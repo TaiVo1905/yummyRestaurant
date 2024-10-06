@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Định dạng css cho contact*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #080a0b;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.title{
+    color:#999;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+/* Đoạn văn bản mô tả */
+p {
+    text-align: center;
+    font-size: 16px;
+    /* line-height: 1.6; */
+    color: #1b1515;
+}
+.box{
+    display: flex;
+    gap:130px;
+    margin-top: 20px;
+}
+/* Biểu tượng Font Awesome */
+.iconAddress, .iconPhone, .iconEmail {
+    margin-right: 10px;
+    color: #1e2021;
+}
+/* Định dạng form liên hệ */
+.fullName, .email{
+    width: 90%;
+    padding: 10px;
+    margin: 10px 5px;
+    border: 1px solid #7dccda;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #0e1010;
+}
+.text{
+    display: flex;
+    width: 90%;
+
+
+}
+/* Định dạng nội dung textarea */
+.message {
+    width: 90%;
+    padding: 15px;
+    border: 1px solid #7dccda;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #433939;
+    height: 150px;
+}
+/* Định dạng nút gửi */
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: not-allowed; /* Hiển thị nút gửi đang bị disable */
+    color: #999;
+    font-size: 14px;
+    margin-top: 10px;
+}
