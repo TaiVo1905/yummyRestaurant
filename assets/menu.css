@@ -1,0 +1,92 @@
+/* Menu */
+/* Tiêu đề MenuPage */
+#menu_title{
+    text-align: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: rgb(93, 92, 92);
+}
+/* Thanh điều hướng của menu */
+#menu_list{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#menu_list li:first-child a {
+    color: white;
+    background-color: orangered;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+#menu_list>li:hover a{
+    color: black;
+}
+#menu_list li a{
+    color: rgb(125, 123, 123);
+    text-transform: uppercase;
+    margin: 0 15px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+} 
+/* Bảng menu */
+#menu_tbl{
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+#menu_tbl tr th{
+    padding: 20px;
+    border: none;
+    border-bottom: 2px solid rgb(113, 111, 111);
+    color: rgb(125, 123, 123);
+    text-transform: uppercase;
+}
+#menu_item2, #menu_item4, #menu_item6, #menu_item8, #menu_item10{
+    background-color: rgb(237, 236, 236);
+}
+#menu_tbl tr td{
+    text-align: center;
+    font-size: 18px;
+}
+/* Ảnh sản phẩm */
+img{
+    margin-top: 5px;
+}
+/* Ô tăng/giảm số lượng */
+#number-input {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+#number_subtraction, #number_addition{
+    background-color: #e0e0e0;
+    border: none;
+    width: 30px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 18px;
+}
+#input_sl {
+    width: 35px;
+    height: 30px;
+    text-align:center;
+    border: none;
+}
+/* Ẩn mũi tên của ô input khi có type là number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Nút add to cart */
+#btn_add{
+    padding: 10px;
+    color: white;
+    background-color: orangered;
+    border: none;
+    border-radius: 8px;
+}
