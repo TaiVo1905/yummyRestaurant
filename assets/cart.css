@@ -140,20 +140,29 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-
 .continue {
     border: 2px solid red;
     background-color: #fff;
     color: red;
     padding: 6px 10px;
+}
+
+.continue:hover {
+    background-color: red;
+    color: #fff;
     cursor: pointer;
 }
 
 .update {
-    background-color: red;
+    background-color: #de4848;
     color: #fff;
-    border: 2px solid red;
+    border: 2px solid #de4848;
     padding: 6px 10px;
+    
+}
+
+.update:hover {
+    background-color: red;
     cursor: pointer;
 }
 
