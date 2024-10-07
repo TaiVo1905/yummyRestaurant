@@ -850,5 +850,93 @@
             "pass": "123456",
             "phoneNum": "0123456789"
         }
+    ],
+    "featuredDishes": [
+        {
+            "id": 96,
+            "name": "Ba Chỉ Bò Cuộn Nấm",
+            "type": "Các Món Khác Và Món Súp",
+            "describe": "Ba Chỉ Bò Cuộn Nấm là sự kết hợp hoàn hảo giữa những miếng thịt ba chỉ bò tươi ngon được cuộn cùng nấm hương và rau thơm. Thịt bò được ướp gia vị vừa miệng, sau đó nướng trên lửa than, tạo nên lớp vỏ ngoài thơm giòn và bên trong mềm mại, mọng nước. Món ăn được phục vụ kèm nước sốt đặc biệt, mang đến hương vị đậm đà và hấp dẫn.",
+            "image_url": "../assets/image/cacMonKhacVaMonSup/baChiBoCuonNam.jpg",
+            "price": "129.000đ"
+        },
+        {
+            "id": 99,
+            "name": "Bò Bít Tết Kiểu Hoàng Kim",
+            "type": "Các Món Khác Và Món Súp",
+            "describe": "Bò Bít Tết Kiểu Hoàng Kim là một món ăn đặc trưng với thịt bò thượng hạng được nướng vừa tới, giữ nguyên độ mềm mại và mọng nước. Món ăn được phục vụ trên đĩa nóng cùng với khoai tây chiên giòn và rau củ tươi, kèm theo sốt tiêu đen đặc biệt của nhà hàng. Hương vị đậm đà, kết hợp với mùi thơm nức của thịt bò nướng khiến món ăn trở thành sự lựa chọn hoàn hảo cho những tín đồ yêu thích ẩm thực.",
+            "image_url": "../assets/image/cacMonKhacVaMonSup/boBitTet.jpg",
+            "price": "185.000đ"
+        },
+        {
+            "id": 100,
+            "name": "Gà Nấu Nấm Đông Cô",
+            "type": "Các Món Khác Và Món Súp",
+            "describe": "Gà Nấu Nấm Đông Cô là sự kết hợp hoàn hảo giữa thịt gà tươi ngon và nấm đông cô thơm ngậy. Gà được nấu chín mềm trong nước dùng đậm đà, kết hợp cùng các loại gia vị như hành, tỏi và tiêu. Nấm đông cô mang đến hương vị đặc trưng và độ giòn ngon, làm tăng thêm sự hấp dẫn cho món ăn. Món này thường được phục vụ nóng, kèm với cơm trắng, mang lại trải nghiệm ẩm thực đầy đủ và hài lòng cho thực khách.",
+            "image_url": "../assets/image/cacMonKhacVaMonSup/gaNauNamDongCo.jpg",
+            "price": "192.000đ"
+        },
+        {
+            "id": 98,
+            "name": "Gỏi Cá Hoàng Triều Thái",
+            "type": "Các Món Khác Và Món Súp",
+            "describe": "Gỏi Cá Hoàng Triều Thái là món ăn nổi bật, được chế biến từ cá tươi sống, thường là cá thu hoặc cá hồi. Món gỏi này kết hợp với các loại rau thơm như rau răm, húng quế và các loại gia vị đặc trưng như tỏi, ớt. Nước sốt chua ngọt được pha chế từ nước cốt chanh, nước mắm và đường, tạo nên hương vị đậm đà, thanh mát. Món ăn được trình bày đẹp mắt và thường được phục vụ kèm bánh tráng, mang lại trải nghiệm ẩm thực độc đáo cho thực khách.",
+            "image_url": "../assets/image/cacMonKhacVaMonSup/goiCaHoangTrieuThai.jpg",
+            "price": "118.000đ"
+        },
+        {
+            "id": 10,
+            "name": "Salad Cá Hồi Thượng Hạng",
+            "type": "Khai vị",
+            "describe": "Salad Cá Hồi Thượng Hạng là sự kết hợp hoàn hảo giữa cá hồi tươi sống, thái lát mỏng và rau xanh tươi ngon như rau xà lách, cải arugula, cùng với bơ chín và dưa leo. Món salad được trộn với sốt chanh và dầu olive, mang đến hương vị thanh mát và bổ dưỡng. Cá hồi được ướp nhẹ với muối và tiêu, tạo nên độ tươi ngon và ngọt tự nhiên. Đây là một lựa chọn tuyệt vời cho những ai yêu thích ẩm thực healthy và muốn thưởng thức một bữa ăn nhẹ nhàng nhưng đầy đủ chất dinh dưỡng.",
+            "image_url": "../assets/image/khaiVi/Salad.webp",
+            "price": "110.000đ"
+        },
+        {
+            "id": 102,
+            "name": "Súp Bào Ngư Vi Cá",
+            "type": "Các Món Khác Và Món Súp",
+            "describe": "Súp Bào Ngư Vi Cá được chế biến từ bào ngư tươi ngon kết hợp với vi cá mập, tạo nên hương vị đặc trưng. Nước dùng được ninh từ xương heo và gia vị tự nhiên, mang lại độ ngọt thanh. Món súp này được thêm vào một số nguyên liệu như nấm, ngò rí, và gia vị vừa ăn, phục vụ nóng hổi, giúp thực khách tận hưởng sự thanh mát và bổ dưỡng. Món ăn không chỉ ngon mà còn rất tốt cho sức khỏe, thích hợp cho những bữa tiệc sang trọng.",
+            "image_url": "../assets/image/cacMonKhacVaMonSup/supBaoNguViCa.jpg",
+            "price": "300.000đ"
+        },
+        {
+            "id": 103,
+            "name": "Tôm Hùm Sốt Phô Mai",
+            "type": "Các Món Khác Và Món Súp",
+            "describe": "Tôm Hùm Sốt Phô Mai là món ăn đặc biệt với tôm hùm tươi sống, được nướng chín tới và phủ lớp sốt phô mai béo ngậy, thơm lừng. Sốt phô mai được chế biến từ phô mai cheddar và kem tươi, tạo nên hương vị đậm đà, kết hợp hoàn hảo với vị ngọt tự nhiên của tôm. Món ăn được trang trí bằng rau xanh và tiêu đen, mang lại trải nghiệm ẩm thực tuyệt vời, thích hợp cho những dịp đặc biệt hoặc tiệc tùng.",
+            "image_url": "../assets/image/cacMonKhacVaMonSup/tomHumSotPhoMai.jpg",
+            "price": "395.000đ"
+        },
+        {
+            "id": 97,
+            "name": "Tôm Sú Nướng Phô Mai",
+            "type": "Các Món Khác Và Món Súp",
+            "describe": "Tôm Sú Nướng Phô Mai là món ăn đặc sắc, với tôm sú tươi ngon được nướng trên lửa than cho đến khi chín vàng. Tôm được phủ một lớp phô mai béo ngậy, tan chảy, tạo nên hương vị đậm đà. Món ăn đi kèm với sốt tỏi ớt và rau sống, mang lại trải nghiệm ẩm thực tuyệt vời, phù hợp cho các bữa tiệc hải sản hoặc dịp sum họp gia đình.",
+            "image_url": "../assets/image/cacMonKhacVaMonSup/tomSuNuongPhoMai.jpg",
+            "price": "205.000đ"
+        }
+    ],
+    "orders": [
+        {
+        "id": 1,
+        "foodName": ["Chả Cá Thát Lát"],
+        "amount": "119.000đ",
+        "time": "12:00",
+        "customerName": "Võ Đức Tài",
+        "phoneNumber": "0393907372",
+        "address": "Đà Nẵng"
+        }
+    ],
+    "bookTables": [
+        {
+            "id": 1,
+            "customerName": "Võ Đức Tài",
+            "email": "voductai123@gmail.com",
+            "phoneNumber": "0393907372",
+            "tableNumber": 2,
+            "time": "12:00",
+            "date": "10/10/2024"
+        }
     ]
 }
