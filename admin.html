@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Yummny Restaurant Administration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/image/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+</head>
+<body>
+    <div class="admin_container">
+        <!-- Header of admin page -->
+        <div class="admin_header displayFlex">
+            <div class="header_left displayFlex">
+                
+                <i class="fa-solid fa-bars"></i>
+                <h1 class="resName">Yummy Restaurant</h1>
+            </div>
+            <div class="header_right displayFlex">
+                <div class="search displayFlex">
+                    <input type="search" name="" id="admin_inputSearch" placeholder="Search...">
+                    <div class="displayFlex" id="admin_find">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <div class="logIn displayFlex">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+        </div>
+        <!-- sidebar -->
+        <div class="admin_sidebar">
+            <a class="active" id="admin_food" href="../admin.html?page=Food Management">Quản lý món ăn</a>
+            <a class="" id="admin_orders" href="../admin.html?page=Order Management">Quản lý đơn đặt hàng</a>
+            <a class="" id="admin_bookTables" href="../admin.html?page=Table Management">Quản lý đơn đặt bàn</a>
+            <a class="" id="admin_users" href="../admin.html?page=User Management">Quản lý người dùng</a>
+        </div>
+        <!-- Quản lý món ăn -->
+        <div class="admin_food">
+            <!-- Table items -->
+            <div class="admin_food_content">
+                <div class="title">
+                    <h1>Quản lý sản phẩm</h1>
+                    <button id="admin_addItem">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Thêm món mới</span>
+                    </button>
+                </div>
+                <table class="admin_tb_thead">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên</th>
+                            <th>Loại</th>
+                            <th>Mô tả</th>
+                            <th>Ảnh</th>
+                            <th>Giá</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                </table>
+                <table class="admin_tb_items">
+
+                    <tbody id="admin_items">
+                        <tr>
+                            <td>1</td>
+                            <td>Gỏi Xoài Hải Sản</td>
+                            <td>Khai vị</td>
+                            <td>bsjaksbduasndasndsakjndjasknd ưuobwieubwquoebwqebwquibeqwiu ưiebwqiebwiqebiwqbeiwe</td>
+                            <td>
+                                <div class="item_img" style="background-image: url(../assets/image/goiXoaiHaiSan.jpg);"></div>
+                            </td>
+                            <td>119.000 đ</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa">
+                                </i></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Gỏi Xoài Hải Sản</td>
+                            <td>Khai vị</td>
+                            <td>bsjaksbduasndasndsakjndjasknd ưuobwieubwquoebwqebwquibeqwiu ưiebwqiebwiqebiwqbeiwe</td>
+                            <td>
+                                <div class="item_img" style="background-image: url(../assets/image/goiXoaiHaiSan.jpg);"></div>
+                            </td>
+                            <td>119.000 đ</td>
+                            <td><i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Gỏi Xoài Hải Sản</td>
+                            <td>Khai vị</td>
+                            <td>bsjaksbduasndasndsakjndjasknd ưuobwieubwquoebwqebwquibeqwiu ưiebwqiebwiqebiwqbeiwe</td>
+                            <td>
+                                <div class="item_img" style="background-image: url(../assets/image/goiXoaiHaiSan.jpg);"></div>
+                            </td>
+                            <td>119.000 đ</td>
+                            <td><i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Gỏi Xoài Hải Sản</td>
+                            <td>Khai vị</td>
+                            <td>bsjaksbduasndasndsakjndjasknd ưuobwieubwquoebwqebwquibeqwiu ưiebwqiebwiqebiwqbeiwe</td>
+                            <td>
+                                <div class="item_img" style="background-image: url(../assets/image/goiXoaiHaiSan.jpg);"></div>
+                            </td>
+                            <td>119.000 đ</td>
+                            <td><i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Gỏi Xoài Hải Sản</td>
+                            <td>Khai vị</td>
+                            <td>bsjaksbduasndasndsakjndjasknd ưuobwieubwquoebwqebwquibeqwiu ưiebwqiebwiqebiwqbeiwe</td>
+                            <td>
+                                <div class="item_img" style="background-image: url(../assets/image/goiXoaiHaiSan.jpg);"></div>
+                            </td>
+                            <td>119.000 đ</td>
+                            <td><i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- add items modal -->
+            <div class="admin_addItems_modal" id="admin_addItems_modal">
+                <div class="modal_content">
+                    <div class="modal_header">
+                        <i class="fa-solid fa-xmark" id="close_addItems_modal" title="Đóng"></i>
+                        <h2>THÊM MÓN MỚI</h2>
+                    </div>
+                    <div class="modal_body">
+                        <form class="form--modal" action="">
+                            <div class="modal_input">
+                                <label for="itemName">Tên món ăn</label>
+                                <input type="text" name="itemName" id="itemName" placeholder="Nhập tên món ăn..." required>
+                            </div>
+                            <div class="modal_input">
+                                <label for="itemType">Loại món ăn</label>
+                                <input type="text" name="itemType" id="itemType" placeholder="Nhập loại món ăn..." required>
+                            </div>
+                            <div class="modal_input">
+                                <label for="itemImg">Hình ảnh món ăn</label>
+                                <div>
+                                    <input type="text" name="itemImgText" id="itemImgText" placeholder="Nhập link ảnh ở đây..." required>
+                                    <label for="itemImg" title="Thêm ảnh"><i id="uploadFile" class="fa-solid fa-upload"></i></label>
+                                </div>
+                                <input type="file" name="itemImg" id="itemImg" style="display: none;" required>
+                                <div id="modal_show_img"></div>
+                            </div>
+                            <div class="modal_input">
+                                <label for="itemDesc">Mô tả món ăn</label>
+                                <textarea name="itemDesc" id="itemDesc" placeholder="Nhập mô tả món ăn ở đây..." required></textarea>
+                            </div>
+                            <div class="modal_input">
+                                <label for="itemPrice">Giá tiền</label>
+                                <input type="number" name="itemPrice" id="itemPrice" placeholder="Nhập giá tiền..." min="0" required>
+                            </div>
+                            <div class="modal_button">
+                                <input type="submit" id="addItem">
+                                <input type="reset" id="resetInput">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Quản lý đơn đặt hàng -->
+        <div class="admin_orders" style="display: none;">
+            <div class="admin_orders_content">
+                <div class="title">
+                    <h1 style="padding: 37px 0 39px 6px;">Quản lý đơn đặt hàng</h1>
+                </div>
+                <table class="admin_tb_thead">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên món ăn</th>
+                            <th>Tổng giá</th>
+                            <th>Thời gian</th>
+                            <th>Tên khách hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Địa chỉ</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                </table>
+                <table class="admin_tb_items">
+
+                    <tbody id="admin_items">
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên món ăn</td>
+                            <td>Tổng giá</td>
+                            <td>Thời gian</td>
+                            <td>Tên khách hàng</td>
+                            <td>Số điện thoại</td>
+                            <td>Trạng thái</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên món ăn</td>
+                            <td>Tổng giá</td>
+                            <td>Thời gian</td>
+                            <td>Tên khách hàng</td>
+                            <td>Số điện thoại</td>
+                            <td>Trạng thái</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên món ăn</td>
+                            <td>Tổng giá</td>
+                            <td>Thời gian</td>
+                            <td>Tên khách hàng</td>
+                            <td>Số điện thoại</td>
+                            <td>Trạng thái</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên món ăn</td>
+                            <td>Tổng giá</td>
+                            <td>Thời gian</td>
+                            <td>Tên khách hàng</td>
+                            <td>Số điện thoại</td>
+                            <td>Trạng thái</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên món ăn</td>
+                            <td>Tổng giá</td>
+                            <td>Thời gian</td>
+                            <td>Tên khách hàng</td>
+                            <td>Số điện thoại</td>
+                            <td>Trạng thái</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên món ăn</td>
+                            <td>Tổng giá</td>
+                            <td>Thời gian</td>
+                            <td>Tên khách hàng</td>
+                            <td>Số điện thoại</td>
+                            <td>Trạng thái</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Quản lý đơn đặt bàn -->
+        <div class="admin_bookTables" style="display: none;">
+            <div class="admin_bookTables_content">
+                <div class="title">
+                    <h1 style="padding: 37px 0 39px 6px;">Quản lý đơn đặt bàn</h1>
+                </div>
+                <table class="admin_tb_thead">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên khách hàng</th>
+                            <th>Email</th>
+                            <th>Số điện thoại</th>
+                            <th>Số bàn</th>
+                            <th>Thời gian</th>
+                            <th>Ngày</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                </table>
+                <table class="admin_tb_items">
+
+                    <tbody id="admin_items">
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên khách hàng</td>
+                            <td>Email</td>
+                            <td>Số điện thoại</td>
+                            <td>Số bàn</td>
+                            <td>Thời gian</td>
+                            <td>Ngày</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên khách hàng</td>
+                            <td>Email</td>
+                            <td>Số điện thoại</td>
+                            <td>Số bàn</td>
+                            <td>Thời gian</td>
+                            <td>Ngày</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên khách hàng</td>
+                            <td>Email</td>
+                            <td>Số điện thoại</td>
+                            <td>Số bàn</td>
+                            <td>Thời gian</td>
+                            <td>Ngày</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên khách hàng</td>
+                            <td>Email</td>
+                            <td>Số điện thoại</td>
+                            <td>Số bàn</td>
+                            <td>Thời gian</td>
+                            <td>Ngày</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên khách hàng</td>
+                            <td>Email</td>
+                            <td>Số điện thoại</td>
+                            <td>Số bàn</td>
+                            <td>Thời gian</td>
+                            <td>Ngày</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên khách hàng</td>
+                            <td>Email</td>
+                            <td>Số điện thoại</td>
+                            <td>Số bàn</td>
+                            <td>Thời gian</td>
+                            <td>Ngày</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên khách hàng</td>
+                            <td>Email</td>
+                            <td>Số điện thoại</td>
+                            <td>Số bàn</td>
+                            <td>Thời gian</td>
+                            <td>Ngày</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên khách hàng</td>
+                            <td>Email</td>
+                            <td>Số điện thoại</td>
+                            <td>Số bàn</td>
+                            <td>Thời gian</td>
+                            <td>Ngày</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên khách hàng</td>
+                            <td>Email</td>
+                            <td>Số điện thoại</td>
+                            <td>Số bàn</td>
+                            <td>Thời gian</td>
+                            <td>Ngày</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Quản lý người dùng -->
+        <div class="admin_users" style="display: none;">
+            <div class="admin_users_content">
+                <div class="title">
+                    <h1 style="padding: 37px 0 39px 6px;">Quản lý người dùng</h1>
+                </div>
+                <table class="admin_tb_thead">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên khách hàng</th>
+                            <th>Email</th>
+                            <th>Số điện thoại</th>
+                            <th>Mật khẩu</th>
+                            <th>Thời gian</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                </table>
+                <table class="admin_tb_items">
+
+                    <tbody id="admin_items">
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên món ăn</td>
+                            <td>Tổng giá</td>
+                            <td>Thời gian</td>
+                            <td>Tên khách hàng</td>
+                            <td>Số điện thoại</td>
+                            <td>
+                                <i></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên món ăn</td>
+                            <td>Tổng giá</td>
+                            <td>Thời gian</td>
+                            <td>Tên khách hàng</td>
+                            <td>Số điện thoại</td>
+                            <td>
+                                <i></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên món ăn</td>
+                            <td>Tổng giá</td>
+                            <td>Thời gian</td>
+                            <td>Tên khách hàng</td>
+                            <td>Số điện thoại</td>
+                            <td>
+                                <i></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên món ăn</td>
+                            <td>Tổng giá</td>
+                            <td>Thời gian</td>
+                            <td>Tên khách hàng</td>
+                            <td>Số điện thoại</td>
+                            <td>
+                                <i></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên món ăn</td>
+                            <td>Tổng giá</td>
+                            <td>Thời gian</td>
+                            <td>Tên khách hàng</td>
+                            <td>Số điện thoại</td>
+                            <td>
+                                <i></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>Tên món ăn</td>
+                            <td>Tổng giá</td>
+                            <td>Thời gian</td>
+                            <td>Tên khách hàng</td>
+                            <td>Số điện thoại</td>
+                            <td>
+                                <i></i>
+                                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> 
+    </div>
+
+    <script src="../assets/javaScript/admin.js"></script>
+</body>
+</html>

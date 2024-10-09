@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* css cho login and regester  */
+.conatianers{
+    width: 700px;
+    border: 1px solid rgb(239, 225, 225);
+    padding: 20px;
+    margin: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+}
+.h1, .h2{
+    font-size: 14px;
+    font-weight: 100%;
+    color: #999;
+    text-align: center;
+}
+.inputEmail1, .inputEmail2, .inputPassword1, .inputPassword2, .inputFirstName, .inputSurName{
+    width: 100%;
+    height: 35px;
+    border: 1px solid rgb(155, 153, 153);
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.iconE1, .iconE2, .iconP1, .iconP2, .iconF, .iconS{
+    color: gray;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.inputE1, .inputE2, .inputP1, .inputP2, .firstName, .surName{
+    border: none;
+    outline: none;
+    width: 270px;
+}
+.sign_in, .logIn{
+    width: 100%;
+    height: 35px;
+    border: 1px solid rgb(155, 153, 153);
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

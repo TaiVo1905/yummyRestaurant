@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YummyRestaurent</title>
+    <link rel="stylesheet" href="./assets/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <div class="cart-container">
+        <!-- Giỏ hàng -->
+        <div class="cart-wrapper">
+            <!-- Bảng giỏ hàng đã thêm vào -->
+            <table class="shop-table">
+                <thead>
+                    <tr>
+                        <th class="product-name-1" colspan="3">Sản phẩm</th>
+                        <th class="product-price">Giá</th>
+                        <th class="product-quantity">Số lượng</th>
+                        <th class="product-subtotal">Tạm tính</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cart-form-products">
+                        <!-- Xoá sản phẩm đã thêm vào giỏ hàng -->
+                        <td class="product-remove">
+                            <a href="#" class="remove"><i class="fa-regular fa-circle-xmark item-remove"></i></a>
+                        </td>
+                        <td class="product-image">
+                            <a href="#" class="image"><img src="./assets/image/khaiVi/goiXoaiHaiSan.jpg" style="width: 80px; height: 80px;" alt="Gỏi xoài hải sản"></a>
+                        </td>
+                        <td class="product-name">
+                            <a href="#">Gỏi xoài hải sản</a>
+                        </td>
+                        <td class="product-price">119.000đ				
+                        </td>
+                        <!-- Tăng giảm số lượng đơn hàng -->
+                        <td class="product-quantity">
+                            <div class="quantity buttons_added">
+                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number-subtraction" value="-">
+                                <input type="number" value="1" id="number-step" min="1">
+                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number-addition" value="+">
+
+                            </div>
+						</td>
+                        <td class="product-subtotal">119.000đ				
+						</td>
+                    </tr>
+                    <tr class="cart-form-products">
+                        <!-- Xoá sản phẩm đã thêm vào giỏ hàng -->
+                        <td class="product-remove">
+                            <a href="#" class="remove"><i class="fa-regular fa-circle-xmark item-remove"></i></a>
+                        </td>
+                        <td class="product-image">
+                            <a href="#" class="image"><img src="./assets/image/monXao/mucXaoCaChuaThomHanh.jpg" style="width: 80px; height: 80px;" alt="Mực xào cà chua"></a>
+                        </td>
+                        <td class="product-name">
+                            <a href="#">Mực xào hành cần / thơm cà</a>
+                        </td>
+                        <td class="product-price">159.000đ				
+                        </td>
+                        <!-- Tăng giảm số lượng đơn hàng -->
+                        <td class="product-quantity">
+                            <div class="quantity buttons_added">
+                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number-subtraction" value="-">
+                                <input type="number" value="1" id="number-step" min="1">
+                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number-addition" value="+">
+
+                            </div>
+						</td>
+                        <td class="product-subtotal">159.000đ				
+						</td>
+                    </tr>
+                    <tr class="cart-form-products">
+                        <!-- Xoá sản phẩm đã thêm vào giỏ hàng -->
+                        <td class="product-remove">
+                            <a href="#" class="remove"><i class="fa-regular fa-circle-xmark item-remove"></i></a>
+                        </td>
+                        <td class="product-image">
+                            <a href="#" class="image"><img src="./assets/image/monChienVaRang/thitBaChiRangChayCanh.jpg" style="width: 80px; height: 80px;" alt="Thịt ba chỉ rang cháy cạnh"></a>
+                        </td>
+                        <td class="product-name">
+                            <a href="#">Thịt ba chỉ rang cháy cạnh</a>
+                        </td>
+                        <td class="product-price">149.000đ				
+                        </td>
+                        <!-- Tăng giảm số lượng đơn hàng -->
+                        <td class="product-quantity">
+                            <div class="quantity buttons_added">
+                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number-subtraction" value="-">
+                                <input type="number" value="1" id="number-step" min="1">
+                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number-addition" value="+">
+
+                            </div>
+						</td>
+                        <td class="product-subtotal">149.000đ				
+						</td>
+                    </tr>
+                    <tr class="cart-form-products">
+                        <!-- Xoá sản phẩm đã thêm vào giỏ hàng -->
+                        <td class="product-remove">
+                            <a href="#" class="remove"><i class="fa-regular fa-circle-xmark item-remove"></i></a>
+                        </td>
+                        <td class="product-image">
+                            <a href="#" class="image"><img src="./assets/image/monRau/rauMuongXaoToi.jpg" style="width: 80px; height: 80px;" alt="Rau muống"></a>
+                        </td>
+                        <td class="product-name">
+                            <a href="#">Rau muống xào tỏi / luộc</a>
+                        </td>
+                        <td class="product-price">49.000đ				
+                        </td>
+                        <!-- Tăng giảm số lượng đơn hàng -->
+                        <td class="product-quantity">
+                            <div class="quantity buttons_added">
+                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number-subtraction" value="-">
+                                <input type="number" value="1" id="number-step" min="1">
+                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number-addition" value="+">
+
+                            </div>
+						</td>
+                        <td class="product-subtotal">49.000đ				
+						</td>
+                    </tr>
+                    <tr class="cart-form-products">
+                        <!-- Xoá sản phẩm đã thêm vào giỏ hàng -->
+                        <td class="product-remove">
+                            <a href="#" class="remove"><i class="fa-regular fa-circle-xmark item-remove"></i></a>
+                        </td>
+                        <td class="product-image">
+                            <a href="#" class="image"><img src="./assets/image/monHap/caLocHapBau.jpg" style="width: 80px; height: 80px;" alt="Cá lóc hấp bầu/ngũ liễu"></a>
+                        </td>
+                        <td class="product-name">
+                            <a href="#">Cá lóc hấp bầu / ngũ liễu</a>
+                        </td>
+                        <td class="product-price">169.000đ				
+                        </td>
+                        <!-- Tăng giảm số lượng đơn hàng -->
+                        <td class="product-quantity">
+                            <div class="quantity buttons_added">
+                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number-subtraction" value="-">
+                                <input type="number" value="1" id="number-step" min="1">
+                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number-addition" value="+">
+
+                            </div>
+						</td>
+                        <td class="product-subtotal">169.000đ				
+						</td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+            <div class="continue-update">
+                <!-- Tiếp tục xem giỏ hàng -->
+                <div class="button-continue">
+                    <button type="reset" class="continue"><i class="fa-solid fa-arrow-left"></i>TIẾP TỤC XEM SẢN PHẨM</button>
+                </div>
+                <!-- Cập nhật giỏ hàng -->
+                <div class="button-update">
+                    <button type="submit" class="update">CẬP NHẬT GIỎ HÀNG</button>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Form cần thanh toán -->
+        <div class="cart-form-payments">
+            <div class="cart-sidebar">
+                <div class="cart-totals">
+                    <table>
+                        <thead style="border: 3px solid #ececec;">
+                            <tr>
+                                <th class="product-name-2" colspan="2">Cộng giỏ hàng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Tính tổng cần thanh toán -->
+                            <tr class="cart-subtotal">
+                                <th class="normal-text">Tạm tính</th>
+                                <td class="cart-total">672.000đ</td>
+                            </tr>
+                            <tr class="order-total">
+                                <th class="normal-text">Tổng</th>
+                                <td class="sum-total">672.000đ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Thanh toán sản phẩm -->
+                    <div class="product-payment">
+                        <a href="#" class="checkout-button">
+                            <button type="submit" class="sub-payment">TIẾN HÀNH THANH TOÁN</button>
+                            
+                        </a>
+                    </div>
+                </div>
+                    <!-- Mã giảm giá -->
+                <form class="checkout-coupon">
+                    <div class="coupon">
+                        <h4><i class="fa-solid fa-tag item-coupon"></i>Phiếu ưu đãi</h4>
+                        <div class="discount">
+                            <input type="text" name="coupon_code" class="coupon_code" class="input-text" placeholder="Mã ưu đãi">
+                            <input type="submit" class="apply" name="apply_coupon" value="Áp dụng">
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
