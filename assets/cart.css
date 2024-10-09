@@ -24,7 +24,7 @@
 
 
 /* Icons */
-.product-remove i{
+.product-remove .item-remove {
     width: 24px;
     height: 24px;
     opacity: .35;
@@ -34,7 +34,7 @@
 }
 
 
-.coupon i {
+.coupon .item-coupon {
     opacity: .35;
     margin-right: 4px;
 }
@@ -49,10 +49,6 @@
     border-right:2px solid #ececec;
     width: 900px;
 }
-
-/* .cart-form-products {
-    width: 600px;
-} */
 
 
 th, td {
