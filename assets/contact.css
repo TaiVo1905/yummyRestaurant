@@ -5,36 +5,41 @@
 }
 /* Định dạng css cho contact*/
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff;
     color: #080a0b;
 }
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    /* width: 90%; */
+    /* max-width: 1200px; */
+    /* margin: 0 auto; */
+    /* padding: 20px; */
 }
 .title{
     color:#999;
     font-size: 36px;
     font-weight: bold;
-    margin-bottom: 10px;
+    padding: 36px 0;
     text-align: center;
 }
 /* Đoạn văn bản mô tả */
-p {
+.script {
     text-align: center;
     font-size: 16px;
     /* line-height: 1.6; */
     color: #1b1515;
+    padding: 36px 0;
 }
-.box{
+/* .box{
     display: flex;
     gap:130px;
     margin-top: 20px;
+} */
+
+.address p b{
+    text-align: center;
+    display: block;
 }
 /* Biểu tượng Font Awesome */
 .iconAddress, .iconPhone, .iconEmail {
@@ -43,7 +48,7 @@ p {
 }
 /* Định dạng form liên hệ */
 .fullName, .email{
-    width: 90%;
+    width: 100%;
     padding: 10px;
     margin: 10px 5px;
     border: 1px solid #7dccda;
@@ -53,19 +58,20 @@ p {
 }
 .text{
     display: flex;
-    width: 90%;
-
-
+    width: 100%;
 }
 /* Định dạng nội dung textarea */
 .message {
-    width: 90%;
-    padding: 15px;
+    width: 100%;
+    /* padding: 15px; */
     border: 1px solid #7dccda;
     border-radius: 5px;
     font-size: 14px;
     color: #433939;
     height: 150px;
+    padding: 10px;
+    margin: 0px 5px;
+    resize: none;
 }
 /* Định dạng nút gửi */
 button[type="submit"] {

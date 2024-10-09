@@ -1,5 +1,10 @@
 /* Menu */
 /* Tiêu đề MenuPage */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 #menu_title{
     text-align: center;
     margin: 20px 0;

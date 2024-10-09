@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/image/logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="../assets/javaScript/home.js">
     <title>Yummy Restaurant</title>
 </head>
@@ -13,19 +14,21 @@
         <!-- --------------------------------------------------------phần header----------------------------------------------- -->
         <div class="header">
             <div class="header_logo">
-                <img src="../image/logo.jpg" alt="">
+                <!-- <img src="../assets/image/logo.jpg" alt=""> -->
             </div>
             <div class="header_nav">
-                <lable>TRANG CHỦ</lable>
-                <lable>THỰC ĐƠN</lable>
-                <lable>ĐẶT BÀN</lable>
-                <lable>LIÊN HỆ</lable>
+                <ul>
+                    <li><a class="active">TRANG CHỦ</a></li>
+                    <li><a class="active" href="../menu.html">THỰC ĐƠN</a></li>
+                    <li><a class="active" href="#">ĐẶT BÀN</a></li>
+                    <li><a class="active" href="../contact.html">LIÊN HỆ</a></li>
+                </ul>
             </div>
             <div class="searchBar">
                 <div class="search_logo">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <input class="search_input" type="text">
+                <input class="search_input" type="text" placeholder="Search...">
             </div>
             <div class="header_cart">
                 <i class="cart_logo fa-solid fa-cart-shopping"></i>
@@ -36,7 +39,7 @@
         </div>
         <!-- ------------------------------------------------phần body------------------------------------------------ -->
         <div class="body_slider">
-            <img src="/image/ảnh_slider.jpg" alt="">
+            <img src="../assets/image/ảnh_slider.jpg" alt="">
         </div>
         <div class="body_text">
             <hr class="body_line">
@@ -44,10 +47,9 @@
             <hr class="body_line">
         </div>        
         <div class="body_menu">
-            <div class="body_menu1">
                 <div class="menu_card">
                     <div class="card_dish">
-                        <img src="/image/bò cuộn nấm.jpg" alt="">
+                        <img src="../assets/image/bò cuộn nấm.jpg" alt="">
                     </div>
                     <h5>Ba Chỉ Bò Cuộn Nấm</h5>
                     <h6>129.000đ</h6>
@@ -55,7 +57,7 @@
                 </div>
                 <div class="menu_card">
                     <div class="card_dish">
-                        <img src="/image/tôm nướng.jpg" alt="">
+                        <img src="../assets/image/tôm nướng.jpg" alt="">
                     </div>
                     <h5>Tôm Sú Nướng Phô Mai</h5>
                     <h6>205.000đ</h6>
@@ -63,7 +65,7 @@
                 </div>
                 <div class="menu_card">
                     <div class="card_dish">
-                        <img src="/image/gỏi cá.jpg" alt="">
+                        <img src="../assets/image/gỏi cá.jpg" alt="">
                     </div>
                     <h5>Gỏi Cá Hoàng Triều Thái</h5>
                     <h6>118.000đ</h6>
@@ -71,17 +73,15 @@
                 </div>
                 <div class="menu_card">
                     <div class="card_dish">
-                        <img src="/image/bít tết.jpg" alt="">
+                        <img src="../assets/image/bít tết.jpg" alt="">
                     </div>
                     <h5>Bò Bifteck Kiểu Hoàng Kim</h5>
                     <h6>185.000đ</h6>
                     <button>Thêm vào giỏ hàng</button>
                 </div>
-            </div>
-            <div class="body_menu2">
                 <div class="menu_card">
                     <div class="card_dish">
-                        <img src="/image/gà nấu nấm.jpg" alt="">
+                        <img src="../assets/image/gà nấu nấm.jpg" alt="">
                     </div>
                     <h5>Gà Nấu Nấm Đông Cô</h5>
                     <h6>192.000đ</h6>
@@ -89,7 +89,7 @@
                 </div>
                 <div class="menu_card">
                     <div class="card_dish">
-                        <img src="/image/salad cá hồi.jpg" alt="">
+                        <img src="../assets/image/salad cá hồi.jpg" alt="">
                     </div>
                     <h5>Salad Cá Hồi Thượng Hạng</h5>
                     <h6>110.000đ</h6>
@@ -97,7 +97,7 @@
                 </div>
                 <div class="menu_card">
                     <div class="card_dish">
-                        <img src="/image/soup bào ngư.jpg" alt="">
+                        <img src="../assets/image/soup bào ngư.jpg" alt="">
                     </div>
                     <h5>Soup Bào Ngư Vi Cá</h5>
                     <h6>300.000đ</h6>
@@ -105,13 +105,12 @@
                 </div>
                 <div class="menu_card">
                     <div class="card_dish">
-                        <img src="/image/tôm hùm.jpg" alt="">
+                        <img src="../assets/image/tôm hùm.jpg" alt="">
                     </div>
                     <h5>Tôm Hùm Sốt Phô Mai</h5>
                     <h6>395.000đ</h6>
                     <button>Thêm vào giỏ hàng</button>
                 </div>
-            </div>
         </div>
         <div class="body_text">
             <hr class="body_line">
@@ -123,21 +122,21 @@
         <div class="body_introduce">
             <div class="introduce_card">
                 <div class="card_img">
-                    <img src="/image/ẩm thực.jpg" alt="">
+                    <img src="../assets/image/ẩm thực.jpg" alt="">
                 </div>
                 <h4>Ẩm Thực</h4>
                 <h6>Ẩm thực Việt Nam mang tính kế thừa và tiếp biến trong tiến trình lịch sử của văn hoá, do đó trải nghiệm ẩm thực “Trọn Vẹn” là sáng tạo trong chế biến nhưng vẫn tôn trọng những nguyên lý đã được đúc kết ngàn đời nhằm lưu giữ hương vị truyền thống</h6>
             </div>
             <div class="introduce_card">
                 <div class="card_img">
-                    <img src="/image/con người.jpg" alt="">
+                    <img src="../assets/image/con người.jpg" alt="">
                 </div>
                 <h4>Con Người</h4>
                 <h6>Tính “Trọn Vẹn” đến từ sự chu đáo và tận tình của người đầu bếp, người phục vụ; là dòng chảy năng lượng được tạo ra từ lòng đam mê và nhiệt huyết của những con người Madame Lân</h6>
             </div>
             <div class="introduce_card">
                 <div class="card_img">
-                    <img src="/image/không gian.jpg" alt="">
+                    <img src="../assets/image/không gian.jpg" alt="">
                 </div>
                 <h4>Không Gian</h4>
                 <h6>Với kiến trúc mang nét giao thoa tinh tế giữa xưa và nay cùng không gian chan hoà thiên nhiên, Madame Lân mang đến ý niệm về tính “Trọn Vẹn”từ bầu không khí ấm áp và gần gũi, khơi gợi những xúc cảm gắn kết và sẻ chia trong từng khoảnh khắc</h6>
@@ -146,29 +145,23 @@
         <!-- -----------------------------------------------PHẦN FOOTER---------------------------------------------- -->
         <div class="footer">
             <div class="footer_card">
-                <div class="card_textTop"><b>Địa Chỉ</b></div><br/>
-                <div class="card_textBottom">Đường số 4 Bạch Đằng, phường Thạch Quang, quận Hải Châu, Tp.Đà Nẵng</div>
+                <div class="card_textTop"><b>Thành viên nhóm</b></div><br/>
+                <div class="card_textBottom">Võ Đức Tài<br>Ngô Thị Kim Hân<br>Hồ Viết Tiến<br>Bnướch Thị Thủy<br>Coor Chăng</div>
             </div>
             <div class="footer_card">
                 <div class="card_textTop"><b>Thời Gian</b></div><br/>
-                <div class="card_textBottom">6h30 - 21h30<br/> Monday - Sunday</div>
+                <div class="card_textBottom">8h00 - 23h59<br/> Monday - Sunday</div>
             </div>
             <div class="footer_card">
                 <div class="card_textTop"><b>Email</b></div><br/>
-                <div class="card_textBottom">Yummy@madam.vn</div>
+                <div class="card_textBottom">Yummy@gmail.com</div>
             </div>
             <div class="footer_card">
                 <div class="card_textTop"><b>Theo Dõi</b></div><br/>
                 <div class="card_logo">
-                    <div>
-                        <i class="fa-brands fa-facebook"></i>
-                    </div>
-                    <div>
-                        <i class="fa-brands fa-square-instagram"></i>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-phone-volume"></i>
-                    </div>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="#"><i class="fa-solid fa-phone-volume"></i></a>
                 </div>
             </div>
         </div>

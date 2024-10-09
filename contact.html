@@ -3,32 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/contact.css">
+    <link rel="stylesheet" href="../assets/contact.css">
+    <link rel="stylesheet" href="../assets/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <title> LIÊN HỆ </title>
+    <title>LIÊN HỆ</title>
 </head>
 <body>
     <div class="container">
-        <h1 class="title"> LIÊN HỆ </h1>
-        <p> Nếu bạn có thắc mắc gì, có thể gửi yêu cầu cho chúng tôi và chúng tôi sẽ liên lạc sớm nhất có thể </p>
-        <div class="box">
-            <div>
-                <p><i class="fa-solid fa-house iconAddress"></i> 137/55 Lê Văn Sỹ, P.13,Q.Phú Nhuận </p>
-                <p> (Ngay ngã 4 Lê Văn Sỹ và Huỳnh Văn Bảnh)</p>
+        <div class="header">
+            <div class="header_logo">
+                <!-- <img src="../assets/image/logo.jpg" alt=""> -->
             </div>
-            <div> <p><i class="fa-solid fa-phone iconPhone"></i> 0906540232 </p></div>
-            <div> <p><i class="fa-regular fa-envelope iconEmail"></i> Yummy@madam.vn </p> </div>
+            <div class="header_nav">
+                <ul>
+                    <li><a class="active" href="../home.html">TRANG CHỦ</a></li>
+                    <li><a class="active" href="../menu.html">THỰC ĐƠN</a></li>
+                    <li><a class="active" href="#">ĐẶT BÀN</a></li>
+                    <li><a class="active" href="../contact.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+            <div class="searchBar">
+                <div class="search_logo">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <input class="search_input" type="text" placeholder="Search...">
+            </div>
+            <div class="header_cart">
+                <i class="cart_logo fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="header_regiter">
+                <i class="regiter_logo fa-solid fa-user"></i>
+            </div>
         </div>
+        <h1 class="title"> LIÊN HỆ </h1>
+        <div class="address">
+            <p><b>Website của nhóm sinh viên đang học tập tại tổ chức <a href="https://www.facebook.com/PNVietnam">Passerelles Numériques Vietnam</a></b></p>
+        </div>
+        <p class="script"> Nếu bạn có thắc mắc gì, có thể gửi yêu cầu cho chúng tôi và chúng tôi sẽ liên lạc sớm nhất có thể </p>
         <form class ="frm">
             <div class="text">
                 <input type="text" name="fullname" class="fullName" placeholder="Tên của bạn ">
                 <input type="email" name="email" class=" email" placeholder="Email của bạn ">
             </div>
-            <div>
                 <textarea name="message" class="message" placeholder="Nội dung"></textarea>
-            </div>
             <button type="submit">Gửi</button>
         </form>
+        <div class="footer">
+            <div class="footer_card">
+                <div class="card_textTop"><b>Thành viên nhóm</b></div><br/>
+                <div class="card_textBottom">Võ Đức Tài<br>Ngô Thị Kim Hân<br>Hồ Viết Tiến<br>Bnướch Thị Thủy<br>Coor Chăng</div>
+            </div>
+            <div class="footer_card">
+                <div class="card_textTop"><b>Thời Gian</b></div><br/>
+                <div class="card_textBottom">8h00 - 23h59<br/> Monday - Sunday</div>
+            </div>
+            <div class="footer_card">
+                <div class="card_textTop"><b>Email</b></div><br/>
+                <div class="card_textBottom">Yummy@gmail.com</div>
+            </div>
+            <div class="footer_card">
+                <div class="card_textTop"><b>Theo Dõi</b></div><br/>
+                <div class="card_logo">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="#"><i class="fa-solid fa-phone-volume"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

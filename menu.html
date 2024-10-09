@@ -5,8 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <link rel="stylesheet" href="assets/menu.css">
+    <link rel="stylesheet" href="assets/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
+    <div class="header">
+        <div class="header_logo">
+            <!-- <img src="../assets/image/logo.jpg" alt=""> -->
+        </div>
+        <div class="header_nav">
+            <ul>
+                <li><a class="active" href="../home.html">TRANG CHỦ</a></li>
+                <li><a class="active" href="../menu.html">THỰC ĐƠN</a></li>
+                <li><a class="active" href="#">ĐẶT BÀN</a></li>
+                <li><a class="active" href="../contact.html">LIÊN HỆ</a></li>
+            </ul>
+        </div>
+        <div class="searchBar">
+            <div class="search_logo">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <input class="search_input" type="text" placeholder="Search...">
+        </div>
+        <div class="header_cart">
+            <i class="cart_logo fa-solid fa-cart-shopping"></i>
+        </div>
+        <div class="header_regiter">
+            <i class="regiter_logo fa-solid fa-user"></i>
+        </div>
+    </div>
     <h1 id="menu_title">Thực đơn tại nhà hàng Yummy</h1>
     <nav id="menu_nav">
         <ul id="menu_list">
@@ -44,7 +71,7 @@
                         <!-- 2 nút để thực hiện giảm số lượng hay tăng số lượng -->
                     </div>
                 </td>
-                <td><button id="btn_add">Add To Cart</button></td>
+                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
             </tr>
 
             <tr id="menu_item2">
@@ -58,7 +85,7 @@
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
                     </div>
                 </td>
-                <td><button id="btn_add">Add To Cart</button></td>
+                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
             </tr>
 
             <tr id="menu_item3">
@@ -72,7 +99,7 @@
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
                     </div>
                 </td>
-                <td><button id="btn_add">Add To Cart</button></td>
+                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
             </tr>
 
             <tr id="menu_item4">
@@ -86,7 +113,7 @@
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
                     </div>
                 </td>
-                <td><button id="btn_add">Add To Cart</button></td>
+                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
             </tr>
 
             <tr id="menu_item5">
@@ -100,7 +127,7 @@
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
                     </div>
                 </td>
-                <td><button id="btn_add">Add To Cart</button></td>
+                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
             </tr>
 
             <tr id="menu_item6">
@@ -114,7 +141,7 @@
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
                     </div>
                 </td>
-                <td><button id="btn_add">Add To Cart</button></td>
+                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
             </tr>
 
             <tr id="menu_item7">
@@ -128,7 +155,7 @@
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
                     </div>
                 </td>
-                <td><button id="btn_add">Add To Cart</button></td>
+                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
             </tr>
 
             <tr id="menu_item8">
@@ -142,7 +169,7 @@
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
                     </div>
                 </td>
-                <td><button id="btn_add">Add To Cart</button></td>
+                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
             </tr>
 
             <tr id="menu_item9">
@@ -156,7 +183,7 @@
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
                     </div>
                 </td>
-                <td><button id="btn_add">Add To Cart</button></td>
+                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
             </tr>
 
             <tr id="menu_item10">
@@ -170,7 +197,7 @@
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
                     </div>
                 </td>
-                <td><button id="btn_add">Add To Cart</button></td>
+                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
             </tr>
             
             <tr id="menu_item11">
@@ -184,9 +211,31 @@
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
                     </div>
                 </td>
-                <td><button id="btn_add">Add To Cart</button></td>
+                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
             </tr>
         </tbody>
     </table>
+    <div class="footer">
+        <div class="footer_card">
+            <div class="card_textTop"><b>Thành viên nhóm</b></div><br/>
+            <div class="card_textBottom">Võ Đức Tài<br>Ngô Thị Kim Hân<br>Hồ Viết Tiến<br>Bnướch Thị Thủy<br>Coor Chăng</div>
+        </div>
+        <div class="footer_card">
+            <div class="card_textTop"><b>Thời Gian</b></div><br/>
+            <div class="card_textBottom">8h00 - 23h59<br/> Monday - Sunday</div>
+        </div>
+        <div class="footer_card">
+            <div class="card_textTop"><b>Email</b></div><br/>
+            <div class="card_textBottom">Yummy@gmail.com</div>
+        </div>
+        <div class="footer_card">
+            <div class="card_textTop"><b>Theo Dõi</b></div><br/>
+            <div class="card_logo">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="#"><i class="fa-solid fa-phone-volume"></i></a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
