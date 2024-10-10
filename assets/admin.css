@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Css chung */
+.displayFlex {
+    display: flex;
+}
+
+/* Css admin header */
+.admin_header {
+    width: 100%;
+    height: 72px;
+    background-color: #555;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.admin_header .header_left > i {
+    align-self: center;
+    font-size: 37.6px;
+    color: #fff;
+    padding-left: 8px;
+}
+
+.admin_header .header_left > i:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.admin_header .resName{
+    color: #fff;
+    padding-left: 16px;
+}
+
+.admin_header .search{
+    padding-right: 24px;
+}
+
+#admin_inputSearch{
+    width: 240px;
+    height: 28px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    outline: none;
+    border: none;
+    padding-left: 5px;
+}
+
+#admin_find{
+    width: 28px;
+    height: 28px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #fff;
+    background-color: #2576e8;
+    justify-content: center;
+    padding-top: 7.5px;
+}
+
+#admin_find:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#admin_find > i{
+    font-size: 16px;
+}
+
+.admin_header .logIn > i {
+    padding-right: 16px;
+    align-self: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Css admin sidebar */
+.admin_sidebar {
+    top: 72px;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    /* overflow: auto; */
+}
+
+.admin_sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.admin_sidebar a.active {
+    background-color: #333;
+    color: white;
+}
+
+.admin_sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+/* Css table item */
+.admin_food_content  .title, .admin_orders_content .title, .admin_users_content .title, .admin_bookTables_content .title {
+    position: fixed;
+    top: 72px;
+    left: 200px;
+    z-index: 1;
+    background-color: #fff;
+    width: calc(100% - 200px);
+    /* margin-left: 200px; */
+}
+
+.admin_food_content .title > h1 {
+    padding: 12px 0 12px 6px;
+}
+
+.admin_tb_thead {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    border-collapse: collapse;
+    height: auto;
+    position: fixed;
+    top: 181.6px;
+    left: 0;
+    z-index: 1;
+}
+
+.admin_tb_items {
+    margin-top: 229.6px;
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    border-collapse: collapse;
+    height: auto;
+}
+
+#admin_addItem {
+    width: 124px;
+    height: 36px;
+    background-color: #2576e8;
+    margin: 6px;
+    border-radius: 5px;
+    padding: 0 6px;
+    color: #fff;
+    border: none;
+    /* position: fixed;
+    top: 133.6px; */
+}
+
+#admin_addItem:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.admin_tb_items th, .admin_tb_items td {
+    border-bottom: 1px solid #999;
+}
+
+.admin_tb_thead th {
+    font-size: 24px;
+    height: 48px;
+    background-color: #cccccc;
+}
+
+.admin_tb_items td {
+    height: 124px;
+    text-align: center;
+    padding: 0 3px;
+}
+
+.admin_food_content .admin_tb_thead th:first-child, .admin_food_content .admin_tb_items td:first-child {
+    width: 5%;
+}
+
+.admin_food_content .admin_tb_thead th:nth-child(2), .admin_food_content .admin_tb_items td:nth-child(2) {
+    width: 20%;
+}
+
+.admin_food_content .admin_tb_thead th:nth-child(3), .admin_food_content .admin_tb_items td:nth-child(3) {
+    width: 10%;
+}
+
+.admin_food_content .admin_tb_thead th:nth-child(4), .admin_food_content .admin_tb_items td:nth-child(4) {
+    width: 25%;
+}
+
+.admin_food_content .admin_tb_thead th:nth-child(5), .admin_food_content .admin_tb_items td:nth-child(5),
+.admin_food_content .admin_tb_thead th:nth-child(6), .admin_food_content .admin_tb_items td:nth-child(6) {
+    width: 15%;
+}
+
+.admin_food_content .admin_tb_thead th:last-child, .admin_food_content .admin_tb_items td:last-child {
+    width: 10%;
+}
+
+.admin_tb_items td:last-child {
+    color: red;
+    font-size: 24px;
+}
+
+.admin_tb_items td:last-child i:first-child {
+    color: green;
+    padding-right: 12px;
+}
+
+.admin_tb_items td:last-child i:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+#admin_items .item_img,
+#modal_show_img {
+    width: 100px;
+    padding-top: 100px;
+    background-size: cover;
+    background-position: center;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+/* order table */
+.admin_orders_content .admin_tb_thead th:first-child, .admin_orders_content .admin_tb_items td:first-child {
+    width: 5%;
+}
+
+.admin_orders_content .admin_tb_thead th:nth-child(2), .admin_orders_content .admin_tb_items td:nth-child(2),
+.admin_orders_content .admin_tb_thead th:nth-child(4), .admin_orders_content .admin_tb_items td:nth-child(4),
+.admin_orders_content .admin_tb_thead th:nth-child(5), .admin_orders_content .admin_tb_items td:nth-child(5) {
+    width: 15%;
+}
+
+.admin_orders_content .admin_tb_thead th:nth-child(7), .admin_orders_content .admin_tb_items td:nth-child(7) {
+    width: 14%;
+}
+
+.admin_orders_content .admin_tb_thead th:nth-child(3), .admin_orders_content .admin_tb_items td:nth-child(3),
+.admin_orders_content .admin_tb_thead th:nth-child(6), .admin_orders_content .admin_tb_items td:nth-child(6),
+.admin_orders_content .admin_tb_thead th:last-child, .admin_orders_content .admin_tb_items td:last-child {
+    width: 12%;
+}
+
+/* Users table, book tables table */
+
+.admin_users_content .admin_tb_thead th:first-child, .admin_users_content .admin_tb_items td:first-child,
+.admin_bookTables_content .admin_tb_thead th:first-child, .admin_bookTables_content .admin_tb_items td:first-child,
+.admin_bookTables_content .admin_tb_thead th:nth-child(5), .admin_bookTables_content .admin_tb_items td:nth-child(5),
+.admin_bookTables_content .admin_tb_thead th:nth-child(6), .admin_bookTables_content .admin_tb_items td:nth-child(6),
+    .admin_bookTables_content .admin_tb_thead th:nth-child(7), .admin_bookTables_content .admin_tb_items td:nth-child(7) {
+    width: 10%;
+}
+
+.admin_users_content .admin_tb_thead th:nth-child(2), .admin_users_content .admin_tb_items td:nth-child(2),
+.admin_bookTables_content .admin_tb_thead th:nth-child(2), .admin_bookTables_content .admin_tb_items td:nth-child(2),
+.admin_bookTables_content .admin_tb_thead th:nth-child(3), .admin_bookTables_content .admin_tb_items td:nth-child(3),
+.admin_bookTables_content .admin_tb_thead th:nth-child(4), .admin_bookTables_content .admin_tb_items td:nth-child(4) {
+    width: 15%;
+}
+
+.admin_users_content .admin_tb_thead th:nth-child(3), .admin_users_content .admin_tb_items td:nth-child(3) {
+    width: 20%;
+}
+
+.admin_users_content .admin_tb_thead th:nth-child(4), .admin_users_content .admin_tb_items td:nth-child(4) {
+    width: 15%;
+}
+
+.admin_users_content .admin_tb_thead th:nth-child(5), .admin_users_content .admin_tb_items td:nth-child(5), .admin_users_content .admin_tb_thead th:nth-child(6), .admin_tb_items td:nth-child(6) {
+    width: 15%;
+}
+
+.admin_users_content .admin_tb_thead th:last-child, .admin_users_content .admin_tb_items td:last-child,
+.admin_bookTables_content .admin_tb_thead th:last-child, .admin_bookTables_content .admin_tb_items td:last-child {
+    width: 10%;
+}
+/* Add item modal */
+.admin_addItems_modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.admin_addItems_modal .modal_header > i {
+  /* color: white; */
+  position: absolute;
+  right: 0;
+  font-size: 28px;
+  padding: 6px 12px 0 0;
+}
+
+.admin_addItems_modal .modal_header > i:hover {
+  color: red;
+  /* float: right;
+  font-size: 28px; */
+}
+
+.admin_addItems_modal .modal_header > h2 {
+    padding: 12px 0 12px 0;
+    text-align: center;
+    background-color: #7db0f6;
+    font-size: 36px;
+    border-bottom: 2px solid black;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.admin_addItems_modal .modal_content {
+  position: relative;
+  background-color: #fff;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 20px;
+  animation-name: animateTop;
+  animation-duration: 0.5s
+}
+
+.admin_addItems_modal .form--modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin_addItems_modal .modal_input {
+    width: 70%;
+    padding: 6px 0;
+}
+
+.admin_addItems_modal .modal_input label {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#itemImgText {
+    width: 90%; height: 100%;
+    border: none;
+    outline: none;
+    background-color: #e5e3e3;
+}
+
+#itemDesc {
+    resize: none;
+    height: 100px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+label[for="itemImg"]:nth-child(2) {
+    display: inline;
+    float: right;
+    transform: translateY(15%);
+}
+
+.admin_addItems_modal .modal_input > label {
+    padding: 0 0 3px 12px;
+}
+
+#modal_show_img {
+    background-image: url("../assets/image/goiXoaiHaiSan.jpg");
+    margin-top: 12px;
+    display: none;
+}
+
+.admin_addItems_modal .modal_input > *:nth-child(2) {
+    width: 100%;
+    height: 36px;
+    background-color: #e5e3e3;
+    border: none;
+    border-radius: 25px;
+    padding: 6px 12px;
+    outline: none;
+    scrollbar-width: none;
+    --webkit-appearance: none;
+}
+
+.modal_button {
+    width: 60%;
+    text-align: center;
+}
+
+
+#addItem, #resetInput {
+    background-color: #7db0f6;
+    height: 30px;
+    width: 30%;
+    border: none;
+    border-radius: 25px;
+    margin: 12px;
+    font-weight: bolder;
+}
+
+#addItem:hover, #resetInput:hover {
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+/* Add animation */
+@keyframes animateTop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}

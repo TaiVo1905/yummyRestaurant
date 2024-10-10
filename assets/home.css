@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header_logo {
+    background-image: url(../assets/image/logo.jpg);
+    padding-left: 108px;
+    height: 108px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin: 12px 36px;
+}
+
+
+/* -------------------------------------------------------PHẦN HEADER----------------------------------------------- */
+.header{
+    background-color: rgb(231, 253, 141);
+    display: flex;
+    font-size: 35px;
+}
+/* .header_logo{
+    height: 140px;
+    width: 230px;
+    margin: auto 24px;
+} */
+/* .header_logo img{
+    height: 116px;
+    width: 116px;
+    border-radius: 100%;
+    object-fit: cover;
+} */
+.header_nav{
+    margin: auto 0;
+}
+
+.header_nav ul {
+    list-style-type: none;
+}
+.header_nav li {
+    float: left;
+    position: relative;
+    margin-right: 20px;
+
+}
+.header_nav a{
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+.header_nav a:hover{
+    color: red;
+}
+.header_nav .active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 0;
+    background: red;
+    transition: width 0.3s ease-in-out;
+  }
+  .header_nav .active:hover::after {
+    width: 100%;
+  }
+
+.searchBar {
+    display: flex;
+    padding-left: 24px;
+}
+
+.header_search {
+    height: 22px;
+    width: 22px;
+    background-color: blue;
+    margin-top: 60px;
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+}
+.search_input{
+    margin: auto;
+    outline: none;
+    border: none;
+    height: 28px;
+    padding: 0;
+    padding: 0 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    width: 210px;
+}
+
+.search_logo{
+    font-size: 20px;
+    display: inline-block;
+    margin: auto 0 auto 72px;
+    background-color: white;
+    height: 28px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    
+}
+
+.search_logo i {
+    color: #868686;
+    font-size: 15px;
+    padding-left: 5px;
+    line-height: 28px;
+}
+
+.header_cart i, .header_regiter i{
+    font-size: 28px;
+    opacity: 0.8;
+}
+
+.header_cart i:hover, .header_regiter i:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.header_cart {
+    padding-left: 26px;
+}
+
+.header_cart, .header_regiter{
+    height: 100%;
+    align-self: center;
+}
+
+.header_regiter{
+    padding: 0 28px;
+}
+.cart_logo{
+    margin-left: 50px;
+}
+
+.regiter_logo{
+    margin-left: 30px;
+}
+
+
+/* ------------------------------------------------------PHẦN BODY-------------------------------------------------------- */
+.body_slider img{
+    height: 1000px;
+    width: 100%;
+}
+
+/* Dish */
+.body_text {
+    display: flex;
+    align-items: center;
+    text-align: center; 
+    height: 80px;
+    /* width: 1400px; */
+    font-size: 50px;
+    margin: 37px auto;
+}
+.body_line {
+    flex-grow: 1; 
+    border-top: 1px solid #000;
+    margin: 0 10px;
+}
+.body_menu{
+    height: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin: 0 10px;
+}
+
+.menu_card{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(241, 252, 198);;
+    display: flex;
+    /* margin: 7px; */
+    flex-direction: column;
+    text-align: center;
+}
+.card_dish{
+    height: 70%;
+    width: 100%;
+    overflow: hidden; /*loại bỏ phần hình ảnh tràn ra ngoài */
+}
+.card_dish img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+.card_dish:hover img{
+    transform: scale(1.1) /*căn chỉnh độ phóng to của hình ảnh*/
+}
+.menu_card h5{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 26px;
+}
+.menu_card h6{
+    margin-bottom: 5px;
+    font-size: 27px;
+    /* margin-left: 124px; */
+    color: #8b8b8b;
+    margin-top: 12px;
+}
+.menu_card button{
+    /* margin-left: 80px; */
+    margin-top: 10px;
+    font-size: 20px;
+    width: 60%;
+    align-self: center;
+    margin-bottom: 10px;
+    border: none;
+    height: 10%;
+    color: #fff;
+    background-color: orangered;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+
+}
+.menu_card button:hover{
+    opacity: 0.9;
+    cursor: pointer;
+    /* color: #333; */
+    transform: scale(1.1);
+    font-weight: 600;
+}
+.bt{
+    margin-left: 80px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* triết lý thương hiệu */
+.body_textH5{
+    text-align: center;
+    font-size: 22px;
+}
+.body_textH6{
+    text-align: center;
+    padding: 0 150px;
+    font-size: 15px;
+}
+
+
+/* giới thiệu */
+.body_introduce{
+    height: 540px;
+    /* width: 85%; */
+    margin: 10px auto 24px auto;
+    display: flex;
+}
+.introduce_card{
+    height: 600px;
+    width: 33.3%;
+    margin: 10px;
+}
+/* thẻ card chứa img */
+.card_img{ 
+    height: 60%;
+    width: 100%;
+    /* background-color: yellow; */
+}
+.card_img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.introduce_card h4{
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin: 0px;
+    background-color: rgb(249, 248, 230);
+    font-size: 32px;
+}
+.introduce_card h6{
+    height: 100px;
+    /* width: 95%; */
+    background-color: rgb(242, 251, 207);
+    margin-left: 0px;
+    text-align: justify;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 0px;
+}
+
+
+/* ------------------------------------------------------phần footer-------------------------------------------------- */
+.footer{
+    /* height: 200px; */
+    /* background-color: rgb(204, 204, 202); màu nào */ 
+    background-color: rgb(231, 253, 141);
+    display: flex;
+}
+.footer_card{
+    height: 100%;
+    width: 25%;
+    /* margin-left: 60px; */
+}
+.card_textBottom{
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 12px;
+}
+.card_textTop{
+    text-align: center;
+    font-size: 35px;
+    /* margin-top: 20px; */
+    padding: 12px 0;
+}
+.card_logo{
+    text-align: center;
+    font-size: 45px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 72px;
+}
+
+.footer_card .card_logo a {
+    color: #000;
+    text-decoration: none;
+}
