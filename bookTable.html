@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Table</title>
+    <link rel="stylesheet" href="assets/bookTable.css">
+</head>
+<body>
+    <h1 id="title">Đặt Bàn Trực Tuyến</h1>
+    <!-- form tìm kiếm bàn trống -->
+    <div id="frm_research">
+        <form id="input_frm">
+            <div id="Time">
+                <label for="" id="time">Giờ: </label>
+                <br>
+                <input type="time" id="input_time" min="08:30" max="22:30">
+            </div>
+            <!-- <br> -->
+            <div id="Date">
+                <label for="" id="date">Ngày: </label>
+                <br>
+                <input type="date" id="input_date">
+            </div>
+            <!-- <br> -->
+            <div id="Quantity_people">
+                <label for="" id="quantity">Số Lượng Người: </label>
+                <br>
+                <input type="number" id="input_number" min="1" max="16">
+            </div>
+        </form>
+        <!-- <br> -->
+        <button id="btn_search" onclick="displaytable()">Tìm Kiếm</button>
+    </div>
+    <!-- Khu vực hiện cái bàn còn trống -->
+    <div id="table_list" class="table-list"></div>
+    <!-- Nút sau khi chọn bàn xong -->
+    <button id="btn_done" onclick="booktable()">Đặt Bàn</button>
+    <!-- Form hiển thị khi nhấn vào bàn trống để chọn bàn -->
+    <div id="frm_booktable" class="modal">
+        <div id="content_frm">
+            <div id="title_frm">
+                <h2 id="titleOfForm">Thông Tin Đặt Bàn</h2>
+                <span id="remove" class="close" onclick="remove()">&times;</span>
+            </div>
+            <form id="form_booktable">
+                <label for="tableNumber" id="number_table">Số Bàn</label>
+                <br>
+                <input type="text" id="tableNumber" readonly>
+                <br>
+                <label for="time" id="timeBooktable">Giờ</label>
+                <br>
+                <input type="time" id="input_time1">
+                <br>
+                <label for="date" id="dateBooktable">Ngày</label>
+                <br> 
+                <input type="date" id="input_date1">
+                <br>
+                <label for="name" id="nameUser">Tên Người Đặt</label>
+                <br>
+                <input type="text" id="input_name">
+                <br>
+                <label for="email" id="emailUser">Email</label>
+                <br>
+                <input type="email" id="input_email">
+                <br>
+                <label for="phone" id="phoneNumber">Số Điện Thoại</label>
+                <br>
+                <input type="tel" id="input_phone">
+                <br>
+                <div id="btn">
+                    <button type="submit" id="submit">Submit</button>
+                    <button type="reset" id="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/javaScript/bookTable.js"></script>
+</body>
+</html>
