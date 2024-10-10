@@ -2,13 +2,13 @@ document.getElementById("btn_done").style.display="none";
 var array_table = []; // Mảng lưu trữ các bàn đã chọn
 
 function displaytable() {
-    var time = document.getElementById('input_time').value;
-    var date = document.getElementById('input_date').value;
-    var people = parseInt(document.getElementById('input_number').value);
+    const time = document.getElementById('input_time').value;
+    const date = document.getElementById('input_date').value;
+    const people = parseInt(document.getElementById('input_number').value);
 
     // Mô phỏng dữ liệu từ API (bàn trống, bàn đã đặt)
     // dãy các bàn trong nhà hàng (tables)
-    var tables = [
+    const tables = [
         { number: 1, available: false, maxPeople: 4 },
         { number: 2, available: true, maxPeople: 15 },
         { number: 3, available: true, maxPeople: 11 },
@@ -29,16 +29,16 @@ function displaytable() {
         { number: 18, available: true, maxPeople: 2 },
     ];
 
-    var tableList = document.getElementById('table_list');
+    const tableList = document.getElementById('table_list');
     tableList.innerHTML = ''; // Xóa danh sách cũ
 
     tables.forEach(table => {
-        var tableDiv = document.createElement('div');
+        const tableDiv = document.createElement('div');
         tableDiv.classList.add('table');
         // thêm tên class
         
         // Thêm checkbox cho mỗi bàn
-        var checkbox = document.createElement('input');
+        const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.value = table.number;
         checkbox.classList.add('table-checkbox');
@@ -67,7 +67,7 @@ function booktable() {
     array_table = []; // Reset mảng bàn đã chọn
 
     // Lấy tất cả các checkbox đã được tick
-    var checkboxes = document.querySelectorAll('.table-checkbox:checked');
+    const checkboxes = document.querySelectorAll('.table-checkbox:checked');
     checkboxes.forEach(checkbox => {
         array_table.push(checkbox.value); // Thêm số bàn vào mảng
     });
@@ -88,7 +88,7 @@ function remove() {
 
 // Đóng form khi click bên ngoài form
 window.onclick = function(event) {
-    var modal = document.getElementById('frm_booktable');
+    const modal = document.getElementById('frm_booktable');
     if (event.target == modal) {
         modal.style.display = "none";
     }
