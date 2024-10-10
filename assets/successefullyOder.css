@@ -1,0 +1,53 @@
+.successfully_oder {
+    height: 350px;
+    width: 500px;
+    border: 1px solid orange;
+    border-radius: 10px;
+    margin: 100px auto; /*canh giữa khối*/
+    transition: transform 0.8s ease; /*làm chậm*/
+    box-shadow: 0.3s ease; /* hiệu ứng khi hover */
+}
+
+.successfully_oder:hover {
+    transform: translateY(-10px); /* khối di chuyển lên khi hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* tăng độ shadow khi hover */
+}
+
+.successfullyOder_image{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.successfullyOder_image img{
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+}
+
+.successfully_oder p{
+    text-align: center;
+    color: orange;
+    font-size: 20px;
+}
+
+.successfullyOder_button{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.successfullyOder_button button{
+    font-size: 15px;
+    color: orange;
+    border: 1px solid rgb(227, 226, 226);
+    border-radius: 5px;
+}
+
+.successfullyOder_button button:hover{
+    background-color: red;
+    color: yellow;
+    cursor: pointer; /*hình bàn tay khi hover*/
+}
