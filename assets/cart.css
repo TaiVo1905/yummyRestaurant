@@ -5,6 +5,19 @@
 }
 
 
+/* Thông báo */
+#delete-notification {
+    display: none; 
+    color: red; 
+    font-weight: bold; 
+    margin-top: 10px;
+    margin-left: 90px;
+}
+
+.notification-check {
+    color: #7a9c59;
+}
+
 /* Common */
 .cart-wrapper, .cart-sidebar {
     padding: 0 30px 30px;
