@@ -19,3 +19,18 @@ fetch('../assets/Data/data.json')
         });
     })
     // .catch(error => console.error('Error loading menu:', error)); CHƯA TÌM HIỂU (Nếu có lỗi trong quá trình tải hoặc xử lý dữ liệu, phần này sẽ bắt lỗi và in ra console với thông báo.)
+
+    function handleLogAndRegModal() {
+        const logAndReg = document.getElementById("logAndReg");
+        const logAndReg_modal = document.getElementById("logAndReg_modal");
+        logAndReg.addEventListener('click', (e) => {
+            logAndReg_modal.style.display = 'block';
+        })
+        logAndReg_modal.addEventListener('click', (e) => {
+            if(e.target === logAndReg_modal){
+                logAndReg_modal.style.display = 'none';
+            }
+
+        })
+    }
+    handleLogAndRegModal();

@@ -10,6 +10,7 @@
     margin: 5% auto;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 254, 254, 0.8);
 }
 .title_register, .title_login {
     font-size: 18px;
