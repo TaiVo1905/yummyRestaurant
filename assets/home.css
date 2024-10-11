@@ -22,7 +22,7 @@
 .header{
     background-color: rgb(231, 253, 141);
     display: flex;
-    font-size: 24px;
+    font-size: 18px;
     position: fixed;
     top: 0;
     left: 0;
@@ -32,8 +32,8 @@
 
 .header_logo {
     background-image: url(../assets/image/logo.jpg);
-    padding-left: 72px;
-    height: 72px;
+    padding-left: 42px;
+    height: 42px;
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -103,7 +103,7 @@
 .search_logo{
     font-size: 20px;
     display: inline-block;
-    margin: auto 0 auto 68px;
+    margin: auto 0 auto 212px;
     background-color: white;
     height: 28px;
     border-top-left-radius: 6px;

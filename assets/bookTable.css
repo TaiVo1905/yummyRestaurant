@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(197, 196, 196);
+    background-color: rgba(255, 255, 254, 0.6);
 }
 /* tìm kiếm bàn trống */
 #title{
@@ -16,8 +16,8 @@ body{
     margin-top: 30px;
 }
 #Time, #Date, #Quantity_people{
-    width: 90%;
-    height: 60px;
+    /* width: 90%; */
+    /* height: 60px; */
     background-color:  #e0e0e0;
     border-radius: 10px;
     padding: 20px 20px;
@@ -39,7 +39,8 @@ body{
 }
 #btn_search{
     margin-top: 30px;
-    margin-left: 45%;
+    margin-left: 50%;
+    transform: translateX(-50%);
     width: 120px;
     height: 40px;
     font-size: 18px;
@@ -56,6 +57,8 @@ body{
     gap: 24px;
     margin-top: 20px;
     margin-left: 10px;
+    margin-right: 10px;
+    min-height: 112px;
 }
 
 .table {
@@ -64,8 +67,8 @@ body{
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
 }
 .table.booked {
     background-color: red;
@@ -74,11 +77,16 @@ body{
 .table-checkbox{
     width: 25px;
     height: 25px;
+    display: block;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 /* button để đặt bàn sau khi chọn */
 #btn_done{
-    margin-top: 30px;
-    margin-left: 45%;
+    margin: 30px 0;
+    /* margin-bottom: 30px; */
+    margin-left: 50%;
+    transform: translateX(-50%);
     width: 120px;
     height: 40px;
     font-size: 18px;
@@ -134,7 +142,9 @@ to {top:0; opacity:1}
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     background-color: rgb(232, 75, 17);
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid black; */
+    margin-bottom: 12px;
+    line-height: 60px;
 }
 #titleOfForm{
     width: 97%;
@@ -146,37 +156,41 @@ to {top:0; opacity:1}
     font-size: 40px;
     font-weight: bold; 
     color: rgb(241, 239, 239);
+    margin-right: 12px;
 }
 #form_booktable{
     margin: 0 30px;
 }
 #number_table, #timeBooktable, #dateBooktable, #nameUser, #emailUser, #phoneNumber{
     font-weight: bold;
-    padding-left: 10px;
+    padding:  0 0 6px 10px;
+    display: inline-block;
 }
 #tableNumber, #input_time1, #input_date1, #input_name, #input_email, #input_phone{
     width: 100%;
-    height: 35px;
+    height: 42px;
     background-color: rgb(196, 195, 195);
     border-radius: 8px;
     border: none;
     outline: none;
-    margin-bottom: 10px;
-    padding-left: 10px;
+    margin-bottom: 16px;
+    padding: 0 10px;
 }
 #btn{
-    transform: translateX(34%);
+    display: flex;
+    margin: 12px 0;
+    justify-content: center;
+    gap: 24px;
 }
 #submit, #reset{
     background-color: orangered;
     border: none;
-    height: 28px;
+    height: 32px;
     border-radius: 6px;
     color: rgb(241, 239, 239);
     width: 80px;
+    
 }
-#submit{
-    margin-right: 15px;
-}
+
 
 
