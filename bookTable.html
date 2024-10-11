@@ -4,78 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Table</title>
+    <link rel="stylesheet" href="assets/home.css">
     <link rel="stylesheet" href="assets/bookTable.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
-<body>
-    <h1 id="title">Đặt Bàn Trực Tuyến</h1>
-    <!-- form tìm kiếm bàn trống -->
-    <div id="frm_research">
-        <form id="input_frm">
-            <div id="Time">
-                <label for="" id="time">Giờ: </label>
-                <br>
-                <input type="time" id="input_time" min="08:30" max="22:30">
+<body style="margin-top: 82px;">
+    <div class="bookTable-container">
+        <!-- --------------------------------------------------------phần header----------------------------------------------- -->
+        <div class="header">
+            <div class="header_logo">
+                <!-- <img src="../assets/image/logo.jpg" alt=""> -->
             </div>
-            <!-- <br> -->
-            <div id="Date">
-                <label for="" id="date">Ngày: </label>
-                <br>
-                <input type="date" id="input_date">
+            <div class="header_nav">
+                <ul>
+                    <li><a class="active" href="../home.html">TRANG CHỦ</a></li>
+                    <li><a class="active" href="../menu.html">THỰC ĐƠN</a></li>
+                    <li><a class="active" href="../bookTable.html">ĐẶT BÀN</a></li>
+                    <li><a class="active" href="../contact.html">LIÊN HỆ</a></li>
+                </ul>
             </div>
-            <!-- <br> -->
-            <div id="Quantity_people">
-                <label for="" id="quantity">Số Lượng Người: </label>
-                <br>
-                <input type="number" id="input_number" min="1" max="16">
+            <div class="searchBar">
+                <div class="search_logo">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <input class="search_input" type="text" placeholder="Search...">
             </div>
-        </form>
-        <!-- <br> -->
-        <button id="btn_search" onclick="displaytable()">Tìm Kiếm</button>
-    </div>
-    <!-- Khu vực hiện cái bàn còn trống -->
-    <div id="table_list" class="table-list"></div>
-    <!-- Nút sau khi chọn bàn xong -->
-    <button id="btn_done" onclick="booktable()">Đặt Bàn</button>
-    <!-- Form hiển thị khi nhấn vào bàn trống để chọn bàn -->
-    <div id="frm_booktable" class="modal">
-        <div id="content_frm">
-            <div id="title_frm">
-                <h2 id="titleOfForm">Thông Tin Đặt Bàn</h2>
-                <span id="remove" class="close" onclick="remove()">&times;</span>
+            <div class="header_cart">
+                <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
             </div>
-            <form id="form_booktable">
-                <label for="tableNumber" id="number_table">Số Bàn</label>
-                <br>
-                <input type="text" id="tableNumber" readonly>
-                <br>
-                <label for="time" id="timeBooktable">Giờ</label>
-                <br>
-                <input type="time" id="input_time1">
-                <br>
-                <label for="date" id="dateBooktable">Ngày</label>
-                <br> 
-                <input type="date" id="input_date1">
-                <br>
-                <label for="name" id="nameUser">Tên Người Đặt</label>
-                <br>
-                <input type="text" id="input_name">
-                <br>
-                <label for="email" id="emailUser">Email</label>
-                <br>
-                <input type="email" id="input_email">
-                <br>
-                <label for="phone" id="phoneNumber">Số Điện Thoại</label>
-                <br>
-                <input type="tel" id="input_phone">
-                <br>
-                <div id="btn">
-                    <button type="submit" id="submit">Submit</button>
-                    <button type="reset" id="reset">Reset</button>
+            <div class="header_regiter">
+                <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
+            </div>
+        </div>
+        <h1 id="title">Đặt Bàn Trực Tuyến</h1>
+        <!-- form tìm kiếm bàn trống -->
+        <div id="frm_research">
+            <form id="input_frm">
+                <div id="Time">
+                    <label for="" id="time">Giờ: </label>
+                    <input type="time" id="input_time" min="08:30" max="22:30" step="1800s">
+                </div>
+                <!-- <br> -->
+                <div id="Date">
+                    <label for="" id="date">Ngày: </label>
+                    <input type="date" id="input_date">
+                </div>
+                <!-- <br> -->
+                <div id="Quantity_people">
+                    <label for="" id="quantity">Số Lượng Người: </label>
+                    <input type="number" id="input_number" min="1" max="16">
                 </div>
             </form>
+            <!-- <br> -->
+            <button id="btn_search" onclick="displaytable()">Tìm Kiếm</button>
+        </div>
+        <!-- Khu vực hiện cái bàn còn trống -->
+        <div id="table_list" class="table-list"></div>
+        <!-- Nút sau khi chọn bàn xong -->
+        <button id="btn_done" onclick="booktable()">Đặt Bàn</button>
+        <!-- Form hiển thị khi nhấn vào bàn trống để chọn bàn -->
+        <div id="frm_booktable" class="modal">
+            <div id="content_frm">
+                <div id="title_frm">
+                    <h2 id="titleOfForm">Thông Tin Đặt Bàn</h2>
+                    <span id="remove" class="close" onclick="remove()">&times;</span>
+                </div>
+                <form id="form_booktable">
+                    <label for="tableNumber" id="number_table">Số Bàn</label>
+                    <input type="text" id="tableNumber" readonly>
+                    <label for="time" id="timeBooktable">Giờ</label>
+                    <input type="time" id="input_time1">
+                    <label for="date" id="dateBooktable">Ngày</label>
+    
+                    <input type="date" id="input_date1">
+                    <label for="name" id="nameUser">Tên Người Đặt</label>
+                    <input type="text" id="input_name">
+                    <label for="email" id="emailUser">Email</label>
+                    <input type="email" id="input_email">
+                    <label for="phone" id="phoneNumber">Số Điện Thoại</label>
+                    <input type="tel" id="input_phone">
+                    <div id="btn">
+                        <button type="submit" id="submit">Submit</button>
+                        <button type="reset" id="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+    
+        </div>
+        <!-- footer -->
+        <div class="footer">
+            <div class="footer_card">
+                <div class="card_textTop"><b>Thành viên nhóm</b></div><br/>
+                <div class="card_textBottom">Võ Đức Tài<br>Ngô Thị Kim Hân<br>Hồ Viết Tiến<br>Bnướch Thị Thủy<br>Coor Chăng</div>
+            </div>
+            <div class="footer_card">
+                <div class="card_textTop"><b>Thời Gian</b></div><br/>
+                <div class="card_textBottom">8h00 - 23h59<br/> Monday - Sunday</div>
+            </div>
+            <div class="footer_card">
+                <div class="card_textTop"><b>Email</b></div><br/>
+                <div class="card_textBottom">Yummy@gmail.com</div>
+            </div>
+            <div class="footer_card">
+                <div class="card_textTop"><b>Theo Dõi</b></div><br/>
+                <div class="card_logo">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="#"><i class="fa-solid fa-phone-volume"></i></a>
+                </div>
+            </div>
         </div>
     </div>
-
     <script src="assets/javaScript/bookTable.js"></script>
 </body>
 </html>
