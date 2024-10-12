@@ -1,0 +1,196 @@
+body{
+    background-color: rgba(255, 255, 254, 0.6);
+}
+/* tìm kiếm bàn trống */
+#title{
+    color: rgb(88, 88, 88);
+    text-align: center;
+    font-size: 45px;
+}
+#input_frm{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 30px;
+}
+#Time, #Date, #Quantity_people{
+    /* width: 90%; */
+    /* height: 60px; */
+    background-color:  #e0e0e0;
+    border-radius: 10px;
+    padding: 20px 20px;
+}
+#time, #date, #quantity{
+    font-size: 18px;
+}
+#input_time, #input_date, #input_number{
+    margin-top: 10px;
+    height: 30px;
+    width: 98%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: #e0e0e0;
+    color: rgb(113, 111, 111);
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+#btn_search{
+    margin-top: 30px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 40px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: orangered;
+    color: rgb(241, 239, 239);
+    border: none;
+    border-radius: 10px;
+}
+/* Danh sách các bàn trống */
+.table-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    min-height: 112px;
+}
+
+.table {
+    padding: 20px;
+    background-color: lightgray;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 220px;
+    height: 220px;
+}
+.table.booked {
+    background-color: red;
+    color: white;
+}
+.table-checkbox{
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+/* button để đặt bàn sau khi chọn */
+#btn_done{
+    margin: 30px 0;
+    /* margin-bottom: 30px; */
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 40px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: orangered;
+    color: rgb(241, 239, 239);
+    border: none;
+    border-radius: 10px;
+}
+/* Bảng thông tin đặt bàn */
+#frm_booktable{
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+#content_frm{
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 55%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}   
+/* Add Animation */
+@-webkit-keyframes animatetop {
+from {top:-300px; opacity:0} 
+to {top:0; opacity:1}
+}
+      
+@keyframes animatetop {
+from {top:-300px; opacity:0}
+to {top:0; opacity:1}
+}
+
+#title_frm{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgb(232, 75, 17);
+    /* border-bottom: 2px solid black; */
+    margin-bottom: 12px;
+    line-height: 60px;
+}
+#titleOfForm{
+    width: 97%;
+    text-align: center;
+    color: rgb(241, 239, 239);
+    text-transform: uppercase;
+}
+#remove{
+    font-size: 40px;
+    font-weight: bold; 
+    color: rgb(241, 239, 239);
+    margin-right: 12px;
+}
+#form_booktable{
+    margin: 0 30px;
+}
+#number_table, #timeBooktable, #dateBooktable, #nameUser, #emailUser, #phoneNumber{
+    font-weight: bold;
+    padding:  0 0 6px 10px;
+    display: inline-block;
+}
+#tableNumber, #input_time1, #input_date1, #input_name, #input_email, #input_phone{
+    width: 100%;
+    height: 42px;
+    background-color: rgb(196, 195, 195);
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    margin-bottom: 16px;
+    padding: 0 10px;
+}
+#btn{
+    display: flex;
+    margin: 12px 0;
+    justify-content: center;
+    gap: 24px;
+}
+#submit, #reset{
+    background-color: orangered;
+    border: none;
+    height: 32px;
+    border-radius: 6px;
+    color: rgb(241, 239, 239);
+    width: 80px;
+    
+}
+
+
+

@@ -5,7 +5,7 @@
             "name": "Chả Cá Thát Lát",
             "type": "Khai vị",
             "describe": "Chả Cá Thát Lát được làm từ cá thát lát tươi ngon, được xay nhuyễn và trộn với gia vị đặc trưng. Món ăn được chiên vàng giòn, phục vụ cùng với bún, rau sống và nước mắm chua ngọt. Điểm nhấn của món ăn là hương vị đậm đà và thơm phức của cá, tạo nên trải nghiệm ẩm thực độc đáo. Chả cá thát lát là một trong những món ăn nổi bật và được thực khách yêu thích.",
-            "image_url": "../assets/image/khaiVi/chaCaThatLat.pgn",
+            "image_url": "../assets/image/khaiVi/chaCaThatLat.png",
             "price": "119.000đ"
         },
         {
@@ -717,7 +717,7 @@
             "name": "Cà Pháo",
             "type": "Các Món Khác Và Món Súp",
             "describe": "Cà Pháo là món ăn dân dã, với những quả cà pháo được muối chua giòn, giữ nguyên hương vị thanh nhẹ. Cà pháo muối kèm với mắm tôm pha hoặc nước mắm tỏi ớt cay nồng, tạo nên sự kết hợp hoàn hảo với các món ăn chính như thịt luộc hoặc bún đậu. Món này mang đậm chất quê nhà, đơn giản mà rất đậm đà.",
-            "image_url": "../assets/image/caPhao.webp",
+            "image_url": "../assets/image/cacMonKhacVaMonSup/caPhao.webp",
             "price": "15.000đ"
         },
         {
@@ -848,7 +848,8 @@
             "lastName": "Đức Tài",
             "email": "voductai123@gmail.com",
             "pass": "123456",
-            "phoneNum": "0123456789"
+            "phoneNum": "0123456789",
+            "date": "13:24, 11/10/2024"
         }
     ],
     "featuredDishes": [
@@ -920,8 +921,8 @@
     "orders": [
         {
         "id": 1,
-        "foodName": ["Chả Cá Thát Lát"],
-        "amount": "119.000đ",
+        "foodName": ["Chả Cá Thát Lát", "Tôm Sú Nướng Phô Mai"],
+        "amount": "324.000đ",
         "time": "12:00",
         "customerName": "Võ Đức Tài",
         "phoneNumber": "0393907372",
@@ -934,7 +935,7 @@
             "customerName": "Võ Đức Tài",
             "email": "voductai123@gmail.com",
             "phoneNumber": "0393907372",
-            "tableNumber": 2,
+            "tableNumber": [2, 3, 4],
             "time": "12:00",
             "date": "10/10/2024"
         }
