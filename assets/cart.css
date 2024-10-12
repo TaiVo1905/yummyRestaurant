@@ -6,7 +6,7 @@
 
 
 /* Thông báo */
-#delete-notification {
+#delete_notification {
     display: none; 
     color: red; 
     font-weight: bold; 
@@ -14,22 +14,26 @@
     margin-left: 90px;
 }
 
-.notification-check {
+.notification_check {
     color: #7a9c59;
 }
 
+#announcement {
+    margin-top: 10px;
+    margin-left: 90px;
+}
 /* Common */
-.cart-wrapper, .cart-sidebar {
+.cart_wrapper, .cart_sidebar {
     padding: 0 30px 30px;
     margin-bottom: 0;
 }
 
-.cart-form-products, .cart-form-payments {
+.cart_form_products, .cart_form_payments {
     width: 50%;
 }
 
 /* Container */
-.cart-container {
+.cart_container {
     display: flex;
     margin: 10px 50px;
     position: relative;
@@ -37,7 +41,7 @@
 
 
 /* Icons */
-.product-remove .item-remove {
+.product_remove .item_remove {
     width: 24px;
     height: 24px;
     opacity: .35;
@@ -47,18 +51,18 @@
 }
 
 
-.coupon .item-coupon {
+.coupon .item_coupon {
     opacity: .35;
     margin-right: 4px;
 }
 
 /* Giỏ hàng */
-.cart-wrapper, .cart-form {
+.cart_wrapper, .cart_form {
     padding: 0 30px 30px;
     margin-bottom: 0;
 }
 
-.cart-wrapper {
+.cart_wrapper {
     border-right:2px solid #ececec;
     width: 900px;
 }
@@ -78,25 +82,39 @@ th {
     color: #777;
 }
 
-.cart-form-products .product-remove{
+.cart_form_products .product_remove{
     padding: 3px;
 }
 
+.cart_form_products .product_price, 
+.cart_form_products .product_subtotal {
+    font-weight: bold;
+}
 
 th:last-child {
     padding-right: 0;
 }
 
+.appear:hover {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
 /* Bảng giỏ hàng đã thêm vào */
-.shop-table {
+.shop_table {
     width: 100%;
 }
 
-.shop-table  th, td {
+.shop_table  th, td {
     text-align: center;
 }
 
-.shop-table .product-name-1 {
+.shop_table .product_name1 {
     text-align: left;
 }
 
@@ -111,18 +129,18 @@ img {
     border: 1px solid #ccc;
 }
 
-#number-subtraction, #number-addition {
+#number_subtraction, #number_addition {
     border: none;
     background-color: #e0e0e0;
     width: 25px;
 }
 
-#number-subtraction:hover, #number-addition:hover {
+#number_subtraction:hover, #number_addition:hover {
     opacity: 0.7;
     cursor: pointer;
 }
 
-#number-step {
+#number_step {
     width: 35px;
     height: 25px;
     text-align: center;
@@ -139,13 +157,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 /* Tiếp tục xem và cập nhật giỏ hàng */
-.continue-update {
-    display: flex;
-    padding:  15px 0 10px;
-}
 
-.button-continue {
-    padding: 0px 7px 0px 0px ;
+.button_continue {
+    padding:  15px 0 10px;
 }
 
 
@@ -162,22 +176,10 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
 }
 
-.update {
-    background-color: #de4848;
-    color: #fff;
-    border: 2px solid #de4848;
-    padding: 6px 10px;
-    
-}
-
-.update:hover {
-    background-color: red;
-    cursor: pointer;
-}
 
 /* Form cần thanh toán */
 
-.product-name-2 {
+.product_name2 {
     text-transform: uppercase;
     font-weight: bold;
     width: 100%;
@@ -187,25 +189,25 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* Tính tổng cần thanh toán */
-.cart-totals table {
+.cart_totals table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.cart-totals th {
+.cart_totals th {
     text-align: left;
     border-bottom: 1px solid #ececec;
 }
 
-.cart-totals td {
+.cart_totals td {
     text-align: right;
 }
 
-.cart-subtotal, .order-total {
+.cart_subtotal, .order_total {
     font-weight: bold;
 }
 
-.normal-text {
+.normal_text {
     padding: 10px;
     font-weight: normal;
     text-transform: inherit;
@@ -213,7 +215,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 /* Thanh toán sản phẩm */
-.sub-payment {
+.sub_payment {
     padding: 10px; 
     margin-top: 20px;
     background-color: #d26e4b;
@@ -225,12 +227,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
-.sub-payment:hover {
+.sub_payment:hover {
     background-color: #9b6c47;
     cursor: pointer;
 }
  
-.order-total {
+.order_total {
     border-bottom: 3px solid #ececec;
 }
 
