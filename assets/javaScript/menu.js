@@ -1,24 +1,17 @@
 import getDataLocalStorage, {setDataLocalStorage} from "../javaScript/localStorage.js";
 const data = getDataLocalStorage();
-// biến lưu trữ dữ liệu được lấy từ file json
-// let menu = [];
-// // hàm lấy dữ liệu từ file json
-// fetch('./assets/Data/data.json')
-//     .then(response => response.json())
-//     .then(data => {
-//         menu=data.menu;
-//         // (toàn bộ dữ liệu về menu trong file data.json sẽ được gán vào mảng menu được khai báo bên trên)
-//     })
-//     .catch(error => {
-//         console.error('Lỗi khi lấy dữ liệu từ file:', error)
-//     });
-    // hàm lọc món ăn theo loại và hiển thị dưới dạng bảng
-     function filterMenu(type){
-        const menu = data.menu;
+// hàm lọc món ăn theo loại và hiển thị dưới dạng bảng
+function filterMenu (){
+    const menu = data.menu;
+    const menu_list = document.querySelector('#menu_list');
+    menu_list.addEventListener('click', (e) => {
+        const type = e.target.textContent;
+        // console.log(type, menu);
         // lọc món ăn theo loại
         const filtered = menu.filter(item => {
-            return item.type===type;
+            return item.type.toLowerCase() === type.toLowerCase();
         })
+
         // nơi hiển thị dữ liệu của menu
         const menuTblBody = document.querySelector("#menu_tbl tbody");
         menuTblBody.innerHTML = ''; // Xóa nội dung cũ
@@ -52,8 +45,8 @@ const data = getDataLocalStorage();
                 </tr>
             `;
         }
+    })
+}
 
-    }
 
-
-export default filterMenu;
+filterMenu()
