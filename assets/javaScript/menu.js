@@ -1,17 +1,20 @@
+import getDataLocalStorage, {setDataLocalStorage} from "../javaScript/localStorage.js";
+const data = getDataLocalStorage();
 // biến lưu trữ dữ liệu được lấy từ file json
-let menu = [];
-// hàm lấy dữ liệu từ file json
-fetch('./assets/Data/data.json')
-    .then(response => response.json())
-    .then(data => {
-        menu=data.menu;
-        // (toàn bộ dữ liệu về menu trong file data.json sẽ được gán vào mảng menu được khai báo bên trên)
-    })
-    .catch(error => {
-        console.error('Lỗi khi lấy dữ liệu từ file:', error)
-    });
+// let menu = [];
+// // hàm lấy dữ liệu từ file json
+// fetch('./assets/Data/data.json')
+//     .then(response => response.json())
+//     .then(data => {
+//         menu=data.menu;
+//         // (toàn bộ dữ liệu về menu trong file data.json sẽ được gán vào mảng menu được khai báo bên trên)
+//     })
+//     .catch(error => {
+//         console.error('Lỗi khi lấy dữ liệu từ file:', error)
+//     });
     // hàm lọc món ăn theo loại và hiển thị dưới dạng bảng
-    function filterMenu(type){
+     function filterMenu(type){
+        const menu = data.menu;
         // lọc món ăn theo loại
         const filtered = menu.filter(item => {
             return item.type===type;
@@ -53,3 +56,4 @@ fetch('./assets/Data/data.json')
     }
 
 
+export default filterMenu;

@@ -848,7 +848,8 @@
             "lastName": "Đức Tài",
             "email": "voductai123@gmail.com",
             "pass": "123456",
-            "phoneNum": "0123456789"
+            "phoneNum": "0123456789",
+            "date": "13:24, 11/10/2024"
         }
     ],
     "featuredDishes": [
@@ -920,8 +921,8 @@
     "orders": [
         {
         "id": 1,
-        "foodName": ["Chả Cá Thát Lát"],
-        "amount": "119.000đ",
+        "foodName": ["Chả Cá Thát Lát", "Tôm Sú Nướng Phô Mai"],
+        "amount": "324.000đ",
         "time": "12:00",
         "customerName": "Võ Đức Tài",
         "phoneNumber": "0393907372",
@@ -934,7 +935,7 @@
             "customerName": "Võ Đức Tài",
             "email": "voductai123@gmail.com",
             "phoneNumber": "0393907372",
-            "tableNumber": 2,
+            "tableNumber": [2, 3, 4],
             "time": "12:00",
             "date": "10/10/2024"
         }
