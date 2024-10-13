@@ -15,6 +15,8 @@ function renderFeaturedDishes(data){
                                   <button>Thêm vào giỏ hàng</button>
                               </div>
                               `;
+    })
+}
 function handleLogAndRegModal() {
     const logAndReg = document.getElementById("logAndReg");
     const logAndReg_modal = document.getElementById("logAndReg_modal");
@@ -29,5 +31,3 @@ function handleLogAndRegModal() {
 }
 handleLogAndRegModal();
 renderFeaturedDishes(allData);
-
-
