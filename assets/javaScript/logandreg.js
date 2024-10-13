@@ -28,12 +28,15 @@ function regisTer(){
         if (existingUser) {
             alert('Email đã được sử dụng!');
         } else {
-            let id = 1;
-            if (users.length > 0) {
-                const lastUser = users[users.length - 1]; // Lấy người dùng cuối cùng
-                id = lastUser.id + 1; // Cộng 1 vào id của người dùng cuối
-            }
-            users.push({ id,lastName, firstName, email, password });
+            const lastUser = users[users.length - 1]; // Lấy người dùng cuối cùng
+            id = lastUser.id + 1; // Cộng 1 vào id của người dùng cuối
+            users.push({
+                id: id,                   
+                lastName: lastName,       
+                firstName: firstName,     
+                email: email,             
+                pass: password,
+            });
             setDataLocalStorage(data);
             alert('Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.');
             this.reset(); // Đặt lại form
