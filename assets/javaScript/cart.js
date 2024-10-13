@@ -145,3 +145,5 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCartTotal();
     checkIfCartIsEmpty();
 });
+
+///localStorage.clear() Hiển thị lại sản phẩm
