@@ -1,5 +1,6 @@
 import getDataLocalStorage, {setDataLocalStorage} from "../javaScript/localStorage.js";
 const data = getDataLocalStorage();
+let filtered = [];
 // hàm lọc món ăn theo loại và hiển thị dưới dạng bảng
 function filterMenu (){
     const menu = data.menu;
@@ -8,7 +9,7 @@ function filterMenu (){
         const type = e.target.textContent;
         // console.log(type, menu);
         // lọc món ăn theo loại
-        const filtered = menu.filter(item => {
+        filtered = menu.filter(item => {
             return item.type.toLowerCase() === type.toLowerCase();
         })
 
@@ -25,12 +26,12 @@ function filterMenu (){
                 <td>
                     <div id="number-input">
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
-                        <input id="input_sl" type="number" value="1" min="1" />
+                        <input class="input_sl" id="input_sl-${item.id}" type="number" value="1" min="1" />
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
                     </div>
                 </td>
                 <td>
-                    <textarea name="note" id="input_note" placeholder="Nhập ghi chú..."></textarea>
+                    <textarea name="note" class="input_note" id="input_note-${item.id}" placeholder="Nhập ghi chú..."></textarea>
                 </td>
                 <td><button class="btn_add" id="btn_add-${item.id}">Thêm vào giỏ hàng</button></td>
             </tr> 
@@ -79,6 +80,7 @@ window.addEventListener('load',()=>{
     }
 })
 
+// Khi click vào nút "Thêm vào giỏ hàng"
 document.querySelectorAll('.btn_add').forEach(button=>{
     // gắn sự kiện onclick cho các nút button "thêm vào giỏ hàng"
     button.addEventListener('click', function(){
@@ -88,10 +90,10 @@ document.querySelectorAll('.btn_add').forEach(button=>{
         const foodNote = document.querySelector(`#input_note-${foodID}`).value;
         // lấy dữ liệu 
         const foodItem = filtered.find(item =>{
-            item.id===foodID;
+            return item.id===foodID;
         })
 
-        const userID = sessionStorage.getItem('userID');
+        const userID = sessionStorage.getItem('UserID');
         // kiểm tra nếu chưa có userID tức là chưa đăng nhập thành công
         if(!userID){
             alert("Bạn chưa đăng nhập. Vui lòng đăng nhập trước khi thêm vào giỏ hàng!")
@@ -112,6 +114,5 @@ document.querySelectorAll('.btn_add').forEach(button=>{
 
         // Sau khi đẩy lên localStorage xong. Hiển thị 1 dòng trạng thái "thêm thành công"
         alert("Quý khách đã thêm món ăn vào giỏ hàng thành công!")
-
     })
 })

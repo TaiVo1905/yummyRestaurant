@@ -73,7 +73,7 @@ img{
     cursor: pointer;
     font-size: 18px;
 }
-#input_sl {
+.input_sl {
     width: 35px;
     height: 30px;
     text-align:center;
@@ -85,7 +85,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-#input_note{
+.input_note{
     outline:none;
     width: 95%;
     height: 110px;
