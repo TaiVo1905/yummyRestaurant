@@ -31,5 +31,3 @@ function handleLogAndRegModal() {
 }
 handleLogAndRegModal();
 renderFeaturedDishes(allData);
-
-
