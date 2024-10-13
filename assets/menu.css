@@ -19,14 +19,11 @@
     margin: 0;
     padding: 0;
 }
-#menu_list li:first-child a {
+#menu_list a:focus{
     color: white;
     background-color: orangered;
     padding: 10px 10px;
     border-radius: 10px;
-}
-#menu_list>li:hover a{
-    color: black;
 }
 #menu_list li a{
     color: rgb(125, 123, 123);
@@ -60,6 +57,7 @@
 /* Ảnh sản phẩm */
 img{
     margin-top: 5px;
+    object-fit: cover;
 }
 /* Ô tăng/giảm số lượng */
 #number-input {
@@ -87,32 +85,40 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* ô ghi chú */
-#input_note1, #input_note3, #input_note5, #input_note7, #input_note9, #input_note11 {
+#input_note{
     outline:none;
     width: 95%;
     height: 110px;
     border: none;
     margin-top: 5px;
-    margin-left: 5px;
-    resize: none;
-}
-#input_note2, #input_note4, #input_note6, #input_note8, #input_note10{
-    outline:none;
-    width: 95%;
-    height: 110px;
-    border: none;
-    margin-top: 5px;
-    background-color:rgb(237, 236, 236);
     margin-left: 5px;
     resize: none;
 }
 
 /* Nút add to cart */
-#btn_add{
+.btn_add{
     padding: 10px;
     color: white;
     background-color: orangered;
     border: none;
     border-radius: 8px;
+}
+/* CSS màu background cho các row */
+/* Các hàng lẽ */
+tr:nth-child(odd) {
+    background-color: white;
+}
+/* Các hàng chẵn */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray */
+}
+
+/* CSS màu nền của text area */
+/* Các hàng lẻ */
+tr:nth-child(odd) textarea {
+    background-color: white;
+}
+/* Các hàng chẵn */
+tr:nth-child(even) textarea {
+    background-color: #f2f2f2;
 }

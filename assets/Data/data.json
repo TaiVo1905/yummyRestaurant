@@ -175,7 +175,7 @@
         {
             "id": 22,
             "name": "Cơm Niêu",
-            "type": "Cơm_Lẩu",
+            "type": "Cơm và Lẩu",
             "describe": "Cơm Niêu là món ăn độc đáo, được nấu trong nồi đất, mang đến hương vị thơm ngon và hấp dẫn. Gạo được chọn lọc kỹ lưỡng, nấu chín đều và có lớp cơm cháy giòn ở đáy nồi. Món ăn thường được phục vụ kèm với các món ăn phụ như thịt kho, cá kho tộ, và rau xanh, tạo nên một bữa ăn đậm đà hương vị truyền thống. Cơm niêu không chỉ ngon mà còn mang lại trải nghiệm ẩm thực thú vị cho thực khách.",
             "image_url": "../assets/image/comLau/comNeu.webp",
             "price": "18.000đ"
@@ -183,7 +183,7 @@
         {
             "id": 23,
             "name": "Cơm Trắng",
-            "type": "Cơm_Lẩu",
+            "type": "Cơm và Lẩu",
             "describe": "Cơm Trắng được nấu từ gạo hạt dài, có màu trắng tinh khiết, được hấp chín tới, tạo độ dẻo và thơm. Món cơm này được phục vụ trong đĩa tròn, thường ăn kèm với các món như thịt kho, cá kho tộ hoặc rau xào, giúp cân bằng hương vị và cung cấp năng lượng cho bữa ăn. Cơm trắng là món ăn chính, không thể thiếu trong thực đơn truyền thống của người Việt, mang đến cảm giác ấm áp và gần gũi.",
             "image_url": "../assets/image/comLau/comTrang.jpeg",
             "price": "49.000đ"
@@ -191,7 +191,7 @@
         {
             "id": 24,
             "name": "Cơm Chiên Trứng Tỏi",
-            "type": "Cơm_Lẩu",
+            "type": "Cơm và Lẩu",
             "describe": "Cơm Chiên Trứng Tỏi là một món ăn hấp dẫn với cơm được xào thơm ngon, hòa quyện vị bùi bùi của trứng và hương thơm đặc trưng của tỏi. Món ăn được trang trí với hành lá và cà rốt thái sợi, tạo nên màu sắc bắt mắt. Với hương vị đậm đà và độ giòn của tỏi, cơm chiên mang đến trải nghiệm ẩm thực tuyệt vời, thích hợp làm món chính trong bữa ăn hàng ngày.",
             "image_url": "../assets/image/comLau/comChienTrungToi.jpg",
             "price": "89.000đ"
@@ -199,7 +199,7 @@
         {
             "id": 25,
             "name": "Cơm Chiên Dương Châu",
-            "type": "Cơm_Lẩu",
+            "type": "Cơm và Lẩu",
             "describe": "Cơm Chiên Dương Châu là sự kết hợp hoàn hảo giữa cơm trắng và nhiều loại hải sản tươi ngon như tôm, mực, cùng với trứng và rau củ như đậu Hà Lan, cà rốt. Món ăn được chiên với gia vị đậm đà, mang đến hương vị thơm ngon, màu sắc bắt mắt. Cơm chiên Dương Châu thường được phục vụ nóng hổi, rắc thêm hành lá tươi và nước tương, tạo nên sự hài hòa trong từng miếng ăn. Đây là một lựa chọn tuyệt vời cho bữa trưa hay bữa tối.",
             "image_url": "../assets/image/comLau/comChienDuongChau.jpg",
             "price": "99.000đ"
@@ -207,7 +207,7 @@
         {
             "id": 26,
             "name": "Cơm Chiên Hải Sản",
-            "type": "Cơm_Lẩu",
+            "type": "Cơm và Lẩu",
             "describe": "Cơm Chiên Hải Sản là món ăn hấp dẫn, được chế biến từ cơm trắng thơm, chiên cùng với tôm, mực và các loại rau củ tươi ngon như đậu hà lan, cà rốt. Món ăn được nêm nếm đậm đà với gia vị truyền thống, mang lại hương vị tuyệt vời. Cơm chiên được trình bày đẹp mắt, kèm theo chén nước tương và dưa leo tươi mát, là lựa chọn hoàn hảo cho những ai yêu thích ẩm thực hải sản.",
             "image_url": "../assets/image/comLau/comChienHaiSan.jpg",
             "price": "99.000đ"
@@ -215,7 +215,7 @@
         {
             "id": 27,
             "name": "Cơm Chiên Bò Dưa Cải",
-            "type": "Cơm_Lẩu",
+            "type": "Cơm và Lẩu",
             "describe": "Cơm Chiên Bò Dưa Cải là món ăn hấp dẫn, gồm cơm chiên vàng tơi được xào cùng với thịt bò mềm ngọt và dưa cải chua giòn. Món ăn được nêm nếm vừa phải với gia vị truyền thống, tạo nên hương vị đậm đà. Cơm chiên được trình bày đẹp mắt, kèm theo rau sống và nước tương để tăng thêm phần hấp dẫn. Món này không chỉ ngon miệng mà còn cung cấp đầy đủ dinh dưỡng, thích hợp cho bữa ăn gia đình hoặc bạn bè.",
             "image_url": "../assets/image/comLau/comChienBoDuaCai.jpg",
             "price": "99.000đ"
@@ -223,7 +223,7 @@
         {
             "id": 28,
             "name": "Cơm Chiên Cá Mặn Thố Đất",
-            "type": "Cơm_Lẩu",
+            "type": "Cơm và Lẩu",
             "describe": "Cơm Chiên Cá Mặn Thố Đất là món ăn đặc trưng, được chế biến từ cơm nguội xào vàng giòn cùng cá mặn ướp gia vị. Món ăn được trình bày trong thố đất, giữ cho cơm nóng và thơm ngon. Cơm chiên có vị đậm đà, hòa quyện với các loại rau củ tươi mát như hành lá, cà rốt, tạo nên hương vị hấp dẫn. Món này thường được ăn kèm với nước tương hoặc tương ớt, mang lại trải nghiệm ẩm thực độc đáo và phong phú.",
             "image_url": "../assets/image/comLau/comChienCaManNeuDat.jpg",
             "price": "109.000đ"
@@ -231,7 +231,7 @@
         {
             "id": 29,
             "name": "Lẩu Cá Lóc/Diêu Hồng",
-            "type": "Cơm_Lẩu",
+            "type": "Cơm và Lẩu",
             "describe": "Lẩu Cá Lóc/Diêu Hồng là một món ăn đặc sắc với cá lóc tươi ngon được chế biến cùng diêu hồng. Nước lẩu được ninh từ xương và gia vị đặc trưng, tạo nên vị ngọt thanh. Món lẩu được phục vụ kèm với rau sống, bún và các loại nấm tươi, mang đến trải nghiệm ẩm thực đậm đà và hấp dẫn. Bạn sẽ cảm nhận được sự hòa quyện giữa vị ngọt của cá và sự tươi mát của các loại rau trong từng ngụm lẩu.",
             "image_url": "../assets/image/comLau/lauCaLocDieuHong.jpg",
             "price": "249.000đ"
@@ -239,7 +239,7 @@
         {
             "id": 30,
             "name": "Lẩu Cá Bông Lau",
-            "type": "Cơm_Lẩu",
+            "type": "Cơm và Lẩu",
             "describe": "Lẩu Cá Bông Lau là món ăn đặc trưng với nước lẩu ngọt thanh được nấu từ xương cá và rau củ tươi. Cá bông lau tươi ngon, được thái lát mỏng, kết hợp với các loại rau như rau muống, nấm, và bún. Món lẩu này được phục vụ kèm với nước chấm đặc trưng và gia vị như ớt, chanh, mang lại trải nghiệm ẩm thực độc đáo, hấp dẫn cho thực khách. Hương vị thơm ngon và sự kết hợp phong phú của nguyên liệu khiến món lẩu này trở thành lựa chọn lý tưởng cho bữa tiệc sum họp.",
             "image_url": "../assets/image/comLau/lauCaBongLau.webp",
             "price": "249.000đ"
@@ -247,7 +247,7 @@
         {
             "id": 31,
             "name": "Lẩu Cá Kèo Lá Giang",
-            "type": "Cơm_Lẩu",
+            "type": "Cơm và Lẩu",
             "describe": "Lẩu Cá Kèo Lá Giang là món ăn đặc trưng với cá kèo tươi ngon, được chế biến cùng với lá giang tạo hương vị chua thanh đặc trưng. Nước lẩu được ninh từ xương heo, hòa quyện với gia vị và lá giang, mang lại sự tươi mát và đậm đà. Món ăn thường kèm theo bún tươi, rau sống, và các loại gia vị như ớt, chanh, giúp tăng thêm độ hấp dẫn cho bữa ăn. Đây là lựa chọn hoàn hảo cho những buổi quây quần bên bạn bè và gia đình.",
             "image_url": "../assets/image/comLau/lauCaKeoLaGiang.webp",
             "price": "249.000đ"
