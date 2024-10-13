@@ -19,7 +19,7 @@
     margin: 0;
     padding: 0;
 }
-#menu_list a:focus{
+#menu_list a.active{
     color: white;
     background-color: orangered;
     padding: 10px 10px;

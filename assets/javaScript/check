@@ -1,0 +1,126 @@
+<!-- HTML Form Đăng Nhập -->
+<form id="login-form">
+    <input type="text" id="username" placeholder="Tên đăng nhập" required />
+    <input type="password" id="password" placeholder="Mật khẩu" required />
+    <button type="submit">Đăng Nhập</button>
+</form>
+
+
+// Giả sử dữ liệu người dùng được lưu trong data.users
+const loginForm = document.querySelector('#login-form');
+
+loginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const username = document.querySelector('#username').value;
+    const password = document.querySelector('#password').value;
+
+    // Giả sử bạn kiểm tra thông tin người dùng từ danh sách đã có (data.users)
+    const user = data.users.find(u => u.username === username && u.password === password);
+    
+    if (user) {
+        // Lưu userID vào sessionStorage
+        sessionStorage.setItem('userID', user.id);
+        alert('Đăng nhập thành công!');
+        // Chuyển hướng người dùng đến trang menu hoặc giỏ hàng
+        window.location.href = "menu.html";  // Ví dụ chuyển sang trang menu
+    } else {
+        alert('Sai tên đăng nhập hoặc mật khẩu');
+    }
+});
+
+
+// Hàm thêm món vào giỏ hàng
+function addToCart(item) {
+    const userID = sessionStorage.getItem('userID'); // Lấy userID từ sessionStorage
+
+    if (!userID) {
+        alert("Bạn cần đăng nhập trước khi thêm món vào giỏ hàng.");
+        return;
+    }
+
+    // Kiểm tra giỏ hàng từ sessionStorage
+    let cart = JSON.parse(sessionStorage.getItem('cart')) || {};
+
+    // Nếu chưa có giỏ hàng cho userID này, tạo mới
+    if (!cart[userID]) {
+        cart[userID] = [];
+    }
+
+    // Thêm món vào giỏ hàng của userID
+    const itemInCart = {
+        id: item.id,
+        name: item.name,
+        price: item.price,
+        quantity: 1,  // Số lượng mặc định là 1
+        note: item.note || ""  // Ghi chú (nếu có)
+    };
+
+    cart[userID].push(itemInCart);
+
+    // Lưu lại giỏ hàng vào sessionStorage
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+
+    alert('Đã thêm món vào giỏ hàng!');
+}
+
+// Hàm xử lý sự kiện thêm món vào giỏ
+document.querySelectorAll('.btn_add').forEach(button => {
+    button.addEventListener('click', function() {
+        const item = {
+            id: this.getAttribute('data-id'), // Giả sử id của món ăn nằm trong data-id
+            name: this.getAttribute('data-name'),
+            price: this.getAttribute('data-price'),
+            note: document.querySelector('#input_note').value // Ghi chú từ textarea
+        };
+
+        addToCart(item); // Thêm món vào giỏ hàng
+    });
+});
+
+
+// Khi người dùng vào trang giỏ hàng hoặc tải lại trang, lấy các món trong giỏ hàng
+window.onload = function() {
+    const userID = sessionStorage.getItem('userID');
+    if (userID) {
+        const cart = JSON.parse(sessionStorage.getItem('cart')) || {};
+        const userCart = cart[userID];
+
+        if (userCart) {
+            const cartTable = document.querySelector('#cart-table tbody');
+            userCart.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.price}</td>
+                    <td>${item.quantity}</td>
+                    <td>${item.note}</td>
+                `;
+                cartTable.appendChild(row);
+            });
+        } else {
+            alert('Giỏ hàng của bạn hiện tại trống.');
+        }
+    } else {
+        alert('Bạn chưa đăng nhập!');
+        window.location.href = "login.html";  // Chuyển hướng người dùng đến trang đăng nhập nếu chưa đăng nhập
+    }
+};
+
+
+<!-- HTML cho Giỏ Hàng -->
+<table id="cart-table">
+    <thead>
+        <tr>
+            <th>Tên Món</th>
+            <th>Giá</th>
+            <th>Số Lượng</th>
+            <th>Ghi Chú</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Các món ăn sẽ được hiển thị ở đây -->
+    </tbody>
+</table>
+
+

@@ -50,3 +50,33 @@ function filterMenu (){
 
 
 filterMenu()
+
+// định dạng cho class active hoạt động đúng như mong đợi
+document.querySelectorAll('#menu_list a').forEach(item => {
+    item.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelectorAll('#menu_list a').forEach(i => {
+            i.classList.remove('active');
+        })
+        this.classList.add('active');
+    });
+});
+
+/*sd hàm forEach để duyệt qua tất cả các thẻ a trong menu list
+    thêm sự kiện click vào mỗi thẻ a
+    chạy function: ngăn chặn các hành vi mặc định của thẻ a (như href)
+    duyệt qua từng thẻ a một lần nữa:
+    - Xóa class active trong các thẻ a khác
+    - thêm class active vào thẻ a hiện tại (this.classList.add('active'))
+*/
+
+// lấy category khai vị làm mặc định khi tải trang
+window.addEventListener('load',()=>{
+    const defaultPage = document.querySelector('#menu_list a');
+    if (defaultPage){
+        defaultPage.click();
+        // mô phỏng quá trình click. Tức là khi tải trang nó sẽ tự động click vào thẻ a đầu tiên mà không cần người dùng click vào.
+    }
+})
+
+

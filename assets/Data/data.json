@@ -413,7 +413,7 @@
             "name": "Trứng Gà Non Xào Nấm",
             "type": "Món Xào",
             "describe": "Trứng Gà Non Xào Nấm là một món ăn đặc sắc, được chế biến từ những quả trứng gà non tươi ngon, xào cùng với nấm đông cô và nấm hương. Món ăn được nêm nếm vừa miệng với các loại gia vị và hành lá, mang lại hương vị béo ngậy và thơm ngon. Trứng gà non mềm mịn kết hợp với độ giòn của nấm tạo nên sự hấp dẫn, thường được phục vụ nóng hổi trên đĩa, kèm với cơm trắng hoặc bánh mì.",
-            "image_url": "../assets/image/monXao/mucXaoCaChuaThomHanh.jpg",
+            "image_url": "../assets/image/monXao/trungGaNonXaoNam.jpg",
             "price": "159.000đ"
         },
         {
@@ -848,8 +848,39 @@
             "lastName": "Đức Tài",
             "email": "voductai123@gmail.com",
             "pass": "123456",
-            "phoneNum": "0123456789",
-            "date": "13:24, 11/10/2024"
+            "phoneNum": "0123456789"
+        },
+        {
+            "id": 2,
+            "firstName": "Ngô",
+            "lastName": "Thị Kim Hân",
+            "email": "ngohan321@gmail.com",
+            "pass": "789012",
+            "phoneNum": "0123654891"
+        },
+        {
+            "id": 3,
+            "firstName": "Hồ",
+            "lastName": "Viết Tiến",
+            "email": "hotien012@gmail.com",
+            "pass": "098765",
+            "phoneNum": "9876543210"
+        },
+        {
+            "id": 4,
+            "firstName": "Bnướch",
+            "lastName": "Thị Thuỷ",
+            "email": "bnuochthuy456@gmail.com",
+            "pass": "123456",
+            "phoneNum": "2106549876"
+        },
+        {
+            "id": 5,
+            "firstName": "Coor",
+            "lastName": "Chăng",
+            "email": "changcoor777@gmail.com",
+            "pass": "987654",
+            "phoneNum": "0987123456"
         }
     ],
     "featuredDishes": [
