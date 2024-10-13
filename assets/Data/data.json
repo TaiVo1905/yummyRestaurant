@@ -970,5 +970,369 @@
             "time": "12:00",
             "date": "10/10/2024"
         }
+    ],
+    "carts":[
+        {
+            "userId": 1,
+            "nameFood": "Ốc Nhồi Ống Nứa",
+            "type": "Khai vị",
+            "describe": "Ốc Nhồi Ống Nứa là một món ăn đặc sản mang đậm hương vị biển. Ốc tươi được chọn lọc kỹ lưỡng, nhồi cùng hỗn hợp thịt ốc băm nhuyễn, hành, tiêu và các loại gia vị, sau đó được nhét vào ống nứa và nướng trên lửa than. Món ăn được phục vụ nóng hổi, có mùi thơm quyến rũ, với vị ngọt tự nhiên của ốc hòa quyện cùng hương thơm của nứa. Khi thưởng thức, bạn sẽ cảm nhận được vị giòn giòn, đậm đà, rất thích hợp để ăn kèm với nước mắm chua ngọt và rau sống.",
+            "image_url": "../assets/image/khaiVi/ocNhoiOngNua.jpg",
+            "price": "109.000đ"
+        },
+        {
+            "userId": 1,
+            "nameFood": "Rau Lang Xào Tỏi",
+            "type": "Món Rau",
+            "describe": "Rau Lang Xào Tỏi là một món ăn đơn giản nhưng đầy hương vị. Rau lang tươi được xào nhanh với tỏi băm, tạo nên hương thơm đặc trưng. Món ăn này không chỉ giữ được độ giòn ngon của rau mà còn hấp dẫn với màu xanh mướt. Chỉ cần thêm một chút gia vị, Rau Lang Xào Tỏi trở thành lựa chọn lý tưởng cho bữa cơm gia đình hoặc bữa tiệc, mang lại cảm giác tươi mới và dinh dưỡng cho thực khách.",
+            "image_url": "../assets/image/monRau/rauLangXao.jpeg",
+            "price": "45.000đ"
+        },
+        {
+            "userId": 1,
+            "nameFood": "Cơm Niêu",
+            "type": "Cơm_Lẩu",
+            "describe": "Cơm Niêu là món ăn độc đáo, được nấu trong nồi đất, mang đến hương vị thơm ngon và hấp dẫn. Gạo được chọn lọc kỹ lưỡng, nấu chín đều và có lớp cơm cháy giòn ở đáy nồi. Món ăn thường được phục vụ kèm với các món ăn phụ như thịt kho, cá kho tộ, và rau xanh, tạo nên một bữa ăn đậm đà hương vị truyền thống. Cơm niêu không chỉ ngon mà còn mang lại trải nghiệm ẩm thực thú vị cho thực khách.",
+            "image_url": "../assets/image/comLau/comNeu.webp",
+            "price": "18.000đ"
+        },
+        {
+            "userId": 1,
+            "nameFood": "Thịt Ba Chỉ Xào Dưa Cải",
+            "type": "Món Xào",
+            "describe": "Thịt Ba Chỉ Xào Dưa Cải là món ăn đặc trưng với thịt ba chỉ heo mềm mại, được xào nhanh trên lửa lớn với dưa cải muối chua giòn. Món ăn mang đến sự hòa quyện giữa vị béo ngậy của thịt và vị chua mặn của dưa cải, tạo nên hương vị hấp dẫn. Được nêm nếm vừa vặn với tỏi và tiêu, món này thường được phục vụ cùng cơm trắng nóng hổi, khiến bữa ăn thêm phần đậm đà và thơm ngon.",
+            "image_url": "../assets/image/monXao/thitBaChiXaoDuaCai.jpg",
+            "price": "129.000đ"
+        },
+        {
+            "userId": 1,
+            "nameFood": "Thịt Ba Chỉ Kho Ruốc Sả",
+            "type": "Món Kho Và Rim",
+            "describe": "Thịt Ba Chỉ Kho Ruốc Sả là sự kết hợp hoàn hảo giữa thịt ba chỉ mềm béo và hương thơm nồng của ruốc sả. Thịt được kho mềm, thấm đẫm gia vị, với ruốc sả vàng ươm, tạo nên mùi thơm đặc trưng. Món ăn có vị đậm đà, mặn mà, thường được ăn kèm với cơm trắng, mang lại hương vị quen thuộc của ẩm thực truyền thống.",
+            "image_url": "../assets/image/monKhoVaRim/thitKhoRuocSa.jpg",
+            "price": "89.000đ"
+        },
+        {
+            "userId": 1,
+            "nameFood": "Cá Chim Hấp Ngũ Liễu/Xì Dầu",
+            "type": "Món Hấp",
+            "describe": "Cá Chim Hấp Ngũ Liễu/Xì Dầu là món ăn đặc trưng với cá chim tươi được hấp cùng nước xì dầu đậm đà, hành lá, gừng, ớt và nấm. Cá được nấu mềm, giữ nguyên vị ngọt tự nhiên, hòa quyện với vị mặn ngọt của nước sốt xì dầu và hương thơm của các loại rau thơm, gia vị. Món này thường được ăn kèm với cơm trắng, tạo nên hương vị cân bằng và hấp dẫn.",
+            "image_url": "../assets/image/monHap/caChimHapXiDau.jpg",
+            "price": "150.000đ"
+        },
+        {
+            "userId": 1,
+            "nameFood": "Ếch Rang Muối",
+            "type": "Món Chiên Và Rang",
+            "describe": "Ếch Rang Muối là một món ăn đặc trưng với thịt ếch chiên giòn, phủ lớp muối rang thơm lừng kết hợp với sả và lá chanh. Miếng ếch được tẩm ướp gia vị vừa vặn, khi ăn có vị mặn, thơm của muối và sả, cùng với độ giòn bên ngoài và mềm bên trong của thịt ếch. Món này thường được dùng kèm với rau sống và nước chấm chua ngọt, tạo nên hương vị đậm đà, khó quên.",
+            "image_url": "../assets/image/monChienVaRang/echRangMuoi.jpg",
+            "price": "149.000đ"
+        },
+        {
+            "userId": 1,
+            "nameFood": "Salad Cá Hồi Thượng Hạng",
+            "type": "Các Món Khác Và Món Súp",
+            "describe": "Salad Cá Hồi Thượng Hạng là sự kết hợp tinh tế giữa cá hồi tươi sống được cắt lát mỏng và rau xanh tươi ngon, thường là xà lách, bơ, dưa chuột, và cà chua bi. Món ăn đi kèm với nước sốt chanh dây hoặc giấm balsamic, mang đến hương vị chua ngọt thanh mát. Được trang trí bằng hạt óc chó hoặc hạt chia, món salad này không chỉ thanh đạm mà còn giàu dinh dưỡng, phù hợp với những thực khách yêu thích ẩm thực cao cấp và lành mạnh.",
+            "image_url": "../assets/image/cacMonKhacVaMonSup/Salad.webp",
+            "price": "110.000đ"
+        },
+        {
+            "userId": 1,
+            "nameFood": "Canh Rau Muống Nấu Nghêu",
+            "type": "Món Canh",
+            "describe": "Canh Rau Muống Nấu Nghêu là món canh thanh mát, mang đậm hương vị biển. Rau muống tươi ngon được nấu chín mềm cùng với những con nghêu tươi, ngọt thịt. Nước dùng trong vắt được nêm nếm vừa miệng, thường được thêm chút tỏi phi và ớt để tăng thêm hương vị. Món ăn này không chỉ bổ dưỡng mà còn rất thích hợp cho những ngày hè oi ả, mang lại cảm giác nhẹ nhàng và sảng khoái cho thực khách.",
+            "image_url": "../assets/image/monCanh/canhRauMuongNauNgheu.webp",
+            "price": "99.000đ"
+        },
+
+
+        {
+            "userId": 2,
+            "nameFood": "Khoai Sọ Lệ Phố",
+            "type": "Khai vị",
+            "describe": "Khoai Sọ Lệ Phố là một đặc sản nổi tiếng, nổi bật với vị ngọt tự nhiên của khoai sọ kết hợp với hương thơm của nước dừa tươi. Món ăn được chế biến cầu kỳ, khoai sọ được hấp chín mềm, sau đó được đun với nước dừa và gia vị để tạo nên hương vị đậm đà. Món này thường được trang trí với lá dứa tươi, tạo thêm vẻ đẹp và hương thơm, mang đến trải nghiệm ẩm thực độc đáo cho thực khách.",
+            "image_url": "../assets/image/khaiVi/khoaiSoLePho.jpg",
+            "price": "99.000đ"
+        },
+        {
+            "userId": 2,
+            "nameFood": "Rau Muống Xào Tỏi",
+            "type": "Món Rau",
+            "describe": "Rau Muống Xào Tỏi nổi bật với rau muống tươi xanh, được xào nhanh trên lửa lớn để giữ độ giòn và màu sắc bắt mắt. Tỏi được phi vàng thơm và thêm vào cùng với một chút nước mắm, tạo nên hương vị đậm đà. Món ăn này không chỉ ngon mà còn mang lại cảm giác thanh mát, là lựa chọn hoàn hảo cho bữa cơm gia đình hoặc các bữa tiệc.",
+            "image_url": "../assets/image/monRau/rauMuongXaoToi.jpg",
+            "price": "49.000đ"
+        },
+        {
+            "userId": 2,
+            "nameFood": "Cơm Trắng",
+            "type": "Cơm_Lẩu",
+            "describe": "Cơm Trắng được nấu từ gạo hạt dài, có màu trắng tinh khiết, được hấp chín tới, tạo độ dẻo và thơm. Món cơm này được phục vụ trong đĩa tròn, thường ăn kèm với các món như thịt kho, cá kho tộ hoặc rau xào, giúp cân bằng hương vị và cung cấp năng lượng cho bữa ăn. Cơm trắng là món ăn chính, không thể thiếu trong thực đơn truyền thống của người Việt, mang đến cảm giác ấm áp và gần gũi.",
+            "image_url": "../assets/image/comLau/comTrang.jpeg",
+            "price": "49.000đ"
+        },
+        {
+            "userId": 2,
+            "nameFood": "Sườn Xào Chua Ngọt",
+            "type": "Món Xào",
+            "describe": "Sườn Xào Chua Ngọt là sự kết hợp hoàn hảo giữa sườn heo tươi ngon được chiên giòn và nước sốt chua ngọt đặc trưng. Món ăn có màu sắc hấp dẫn với những miếng sườn được phủ lớp sốt cam đỏ rực rỡ, điểm thêm hành tây, ớt và dứa. Hương vị vừa cay cay, ngọt ngọt, cùng độ giòn của sườn tạo nên một trải nghiệm ẩm thực thú vị. Món này thường được phục vụ nóng hổi, ăn kèm với cơm trắng, rất hợp cho bữa ăn gia đình.",
+            "image_url": "../assets/image/monXao/suonXaoChuaNgot.jpg",
+            "price": "129.000đ"
+        },
+        {
+            "userId": 2,
+            "nameFood": "Thịt Ba Chỉ Mắm Tôm",
+            "type": "Món Hấp",
+            "describe": "Thịt Ba Chỉ Mắm Tôm là món ăn đậm đà, kết hợp giữa thịt ba chỉ mềm thơm và mắm tôm pha chua ngọt vừa miệng. Thịt được luộc chín tới, giữ nguyên vị ngọt tự nhiên, thái lát mỏng, ăn kèm với rau sống tươi mát như xà lách, húng quế và dưa leo. Mắm tôm được pha chế cẩn thận, không quá nồng, thêm một chút chanh, ớt và đường, tạo nên sự hòa quyện tuyệt hảo giữa các hương vị.",
+            "image_url": "../assets/image/monHap/thitBaChiMamTom.jpg",
+            "price": "119.000đ"
+        },
+        {
+            "userId": 2,
+            "nameFood": "Cá Lóc Kho Tộ/Kho Nghệ",
+            "type": "Món Kho Và Rim",
+            "describe": "Cá Lóc Kho Tộ là món đặc sản với cá lóc tươi, kho trong nồi đất cùng nước mắm đậm đà, đường và hạt tiêu. Cá được kho mềm, thấm gia vị và mang vị ngọt tự nhiên của cá hòa quyện cùng nước sốt thơm ngon. Một chút nghệ thêm vào tạo màu vàng bắt mắt, kết hợp với hương thơm đặc trưng. Món ăn thường đi kèm với cơm trắng nóng hổi, mang lại hương vị mộc mạc, đậm chất quê hương.",
+            "image_url": "../assets/image/monKhoVaRim/caLocKhoTo.jpg",
+            "price": "109.000đ"
+        },
+        {
+            "userId": 2,
+            "nameFood": "Súp Bào Ngư Vi Cá",
+            "type": "Các Món Khác Và Món Súp",
+            "describe": "Súp Bào Ngư Vi Cá được chế biến từ bào ngư tươi ngon kết hợp với vi cá mập, tạo nên hương vị đặc trưng. Nước dùng được ninh từ xương heo và gia vị tự nhiên, mang lại độ ngọt thanh. Món súp này được thêm vào một số nguyên liệu như nấm, ngò rí, và gia vị vừa ăn, phục vụ nóng hổi, giúp thực khách tận hưởng sự thanh mát và bổ dưỡng. Món ăn không chỉ ngon mà còn rất tốt cho sức khỏe, thích hợp cho những bữa tiệc sang trọng.",
+            "image_url": "../assets/image/cacMonKhacVaMonSup/supBaoNguViCa.jpg",
+            "price": "300.000đ"
+        },
+        {
+            "userId": 2,
+            "nameFood": "Ếch Chiên Bơ",
+            "type": "Món Chiên Và Rang",
+            "describe": "Ếch Chiên Bơ là món ăn đặc trưng với thịt ếch tươi, được chiên giòn cùng lớp bơ béo ngậy, thơm lừng. Miếng ếch vàng ươm bên ngoài, mềm ngọt bên trong, thấm đẫm vị bơ và tỏi phi. Món này thường được kèm với rau sống và nước chấm đậm đà, tạo nên hương vị cuốn hút và đầy lôi cuốn cho thực khách.",
+            "image_url": "../assets/image/monChienVaRang/echChienBoChienMam.jpg",
+            "price": "149.000đ"
+        },
+        {
+            "userId": 2,
+            "nameFood": "Canh Mồng Tơi Nấu Tôm",
+            "type": "Món Canh",
+            "describe": "Canh Mồng Tơi Nấu Tôm là món canh thanh mát, được chế biến từ rau mồng tơi tươi ngon và tôm tươi. Rau được nấu vừa chín tới, giữ được độ giòn và màu xanh mướt, hòa quyện cùng vị ngọt tự nhiên của tôm. Món canh này được nêm nếm vừa miệng, mang đến cảm giác thanh nhẹ, rất thích hợp cho những bữa cơm gia đình. Thêm chút tiêu xay và hành lá lên trên, món canh trở nên hấp dẫn hơn với hương thơm đặc trưng.",
+            "image_url": "../assets/image/monCanh/canhMongToiNauTom.jpg",
+            "price": "99.000đ"
+        },
+
+
+
+        {
+            "userId": 3,
+            "nameFood": "Rau Càng Cua Trộn Bò",
+            "type": "Khai vị",
+            "describe": "Rau Càng Cua Trộn Bò là sự kết hợp hoàn hảo giữa rau càng cua tươi ngon và thịt bò xào mềm. Rau càng cua được chọn lọc kỹ, giòn và ngọt, trộn cùng thịt bò thái lát mỏng, được ướp gia vị vừa phải, sau đó xào nhanh trên lửa lớn để giữ được độ tươi. Món ăn được rắc thêm hành phi thơm lừng và chút tiêu xay, tạo nên hương vị đậm đà. Món này không chỉ ngon mà còn rất bổ dưỡng, thích hợp cho những ai yêu thích ẩm thực xanh.",
+            "image_url": "../assets/image/khaiVi/rauCangCuaTronBo.jpg",
+            "price": "110.000đ"
+        },
+        {
+            "userId": 3,
+            "nameFood": "Thịt Ba Chỉ Rang Cháy Cạnh",
+            "type": "Món Chiên Và Rang",
+            "describe": "Thịt Ba Chỉ Rang Cháy Cạnh là món ăn đậm đà, với từng miếng thịt ba chỉ được rang vàng giòn bên ngoài, nhưng vẫn giữ được độ mềm bên trong. Thịt được tẩm ướp gia vị đặc trưng, kết hợp với hành, tỏi phi thơm lừng, tạo nên hương vị mặn mà, béo ngậy và hấp dẫn. Món này thường ăn kèm với cơm trắng, rất đưa cơm và hợp khẩu vị.",
+            "image_url": "../assets/image/monChienVaRang/thitBaChiRangChayCanh.jpg",
+            "price": "129.000đ"
+        },
+        {
+            "userId": 3,
+            "nameFood": "Gà Nấu Nấm Đông Cô",
+            "type": "Các Món Khác Và Món Súp",
+            "describe": "Gà Nấu Nấm Đông Cô là sự kết hợp hoàn hảo giữa thịt gà tươi ngon và nấm đông cô thơm ngậy. Gà được nấu chín mềm trong nước dùng đậm đà, kết hợp cùng các loại gia vị như hành, tỏi và tiêu. Nấm đông cô mang đến hương vị đặc trưng và độ giòn ngon, làm tăng thêm sự hấp dẫn cho món ăn. Món này thường được phục vụ nóng, kèm với cơm trắng, mang lại trải nghiệm ẩm thực đầy đủ và hài lòng cho thực khách.",
+            "image_url": "../assets/image/cacMonKhacVaMonSup/gaNauNamDongCo.jpg",
+            "price": "192.000đ"
+        },
+        {
+            "userId": 3,
+            "nameFood": "Cải Xanh Xào Tỏi",
+            "type": "Món Rau",
+            "describe": "Cải Xanh Xào Tỏi được chế biến từ những ngọn cải xanh tươi ngon, được xào nhanh với tỏi phi thơm lừng, tạo nên hương vị đậm đà và giữ nguyên độ giòn. Món ăn này không chỉ cung cấp chất dinh dưỡng mà còn mang lại cảm giác tươi mát, rất thích hợp làm món phụ trong bữa cơm gia đình hoặc trong các bữa tiệc. Cải xanh xào tỏi thường được nêm nếm vừa miệng, làm nổi bật vị ngọt tự nhiên của rau.",
+            "image_url": "../assets/image/monRau/caiXanhXaoToi.jpg",
+            "price": "49.000đ"
+        },
+        {
+            "userId": 3,
+            "nameFood": "Cơm Chiên Trứng Tỏi",
+            "type": "Cơm_Lẩu",
+            "describe": "Cơm Chiên Trứng Tỏi là một món ăn hấp dẫn với cơm được xào thơm ngon, hòa quyện vị bùi bùi của trứng và hương thơm đặc trưng của tỏi. Món ăn được trang trí với hành lá và cà rốt thái sợi, tạo nên màu sắc bắt mắt. Với hương vị đậm đà và độ giòn của tỏi, cơm chiên mang đến trải nghiệm ẩm thực tuyệt vời, thích hợp làm món chính trong bữa ăn hàng ngày.",
+            "image_url": "../assets/image/comLau/comChienTrungToi.jpg",
+            "price": "89.000đ"
+        },
+        {
+            "userId": 3,
+            "nameFood": "Cá Bông Lau Kho Tộ/Kho Nghệ",
+            "type": "Món Kho Và Rim",
+            "describe": "Cá Bông Lau Kho Tộ được nấu trong nồi đất truyền thống, mang đến hương vị đậm đà và đặc trưng. Cá bông lau tươi ngon được kho cùng nước màu, hành, tỏi, ớt, và gia vị đặc biệt, tạo nên nước sốt kẹo sánh quyện. Món ăn có vị mặn ngọt hài hòa, cá mềm, thấm đều gia vị. Thường được ăn kèm với cơm trắng và rau luộc.",
+            "image_url": "../assets/image/monKhoVaRim/caBongLauKhoTo.jpg",
+            "price": "109.000đ"
+        },
+        {
+            "userId": 3,
+            "nameFood": "Ếch xào sả ớt",
+            "type": "Món Xào",
+            "describe": "Ếch Xào Sả Ớt là một trải nghiệm ẩm thực độc đáo. Thịt ếch tươi được xào nhanh với sả tươi và ớt để tạo ra sự hòa quyện hoàn hảo giữa vị cay và hương thơm đặc trưng. Món ăn được điểm xuyết bằng hành lá và các loại gia vị truyền thống, mang đến hương vị đậm đà, hấp dẫn. Thịt ếch mềm, ngọt, cùng với vị cay của ớt khiến món ăn trở nên hấp dẫn hơn bao giờ hết. Món này thường được phục vụ kèm với cơm trắng hoặc bánh mì để tận hưởng trọn vẹn hương vị.",
+            "image_url": "../assets/image/monXao/echXaoSaOt.jpg",
+            "price": "129.000đ"
+        },
+        {
+            "userId": 3,
+            "nameFood": "Mực Ống Hấp Gừng",
+            "type": "Món Hấp",
+            "describe": "Mực ống hấp gừng là món ăn thanh đạm, hấp dẫn. Mực ống tươi được hấp cùng với gừng thái lát, tạo hương thơm đặc trưng, kết hợp vị ngọt tự nhiên của mực. Món ăn được trang trí với hành lá và ớt đỏ, thường đi kèm với chén nước mắm gừng đậm đà, tạo sự cân bằng hoàn hảo giữa vị cay, mặn và ngọt.",
+            "image_url": "../assets/image/monHap/mucOngHapGung.jpg",
+            "price": "159.000đ"
+        },
+        {
+            "userId": 3,
+            "nameFood": "Canh Rong Biển Nấu Tôm",
+            "type": "Món Canh",
+            "describe": "Canh Rong Biển Nấu Tôm là món canh thơm ngon, kết hợp giữa rong biển tươi và tôm ngọt. Món canh có vị ngọt tự nhiên từ tôm cùng với hương vị biển nhẹ nhàng của rong biển, tạo nên một bát canh thanh mát và bổ dưỡng. Nước canh trong veo, được nêm nếm vừa vặn, thích hợp để làm món khai vị trong bữa ăn hoặc dùng kèm với cơm trắng.",
+            "image_url": "../assets/image/monCanh/canhRongBienNauTom.jpg",
+            "price": "99.000đ"
+        },
+
+
+
+        {
+            "userId": 4,
+            "nameFood": "Khoai Tây Chiên Bơ",
+            "type": "Khai vị",
+            "describe": "Khoai Tây Chiên Bơ là món ăn đặc biệt với những miếng khoai tây vàng giòn, được chế biến từ khoai tây tươi ngon, chiên trong bơ thực vật. Món này mang lại vị béo ngậy, thơm lừng, kết hợp với chút muối và tiêu để tăng thêm hương vị. Khoai tây chiên bơ thường được phục vụ kèm với sốt mayonnaise hoặc tương ớt, là lựa chọn lý tưởng cho những ai yêu thích món ăn nhẹ và ngon miệng.",
+            "image_url": "../assets/image/khaiVi/khoaiTayChienBo.jpg",
+            "price": "69.000đ"
+        },
+        {
+            "userId": 4,
+            "nameFood": "Rau Thập Cẩm Luộc",
+            "type": "Món Rau",
+            "describe": "Rau Thập Cẩm Luộc là sự kết hợp hoàn hảo của nhiều loại rau tươi như bông cải xanh, cà rốt, đậu que và măng tây, được luộc chín tới, giữ nguyên độ giòn và màu sắc tự nhiên. Món ăn được phục vụ kèm với nước chấm mắm tỏi ớt, giúp tăng thêm hương vị. Đây là lựa chọn lý tưởng cho những ai yêu thích sự thanh đạm và dinh dưỡng trong bữa ăn.",
+            "image_url": "../assets/image/monRau/rauThapCamLuoc.jpeg",
+            "price": "49.000đ"
+        },
+        {
+            "userId": 4,
+            "nameFood": "Cơm Chiên Dương Châu",
+            "type": "Cơm_Lẩu",
+            "describe": "Cơm Chiên Dương Châu là sự kết hợp hoàn hảo giữa cơm trắng và nhiều loại hải sản tươi ngon như tôm, mực, cùng với trứng và rau củ như đậu Hà Lan, cà rốt. Món ăn được chiên với gia vị đậm đà, mang đến hương vị thơm ngon, màu sắc bắt mắt. Cơm chiên Dương Châu thường được phục vụ nóng hổi, rắc thêm hành lá tươi và nước tương, tạo nên sự hài hòa trong từng miếng ăn. Đây là một lựa chọn tuyệt vời cho bữa trưa hay bữa tối.",
+            "image_url": "../assets/image/comLau/comChienDuongChau.jpg",
+            "price": "99.000đ"
+        },
+        {
+            "userId": 4,
+            "nameFood": "Cá Bống Kho Tộ",
+            "type": "Món Kho Và Rim",
+            "describe": "Cá Bống Kho Tộ là món ăn đậm đà với cá bống tươi ngon, được kho trong nồi đất cùng nước mắm, đường, và hạt tiêu, tạo nên vị mặn ngọt hài hòa. Cá thấm đều gia vị, thịt chắc, không bị nát, ăn kèm cơm trắng rất ngon miệng. Món này còn được điểm thêm vài lát ớt và hành lá tươi, tăng thêm hương vị hấp dẫn.",
+            "image_url": "../assets/image/monKhoVaRim/caBongKhoTo.jpg",
+            "price": "109.000đ"
+        },
+        {
+            "userId": 4,
+            "nameFood": "Bò Xào Ớt Chuông",
+            "type": "Món Xào",
+            "describe": "Bò Xào Ớt Chuông được chế biến từ thịt bò tươi ngon, thái mỏng và xào nhanh trên lửa lớn để giữ được độ mềm. Món ăn kết hợp với ớt chuông đỏ, xanh, vàng tạo màu sắc bắt mắt và hương vị thơm ngon. Gia vị đặc trưng như tỏi, hành, và nước tương được thêm vào, tạo nên một món ăn đậm đà, thường được phục vụ cùng cơm trắng nóng hổi, rất thích hợp cho bữa cơm gia đình.",
+            "image_url": "../assets/image/monXao/boXaoOtChuong.jpg",
+            "price": "159.000đ"
+        },
+        {
+            "userId": 4,
+            "nameFood": "Cá Bớp Hấp Xì Dầu",
+            "type": "Món Hấp",
+            "describe": "Cá Bớp Hấp Xì Dầu là món cá bớp tươi được hấp cùng xì dầu thơm lừng, hòa quyện với gừng, hành lá và ớt tạo nên vị đậm đà, ngọt thịt. Cá bớp sau khi hấp giữ được độ mềm, béo tự nhiên, thấm đều nước sốt xì dầu đậm vị. Món ăn được bày trí đẹp mắt và thường kèm theo rau thơm, thích hợp dùng với cơm trắng hoặc bún tươi.",
+            "image_url": "../assets/image/monHap/caBopHapXiDau.jpg",
+            "price": "140.000đ"
+        },
+        {
+            "userId": 4,
+            "nameFood": "Cá Thu Chiên Mắm Xoài",
+            "type": "Món Chiên Và Rang",
+            "describe": "Cá Thu Chiên Mắm Xoài là món cá thu tươi ngon, chiên giòn đều hai mặt. Cá được rưới lên nước mắm pha đặc biệt, mang vị mặn ngọt đậm đà. Kết hợp với xoài xanh thái sợi chua thanh, món ăn tạo ra sự hài hòa giữa vị giòn của cá và vị tươi mát của xoài, rất kích thích vị giác. Món này thường ăn kèm với rau sống và cơm trắng.",
+            "image_url": "../assets/image/monChienVaRang/caThuChienMamXoaiSotCa.jpg",
+            "price": "149.000đ"
+        },
+        {
+            "userId": 4,
+            "nameFood": "Canh Chua Nghêu",
+            "type": "Món Canh",
+            "describe": "Canh Chua Nghêu là sự kết hợp hoàn hảo giữa vị ngọt của nghêu tươi, vị chua từ me và nước dừa, cùng với các loại rau thơm như ngò gai và giá đỗ. Nước canh trong veo, thơm phức với mùi hương đặc trưng, mang đến trải nghiệm ẩm thực tuyệt vời. Món ăn không chỉ bổ dưỡng mà còn giúp kích thích vị giác, phù hợp cho những ai yêu thích sự thanh mát và chua ngọt trong bữa ăn.",
+            "image_url": "../assets/image/monCanh/canhChuaNauNgheu.jpg",
+            "price": "109.000đ"
+        },
+
+
+        {
+            "userId": 5,
+            "nameFood": "Khổ Qua Xào Trứng",
+            "type": "Món Rau",
+            "describe": "Khổ Qua Xào Trứng là món ăn đơn giản nhưng đầy hương vị. Món này được chế biến từ khổ qua tươi xanh, cắt lát mỏng, xào cùng với trứng gà đánh tan, tạo thành một món ăn hấp dẫn với màu sắc bắt mắt. Khổ qua giữ được vị đắng đặc trưng, hòa quyện với vị béo ngậy của trứng, mang lại trải nghiệm ẩm thực thú vị. Món ăn thường được rắc thêm một chút hành lá và tiêu để tăng thêm hương vị, rất phù hợp làm món chính hoặc ăn kèm với cơm trắng.",
+            "image_url": "../assets/image/monRau/khoQuaXaoTrung.jpeg",
+            "price": "55.000đ"
+        }, 
+        {
+            "userId": 5,
+            "nameFood": "Ram Quảng Bình",
+            "type": "Khai vị",
+            "describe": "Ram Quảng Bình là món ăn đặc sản của miền Trung, được phục vụ. Món này gồm các nguyên liệu chính như thịt heo xay nhuyễn, trứng, và các loại gia vị, cuốn trong lớp bánh tráng mỏng, sau đó chiên giòn. Ram Quảng Bình có vị béo ngậy từ thịt, kết hợp với vị giòn tan của lớp vỏ bên ngoài. Món ăn thường được ăn kèm với rau sống và nước mắm chua ngọt, tạo nên hương vị hấp dẫn và độc đáo.",
+            "image_url": "../assets/image/khaiVi/ramQuangBinh.jpg",
+            "price": "95.000đ"
+        },
+        {
+            "userId": 5,
+            "nameFood": "Cơm Chiên Hải Sản",
+            "type": "Cơm_Lẩu",
+            "describe": "Cơm Chiên Hải Sản là món ăn hấp dẫn, được chế biến từ cơm trắng thơm, chiên cùng với tôm, mực và các loại rau củ tươi ngon như đậu hà lan, cà rốt. Món ăn được nêm nếm đậm đà với gia vị truyền thống, mang lại hương vị tuyệt vời. Cơm chiên được trình bày đẹp mắt, kèm theo chén nước tương và dưa leo tươi mát, là lựa chọn hoàn hảo cho những ai yêu thích ẩm thực hải sản.",
+            "image_url": "../assets/image/comLau/comChienHaiSan.jpg",
+            "price": "99.000đ"
+        },
+        {
+            "userId": 5,
+            "nameFood": "Cá Lóc Kho Dưa Cải/Kho Xổi",
+            "type": "Món Kho Và Rim",
+            "describe": "Cá Lóc Kho Dưa Cải là món ăn đậm đà, kết hợp giữa cá lóc tươi ngọt thịt và dưa cải chua nhẹ. Cá được kho mềm với nước màu từ đường thắng, thêm chút tiêu cay và nước mắm thơm nồng. Dưa cải giòn giòn thấm gia vị, tạo nên vị chua ngọt hài hòa, cực kỳ đưa cơm. Món ăn được chế biến kỹ lưỡng, đảm bảo vị đậm đà và thơm ngon, thích hợp cho bữa cơm gia đình.",
+            "image_url": "../assets/image/monKhoVaRim/caLocKhoDuaCai.jpg",
+            "price": "119.000đ"
+        },
+        {
+            "userId": 5,
+            "nameFood": "Mực Xào Thơm Cà",
+            "type": "Món Xào",
+            "describe": "Mực Xào Thơm Cà là món ăn hấp dẫn, được chế biến từ mực tươi xắt miếng vừa ăn, xào nhanh với thơm (dứa) và cà chua. Món ăn mang lại hương vị ngọt thanh của mực, kết hợp với sự chua ngọt của thơm và cà chua, tạo nên sự hòa quyện tuyệt vời. Gia vị như hành, tỏi và tiêu được thêm vào để tăng cường hương vị. Món này thường được phục vụ nóng, kèm cơm trắng, là lựa chọn hoàn hảo cho bữa ăn gia đình.",
+            "image_url": "../assets/image/monXao/mucXaoCaChuaThomHanh.jpg",
+            "price": "159.000đ"
+        },
+        {
+            "userId": 5,
+            "nameFood": "Cá Lóc Hấp Bầu",
+            "type": "Món Hấp",
+            "describe": "Cá Lóc Hấp Bầu là món ăn tinh tế với cá lóc tươi hấp chín cùng bầu thái lát mỏng. Cá giữ được vị ngọt tự nhiên, kết hợp với bầu mềm, thanh mát. Món ăn đi kèm với nước mắm gừng và rau sống, mang đến hương vị thanh đạm nhưng đậm đà, phù hợp cho những bữa ăn gia đình.",
+            "image_url": "../assets/image/monHap/caLocHapBau.jpg",
+            "price": "160.000đ"
+        },
+        {
+            "userId": 5,
+            "nameFood": "Canh Khổ Qua Nhồi Thịt",
+            "type": "Món Canh",
+            "describe": "Canh Khổ Qua Nhồi Thịt là món ăn hấp dẫn được chế biến từ trái khổ qua (mướp đắng) tươi ngon, được nhồi nhân thịt heo xay trộn với nấm, hành lá và gia vị. Sau khi nhồi, khổ qua được nấu trong nước dùng thanh ngọt, có thể thêm chút tiêu để tăng hương vị. Món canh không chỉ có vị đắng nhẹ của khổ qua mà còn mang lại sự tươi mát và bổ dưỡng, rất thích hợp cho những bữa cơm gia đình. Món ăn thường được phục vụ nóng, kèm với cơm trắng.",
+            "image_url": "../assets/image/monCanh/canhKhoQuaDonThit.jpg",
+            "price": "109.000đ"
+        },
+        {
+            "userId": 5,
+            "nameFood": "Cá Bớp Chiên Sốt Cà",
+            "type": "Món Chiên Và Rang",
+            "describe": "Cá Bớp Chiên Sốt Cà là một món ăn nổi bật với cá bớp tươi ngon được chiên vàng giòn, sau đó được phủ lớp sốt cà chua thơm lừng. Sốt cà được chế biến từ cà chua tươi, hành tỏi phi thơm và các gia vị đặc trưng, tạo nên hương vị đậm đà. Món ăn đi kèm với cơm trắng và rau sống, mang đến trải nghiệm ẩm thực phong phú và hấp dẫn.",
+            "image_url": "../assets/image/monChienVaRang/caBopChienMamXoaiSotCa.jpg",
+            "price": "149.000đ"
+        },
+        {
+            "userId": 5,
+            "nameFood": "Tôm Hùm Sốt Phô Mai",
+            "type": "Các Món Khác Và Món Súp",
+            "describe": "Tôm Hùm Sốt Phô Mai là món ăn đặc biệt với tôm hùm tươi sống, được nướng chín tới và phủ lớp sốt phô mai béo ngậy, thơm lừng. Sốt phô mai được chế biến từ phô mai cheddar và kem tươi, tạo nên hương vị đậm đà, kết hợp hoàn hảo với vị ngọt tự nhiên của tôm. Món ăn được trang trí bằng rau xanh và tiêu đen, mang lại trải nghiệm ẩm thực tuyệt vời, thích hợp cho những dịp đặc biệt hoặc tiệc tùng.",
+            "image_url": "../assets/image/cacMonKhacVaMonSup/tomHumSotPhoMai.jpg",
+            "price": "395.000đ"
+        }
     ]
 }
