@@ -4,13 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YummyRestaurent</title>
-    <link rel="stylesheet" href="./assets/cart.css">
+    <link rel="stylesheet" href="../assets/cart.css">
+    <link rel="stylesheet" href="../assets/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
 </head>
 <body>
-    <div id="delete_notification" ><i class="fa-solid fa-check notification_check"></i>Đã xoá 1 sản phẩm khỏi giỏ hàng</div>
-    <div id="announcement"></div>
+    <!-- --------------------------------------------------------phần header----------------------------------------------- -->
+    <div class="header">
+        <div class="header_logo">
+            <!-- <img src="../assets/image/logo.jpg" alt=""> -->
+        </div>
+        <div class="header_nav">
+            <ul>
+                <li><a class="active" href="../home.html">TRANG CHỦ</a></li>
+                <li><a class="active" href="../menu.html">THỰC ĐƠN</a></li>
+                <li><a class="active" href="../bookTable.html">ĐẶT BÀN</a></li>
+                <li><a class="active" href="../contact.html">LIÊN HỆ</a></li>
+            </ul>
+        </div>
+        <div class="searchBar">
+            <div class="search_logo">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <input class="search_input" type="text" placeholder="Search...">
+        </div>
+        <div class="header_cart">
+            <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="header_regiter">
+            <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
+        </div>
+    </div>
+    <!-- Tiếp tục xem giỏ hàng -->
+    <div class="cart_header">
+        <div class="button_continue">
+            <a href="./menu.html">
+                <button type="reset" class="continue"><i class="fa-solid fa-arrow-left"></i>TIẾP TỤC XEM SẢN PHẨM</button>
+            </a>
+        </div>
+        <!-- In ra thông báo -->
+        <div class="delete_announcements">
+            <div id="delete_notification" ><i class="fa-solid fa-check notification_check"></i>Đã xoá 1 sản phẩm khỏi giỏ hàng</div>
+            <div id="announcement"></div>
+        </div>
+    </div>
     <div class="cart_container">
         <!-- Giỏ hàng -->
         <div class="cart_wrapper">
@@ -24,122 +62,15 @@
                         <th class="product_subtotal">Tạm tính</th>
                     </tr>
                 </thead>
-                <tbody id="menu_body">
-                    <tr class="cart_form_products">
-                        <!-- Xoá sản phẩm đã thêm vào giỏ hàng -->
-                        <td class="product_remove">
-                            <a href="#" class="remove"><i class="fa-regular fa-circle-xmark item_remove"></i></a>
-                        </td>
-                        <td class="product_image appear">
-                            <a href="./details.html" class="image"><img src="./assets/image/khaiVi/goiXoaiHaiSan.jpg" style="width: 80px; height: 80px;" alt="Gỏi xoài hải sản"></a>
-                        </td>
-                        <td class="product_name appear">
-                            <a href="./details.html">Gỏi xoài hải sản</a>
-                        </td>
-                        <td class="product_price appear">
-                            <a href="./details.html">119.000đ</a>				
-                        </td>
-                        <!-- Tăng giảm số lượng đơn hàng -->
-                        <td class="product_quantity">
-                            <div class="quantity buttons_added">
-                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction" value="-">
-                                <input type="number" value="1" id="number_step" min="1">
-                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition" value="+">
-                
-                            </div>
-                        </td>
-                        <td class="product_subtotal appear">119.000đ				
-                        </td>
-                    </tr>
-                    <tr class="cart_form_products">
-                        <!-- Xoá sản phẩm đã thêm vào giỏ hàng -->
-                        <td class="product_remove">
-                            <a href="#" class="remove"><i class="fa-regular fa-circle-xmark item_remove"></i></a>
-                        </td>
-                        <td class="product_image appear">
-                            <a href="./details.html" class="image"><img src="./assets/image/monXao/mucXaoCaChuaThomHanh.jpg" style="width: 80px; height: 80px;" alt="Mực xào cà chua"></a>
-                        </td>
-                        <td class="product_name appear">
-                            <a href="./details.html">Mực xào hành cần / thơm cà</a>
-                        </td>
-                        <td class="product_price appear">
-                            <a href="./details.html">159.000đ</a>				
-                        </td>
-                        <!-- Tăng giảm số lượng đơn hàng -->
-                        <td class="product_quantity">
-                            <div class="quantity buttons_added">
-                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction" value="-">
-                                <input type="number" value="1" id="number_step" min="1">
-                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition" value="+">
-                
-                            </div>
-                        </td>
-                        <td class="product_subtotal appear">159.000đ				
-                        </td>
-                    </tr>
-                    <tr class="cart_form_products">
-                        <!-- Xoá sản phẩm đã thêm vào giỏ hàng -->
-                        <td class="product_remove">
-                            <a href="#" class="remove"><i class="fa-regular fa-circle-xmark item_remove"></i></a>
-                        </td>
-                        <td class="product_image appear">
-                            <a href="./details.html" class="image"><img src="./assets/image/monChienVaRang/thitBaChiRangChayCanh.jpg" style="width: 80px; height: 80px;" alt="Thịt ba chỉ rang cháy cạnh"></a>
-                        </td>
-                        <td class="product_name appear">
-                            <a href="./details.html">Thịt ba chỉ rang cháy cạnh</a>
-                        </td>
-                        <td class="product_price appear">
-                            <a href="./details.html">149.000đ</a>				
-                        </td>
-                        <!-- Tăng giảm số lượng đơn hàng -->
-                        <td class="product_quantity">
-                            <div class="quantity buttons_added">
-                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction" value="-">
-                                <input type="number" value="1" id="number_step" min="1">
-                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition" value="+">
-                
-                            </div>
-                        </td>
-                        <td class="product_subtotal appear">149.000đ				
-                        </td>
-                    </tr>
-                    <tr class="cart_form_products">
-                        <!-- Xoá sản phẩm đã thêm vào giỏ hàng -->
-                        <td class="product_remove">
-                            <a href="#" class="remove"><i class="fa-regular fa-circle-xmark item_remove"></i></a>
-                        </td>
-                        <td class="product_image appear">
-                            <a href="./details.html" class="image"><img src="./assets/image/monRau/rauMuongXaoToi.jpg" style="width: 80px; height: 80px;" alt="Rau muống"></a>
-                        </td>
-                        <td class="product_name appear">
-                            <a href="./details.html">Rau muống xào tỏi / luộc</a>
-                        </td>
-                        <td class="product_price appear">
-                            <a href="./details.html">49.000đ</a>				
-                        </td>
-                        <!-- Tăng giảm số lượng đơn hàng -->
-                        <td class="product_quantity">
-                            <div class="quantity buttons_added">
-                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction" value="-">
-                                <input type="number" value="1" id="number_step" min="1">
-                                <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition" value="+">
-                
-                            </div>
-                        </td>
-                        <td class="product_subtotal appear">49.000đ				
-                        </td>
-                    </tr>
+                <tbody id="menu_body">    
                     
                 </tbody>
             </table>
-            
-                <!-- Tiếp tục xem giỏ hàng -->
-            <div class="button_continue">
+            <!-- <div class="button_continue">
                 <a href="./menu.html">
                     <button type="reset" class="continue"><i class="fa-solid fa-arrow-left"></i>TIẾP TỤC XEM SẢN PHẨM</button>
                 </a>
-            </div>
-              
+            </div> -->
         </div>
         <!-- Form cần thanh toán -->
         <div class="cart_form_payments">
@@ -178,7 +109,6 @@
                         <div class="discount">
                             <input type="text" name="coupon_code" class="coupon_code" class="input_text" placeholder="Mã ưu đãi">
                             <input type="submit" class="apply" name="apply_coupon" value="Áp dụng">
-                
                         </div>
                     </div>
                 </form>
@@ -186,8 +116,30 @@
         </div>
 
     </div>
-
-    <script src="./assets/javaScript/cart.js" type="module"></script>
-
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer_card">
+            <div class="card_textTop"><b>Thành viên nhóm</b></div><br/>
+            <div class="card_textBottom">Võ Đức Tài<br>Ngô Thị Kim Hân<br>Hồ Viết Tiến<br>Bnướch Thị Thủy<br>Coor Chăng</div>
+        </div>
+        <div class="footer_card">
+            <div class="card_textTop"><b>Thời Gian</b></div><br/>
+            <div class="card_textBottom">8h00 - 23h59<br/> Monday - Sunday</div>
+        </div>
+        <div class="footer_card">
+            <div class="card_textTop"><b>Email</b></div><br/>
+            <div class="card_textBottom">Yummy@gmail.com</div>
+        </div>
+        <div class="footer_card">
+            <div class="card_textTop"><b>Theo Dõi</b></div><br/>
+            <div class="card_logo">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="#"><i class="fa-solid fa-phone-volume"></i></a>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/javaScript/localStorage.js" type="module"></script>
+    <script src="../assets/javaScript/cart.js" type="module"></script>
 </body>
 </html>
