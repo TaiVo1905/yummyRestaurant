@@ -37,7 +37,7 @@ function filterMenu (){
             </tr> 
             `;
         });
-        
+        addCart()
     // Nếu không có món ăn nào phù hợp
         if (filtered.length === 0) {
             menuTblBody.innerHTML = `
@@ -81,38 +81,41 @@ window.addEventListener('load',()=>{
 })
 
 // Khi click vào nút "Thêm vào giỏ hàng"
-document.querySelectorAll('.btn_add').forEach(button=>{
-    // gắn sự kiện onclick cho các nút button "thêm vào giỏ hàng"
-    button.addEventListener('click', function(){
-        // lấy id của nút gán cho foodID
-        const foodID = this.id.split('-')[1]; 
-        const foodQuantity = document.querySelector(`#input_sl-${foodID}`).value;
-        const foodNote = document.querySelector(`#input_note-${foodID}`).value;
-        // lấy dữ liệu 
-        const foodItem = filtered.find(item =>{
-            return item.id===foodID;
+console.log(document.querySelectorAll('.btn_add'))
+function addCart() {
+    document.querySelectorAll('.btn_add').forEach(button=>{
+        // gắn sự kiện onclick cho các nút button "thêm vào giỏ hàng"
+        button.addEventListener('click', function(){
+            // lấy id của nút gán cho foodID
+            const foodID = this.id.split('-')[1]; 
+            const foodQuantity = document.querySelector(`#input_sl-${foodID}`).value;
+            const foodNote = document.querySelector(`#input_note-${foodID}`).value;
+            // lấy dữ liệu 
+            const foodItem = filtered.find(item =>{
+                return item.id===foodID;
+            })
+
+            const userID = sessionStorage.getItem('UserID');
+            // kiểm tra nếu chưa có userID tức là chưa đăng nhập thành công
+            if(!userID){
+                alert("Bạn chưa đăng nhập. Vui lòng đăng nhập trước khi thêm vào giỏ hàng!")
+            }
+            // tạo một đối tượng chứa các thông tin (user_ID, foodName, ....)
+            const cartItem = {
+                user_ID: userID,
+                food_Name: foodItem.name,
+                food_Image: foodItem.image_url,
+                food_Price: foodItem.price,
+                food_Number: foodQuantity,
+                food_Note: foodNote
+            }
+            // Đẩy dữ liệu lên mảng data.carts(json)
+            data.carts.push(cartItem);
+            // Đẩy lên localstorage 
+            setDataLocalStorage(data);
+
+            // Sau khi đẩy lên localStorage xong. Hiển thị 1 dòng trạng thái "thêm thành công"
+            alert("Quý khách đã thêm món ăn vào giỏ hàng thành công!")
         })
-
-        const userID = sessionStorage.getItem('UserID');
-        // kiểm tra nếu chưa có userID tức là chưa đăng nhập thành công
-        if(!userID){
-            alert("Bạn chưa đăng nhập. Vui lòng đăng nhập trước khi thêm vào giỏ hàng!")
-        }
-        // tạo một đối tượng chứa các thông tin (user_ID, foodName, ....)
-        const cartItem = {
-            user_ID: userID,
-            food_Name: foodItem.name,
-            food_Image: foodItem.image_url,
-            food_Price: foodItem.price,
-            food_Number: foodQuantity,
-            food_Note: foodNote
-        }
-        // Đẩy dữ liệu lên mảng data.carts(json)
-        data.carts.push(cartItem);
-        // Đẩy lên localstorage 
-        setDataLocalStorage(data);
-
-        // Sau khi đẩy lên localStorage xong. Hiển thị 1 dòng trạng thái "thêm thành công"
-        alert("Quý khách đã thêm món ăn vào giỏ hàng thành công!")
     })
-})
+}

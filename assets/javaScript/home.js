@@ -16,7 +16,7 @@ function renderFeaturedDishes(data){
                               </div>
                               `;
     })
-}
+};
 function handleLogAndRegModal() {
     const logAndReg = document.getElementById("logAndReg");
     const logAndReg_modal = document.getElementById("logAndReg_modal");
