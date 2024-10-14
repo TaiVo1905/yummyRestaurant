@@ -34,6 +34,9 @@ function displayCart(data){
               
                           </div>
                       </td>
+                      <td>
+                      <div class="input_note">Cay vừa phải, không ăn được hành, thích mùi vị thơm nồng</div>
+                       </td>
                       <td class="product_subtotal appear">${cart.price}				
                       </td>
                 </tr>
@@ -77,11 +80,11 @@ function checkIfCartIsEmpty() {
         // Ẩn phần giỏ hàng và hiển thị thông báo trống
         document.querySelector('.cart_container').style.display = 'none';
 
-
         // //Hiển thị thông báo
         const announcementCart = document.getElementById('cart_announcement');
         announcementCart.innerHTML = 'Chưa có sản phẩm nào trong giỏ hàng.';
         announcementCart.style.display = 'block';//Hiển thị thông báo.
+        
     } else {
         document.getElementById('cart_announcement').style.display = 'none';
         document.querySelector('.cart_container').style.display = 'flex';
@@ -106,6 +109,7 @@ function removeCartItem(event) {
     checkIfCartIsEmpty();
     // Hiển thị thông báo tùy chỉnh
     const notification = document.getElementById('delete_notification');
+    notification.innerHTML = `<i class="fa-solid fa-check notification_check"></i> “${productName}” đã xoá.`; // Thêm tên sản phẩm vào thông báo
     notification.style.display = 'block';
 
     

@@ -17,7 +17,7 @@
 
 #delete_notification {
     display: none; 
-    color: red; 
+    color: #7a9c59; 
     font-weight: bold; 
     margin-top: 5px;
     margin-left: 30px;
@@ -28,9 +28,6 @@
 }
 
 .cart_empty_space {
-    height: 300px; /* Tùy chỉnh chiều cao */
-    display: none; /* Mặc định ẩn */
-    text-align: center;
     font-size: 18px;
     color: #888;
 }
@@ -64,7 +61,7 @@
 /* Giỏ hàng */
 
 .cart_wrapper {
-    width: 800px;
+    width: 70%;
 }
 
 
@@ -81,10 +78,6 @@
     border-bottom: 3px solid #ececec;  
     color: #777;
 }
-
-/* .cart_form_products{
-    width: 50%;
-} */
 
 .cart_form_products .product_remove{
     padding: 3px;
@@ -127,6 +120,11 @@ a {
 img {
     width: 100%;
     height: auto;
+}
+
+/* Note */
+.input_note {
+    padding: 10px;
 }
 
 /* Tăng giảm số lượng đơn hàng */
@@ -226,7 +224,7 @@ input[type=number]::-webkit-outer-spin-button {
 .cart_form_payments {
     position: fixed;
     right: 30px;
-    width: 33%;
+    width: 25%;
 }
 
 .sub_payment {

@@ -6,6 +6,7 @@
     <title>YummyRestaurent</title>
     <link rel="stylesheet" href="../assets/cart.css">
     <link rel="stylesheet" href="../assets/home.css">
+    <link rel="stylesheet" href="../assets/successefullyOder.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
 </head>
@@ -45,7 +46,7 @@
         </div>
         <!-- In ra thông báo -->
         <div class="delete_announcements">
-            <div id="delete_notification" ><i class="fa-solid fa-check notification_check"></i>Đã xoá 1 sản phẩm khỏi giỏ hàng</div>
+            <div id="delete_notification" ></div>
             <div id="cart_announcement" class="cart_empty_space"></div>
         </div>
     </div>
@@ -59,6 +60,7 @@
                         <th class="product_name" colspan="3">Sản phẩm</th>
                         <th class="product_price">Giá</th>
                         <th class="product_quantity">Số lượng</th>
+                        <th class="note">Ghi chú</th>
                         <th class="product_subtotal">Tạm tính</th>
                     </tr>
                 </thead>
@@ -66,11 +68,6 @@
                     
                 </tbody>
             </table>
-            <!-- <div class="button_continue">
-                <a href="./menu.html">
-                    <button type="reset" class="continue"><i class="fa-solid fa-arrow-left"></i>TIẾP TỤC XEM SẢN PHẨM</button>
-                </a>
-            </div> -->
         </div>
         <!-- Form cần thanh toán -->
         <div class="cart_form_payments">
@@ -116,6 +113,20 @@
         </div>
 
     </div>
+
+    <!-- Order successfully -->
+    <div class="order_success_modal">
+        <div class="successfully_oder">
+            <div class="successfullyOder_image">
+                <img src="/assets/image/successefully_oder.png" alt="">
+            </div>
+            <p><b>Cám ơn bạn đã cho phép chúng tôi được phục vụ bạn<b></p>
+            <div class="successfullyOder_button">
+                <button>Tiếp tục xem sản phẩm</button>
+            </div>
+        </div>
+    </div>
+
     <!-- footer -->
     <div class="footer">
         <div class="footer_card">
