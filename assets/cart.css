@@ -125,6 +125,7 @@ img {
 /* Note */
 .input_note {
     padding: 10px;
+    width: 200px;
 }
 
 /* Tăng giảm số lượng đơn hàng */

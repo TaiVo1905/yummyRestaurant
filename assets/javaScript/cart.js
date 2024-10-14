@@ -17,13 +17,13 @@ function displayCart(data){
                           <a href="#" class="remove"><i class="fa-regular fa-circle-xmark item_remove"></i></a>
                       </td>
                       <td class="product_image appear">
-                          <a href="details.html" class="image"><img src="${cart.image_url}" style="width: 80px; height: 80px;" alt="${cart.nameFood}"></a>
+                          <div class="image"><img src="${cart.image_url}" style="width: 80px; height: 80px;" alt="${cart.nameFood}"></div>
                       </td>
                       <td class="product_name appear">
-                          <a href="details.html">${cart.nameFood}</a>
+                          <div>${cart.nameFood}</div>
                       </td>
                       <td class="product_price appear">
-                          <a href="details.html">${cart.price}</a>				
+                          <div>${cart.price}</div>				
                       </td>
                       <!-- Tăng giảm số lượng đơn hàng -->
                       <td class="product_quantity">
@@ -37,15 +37,49 @@ function displayCart(data){
                       <td>
                       <div class="input_note">Cay vừa phải, không ăn được hành, thích mùi vị thơm nồng</div>
                        </td>
-                      <td class="product_subtotal appear">${cart.price}				
+                      <td class="product_subtotal">${cart.price}				
                       </td>
                 </tr>
       `;
     });
+
 }
 
+//Lấy dữ liệu từ JSON
 displayCart(data)
 
+function onclickProduct(event) {
+    // Kiểm tra nếu sự kiện xảy ra từ một phần tử sản phẩm
+    const productElement = event.target.closest('.product_image, .product_name, .product_price');
+    const isHeader = event.target.closest('th'); // Kiểm tra xem có phải nhấp vào tiêu đề (thead) không
+
+    if (isHeader) {
+        return; // Nếu nhấp vào tiêu đề, không chuyển hướng
+    }
+
+    if (!productElement) {
+        return; // Nếu không phải, ngăn chặn việc chuyển trang
+    }
+
+        /*
+        event.target: Trả về phần tử cụ thể mà người dùng đã nhấp vào.
+        .closest(selector): Phương thức này tìm kiếm trong chuỗi các phần tử cha gần nhất cho phần tử mà đã được nhấp vào
+        (trong trường hợp này là event.target). Nếu phần tử đó khớp với bất kỳ phần tử nào trong chuỗi .product_image, 
+        .product_name, hoặc .product_price, nó sẽ trả về phần tử đó. Nếu không, nó sẽ trả về null.
+         */
+
+        window.location.href = "details.html"; // Chuyển hướng đến trang chi tiết
+    }
+
+
+// Thêm sự kiện 'click' cho các sản phẩm sau khi DOM đã sẵn sàng
+document.addEventListener('DOMContentLoaded', function() {
+    const productElements = document.querySelectorAll('.product_image, .product_name, .product_price');
+    
+    productElements.forEach(function(element) {
+        element.addEventListener('click', onclickProduct);
+    });
+});
 
 
 // Hàm cập nhật tổng tạm tính và tổng giá
@@ -95,7 +129,7 @@ function checkIfCartIsEmpty() {
 function removeCartItem(event) {
     const buttonClicked = event.target;
     const cartRow = buttonClicked.closest('tr'); // Lấy dòng sản phẩm (row)
-    const productName = cartRow.querySelector('.product_name a').innerText; // Lấy tên sản phẩm
+    const productName = cartRow.querySelector('.product_name div').innerText; // Lấy tên sản phẩm
 
 
     // Xóa sản phẩm khỏi localStorage
@@ -116,6 +150,7 @@ function removeCartItem(event) {
     setTimeout(() => {
         notification.style.display = 'none';
     }, 2000); // Ẩn thông báo sau 1 giây
+    
 }
 
 

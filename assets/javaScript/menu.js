@@ -20,9 +20,9 @@ function filterMenu (){
         // hiển thị các món đã lọc được
         filtered.forEach(item => {
             menuTblBody.innerHTML += `
-                <td><img src="${item.image_url}" alt="${item.name}" width="100px" height="100px"></td>
-                <td>${item.name}</td>
-                <td>${item.price}</td>
+                <td class="product_image"><img src="${item.image_url}" alt="${item.name}" width="100px" height="100px"></td>
+                <td class="product_name">${item.name}</td>
+                <td class="product_price">${item.price}</td>
                 <td>
                     <div id="number-input">
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
@@ -38,6 +38,9 @@ function filterMenu (){
             `;
         });
         addCart()
+  // Thêm sự kiện nhấp chuột cho các sản phẩm mới
+  addClickEventToProducts();
+
     // Nếu không có món ăn nào phù hợp
         if (filtered.length === 0) {
             menuTblBody.innerHTML = `
@@ -118,4 +121,30 @@ function addCart() {
             alert("Quý khách đã thêm món ăn vào giỏ hàng thành công!")
         })
     })
+}
+
+//Xem sản phẩm chi tiết
+// Đảm bảo hàm onclickProduct hoạt động đúng
+function onclickProduct(event) {
+    // Kiểm tra nếu sự kiện xảy ra từ một phần tử sản phẩm
+    const productElement = event.target.closest('.product_image, .product_name, .product_price');
+    if (!productElement) {
+        return; // Nếu không phải, ngăn chặn việc chuyển trang
+    }
+     /*
+        event.target: Trả về phần tử cụ thể mà người dùng đã nhấp vào.
+        .closest(selector): Phương thức này tìm kiếm trong chuỗi các phần tử cha gần nhất cho phần tử mà đã được nhấp vào
+        (trong trường hợp này là event.target). Nếu phần tử đó khớp với bất kỳ phần tử nào trong chuỗi .product_image, 
+        .product_name, hoặc .product_price, nó sẽ trả về phần tử đó. Nếu không, nó sẽ trả về null.
+         */
+        
+    // Chuyển hướng đến trang chi tiết
+    window.location.href = "details.html"; 
+}
+
+function addClickEventToProducts() {
+    const productElements = document.querySelectorAll('.product_image, .product_name, .product_price');
+    productElements.forEach(function (element) {
+        element.addEventListener('click', onclickProduct);
+    });
 }
