@@ -846,7 +846,8 @@
             "lastName": "Đức Tài",
             "email": "voductai123@gmail.com",
             "pass": "123456",
-            "phoneNum": "0123456789"
+            "phoneNum": "0123456789",
+            "date" : "14/10/2024"
         },
         {
             "id": 2,
@@ -854,7 +855,8 @@
             "lastName": "Thị Kim Hân",
             "email": "ngohan321@gmail.com",
             "pass": "789012",
-            "phoneNum": "0123654891"
+            "phoneNum": "0123654891",
+            "date" : "14/10/2024"
         },
         {
             "id": 3,
@@ -862,7 +864,8 @@
             "lastName": "Viết Tiến",
             "email": "hotien012@gmail.com",
             "pass": "098765",
-            "phoneNum": "9876543210"
+            "phoneNum": "9876543210",
+            "date" : "14/10/2024"
         },
         {
             "id": 4,
@@ -870,7 +873,8 @@
             "lastName": "Thị Thuỷ",
             "email": "bnuochthuy456@gmail.com",
             "pass": "123456",
-            "phoneNum": "2106549876"
+            "phoneNum": "2106549876",
+            "date" : "14/10/2024"
         },
         {
             "id": 5,
@@ -878,7 +882,8 @@
             "lastName": "Chăng",
             "email": "changcoor777@gmail.com",
             "pass": "987654",
-            "phoneNum": "0987123456"
+            "phoneNum": "0987123456",
+            "date" : "14/10/2024"
         }
     ],
     "featuredDishes": [
@@ -952,7 +957,7 @@
         "id": 1,
         "foodName": ["Chả Cá Thát Lát", "Tôm Sú Nướng Phô Mai"],
         "amount": "324.000đ",
-        "time": "12:00",
+        "time": "12:00, 10/10/2024",
         "customerName": "Võ Đức Tài",
         "phoneNumber": "0393907372",
         "address": "Đà Nẵng"
@@ -966,7 +971,7 @@
             "phoneNumber": "0393907372",
             "tableNumber": [2, 3, 4],
             "time": "12:00",
-            "date": "10/10/2024"
+            "date":  "10/10/2024"
         }
     ],
     "carts":[

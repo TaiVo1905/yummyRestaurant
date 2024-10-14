@@ -1,5 +1,5 @@
 .order_success_modal {
-    /* display: none; */
+    display: none;
     position: fixed;
     z-index: 15;
     padding-top: 100px;
