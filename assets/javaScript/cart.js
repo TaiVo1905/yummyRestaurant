@@ -2,7 +2,7 @@
 import getDataLocalStorage, {setDataLocalStorage} from "../javaScript/localStorage.js";
 const data = getDataLocalStorage()
 
-
+//Hiển thị sản phẩm 
 function displayCart(data){
      // Truy xuất đến phần tử có ID 'menu_body'
      const cartTable = document.getElementById('menu_body');
@@ -49,15 +49,18 @@ displayCart(data)
 function updateCartTotal() {
     const cartRows = document.querySelectorAll('.cart_form_products');
     let total = 0;
+    //Chạy qua các row
     cartRows.forEach(function(row) {
         const priceElement = row.querySelector('.product_price');
         const quantityElement = row.querySelector('.product_quantity input[type=number]');
         const subtotalElement = row.querySelector('.product_subtotal');
-        
+
+        //Thay đổi 'đ' thành khoảng trắng để lấy số và tính tổng
         const price = parseFloat(priceElement.innerText.replace('đ', '').replace('.', ''));
         const quantity = quantityElement.value;
         const subtotal = price * quantity;
 
+        //Khi tính tổng xong chuyển sang dạng chuỗi để thêm chữ 'đ
         subtotalElement.innerText = subtotal.toLocaleString() + 'đ';    
         total += subtotal;
     });
@@ -69,15 +72,18 @@ function updateCartTotal() {
 //Hàm kiểm tra nếu giỏ hàng trống
 function checkIfCartIsEmpty() {
     const cartRows = document.querySelectorAll('.cart_form_products');
+
     if(cartRows.length === 0) {
+        // Ẩn phần giỏ hàng và hiển thị thông báo trống
         document.querySelector('.cart_container').style.display = 'none';
 
-        //Hiển thị thông báo
-        const announcementCart = document.getElementById('announcement');
+
+        // //Hiển thị thông báo
+        const announcementCart = document.getElementById('cart_announcement');
         announcementCart.innerHTML = 'Chưa có sản phẩm nào trong giỏ hàng.';
-        announcementCart.style.display = 'block';//Hiển thị thông báo
+        announcementCart.style.display = 'block';//Hiển thị thông báo.
     } else {
-        document.getElementById('announcement').style.display = 'none';
+        document.getElementById('cart_announcement').style.display = 'none';
         document.querySelector('.cart_container').style.display = 'flex';
     }
 }
@@ -146,4 +152,4 @@ document.addEventListener('DOMContentLoaded', function() {
     checkIfCartIsEmpty();
 });
 
-///localStorage.clear() Hiển thị lại sản phẩm
+localStorage.clear() //Hiển thị lại sản phẩm

@@ -27,6 +27,14 @@
     color: #7a9c59;
 }
 
+.cart_empty_space {
+    height: 300px; /* Tùy chỉnh chiều cao */
+    display: none; /* Mặc định ẩn */
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+}
+
 /* Container */
 .cart_container {
     display: flex;
