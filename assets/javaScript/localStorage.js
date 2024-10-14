@@ -14,4 +14,5 @@ function saveData() {
         } 
     })
 }
+// localStorage.clear();
 saveData();
