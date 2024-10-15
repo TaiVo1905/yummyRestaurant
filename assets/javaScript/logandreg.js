@@ -51,6 +51,7 @@ function logIn(){
         const password = this.password.value.trim();
         // Lấy danh sách người dùng từ localStorage
         const users = data.users;
+        console.log(users[0])
         // Kiểm tra thông tin đăng nhập
         const user = users.find(user => user.email === email && user.pass === password);
         if (user) {
