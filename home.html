@@ -28,9 +28,10 @@
                 <div class="search_logo">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <input class="search_input" type="text" placeholder="Search...">
-                <button class="btn_search">Tìm Kiếm</button>
+                <input class="search_input" id="search_input" type="text" placeholder="Search...">
+                <button class="btn_search" id="btn_search">Tìm Kiếm</button>
             </div>
+            <div id="result"></div>
             <div class="header_cart">
                 <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
             </div>
@@ -116,7 +117,7 @@
                 </div>
             </div>
         </div>
-        <div class="logAndReg_modal" id="logAndReg_modal" style="display: none;">
+        <div class="logAndReg_modal" id="logAndReg_modal">
             <div class="containers_logandreg" id="registerContainer">
                 <form id="register_Form">
                     <h1 class="title_register">ĐĂNG KÝ</h1>
