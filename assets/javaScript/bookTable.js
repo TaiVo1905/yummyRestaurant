@@ -94,4 +94,16 @@ window.onclick = function(event) {
     }
 }
 
-
+function handleLogAndRegModal() {
+    const logAndReg = document.getElementById("logAndReg");
+    const logAndReg_modal = document.getElementById("logAndReg_modal");
+    logAndReg.addEventListener('click', (e) => {
+        logAndReg_modal.style.display = 'block';
+    })
+    logAndReg_modal.addEventListener('click', (e) => {
+        if(e.target === logAndReg_modal){
+            logAndReg_modal.style.display = 'none';
+        }
+    })
+}
+handleLogAndRegModal()

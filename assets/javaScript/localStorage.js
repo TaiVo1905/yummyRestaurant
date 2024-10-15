@@ -15,4 +15,5 @@ function saveData() {
     })
 }
 // localStorage.clear();
+// sessionStorage.clear();
 saveData();

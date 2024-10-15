@@ -14,7 +14,9 @@
         <!-- --------------------------------------------------------phần header----------------------------------------------- -->
         <div class="header">
             <div class="header_logo">
-                <!-- <img src="../assets/image/logo.jpg" alt=""> -->
+                <div class="logo">
+                    <!-- <img src="../assets/image/logo.jpg" alt=""> -->
+                </div>
             </div>
             <div class="header_nav">
                 <ul>
@@ -24,19 +26,18 @@
                     <li><a class="active" href="../contact.html">LIÊN HỆ</a></li>
                 </ul>
             </div>
-            <div class="searchBar">
-                <div class="search_logo">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="header-right">
+
+                <div class="searchBar">
+                    <input class="search_input" id="search_input" type="text" placeholder="Search...">
+                    <button class="btn_search" id="btn_search">Tìm Kiếm</button>
                 </div>
-                <input class="search_input" id="search_input" type="text" placeholder="Search...">
-                <button class="btn_search" id="btn_search">Tìm Kiếm</button>
-            </div>
-            <div id="result"></div>
-            <div class="header_cart">
-                <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
-            </div>
-            <div class="header_regiter">
-                <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
+                <div class="header_cart">
+                    <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+                </div>
+                <div class="header_regiter">
+                    <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
+                </div>
             </div>
         </div>
         <!-- ------------------------------------------------phần body------------------------------------------------ -->
@@ -161,6 +162,6 @@
     <script src="../assets/javaScript/localStorage.js" type="module"></script>
     <script src="../assets/javaScript/logandreg.js" type="module"></script>
     <script src="../assets/javaScript/home.js" type="module"></script>
-    <script src="../assets/javaScript/menu.js" type="module"></script>
+    <!-- <script src="../assets/javaScript/menu.js" type="module"></script> -->
 </body>
 </html>
