@@ -131,17 +131,14 @@ function removeCartItem(event) {
     const cartRow = buttonClicked.closest('tr'); // Lấy dòng sản phẩm (row)
     const productName = cartRow.querySelector('.product_name div').innerText; // Lấy tên sản phẩm
 
-
     // Xóa sản phẩm khỏi localStorage
     const updatedCartLocalStorage = data.carts.filter(cart => cart.nameFood !== productName);
     data.carts = updatedCartLocalStorage;// Cập nhật data
     setDataLocalStorage(data); //Cập nhật lại localStrorage
 
-
     cartRow.remove();
     updateCartTotal();
     checkIfCartIsEmpty();
-    adjustCartLayout();
 
     // Hiển thị thông báo tùy chỉnh
     const notification = document.getElementById('delete_notification');
@@ -154,7 +151,6 @@ function removeCartItem(event) {
     }, 2000); // Ẩn thông báo sau 1 giây
     
 }
-
 
 // Hàm thêm sự kiện lắng nghe cho các nút xoá
 function setupRemoveButtons() {
@@ -197,15 +193,4 @@ localStorage.clear() //Hiển thị lại sản phẩm
 
 
 
-// function adjustCartLayout() {
-//     const cartItems = document.querySelectorAll('.cart_form_products');
-//     const cartFormPayments = document.querySelector('.cart_form_payments');
 
-//     if (cartItems.length === 1) {
-//         cartFormPayments.style.marginBottom = '200px'; // Điều chỉnh để form không tràn ra footer
-//     } else {
-//         cartFormPayments.style.marginBottom = '0'; // Reset lại khi có nhiều sản phẩm
-//     }
-// }
-
-// document.addEventListener('DOMContentLoaded', adjustCartLayout);
