@@ -4,42 +4,47 @@ const data = getDataLocalStorage()
 
 //Hiển thị sản phẩm 
 function displayCart(data){
+    const user_ID = sessionStorage.getItem('UserID');
+    const carts = data.carts;
      // Truy xuất đến phần tử có ID 'menu_body'
      const cartTable = document.getElementById('menu_body');
      cartTable.innerHTML = ""; // Xóa các sản phẩm hiện tại trong giỏ hàng
 
-    data.carts.forEach(cart => {
+    let cart_item = carts.filter(cart => {
+        return cart.userId === user_ID;
+    })
+
+    cart_item.forEach(item => {
     // Nội dung HTML của từng dòng sản phẩm
-    cartTable.innerHTML += `
-                <tr class="cart_form_products">
-                      <!-- Xoá sản phẩm đã thêm vào giỏ hàng -->
-                      <td class="product_remove">
-                          <a href="#" class="remove"><i class="fa-regular fa-circle-xmark item_remove"></i></a>
-                      </td>
-                      <td class="product_image appear">
-                          <div class="image"><img src="${cart.image_url}" style="width: 80px; height: 80px;" alt="${cart.nameFood}"></div>
-                      </td>
-                      <td class="product_name appear">
-                          <div>${cart.nameFood}</div>
-                      </td>
-                      <td class="product_price appear">
-                          <div>${cart.price}</div>				
-                      </td>
-                      <!-- Tăng giảm số lượng đơn hàng -->
-                      <td class="product_quantity">
-                          <div class="quantity buttons_added">
-                              <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction" value="-">
-                              <input type="number" value="1" id="number_step" min="1">
-                              <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition" value="+">
-              
-                          </div>
-                      </td>
-                      <td>
+        cartTable.innerHTML += `
+            <tr class="cart_form_products">
+                    <!-- Xoá sản phẩm đã thêm vào giỏ hàng -->
+                    <td class="product_remove">
+                        <a href="#" class="remove"><i class="fa-regular fa-circle-xmark item_remove"></i></a>
+                    </td>
+                    <td class="product_image appear">
+                        <a href="details.html" class="image"><img src="${item.image_url}" style="width: 80px; height: 80px;" alt="${item.nameFood}"></a>
+                    </td>
+                    <td class="product_name appear">
+                        <a href="details.html">${item.nameFood}</a>
+                    </td>
+                    <td class="product_price appear">
+                        <a href="details.html">${item.price}</a>				
+                    </td>
+                    <!-- Tăng giảm số lượng đơn hàng -->
+                    <td class="product_quantity">
+                        <div class="quantity buttons_added">
+                            <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction" value="-">
+                            <input type="number" value="1" id="number_step" min="1">
+                            <input type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition" value="+">
+                        </div>
+                    </td>
+                    <td>
                       <div class="input_note">Cay vừa phải, không ăn được hành, thích mùi vị thơm nồng</div>
-                       </td>
-                      <td class="product_subtotal">${cart.price}				
-                      </td>
-                </tr>
+                     </td>
+                    <td class="product_subtotal appear">${item.price}				
+                    </td>
+            </tr>
       `;
     });
 
@@ -80,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
         element.addEventListener('click', onclickProduct);
     });
 });
-
 
 // Hàm cập nhật tổng tạm tính và tổng giá
 function updateCartTotal() {

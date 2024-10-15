@@ -1,6 +1,6 @@
 import getDataLocalStorage, {setDataLocalStorage} from "../javaScript/localStorage.js";
 const data = getDataLocalStorage();
-let filtered = [];
+let filtered=[];
 // hàm lọc món ăn theo loại và hiển thị dưới dạng bảng
 function filterMenu (){
     const menu = data.menu;
@@ -12,7 +12,6 @@ function filterMenu (){
         filtered = menu.filter(item => {
             return item.type.toLowerCase() === type.toLowerCase();
         })
-
         // nơi hiển thị dữ liệu của menu
         const menuTblBody = document.querySelector("#menu_tbl tbody");
         menuTblBody.innerHTML = ''; // Xóa nội dung cũ
@@ -37,10 +36,10 @@ function filterMenu (){
             </tr> 
             `;
         });
+    addData()
         addCart()
   // Thêm sự kiện nhấp chuột cho các sản phẩm mới
   addClickEventToProducts();
-
     // Nếu không có món ăn nào phù hợp
         if (filtered.length === 0) {
             menuTblBody.innerHTML = `
@@ -51,11 +50,64 @@ function filterMenu (){
         }
     })
 }
-
-
 filterMenu()
 
-// định dạng cho class active hoạt động đúng như mong đợi
+
+function addData(){
+    document.querySelectorAll('.btn_add').forEach(button=>{
+        // gắn sự kiện onclick cho các nút button "thêm vào giỏ hàng"
+        button.addEventListener('click', function(){
+            // lấy id của nút gán cho foodID
+            const foodID = parseInt(this.id.split('-')[1]); 
+            
+            const foodQuantity = document.querySelector(`#input_sl-${foodID}`).value;
+            const foodNote = document.querySelector(`#input_note-${foodID}`).value;
+            // lấy dữ liệu 
+            
+            const foodItem = filtered.find(item =>{
+                return item.id === foodID;
+            })
+            const userID = sessionStorage.getItem('UserID');
+            // kiểm tra nếu chưa có userID tức là chưa đăng nhập thành công
+            if(!userID){
+                let userConfirmed = confirm("Bạn chưa đăng nhập. Bạn có muốn đăng nhập hoặc đăng ký không?");
+                if (userConfirmed) {
+                        document.getElementById('logAndReg_modal').style.display = 'block';
+                        document.getElementById('register_Form').style.display = 'block';
+                        document.getElementById('login_Form').style.display = 'block';
+                } else {
+                    alert("Hãy đăng nhập để thêm món vào giỏ hàng.");
+                }
+            }
+            else{
+                const cartItem = {
+                    userId: userID,
+                    nameFood: foodItem.name,
+                    image_url: foodItem.image_url,
+                    price: foodItem.price,
+                    food_Number: parseInt(foodQuantity),
+                    food_Note: foodNote
+                }
+                // Kiểm tra xem có trong cart có chưa. Nếu có rồi thì tăng số lượng
+                let itemIndex = data.carts.findIndex(item =>{
+                    return item.nameFood === foodItem.name;
+                })
+    
+                if (itemIndex !== -1){
+                    data.carts[itemIndex].food_Number += cartItem.food_Number;
+                    // alert("Bạn thêm thành công!")
+                }
+                else{
+                    data.carts.push(cartItem);
+                    // alert("Thêm thành công!")
+                }
+                setDataLocalStorage(data);
+            }
+            
+        })
+    })
+}
+// định dạng cho class active hoạt động đúng như mong đợi (MẶC ĐỊNH)
 document.querySelectorAll('#menu_list a').forEach(category => {
     category.addEventListener('click', function(e){
         e.preventDefault();
@@ -74,7 +126,7 @@ document.querySelectorAll('#menu_list a').forEach(category => {
     - thêm class active vào thẻ a hiện tại (this.classList.add('active'))
 */
 
-// lấy category khai vị làm mặc định khi tải trang
+// lấy category khai vị làm mặc định khi tải trang (MẶC ĐỊNH)
 window.addEventListener('load',()=>{
     const defaultPage = document.querySelector('#menu_list a');
     if (defaultPage){
