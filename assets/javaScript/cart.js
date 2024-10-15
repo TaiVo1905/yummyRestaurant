@@ -11,7 +11,7 @@ function displayCart(data){
      cartTable.innerHTML = ""; // Xóa các sản phẩm hiện tại trong giỏ hàng
 
     const cart_item = carts.filter(cart => {
-        return cart.userId === user_ID;
+        return cart.userId == user_ID;
     })
 
     cart_item.forEach(item => {
@@ -133,7 +133,7 @@ function checkIfCartIsEmpty() {
 function removeCartItem(event) {
     const buttonClicked = event.target;
     const cartRow = buttonClicked.closest('tr'); // Lấy dòng sản phẩm (row)
-    const productName = cartRow.querySelector('.product_name div').innerText; // Lấy tên sản phẩm
+    const productName = cartRow.querySelector('.product_name a').innerText; // Lấy tên sản phẩm
 
 
     // Xóa sản phẩm khỏi localStorage
