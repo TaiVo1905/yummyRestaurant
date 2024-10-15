@@ -5,112 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/image/logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="../assets/home.css">
+    <link rel="stylesheet" href="../assets/logandreg.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="../assets/javaScript/home.js">
     <title>Yummy Restaurant</title>
 </head>
-<body>
+<body style="margin-top: 42px;">
     <div class="container">
         <!-- --------------------------------------------------------phần header----------------------------------------------- -->
         <div class="header">
             <div class="header_logo">
-                <!-- <img src="../assets/image/logo.jpg" alt=""> -->
+                <div class="logo">
+                    <!-- <img src="../assets/image/logo.jpg" alt=""> -->
+                </div>
             </div>
             <div class="header_nav">
                 <ul>
-                    <li><a class="active">TRANG CHỦ</a></li>
+                    <li><a class="active" href="../home.html">TRANG CHỦ</a></li>
                     <li><a class="active" href="../menu.html">THỰC ĐƠN</a></li>
-                    <li><a class="active" href="#">ĐẶT BÀN</a></li>
+                    <li><a class="active" href="../bookTable.html">ĐẶT BÀN</a></li>
                     <li><a class="active" href="../contact.html">LIÊN HỆ</a></li>
                 </ul>
             </div>
-            <div class="searchBar">
-                <div class="search_logo">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="header-right">
+
+                <div class="searchBar">
+                    <input class="search_input" id="search_input" type="text" placeholder="Search...">
+                    <button class="btn_search" id="btn_search">Tìm Kiếm</button>
                 </div>
-                <input class="search_input" type="text" placeholder="Search...">
-            </div>
-            <div class="header_cart">
-                <i class="cart_logo fa-solid fa-cart-shopping"></i>
-            </div>
-            <div class="header_regiter">
-                <i class="regiter_logo fa-solid fa-user"></i>
+                <div class="header_cart">
+                    <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+                </div>
+                <div class="header_regiter">
+                    <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
+                </div>
             </div>
         </div>
         <!-- ------------------------------------------------phần body------------------------------------------------ -->
         <div class="body_slider">
-            <img src="../assets/image/ảnh_slider.jpg" alt="">
+            <div class="slider">
+                <div class="slide">
+                    <img src="/assets/image/ảnh_slider.jpg" alt="Slide 1">
+                </div>
+                <div class="slide">
+                    <img src="/assets/image/ảnh2_slider.jpg" alt="Slide 2">
+                </div>
+                <div class="slide">
+                    <img src="/assets/image/ảnh3_slider.jpg" alt="Slide 3">
+                </div>
+                <div class="slide">
+                    <img src="/assets/image/ảnh4_slider.jpg" alt="Slide 4">
+                </div>
+            </div>
         </div>
         <div class="body_text">
             <hr class="body_line">
             <span>MÓN ĂN NỔI BẬT</span>
             <hr class="body_line">
-        </div>        
-        <div class="body_menu">
-                <div class="menu_card">
-                    <div class="card_dish">
-                        <img src="../assets/image/bò cuộn nấm.jpg" alt="">
-                    </div>
-                    <h5>Ba Chỉ Bò Cuộn Nấm</h5>
-                    <h6>129.000đ</h6>
-                    <button>Thêm vào giỏ hàng</button>
-                </div>
-                <div class="menu_card">
-                    <div class="card_dish">
-                        <img src="../assets/image/tôm nướng.jpg" alt="">
-                    </div>
-                    <h5>Tôm Sú Nướng Phô Mai</h5>
-                    <h6>205.000đ</h6>
-                    <button>Thêm vào giỏ hàng</button>
-                </div>
-                <div class="menu_card">
-                    <div class="card_dish">
-                        <img src="../assets/image/gỏi cá.jpg" alt="">
-                    </div>
-                    <h5>Gỏi Cá Hoàng Triều Thái</h5>
-                    <h6>118.000đ</h6>
-                    <button>Thêm vào giỏ hàng</button>
-                </div>
-                <div class="menu_card">
-                    <div class="card_dish">
-                        <img src="../assets/image/bít tết.jpg" alt="">
-                    </div>
-                    <h5>Bò Bifteck Kiểu Hoàng Kim</h5>
-                    <h6>185.000đ</h6>
-                    <button>Thêm vào giỏ hàng</button>
-                </div>
-                <div class="menu_card">
-                    <div class="card_dish">
-                        <img src="../assets/image/gà nấu nấm.jpg" alt="">
-                    </div>
-                    <h5>Gà Nấu Nấm Đông Cô</h5>
-                    <h6>192.000đ</h6>
-                    <button>Thêm vào giỏ hàng</button>
-                </div>
-                <div class="menu_card">
-                    <div class="card_dish">
-                        <img src="../assets/image/salad cá hồi.jpg" alt="">
-                    </div>
-                    <h5>Salad Cá Hồi Thượng Hạng</h5>
-                    <h6>110.000đ</h6>
-                    <button>Thêm vào giỏ hàng</button>
-                </div>
-                <div class="menu_card">
-                    <div class="card_dish">
-                        <img src="../assets/image/soup bào ngư.jpg" alt="">
-                    </div>
-                    <h5>Soup Bào Ngư Vi Cá</h5>
-                    <h6>300.000đ</h6>
-                    <button>Thêm vào giỏ hàng</button>
-                </div>
-                <div class="menu_card">
-                    <div class="card_dish">
-                        <img src="../assets/image/tôm hùm.jpg" alt="">
-                    </div>
-                    <h5>Tôm Hùm Sốt Phô Mai</h5>
-                    <h6>395.000đ</h6>
-                    <button>Thêm vào giỏ hàng</button>
-                </div>
+        </div>
+        <div class="body_menu" id="body-menu">
+                <!-- LẤY DỮ LIỆU JSON -->
         </div>
         <div class="body_text">
             <hr class="body_line">
@@ -165,6 +118,50 @@
                 </div>
             </div>
         </div>
+        <div class="logAndReg_modal" id="logAndReg_modal">
+            <div class="containers_logandreg" id="registerContainer">
+                <form id="register_Form">
+                    <h1 class="title_register">ĐĂNG KÝ</h1>
+                    <div class="input_register">
+                        <i class="fa-solid fa-user register_icon"></i>
+                        <input type="text" name="lastName" class="register_lastName" placeholder="Họ" required>
+                    </div>
+                    <div class="input_register">
+                    <i class="fa-solid fa-user register_icon"></i>
+                        <input type="text" name="firstName" class="register_firstName" placeholder="Tên" required>
+                    </div>
+                    <div class="input_register">
+                        <i class="fa-solid fa-envelope register_icon"></i>
+                        <input type="email" name="email" class="register_email" placeholder="Email của bạn" required>
+                    </div>
+                    <div class="input_register">
+                        <i class="fa-solid fa-lock register_icon"></i>
+                        <input type="password" name="password" class="register_password" placeholder="Nhập mật khẩu" required>
+                    </div>
+                    <button type="submit" class="register_button">Đăng ký</button>
+                    <div class="register_prompt">Bạn đã có tài khoản? <a href="#" id="switchToLogin">Đăng nhập</a></div>
+                </form>
+            </div>
+            <div class="containers_logandreg" id="loginContainer" style="display: none;">
+                <form id="login_Form">
+                    <h1 class="title_login">ĐĂNG NHẬP</h1>
+                    <div class="input_login">
+                        <i class="fa-solid fa-envelope login_icon"></i>
+                        <input type="email" name="email" class="login_email" placeholder="Email của bạn" required>
+                    </div>
+                    <div class="input_login">
+                        <i class="fa-solid fa-lock login_icon"></i>
+                        <input type="password" name="password" class="login_password" placeholder="Nhập mật khẩu" required>
+                    </div>
+                    <button type="submit" class="login_button">Đăng nhập</button>
+                    <div class="login_prompt">Bạn chưa có tài khoản? <a href="#" id="switchToRegister">Đăng ký</a></div>
+                </form>
+            </div>
+        </div>
     </div>
+    <script src="../assets/javaScript/localStorage.js" type="module"></script>
+    <script src="../assets/javaScript/logandreg.js" type="module"></script>
+    <script src="../assets/javaScript/home.js" type="module"></script>
+    <!-- <script src="../assets/javaScript/menu.js" type="module"></script> -->
 </body>
 </html>
