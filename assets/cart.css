@@ -85,6 +85,10 @@
     padding: 3px;
 }
 
+.cart_form_products td, .cart_form_products td div {
+    text-align: center;
+}
+
 .cart_form_products .product_price, 
 .cart_form_products .product_subtotal {
     font-weight: bold;
@@ -109,6 +113,7 @@ a {
     width: 100%;
     margin-top: 40px;
     border-right: 3px solid #e0e0e0;
+    border-collapse: collapse;
 }
 
 .cart_table  th, td {
@@ -127,7 +132,13 @@ img {
 /* Note */
 .input_note {
     padding: 10px;
-    width: 200px;
+    resize: none;
+    height: 90.8px;
+    width: 100%;
+    border: none;
+    scrollbar-width: none;
+    --webkit-appearance: none;
+    outline: none;
 }
 
 /* Tăng giảm số lượng đơn hàng */

@@ -62,45 +62,54 @@ function addData(){
             
             const foodQuantity = document.querySelector(`#input_sl-${foodID}`).value;
             const foodNote = document.querySelector(`#input_note-${foodID}`).value;
+            console.log(foodNote)
             // lấy dữ liệu 
             
             const foodItem = filtered.find(item =>{
                 return item.id === foodID;
             })
-            const userID = sessionStorage.getItem('UserID');
+            const userID = parseInt(sessionStorage.getItem('UserID'));
             // kiểm tra nếu chưa có userID tức là chưa đăng nhập thành công
             if(!userID){
                 const userConfirmed = confirm("Bạn chưa đăng nhập. Bạn có muốn đăng nhập hoặc đăng ký không?");
                 if (userConfirmed) {
                         document.getElementById('logAndReg_modal').style.display = 'block';
-                        document.getElementById('register_Form').style.display = 'block';
-                        document.getElementById('login_Form').style.display = 'block';
                 } else {
                     alert("Hãy đăng nhập để thêm món vào giỏ hàng.");
                 }
             }
             else{
                 const cartItem = {
-                    userId: userID,
-                    nameFood: foodItem.name,
-                    image_url: foodItem.image_url,
-                    price: foodItem.price,
-                    food_Number: parseInt(foodQuantity),
-                    food_Note: foodNote
+                    "userId": userID,
+                    "nameFood": foodItem.name,
+                    "type": foodItem.type,
+                    "image_url": foodItem.image_url,
+                    "price": foodItem.price,
+                    "food_Qty": parseInt(foodQuantity),
+                    "describe": foodItem.describe,
+                    "food_Note": foodNote
                 }
                 // Kiểm tra xem có trong cart có chưa. Nếu có rồi thì tăng số lượng
                 let itemIndex = data.carts.findIndex(item =>{
                     return item.nameFood === foodItem.name;
                 })
-    
+                console.log(cartItem.food_Note)
                 if (itemIndex !== -1){
-                    data.carts[itemIndex].food_Number += cartItem.food_Number;
-                    alert("Bạn thêm thành công!")
+                    data.carts[itemIndex].food_Qty = parseInt(data.carts[itemIndex].food_Qty) + cartItem.food_Qty;
+                    console.log(data.carts[itemIndex].food_Note, cartItem.food_Note)
+                    if ((data.carts[itemIndex].food_Note !== "") && (cartItem.food_Note == "")) {
+                        cartItem.food_Note = data.carts[itemIndex].food_Note;
+                    } else {
+                        data.carts[itemIndex].food_Note = cartItem.food_Note;
+                    }
+                    // alert("Bạn thêm thành công!")
                 }
                 else{
                     data.carts.push(cartItem);
-                    alert("Thêm thành công!")
+                    // alert("Thêm thành công!")
                 }
+                document.querySelector(`#input_sl-${foodID}`).value = 1;
+                document.querySelector(`#input_note-${foodID}`).value = "";
                 setDataLocalStorage(data);
             }
             
@@ -136,7 +145,7 @@ window.addEventListener('load',()=>{
 })
 
 // Khi click vào nút "Thêm vào giỏ hàng"
-console.log(document.querySelectorAll('.btn_add'))
+// console.log(document.querySelectorAll('.btn_add'))
 // function addCart() {
 //     document.querySelectorAll('.btn_add').forEach(button=>{
 //         // gắn sự kiện onclick cho các nút button "thêm vào giỏ hàng"

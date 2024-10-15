@@ -37,7 +37,7 @@ body{
     font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
 }
-#btn_search{
+#frm_research #btn_search{
     margin-top: 30px;
     margin-left: 50%;
     transform: translateX(-50%);
