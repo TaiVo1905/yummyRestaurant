@@ -29,5 +29,28 @@ function handleLogAndRegModal() {
         }
     })
 }
+
+function search_menu(){  
+    const btn_search = document.getElementById('btn_search');
+    btn_search.addEventListener('click', function(){
+        const search_item = document.getElementById('search_input').value; 
+        const search_result = allData.menu.find(item => {
+            return item.name.toLowerCase() === search_item.toLowerCase(); // So sánh không phân biệt chữ hoa/thường
+        })
+
+        if(search_result){
+            // Lưu kết quả vào sessionStorage
+            sessionStorage.setItem('searchResult', JSON.stringify(search_result));
+            // Chuyển hướng sang trang searchResults.html
+            window.location.href = 'searchResults.html';
+        }
+        else{
+            // Hiển thị thông báo lỗi nếu không tìm thấy
+            document.getElementById('result').innerHTML = "Không tìm thấy sản phẩm trong hệ thống menu của nhà hàng YUMMY!";
+        }
+    });  
+}
+
 handleLogAndRegModal();
 renderFeaturedDishes(allData);
+search_menu();
