@@ -53,8 +53,7 @@ function logIn(){
         const users = data.users;
         console.log(users[0])
         // Kiểm tra thông tin đăng nhập
-        const user = users.find(user => (user.email === email && user.pass === password));
-        console.log(user)
+        const user = users.find(user => user.email === email && user.pass === password);
         if (user) {
             alert('Đăng nhập thành công!');
             // lưu userID vào sessionStorage 

@@ -102,6 +102,10 @@ input::-webkit-inner-spin-button {
     background-color: orangered;
     border: none;
     border-radius: 8px;
+    cursor: pointer;
+}
+.btn_add:active{
+    background-color: rgb(230, 159, 133);
 }
 /* CSS màu background cho các row */
 /* Các hàng lẽ */
