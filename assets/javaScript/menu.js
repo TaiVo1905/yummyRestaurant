@@ -1,24 +1,46 @@
 import getDataLocalStorage, {setDataLocalStorage} from "../javaScript/localStorage.js";
 const data = getDataLocalStorage();
 let filtered=[];
-// hàm lọc món ăn theo loại và hiển thị dưới dạng bảng
-function filterMenu (){
+// Hàm lọc món ăn theo loại và hiển thị dưới dạng bảng
+function filterMenu() {
     const menu = data.menu;
     const menu_list = document.querySelector('#menu_list');
     menu_list.addEventListener('click', (e) => {
         const type = e.target.textContent;
-        // console.log(type, menu);
-        // lọc món ăn theo loại
+        // Lọc món ăn theo loại
         filtered = menu.filter(item => {
             return item.type.toLowerCase() === type.toLowerCase();
-        })
-        // nơi hiển thị dữ liệu của menu
-        const menuTblBody = document.querySelector("#menu_tbl tbody");
-        menuTblBody.innerHTML = ''; // Xóa nội dung cũ
-    
-        // hiển thị các món đã lọc được
-        filtered.forEach(item => {
-            menuTblBody.innerHTML += `
+        });
+
+        // Hiển thị menu theo loại đã lọc
+        displayFilteredMenu();
+    });
+
+    // Thêm sự kiện cho nút tìm kiếm
+    const searchButton = document.querySelector('#searchButton');
+    searchButton.addEventListener('click', searchMenu);
+
+    // Thêm sự kiện cho nút reset tìm kiếm
+    const resetSearch = document.querySelector('#resetSearch');
+    resetSearch.addEventListener('click', resetSearchMenu);
+
+    // Tải menu mặc định khi trang tải
+    const defaultPage = document.querySelector('#menu_list a');
+    if (defaultPage) {
+        defaultPage.click();
+    }
+}
+
+filterMenu();
+
+// Hàm hiển thị món ăn đã lọc
+function displayFilteredMenu() {
+    const menuTblBody = document.querySelector("#menu_tbl tbody");
+    menuTblBody.innerHTML = ''; // Xóa nội dung cũ
+
+    filtered.forEach(item => {
+        menuTblBody.innerHTML += `
+            <tr>
                 <td class="product_image"><img src="${item.image_url}" alt="${item.name}" width="100px" height="100px"></td>
                 <td class="product_name">${item.name}</td>
                 <td class="product_price">${item.price}</td>
@@ -34,23 +56,36 @@ function filterMenu (){
                 </td>
                 <td><button class="btn_add" id="btn_add-${item.id}">Thêm vào giỏ hàng</button></td>
             </tr> 
-            `;
-        });
-    addData()
-        addCart()
-  // Thêm sự kiện nhấp chuột cho các sản phẩm mới
-  addClickEventToProducts();
-    // Nếu không có món ăn nào phù hợp
-        if (filtered.length === 0) {
-            menuTblBody.innerHTML = `
-                <tr>
-                    <td colspan="6">Không có món nào thuộc loại này.</td>
-                </tr>
-            `;
-        }
-    })
+        `;
+    });
+
+    addData();
+    addCart();
+    addClickEventToProducts();
 }
-filterMenu()
+
+// Tìm kiếm món ăn khi người dùng nhấn nút "Tìm"
+function searchMenu() {
+    const searchQuery = document.querySelector('#searchInput').value.toLowerCase();
+    const menu = data.menu;
+    filtered = menu.filter(item => {
+        return item.name.toLowerCase().includes(searchQuery); // Tìm món ăn có chứa từ khóa
+    });
+    
+    // Hiển thị kết quả tìm kiếm
+    displayFilteredMenu();
+}
+
+// Reset lại tìm kiếm và làm mới menu
+function resetSearchMenu() {
+    const searchInput = document.querySelector('#searchInput');
+    searchInput.value = ''; // Xóa giá trị tìm kiếm
+    filtered = []; // Reset mảng lọc
+
+    // Hiển thị lại toàn bộ menu (không lọc)
+    displayFilteredMenu();
+}
+
 
 
 function addData(){
@@ -126,14 +161,14 @@ document.querySelectorAll('#menu_list a').forEach(category => {
     - thêm class active vào thẻ a hiện tại (this.classList.add('active'))
 */
 
-// lấy category khai vị làm mặc định khi tải trang (MẶC ĐỊNH)
-window.addEventListener('load',()=>{
-    const defaultPage = document.querySelector('#menu_list a');
-    if (defaultPage){
-        defaultPage.click();
-        // mô phỏng quá trình click. Tức là khi tải trang nó sẽ tự động click vào thẻ a đầu tiên mà không cần người dùng click vào.
-    }
-})
+// // lấy category khai vị làm mặc định khi tải trang (MẶC ĐỊNH)
+// window.addEventListener('load',()=>{
+//     const defaultPage = document.querySelector('#menu_list a');
+//     if (defaultPage){
+//         defaultPage.click();
+//         // mô phỏng quá trình click. Tức là khi tải trang nó sẽ tự động click vào thẻ a đầu tiên mà không cần người dùng click vào.
+//     }
+// })
 
 // Khi click vào nút "Thêm vào giỏ hàng"
 console.log(document.querySelectorAll('.btn_add'))
