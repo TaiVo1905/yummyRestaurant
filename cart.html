@@ -14,7 +14,9 @@
     <!-- --------------------------------------------------------phần header----------------------------------------------- -->
     <div class="header">
         <div class="header_logo">
-            <!-- <img src="../assets/image/logo.jpg" alt=""> -->
+            <div class="logo">
+                <!-- <img src="../assets/image/logo.jpg" alt=""> -->
+            </div>
         </div>
         <div class="header_nav">
             <ul>
@@ -24,24 +26,25 @@
                 <li><a class="active" href="../contact.html">LIÊN HỆ</a></li>
             </ul>
         </div>
-        <div class="searchBar">
-            <div class="search_logo">
-                <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="header-right">
+
+            <div class="searchBar">
+                <input class="search_input" id="search_input" type="text" placeholder="Search...">
+                <button class="btn_search" id="btn_search">Tìm Kiếm</button>
             </div>
-            <input class="search_input" type="text" placeholder="Search...">
-        </div>
-        <div class="header_cart">
-            <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="header_regiter">
-            <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
+            <div class="header_cart">
+                <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="header_regiter">
+                <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
+            </div>
         </div>
     </div>
     <!-- Tiếp tục xem giỏ hàng -->
     <div class="cart_header">
         <div class="button_continue">
             <a href="./menu.html">
-                <button type="reset" class="continue"><i class="fa-solid fa-arrow-left"></i>TIẾP TỤC XEM SẢN PHẨM</button>
+                <button class="continue"><i class="fa-solid fa-arrow-left"></i>TIẾP TỤC XEM SẢN PHẨM</button>
             </a>
         </div>
         <!-- In ra thông báo -->
@@ -57,7 +60,8 @@
             <table class="cart_table">
                 <thead>
                     <tr>
-                        <th class="product_name" colspan="3">Sản phẩm</th>
+                        <th class="img_" colspan="2" style="text-align: end;padding-right: 42px;">Ảnh</th>
+                        <th class="product_name" >Món ăn</th>
                         <th class="product_price">Giá</th>
                         <th class="product_quantity">Số lượng</th>
                         <th class="note">Ghi chú</th>
