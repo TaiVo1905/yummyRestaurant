@@ -39,7 +39,7 @@
             <a class="" id="admin_users" href="../admin.html?page=User Management">Quản lý người dùng</a>
         </div>
         <!-- Quản lý món ăn -->
-        <div class="admin_food">
+        <div class="admin_food" style="display: block;">
             <!-- Table items -->
             <div class="admin_food_content">
                 <div class="title">
@@ -92,7 +92,7 @@
                                     <input type="text" name="itemImgText" id="itemImgText" placeholder="Nhập link ảnh ở đây..." required>
                                     <label for="itemImg" title="Thêm ảnh"><i id="uploadFile" class="fa-solid fa-upload"></i></label>
                                 </div>
-                                <input type="file" name="itemImg" id="itemImg" style="display: none;" required>
+                                <input type="file" name="itemImg" id="itemImg" style="display: none;">
                                 <div id="modal_show_img"></div>
                             </div>
                             <div class="modal_input">
@@ -104,7 +104,7 @@
                                 <input type="number" name="itemPrice" id="itemPrice" placeholder="Nhập giá tiền..." min="0" required>
                             </div>
                             <div class="modal_button">
-                                <input type="submit" id="addItem" onclick="addFood()">
+                                <input type="submit" id="addItem">
                                 <input type="reset" id="resetInput">
                             </div>
                         </form>

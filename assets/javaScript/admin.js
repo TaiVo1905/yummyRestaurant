@@ -13,26 +13,28 @@ const bookTable = $('.admin_bookTables #admin_items');
 const userTable = $('.admin_users #admin_items');
 
 
-const data = getDataLocalStorage()
+const data = getDataLocalStorage();
 
 function renderFood(menu) {
     menu.forEach(food => {
-        foodTable.innerHTML += `
-            <tr>
-                <td>${food.id}</td>
-                <td>${food.name}</td>
-                <td>${food.type}</td>
-                <td>${food.describe}</td>
-                <td>
-                    <div class="item_img" style="background-image: url(${food.image_url});"></div>
-                </td>
-                <td>${food.price}</td>
-                <td>
-                    <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
-                    <i class="fa-solid fa-trash-can-arrow-up" title="Xóa">
-                    </i></td>
-            </tr>
-        `
+        if (food.name != '') {
+            foodTable.innerHTML += `
+                <tr>
+                    <td>${food.id}</td>
+                    <td>${food.name}</td>
+                    <td>${food.type}</td>
+                    <td>${food.describe}</td>
+                    <td>
+                        <div class="item_img" style="background-image: url(${food.image_url});"></div>
+                    </td>
+                    <td>${food.price}</td>
+                    <td>
+                        <i class="fa-solid fa-pen-to-square" id="update" title="Chỉnh sửa"></i>
+                        <i class="fa-solid fa-trash-can-arrow-up" id="delete" title="Xóa">
+                        </i></td>
+                </tr>
+            `
+        }
     });
 
 
@@ -41,42 +43,46 @@ console.log(foodTable);
 
 function renderOrders(orders) {
     orders.forEach(order => {
-    orderTable.innerHTML += `
-        <tr>
-                <td>${order.id}</td>
-                <td>${order.foodName.join(", ")}</td>
-                <td>${order.amount}</td>
-                <td>${order.time}</td>
-                <td>${order.customerName}</td>
-                <td>${order.phoneNumber}</td>
-                <td>${order.address}</td>
-                <td>
-                    <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
-                    <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
-                </td>
-            </tr>
-    `
+        if (order.foodName != '') {
+            orderTable.innerHTML += `
+                <tr>
+                        <td>${order.id}</td>
+                        <td>${order.foodName.join(", ")}</td>
+                        <td>${order.amount}</td>
+                        <td>${order.time}</td>
+                        <td>${order.customerName}</td>
+                        <td>${order.phoneNumber}</td>
+                        <td>${order.address}</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square" id="update" title="Chỉnh sửa"></i>
+                            <i class="fa-solid fa-trash-can-arrow-up" id="delete" title="Xóa"></i>
+                        </td>
+                    </tr>
+            `
+        }
 });
 
 }
 
 function renderBookTable(bookTables) {
     bookTables.forEach(bookTb => {
-    bookTable.innerHTML += `
-        <tr>
-            <td>${bookTb.id}</td>
-            <td>${bookTb.customerName}</td>
-            <td>${bookTb.email}</td>
-            <td>${bookTb.phoneNumber}</td>
-            <td>${bookTb.tableNumber.join(", ")}</td>
-            <td>${bookTb.time}</td>
-            <td>${bookTb.date}</td>
-            <td>
-                <i class="fa-solid fa-pen-to-square" title="Chỉnh sửa"></i>
-                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
-            </td>
-        </tr>
-    `
+        if (bookTb.customerName != '') {
+            bookTable.innerHTML += `
+                <tr>
+                    <td>${bookTb.id}</td>
+                    <td>${bookTb.customerName}</td>
+                    <td>${bookTb.email}</td>
+                    <td>${bookTb.phoneNumber}</td>
+                    <td>${bookTb.tableNumber.join(", ")}</td>
+                    <td>${bookTb.time}</td>
+                    <td>${bookTb.date}</td>
+                    <td>
+                        <i class="fa-solid fa-pen-to-square" id="update" title="Chỉnh sửa"></i>
+                        <i class="fa-solid fa-trash-can-arrow-up" id="delete" title="Xóa"></i>
+                    </td>
+                </tr>
+            `
+        }
 });
 }
 
@@ -92,7 +98,7 @@ function renderUser(users) {
             <td>${user.date}</td>
             <td>
                 <i></i>
-                <i class="fa-solid fa-trash-can-arrow-up" title="Xóa"></i>
+                <i class="fa-solid fa-trash-can-arrow-up" id="delete" title="Xóa"></i>
             </td>
         </tr>
     `
@@ -124,14 +130,8 @@ function handleDisplayAdminTable () {
             e.target.classList.add('active');
             $(`.${e.target.id}`).style.display = "block";
             $(`.${e.target.id}`).querySelector('.admin_tb_thead').style.display = "table";
-            foodTable.innerHTML = '';
-            orderTable.innerHTML = '';
-            bookTable.innerHTML = '';
-            userTable.innerHTML = '';
-            renderFood(data.menu);
-            renderOrders(data.orders);
-            renderBookTable(data.bookTables);
-            renderUser(data.users);
+            renderData(data);
+
         } 
     })
 }
@@ -144,6 +144,7 @@ function search(data) {
     const admin_food = $('.admin_food');
     const admin_orders = $('.admin_orders');
     const admin_bookTables = $('.admin_bookTables');
+    const admin_users = $('.admin_users');
     
     admin_find.addEventListener('click', () => {
         const searchValue = admin_inputSearch.value;
@@ -159,7 +160,7 @@ function search(data) {
                 const ordersSearch = data.orders.filter(order => {
                     return order.foodName.includes(searchValue) || order.customerName.includes(searchValue) || order.address.includes(searchValue);
                 })
-                bookTable.innerHTML = '';
+                orderTable.innerHTML = '';
                 renderOrders(ordersSearch);
             } else if (admin_bookTables.style.display === "block"){
                 const bookTablesSearch = data.bookTables.filter(bookTable => {
@@ -167,20 +168,111 @@ function search(data) {
                 })
                 bookTable.innerHTML = '';
                 renderBookTable(bookTablesSearch);
+            } else if (admin_users.style.display === "block"){
+                const userSearch = data.users.filter(user => {
+                    return user.firstName.includes(searchValue) || user.lastName.includes(searchValue) || user.email.includes(searchValue)
+                })
+                userTable.innerHTML = '';
+                renderBookTable(userSearch);
             }
+        } else {
+            renderData(data);
         }
-        console.log(1)
     })
 
 }
 
+function addItems(data) {
+    const form = $('.form--modal');
+    // const submit = $('#addItem');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const itemName = form['itemName'].value;
+        const itemType = form['itemType'].value;
+        const itemImgText = form['itemImgText'].value;
+        const itemDesc = form['itemDesc'].value;
+        const itemPrice = form['itemPrice'].value;
+        console.log(itemDesc, itemImgText, itemName, itemPrice, itemType);
+        data.menu.push({
+            "id": data.menu[data.menu.length -1].id + 1,
+            "name": itemName,
+            "type": itemType,
+            "describe": itemDesc,
+            "image_url": `${itemImgText}`,
+            "price": itemPrice + "đ"
+        })
+        setDataLocalStorage(data);
 
+        renderData(data);
+        form.reset();
+    })
+    
+}
 
+addItems(data);
+function renderData(data) {
+    foodTable.innerHTML = '';
+    orderTable.innerHTML = '';
+    bookTable.innerHTML = '';
+    userTable.innerHTML = '';
+    renderFood(data.menu);
+    renderOrders(data.orders);
+    renderBookTable(data.bookTables);
+    renderUser(data.users);
+}
 
+function deleteRecord(data) {
+    // const deleteFood = foodTable.querySelectorAll('#delete');
+    // const deletebookTable = bookTable.querySelectorAll('#delete');
+    // const deleteOrder = bookTable.querySelectorAll('#delete');
+    // const deleteUser = userTable.querySelectorAll('#delete');
+    // console.log(deleteFood, deleteOrder, deletebookTable, deleteUser);
+    //  Xóa thực đơn
+    foodTable.addEventListener('click', (e) => {
+        if (e.target.id == "delete") {
+            const recordFood = e.target.closest('tr');
+            if(confirm(`Bạn chắc chắn muốn xóa món ${recordFood.querySelector('td:nth-child(2)').innerText}`)) {
+                data.menu.some(record => {
+                    if (record.id == recordFood.querySelector('td:first-Child').innerText) {
+                        record.name = '';
+                        record.type = '';
+                        record.describe = '';
+                        record.image_url = '';
+                        record.price = '';
+                        console.log(record);
+                        return;
+                    }
+                })
+                setDataLocalStorage(data);
+                renderData(data);
+            }
+        }
+    })
+
+    orderTable.addEventListener('click', (e) => {
+        if (e.target.id == "delete") {
+            const recordOrder = e.target.closest('tr');
+            if(confirm(`Bạn chắc chắn muốn xóa đơn đặt hàng của khách hàng ${recordOrder.querySelector('td:nth-child(5)').innerText}`)) {
+                data.orders.some(record => {
+                    if (record.id == recordOrder.querySelector('td:first-Child').innerText) {
+                        record.foodName = '';
+                        record.amount = '';
+                        record.time = '';
+                        record.customerName = '';
+                        record.phoneNumber = '';
+                        record.address = '';
+                        console.log(record);
+                        return;
+                    }
+                })
+                setDataLocalStorage(data);
+                renderData(data);
+            }
+        }
+    })
+}
+deleteRecord(data);
 handleDisplayAddItemsModal();
 handleDisplayAdminTable();
-renderFood(data.menu);
-renderOrders(data.orders);
-renderBookTable(data.bookTables);
-renderUser(data.users);
+renderData(data);
 search(data);

@@ -28,20 +28,35 @@
     left: 0;
     right: 0;
     z-index: 5;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-right {
+    width: 50%;
+    display: flex;
+    justify-content: end;
 }
 
 .header_logo {
+    margin-left: 36px;
+    display: inline-block;
+}
+
+.logo {
     background-image: url(../assets/image/logo.jpg);
     padding-left: 42px;
     height: 42px;
     background-size: cover;
     background-position: center;
     border-radius: 50%;
-    margin: 12px 36px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    display: inline-block;
+    margin-right: 6px;
 }
 .header_nav{
-    margin: auto 0;
-    padding: 0 86px;
+    display: inline-block;
 }
 .header_nav ul {
     list-style-type: none;
@@ -76,7 +91,7 @@
 
 .searchBar {
     display: flex;
-    padding-left: 24px;
+    display: inline-block;
 }
 
 
@@ -90,26 +105,12 @@
     justify-content: center; /* Căn giữa theo chiều ngang */
 }
 .search_input{
-    margin: auto;
     outline: none;
     border: none;
     height: 28px;
-    padding: 0;
     padding: 0 6px;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-radius: 6px;
     width: 210px;
-}
-
-.search_logo{
-    font-size: 20px;
-    display: inline-block;
-    margin: auto 0 auto 212px;
-    background-color: white;
-    height: 28px;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-    
 }
 
 .search_logo i {
@@ -118,16 +119,28 @@
     padding-left: 5px;
     line-height: 28px;
 }
+.reset_search{
+    width: 140px;
+    height: 30px;
+    background-color:orangered ;
+    color:white;
+    border-radius: 5px;
+    font-size: 14px;
+    transform: translateY(-10px);
+    margin-left: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 6px 15px 0 15px;
+}
 .btn_search{
     width: 70px;
-    height: 30px;
+    height: 28px;
     background-color: orangered;
     color: white;
     border: none;
     outline: none;
     border-radius: 5px;
     margin-left: 10px;
-    transform: translateY(18px);
 }
 
 .header_cart i, .header_regiter i{
@@ -140,13 +153,11 @@
     opacity: 0.6;
 }
 
-.header_cart {
-    padding-left: 32px;
-}
 
 .header_cart, .header_regiter{
     height: 100%;
     align-self: center;
+    display: inline-block;
 }
 
 .header_regiter{
