@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/contact.css">
     <link rel="stylesheet" href="../assets/home.css">
+    <link rel="stylesheet" href="../assets/logandreg.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>LIÊN HỆ</title>
 </head>
@@ -12,7 +13,9 @@
     <div class="container_contact">
         <div class="header">
             <div class="header_logo">
-                <!-- <img src="../assets/image/logo.jpg" alt=""> -->
+                <div class="logo">
+                    <!-- <img src="../assets/image/logo.jpg" alt=""> -->
+                </div>
             </div>
             <div class="header_nav">
                 <ul>
@@ -22,17 +25,18 @@
                     <li><a class="active" href="../contact.html">LIÊN HỆ</a></li>
                 </ul>
             </div>
-            <div class="searchBar">
-                <div class="search_logo">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="header-right">
+
+                <div class="searchBar">
+                    <input class="search_input" id="search_input" type="text" placeholder="Search...">
+                    <button class="btn_search" id="btn_search">Tìm Kiếm</button>
                 </div>
-                <input class="search_input" type="text" placeholder="Search...">
-            </div>
-            <div class="header_cart">
-                <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
-            </div>
-            <div class="header_regiter">
-                <i class="regiter_logo fa-solid fa-user"></i>
+                <div class="header_cart">
+                    <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+                </div>
+                <div class="header_regiter">
+                    <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
+                </div>
             </div>
         </div>
         <div class="body">
@@ -74,6 +78,47 @@
                     </div>
                 </div>
         </div>
+        <div class="logAndReg_modal" id="logAndReg_modal">
+            <div class="containers_logandreg" id="registerContainer">
+                <form id="register_Form">
+                    <h1 class="title_register">ĐĂNG KÝ</h1>
+                    <div class="input_register">
+                        <i class="fa-solid fa-user register_icon"></i>
+                        <input type="text" name="lastName" class="register_lastName" placeholder="Họ" required>
+                    </div>
+                    <div class="input_register">
+                    <i class="fa-solid fa-user register_icon"></i>
+                        <input type="text" name="firstName" class="register_firstName" placeholder="Tên" required>
+                    </div>
+                    <div class="input_register">
+                        <i class="fa-solid fa-envelope register_icon"></i>
+                        <input type="email" name="email" class="register_email" placeholder="Email của bạn" required>
+                    </div>
+                    <div class="input_register">
+                        <i class="fa-solid fa-lock register_icon"></i>
+                        <input type="password" name="password" class="register_password" placeholder="Nhập mật khẩu" required>
+                    </div>
+                    <button type="submit" class="register_button">Đăng ký</button>
+                    <div class="register_prompt">Bạn đã có tài khoản? <a href="#" id="switchToLogin">Đăng nhập</a></div>
+                </form>
+            </div>
+            <div class="containers_logandreg" id="loginContainer" style="display: none;">
+                <form id="login_Form">
+                    <h1 class="title_login">ĐĂNG NHẬP</h1>
+                    <div class="input_login">
+                        <i class="fa-solid fa-envelope login_icon"></i>
+                        <input type="email" name="email" class="login_email" placeholder="Email của bạn" required>
+                    </div>
+                    <div class="input_login">
+                        <i class="fa-solid fa-lock login_icon"></i>
+                        <input type="password" name="password" class="login_password" placeholder="Nhập mật khẩu" required>
+                    </div>
+                    <button type="submit" class="login_button">Đăng nhập</button>
+                    <div class="login_prompt">Bạn chưa có tài khoản? <a href="#" id="switchToRegister">Đăng ký</a></div>
+                </form>
+            </div>
+        </div>
     </div>
+    <script src="../assets/javaScript/logandreg.js" type="module"></script>
 </body>
 </html>

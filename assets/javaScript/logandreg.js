@@ -51,8 +51,9 @@ function logIn(){
         const password = this.password.value.trim();
         // Lấy danh sách người dùng từ localStorage
         const users = data.users;
+        console.log(users[0])
         // Kiểm tra thông tin đăng nhập
-        const user = users.find(user => user.email === email && user.password === password);
+        const user = users.find(user => user.email === email && user.pass === password);
         if (user) {
             alert('Đăng nhập thành công!');
             // lưu userID vào sessionStorage 
@@ -64,6 +65,20 @@ function logIn(){
         }
     });
 }
+
+function handleLogAndRegModal() {
+    const logAndReg = document.getElementById("logAndReg");
+    const logAndReg_modal = document.getElementById("logAndReg_modal");
+    logAndReg.addEventListener('click', (e) => {
+        logAndReg_modal.style.display = 'block';
+    })
+    logAndReg_modal.addEventListener('click', (e) => {
+        if(e.target === logAndReg_modal){
+            logAndReg_modal.style.display = 'none';
+        }
+    })
+}
+handleLogAndRegModal()
 changeFormLogAndReg();
 regisTer();
 logIn()
