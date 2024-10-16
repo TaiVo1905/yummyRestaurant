@@ -111,7 +111,6 @@ document.querySelectorAll('.btn_add').forEach(button=>{
         data.carts.push(cartItem);
         // Đẩy lên localstorage 
         setDataLocalStorage(data);
-
         // Sau khi đẩy lên localStorage xong. Hiển thị 1 dòng trạng thái "thêm thành công"
         alert("Quý khách đã thêm món ăn vào giỏ hàng thành công!")
     })
