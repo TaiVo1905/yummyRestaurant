@@ -13,7 +13,6 @@
     top: 0;
     z-index: 1;
     margin-top: 66px;
-
 }
 
 #delete_notification {
@@ -31,6 +30,8 @@
 .cart_empty_space {
     font-size: 18px;
     color: #888;
+    padding: 12px 30px;
+    text-align: center;
 }
 
 /* Container */
@@ -38,9 +39,8 @@
     display: flex;
     margin-top: 84px;
     margin-left: 30px;
-    z-index: -1;
     margin-bottom: 2rem;
-    
+    min-height: 375px;
 }
 
 
@@ -290,5 +290,6 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #aeacac;
     cursor: pointer;
 }
-
-
+.footer {
+    margin-top: 490px;
+}

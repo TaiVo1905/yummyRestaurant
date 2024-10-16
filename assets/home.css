@@ -53,6 +53,7 @@
     margin-top: 6px;
     margin-bottom: 6px;
     display: inline-block;
+    margin-right: 6px;
 }
 .header_nav{
     display: inline-block;
@@ -120,7 +121,7 @@
 }
 .btn_search{
     width: 70px;
-    height: 30px;
+    height: 28px;
     background-color: orangered;
     color: white;
     border: none;

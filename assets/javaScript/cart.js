@@ -156,6 +156,7 @@ function removeCartItem(event) {
     cartRow.remove();
     updateCart();
     checkIfCartIsEmpty();
+    setMtopFooter()
 
     // Hiển thị thông báo tùy chỉnh
     const notification = document.getElementById('delete_notification');
@@ -202,6 +203,18 @@ function setupQuantityButtons() {
     })
 }
 
+function setMtopFooter() {
+    const isCart = data.carts.find( (cart) => {
+        return sessionStorage.getItem('UserID') == cart.userId;
+    })
+    console.log(isCart)
+    if (isCart) {
+        document.querySelector('.footer').style.marginTop = '0';
+    } else {
+        document.querySelector('.footer').style.marginTop = '490px';
+    }
+}
+
 
 // Khởi tạo sự kiện lắng nghe khi tài liệu được tải xong
 document.addEventListener('DOMContentLoaded', function() {
@@ -209,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupQuantityButtons();
     updateCart();
     checkIfCartIsEmpty();
-    
+    setMtopFooter()
 });
 
 // localStorage.clear() //Hiển thị lại sản phẩm
