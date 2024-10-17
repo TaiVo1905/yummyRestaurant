@@ -65,7 +65,6 @@ function displayFilteredMenu() {
     }
 filterMenu()
 
-
 function addData(){
     document.querySelectorAll('.btn_add').forEach(button=>{
         // gắn sự kiện onclick cho các nút button "thêm vào giỏ hàng"
