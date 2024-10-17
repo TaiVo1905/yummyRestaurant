@@ -95,6 +95,7 @@ body{
     color: rgb(241, 239, 239);
     border: none;
     border-radius: 10px;
+    display: none;
 }
 /* Bảng thông tin đặt bàn */
 #frm_booktable{

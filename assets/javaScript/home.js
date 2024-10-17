@@ -60,7 +60,6 @@ function addCart(){
     });
 
 }
-};
 function handleLogAndRegModal() {
     const logAndReg = document.getElementById("logAndReg");
     const logAndReg_modal = document.getElementById("logAndReg_modal");
@@ -75,7 +74,7 @@ function handleLogAndRegModal() {
 }
 addCart();
 renderFeaturedDishes(allData);
-handleCart();
+// handleCart();
 handleLogAndRegModal();
 
 // function search_menu(){  
@@ -99,6 +98,5 @@ handleLogAndRegModal();
 //     });  
 // }
 
-handleLogAndRegModal();
-renderFeaturedDishes(allData);
+
 // search_menu();

@@ -5,18 +5,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    /* z-index: 1000; */
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 2px solid #ccc; /* Để tạo đường viền ngăn cách */
-}
+
 
 .header_nav ul {
     display: flex;
@@ -32,7 +21,6 @@
 .header_nav ul li a {
     text-decoration: none;
     color: black;
-    font-weight: bold;
 }
 
 .searchBar, .header_cart, .header_regiter {
@@ -48,7 +36,7 @@
 
 #menu_tbl thead th {
     position: sticky; /* Giữ cố định khi cuộn */
-    top: 80px; /* Đặt ngay dưới header cố định */
+    top: 57px; /* Đặt ngay dưới header cố định */
     background-color: white;
     padding: 20px;
     border-bottom: 2px solid rgb(113, 111, 111);

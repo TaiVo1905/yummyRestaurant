@@ -42,7 +42,7 @@ function displayCart(data){
                                     </div>
                                 </td>
                                 <td>
-                                <textarea class="input_note">${item.food_Note}</textarea>
+                                <textarea class="input_note" placeholder="Nhập ghi chú tại đây...">${item.food_Note}</textarea>
                                 </td>
                                 <td class="product_subtotal">${item.price}				
                                 </td>

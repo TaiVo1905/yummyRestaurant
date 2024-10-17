@@ -74,6 +74,7 @@ function renderBookTable(bookTables) {
                     <td>${bookTb.email}</td>
                     <td>${bookTb.phoneNumber}</td>
                     <td>${bookTb.tableNumber.join(", ")}</td>
+                    <td>${bookTb.peopleNum}</td>
                     <td>${bookTb.time}</td>
                     <td>${bookTb.date}</td>
                     <td>
