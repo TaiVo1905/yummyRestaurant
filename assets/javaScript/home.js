@@ -15,13 +15,13 @@ function renderFeaturedDishes(data) {
         `;
     });
 }
-const carts = []; // Đảm bảo biến carts đã được khai báo
+const carts =  []; // Lấy giỏ hàng từ localStorage hoặc khởi tạo mảng rỗng
 function handleCart() {
     const data = allData.featuredDishes;
     document.querySelectorAll('.add_to_cart').forEach(button => {
         button.addEventListener('click', function () {
-            const food_Name = this.getAttribute('data-name');
-            const user_ID = parseInt(sessionStorage.getItem('UserID'));
+            const food_Name = this.getAttribute('data-name'); 
+            const user_ID = parseInt(sessionStorage.getItem('UserID')); // Lấy ID người dùng từ sessionStorage
             if (!user_ID) {
                 const users_confirm = confirm("Bạn chưa đăng nhập. Bạn có muốn đăng nhập hoặc đăng ký không?");
                 if (users_confirm) {
@@ -41,20 +41,24 @@ function handleCart() {
                         "food_Qty": 1,
                         "describe": food_Items.describe,
                     };
-                    carts.push(cartItem);
+                    carts.push(cartItem); // Thêm món vào giỏ hàng
                     localStorage.setItem('carts', JSON.stringify(carts)); // Lưu giỏ hàng vào localStorage
+                    console.log("Giỏ hàng hiện tại:", carts); // In giỏ hàng để kiểm tra
                     alert('Bạn đã thêm món vào giỏ hàng thành công');
                 } else {
                     alert('Món ăn không tồn tại trong danh sách.');
-                    
                 }
-
             }
         });
     });
 }
-function handleLogAndRegModal() {
-    const logAndReg = document.getElementById("logAndReg");
+// Gọi các hàm
+renderFeaturedDishes(allData);
+handleCart();
+handleLogAndRegModal();
+
+    function handleLogAndRegModal() {
+        const logAndReg = document.getElementById("logAndReg");
     const logAndReg_modal = document.getElementById("logAndReg_modal");
     logAndReg.addEventListener('click', (e) => {
         logAndReg_modal.style.display = 'block';
