@@ -52,13 +52,10 @@ function handleCart() {
         });
     });
 }
-// Gọi các hàm
-renderFeaturedDishes(allData);
-handleCart();
-handleLogAndRegModal();
 
-    function handleLogAndRegModal() {
-        const logAndReg = document.getElementById("logAndReg");
+
+function handleLogAndRegModal() {
+    const logAndReg = document.getElementById("logAndReg");
     const logAndReg_modal = document.getElementById("logAndReg_modal");
     logAndReg.addEventListener('click', (e) => {
         logAndReg_modal.style.display = 'block';
