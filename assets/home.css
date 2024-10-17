@@ -119,6 +119,19 @@
     padding-left: 5px;
     line-height: 28px;
 }
+.reset_search{
+    width: 140px;
+    height: 30px;
+    background-color:orangered ;
+    color:white;
+    border-radius: 5px;
+    font-size: 14px;
+    transform: translateY(-10px);
+    margin-left: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 6px 15px 0 15px;
+}
 .btn_search{
     width: 70px;
     height: 28px;

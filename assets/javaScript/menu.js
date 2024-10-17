@@ -1,24 +1,38 @@
 import getDataLocalStorage, {setDataLocalStorage} from "../javaScript/localStorage.js";
 const data = getDataLocalStorage();
 let filtered=[];
-// hàm lọc món ăn theo loại và hiển thị dưới dạng bảng
-function filterMenu (){
+// Hàm lọc món ăn theo loại và hiển thị dưới dạng bảng
+function filterMenu() {
     const menu = data.menu;
     const menu_list = document.querySelector('#menu_list');
     menu_list.addEventListener('click', (e) => {
         const type = e.target.textContent;
-        // console.log(type, menu);
-        // lọc món ăn theo loại
+        // Lọc món ăn theo loại
         filtered = menu.filter(item => {
             return item.type.toLowerCase() === type.toLowerCase();
-        })
-        // nơi hiển thị dữ liệu của menu
-        const menuTblBody = document.querySelector("#menu_tbl tbody");
-        menuTblBody.innerHTML = ''; // Xóa nội dung cũ
-    
-        // hiển thị các món đã lọc được
-        filtered.forEach(item => {
-            menuTblBody.innerHTML += `
+        });
+
+        // Hiển thị menu theo loại đã lọc
+        displayFilteredMenu();
+    });
+    // Thêm sự kiện cho nút tìm kiếm
+    const searchButton = document.querySelector('#btn_search');
+    searchButton.addEventListener('click', searchMenu);
+    // Thêm sự kiện cho nút reset tìm kiếm
+    const reset_Search = document.querySelector('#reset_search');
+    reset_Search.addEventListener('click', resetSearch);
+}
+
+filterMenu();
+
+// Hàm hiển thị món ăn đã lọc
+function displayFilteredMenu() {
+    const menuTblBody = document.querySelector("#menu_tbl tbody");
+    menuTblBody.innerHTML = ''; // Xóa nội dung cũ
+
+    filtered.forEach(item => {
+        menuTblBody.innerHTML += `
+            <tr>
                 <td class="product_image"><img src="${item.image_url}" alt="${item.name}" width="100px" height="100px"></td>
                 <td class="product_name">${item.name}</td>
                 <td class="product_price">${item.price}</td>
@@ -48,8 +62,7 @@ function filterMenu (){
                 </tr>
             `;
         }
-    })
-}
+    }
 filterMenu()
 
 function addData(){
@@ -115,16 +128,36 @@ function addData(){
         })
     })
 }
-// định dạng cho class active hoạt động đúng như mong đợi (MẶC ĐỊNH)
-document.querySelectorAll('#menu_list a').forEach(category => {
-    category.addEventListener('click', function(e){
-        e.preventDefault();
-        document.querySelectorAll('#menu_list a').forEach(i => {
-            i.classList.remove('active');
-        })
-        this.classList.add('active');
+
+// Tìm kiếm món ăn khi người dùng nhấn nút "Tìm"
+function searchMenu() {
+    const searchKey = document.getElementById('search_input').value.toLowerCase();
+    filtered = filtered.filter(item => {
+        return item.name.toLowerCase().includes(searchKey); // Tìm món ăn có chứa từ khóa 'thuộc tính "includes"
     });
-});
+
+    // Hiển thị kết quả tìm kiếm
+    displayFilteredMenu();
+}
+
+// Reset lại tìm kiếm và làm mới menu
+function resetSearch() {
+    window.location.href='menu.html';
+}
+
+// định dạng cho class active hoạt động đúng như mong đợi (MẶC ĐỊNH)
+function active(){
+    document.querySelectorAll('#menu_list a').forEach(category => {
+        category.addEventListener('click', function(e){
+            e.preventDefault();
+            document.querySelectorAll('#menu_list a').forEach(i => {
+                i.classList.remove('active');
+            })
+            this.classList.add('active');
+        });
+    });
+}
+active();
 
 /*sd hàm forEach để duyệt qua tất cả các thẻ a trong menu list
     thêm sự kiện click vào mỗi thẻ a
@@ -135,53 +168,16 @@ document.querySelectorAll('#menu_list a').forEach(category => {
 */
 
 // lấy category khai vị làm mặc định khi tải trang (MẶC ĐỊNH)
-window.addEventListener('load',()=>{
-    const defaultPage = document.querySelector('#menu_list a');
-    if (defaultPage){
-        defaultPage.click();
-        // mô phỏng quá trình click. Tức là khi tải trang nó sẽ tự động click vào thẻ a đầu tiên mà không cần người dùng click vào.
-    }
-})
-
-// Khi click vào nút "Thêm vào giỏ hàng"
-// console.log(document.querySelectorAll('.btn_add'))
-// function addCart() {
-//     document.querySelectorAll('.btn_add').forEach(button=>{
-//         // gắn sự kiện onclick cho các nút button "thêm vào giỏ hàng"
-//         button.addEventListener('click', function(){
-//             // lấy id của nút gán cho foodID
-//             const foodID = this.id.split('-')[1]; 
-//             const foodQuantity = document.querySelector(`#input_sl-${foodID}`).value;
-//             const foodNote = document.querySelector(`#input_note-${foodID}`).value;
-//             // lấy dữ liệu 
-//             const foodItem = filtered.find(item =>{
-//                 return item.id===foodID;
-//             })
-
-//             const userID = sessionStorage.getItem('UserID');
-//             // kiểm tra nếu chưa có userID tức là chưa đăng nhập thành công
-//             if(!userID){
-//                 alert("Bạn chưa đăng nhập. Vui lòng đăng nhập trước khi thêm vào giỏ hàng!")
-//             }
-//             // tạo một đối tượng chứa các thông tin (user_ID, foodName, ....)
-//             const cartItem = {
-//                 user_ID: userID,
-//                 food_Name: foodItem.name,
-//                 food_Image: foodItem.image_url,
-//                 food_Price: foodItem.price,
-//                 food_Number: foodQuantity,
-//                 food_Note: foodNote
-//             }
-//             // Đẩy dữ liệu lên mảng data.carts(json)
-//             data.carts.push(cartItem);
-//             // Đẩy lên localstorage 
-//             setDataLocalStorage(data);
-
-//             // Sau khi đẩy lên localStorage xong. Hiển thị 1 dòng trạng thái "thêm thành công"
-//             alert("Quý khách đã thêm món ăn vào giỏ hàng thành công!")
-//         })
-//     })
-// }
+function displayDefault(){
+    window.addEventListener('load',()=>{
+        const defaultPage = document.querySelector('#menu_list a');
+        if (defaultPage){
+            defaultPage.click();
+            // mô phỏng quá trình click. Tức là khi tải trang nó sẽ tự động click vào thẻ a đầu tiên mà không cần người dùng click vào.
+        }
+    })
+}
+displayDefault();
 
 //Xem sản phẩm chi tiết
 // Đảm bảo hàm onclickProduct hoạt động đúng
