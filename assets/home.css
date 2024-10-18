@@ -119,6 +119,7 @@
     padding-left: 5px;
     line-height: 28px;
 }
+
 .btn_search{
     width: 70px;
     height: 28px;
@@ -128,6 +129,7 @@
     outline: none;
     border-radius: 5px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .header_cart i, .header_regiter i{

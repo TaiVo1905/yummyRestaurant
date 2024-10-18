@@ -69,14 +69,21 @@ body {
 }
 /* Định dạng nút gửi */
 .frm button[type="submit"] {
-    padding: 10px 20px;
-    background-color: #f1f1f1;
+    padding: 10px 25px;
+    background-color: #868686;
     border: 1px solid #ddd;
     border-radius: 5px;
     cursor: pointer; /* Hiển thị nút gửi đang bị disable */
-    color: #999;
+    color: #fff;
     font-size: 14px;
     margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.frm button[type="submit"]:hover {
+    background-color: orangered;
 }
 
 .logAndReg_modal {

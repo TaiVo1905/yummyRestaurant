@@ -60,23 +60,18 @@ function onclickProduct(event) {
     const productElement = event.target.closest('.product_image, .product_name, .product_price');
     const isHeader = event.target.closest('th'); // Kiểm tra xem có phải nhấp vào tiêu đề (thead) không
 
-    if (isHeader) {
-        return; // Nếu nhấp vào tiêu đề, không chuyển hướng
+    if (!isHeader && productElement) {// Nếu nhấp vào tiêu đề, không chuyển hướng/
+        window.location.href = "details.html";
     }
+      
+}
 
-    if (!productElement) {
-        return; // Nếu không phải, ngăn chặn việc chuyển trang
-    }
-
-        /*
+      /*
         event.target: Trả về phần tử cụ thể mà người dùng đã nhấp vào.
         .closest(selector): Phương thức này tìm kiếm trong chuỗi các phần tử cha gần nhất cho phần tử mà đã được nhấp vào
         (trong trường hợp này là event.target). Nếu phần tử đó khớp với bất kỳ phần tử nào trong chuỗi .product_image, 
         .product_name, hoặc .product_price, nó sẽ trả về phần tử đó. Nếu không, nó sẽ trả về null.
          */
-
-        window.location.href = "details.html"; // Chuyển hướng đến trang chi tiết
-    }
 
 
 // Thêm sự kiện 'click' cho các sản phẩm sau khi DOM đã sẵn sàng
@@ -225,5 +220,67 @@ document.addEventListener('DOMContentLoaded', function() {
     setMtopFooter()
 });
 
-// localStorage.clear() //Hiển thị lại sản phẩm
+// xử lý form đăng nhập
+function handleLogAndRegModal() {
+    const logAndReg = document.getElementById("logAndReg");
+    const logAndReg_modal = document.getElementById("logAndReg_modal");
+    logAndReg.addEventListener('click', (e) => {
+        logAndReg_modal.style.display = 'block';
+    })
+    logAndReg_modal.addEventListener('click', (e) => {
+        if(e.target === logAndReg_modal){
+            logAndReg_modal.style.display = 'none';
+        }
+    })
+}
 
+handleLogAndRegModal()
+
+
+// Xử lý payment
+function handleDisplayPaymentModal () {
+    const payment_modal = document.querySelector('#payment_modal');
+    const sub_payment = document.querySelector('.sub_payment');
+
+    const paymentForm = document.querySelector('#paymentForm');
+
+    //Hiển thị model khi bấm nút thanh toán
+    sub_payment.addEventListener('click', function (e) {
+        e.preventDefault();
+        payment_modal.style.display = 'block';
+        getInformationLocalStorage();
+
+    })
+
+    //Ẩn model khi bấm ra ngoài form
+    payment_modal.addEventListener('click', function (e) {
+        if(e.target !== paymentForm && !paymentForm.contains(e.target)){
+            payment_modal.style.display = 'none';
+
+        }
+    })
+}
+
+
+
+//Lấy thông tin khách hàng đã đăng ký từ localstorage sau đó hiển thị lên form thông tin khách hàng
+function getInformationLocalStorage() {
+    const users = data.users; // Lấy mảng người dùng từ localStorage
+    const user_ID = parseInt(sessionStorage.getItem('UserID')); // Lấy ID người dùng từ sessionStorage
+    const existingUser = users.find(user => user.id === user_ID); // Tìm người dùng dựa theo ID
+
+    if (existingUser) {
+        // Nếu tìm thấy người dùng, điền thông tin vào form
+        document.querySelector('.payment_firstName').value = existingUser.firstName;
+        document.querySelector('.payment_lastName').value = existingUser.lastName;
+        document.querySelector('.payment_email').value = existingUser.email;
+        document.querySelector('.payment_phoneNumber').value = existingUser.phoneNum || ''; // Trường hợp người dùng chưa nhập phone
+    } else {
+        alert('Không tìm thấy thông tin người dùng!');
+    }
+}
+
+
+handleDisplayPaymentModal();
+  
+// localStorage.clear() //Hiển thị lại sản phẩm

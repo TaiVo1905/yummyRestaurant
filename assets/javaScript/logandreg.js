@@ -29,7 +29,7 @@ function regisTer(){
             alert('Email đã được sử dụng!');
         } else {
             const lastUser = users[users.length - 1]; // Lấy người dùng cuối cùng
-            id = lastUser.id + 1; // Cộng 1 vào id của người dùng cuối
+            const id = lastUser.id + 1; // Cộng 1 vào id của người dùng cuối
             users.push({
                 id: id,                   
                 lastName: lastName,       

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../assets/cart.css">
     <link rel="stylesheet" href="../assets/home.css">
     <link rel="stylesheet" href="../assets/successefullyOder.css">
+    <link rel="stylesheet" href="../assets/logandreg.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
 </head>
@@ -29,7 +30,7 @@
         <div class="header-right">
 
             <div class="searchBar">
-                <input class="search_input" id="search_input" type="text" placeholder="Search...">
+                <input class="search_input" id="search_input" type="search" placeholder="Tìm kiếm...">
                 <button class="btn_search" id="btn_search">Tìm Kiếm</button>
             </div>
             <div class="header_cart">
@@ -50,7 +51,7 @@
         <!-- In ra thông báo -->
         <div class="delete_announcements">
             <div id="delete_notification" ></div>
-            <div id="cart_announcement" class="cart_empty_space"></div>
+            <div id="cart_announcement"></div>
         </div>
     </div>
     <div class="cart_container">
@@ -154,7 +155,74 @@
             </div>
         </div>
     </div>
+    <!-- form log in and reg -->
+    <div class="logAndReg_modal" id="logAndReg_modal">
+        <div class="containers_logandreg" id="registerContainer">
+            <form id="register_Form">
+                <h1 class="title_register">ĐĂNG KÝ</h1>
+                <div class="input_register">
+                    <i class="fa-solid fa-user register_icon"></i>
+                    <input type="text" name="lastName" class="register_lastName" placeholder="Họ" required>
+                </div>
+                <div class="input_register">
+                <i class="fa-solid fa-user register_icon"></i>
+                    <input type="text" name="firstName" class="register_firstName" placeholder="Tên" required>
+                </div>
+                <div class="input_register">
+                    <i class="fa-solid fa-envelope register_icon"></i>
+                    <input type="email" name="email" class="register_email" placeholder="Email của bạn" required>
+                </div>
+                <div class="input_register">
+                    <i class="fa-solid fa-lock register_icon"></i>
+                    <input type="password" name="password" class="register_password" placeholder="Nhập mật khẩu" required>
+                </div>
+                <button type="submit" class="register_button">Đăng ký</button>
+                <div class="register_prompt">Bạn đã có tài khoản? <a href="#" id="switchToLogin">Đăng nhập</a></div>
+            </form>
+        </div>
+        <div class="containers_logandreg" id="loginContainer" style="display: none;">
+            <form id="login_Form">
+                <h1 class="title_login">ĐĂNG NHẬP</h1>
+                <div class="input_login">
+                    <i class="fa-solid fa-envelope login_icon"></i>
+                    <input type="email" name="email" class="login_email" placeholder="Email của bạn" required>
+                </div>
+                <div class="input_login">
+                    <i class="fa-solid fa-lock login_icon"></i>
+                    <input type="password" name="password" class="login_password" placeholder="Nhập mật khẩu" required>
+                </div>
+                <button type="submit" class="login_button">Đăng nhập</button>
+                <div class="login_prompt">Bạn chưa có tài khoản? <a href="#" id="switchToRegister">Đăng ký</a></div>
+            </form>
+        </div>
+    </div>
+    <!-- payment form -->
+    <div class="payment_modal" id="payment_modal">
+        <div class="paymentForm" id="paymentForm">
+            <form id="paymentfrm">
+                <h1 class="payment_title">THÔNG TIN KHÁCH HÀNG</h1>
+                <div class="iput_payment">
+                    <i class="fa-solid fa-user register_icon"></i>
+                    <input type="text" name="firstName" class="payment_firstName" placeholder="Họ" required>
+                </div>
+                <div class="iput_payment">
+                <i class="fa-solid fa-user payment_icon"></i>
+                    <input type="text" name="LastName" class="payment_lastName" placeholder="Tên" required>
+                </div>
+                <div class="iput_payment">
+                    <i class="fa-solid fa-envelope payment_icon"></i>
+                    <input type="email" name="email" class="payment_email" placeholder="Email của bạn" required>
+                </div>
+                <div class="iput_payment">
+                    <i class="fa-solid fa-phone payment_icon"></i>
+                    <input type="tel" name="phoneNumer" class="payment_phoneNumber" placeholder="Nhập số điện thoại của bạn" required>
+                </div>
+                <button type="submit" class="payment_button">Đặt hàng ngay</button>
+            </form>
+        </div>
+    </div>
     <script src="../assets/javaScript/localStorage.js" type="module"></script>
+    <script src="../assets/javaScript/logandreg.js" type="module"></script>
     <script src="../assets/javaScript/cart.js" type="module"></script>
 </body>
 </html>
