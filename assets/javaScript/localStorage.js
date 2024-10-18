@@ -1,7 +1,6 @@
 export const setDataLocalStorage = function (data) {
     localStorage.setItem('data', JSON.stringify(data));
 }
-
 function getDataLocalStorage() {
     return JSON.parse(localStorage.getItem('data'));
 }
@@ -15,4 +14,5 @@ function saveData() {
         } 
     })
 }
+// localStorage.clear();
 saveData();

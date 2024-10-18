@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/menu.css">
     <link rel="stylesheet" href="assets/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
 </head>
 <body style="margin-top: 82px;">
     <div class="header">
@@ -16,7 +17,7 @@
         <div class="header_nav">
             <ul>
                 <li><a class="active" href="../home.html">TRANG CHỦ</a></li>
-                <li><a class="active" href="../menu.html">THỰC ĐƠN</a></li>
+                <li><a class="active" href="../menu.html" id="thucdon">THỰC ĐƠN</a></li>
                 <li><a class="active" href="../bookTable.html">ĐẶT BÀN</a></li>
                 <li><a class="active" href="../contact.html">LIÊN HỆ</a></li>
             </ul>
@@ -37,15 +38,15 @@
     <h1 id="menu_title">Thực đơn tại nhà hàng Yummy</h1>
     <nav id="menu_nav">
         <ul id="menu_list">
-            <li><a href="#">Khai vị</a></li>
-            <li><a href="#">Món rau</a></li>
-            <li><a href="#">Cơm & Lẩu</a></li>
-            <li><a href="#">Món kho và rim</a></li>
-            <li><a href="#">Món xào</a></li>
-            <li><a href="#">Món hấp</a></li>
-            <li><a href="#">Món canh</a></li>
-            <li><a href="#">Món chiên và rang</a></li>
-            <li><a href="#">Các món khác & món súp</a></li>
+            <li id="khaivi"><a href="#" >Khai vị</a></li>
+            <li><a href="#" >Món rau</a></li>
+            <li><a href="#" >Cơm và Lẩu</a></li>
+            <li><a href="#" >Món kho và rim</a></li>
+            <li><a href="#" >Món xào</a></li>
+            <li><a href="#" >Món hấp</a></li>
+            <li><a href="#" >Món canh</a></li>
+            <li><a href="#" >Món chiên và rang</a></li>
+            <li><a href="#" >Các món khác và món súp</a></li>
         </ul>
     </nav>
     <table id="menu_tbl" border="1">
@@ -60,193 +61,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr id="menu_item1">
-                <td><img src="assets/image/khaiVi/chaCaThatLat.png" alt="Món 1" width="100px" height="100px"></td>
-                <td>Chả Cá Thát Lát</td>
-                <td>119.000đ</td>
-                <td>
-                    <div id="number-input">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
-                        <input id="input_sl" type="number" value="1" min="1" />
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
-                        <!-- 2 nút để thực hiện giảm số lượng hay tăng số lượng -->
-                    </div>
-                </td>
-                <td>
-                    <textarea name="note" id="input_note1"></textarea>
-                </td>
-                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
-            </tr>
-
-            <tr id="menu_item2">
-                <td><img src="assets/image/khaiVi/chaGioHaiSan.jpg" alt="Món 2" width="100px" height="100px"></td>
-                <td>Chả Giò Hải Sản</td>
-                <td>95.000đ</td>
-                <td>
-                    <div id="number-input">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
-                        <input id="input_sl" type="number" value="1" min="1" />
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
-                    </div>
-                </td>
-                <td>
-                    <textarea name="note" id="input_note2"></textarea>
-                </td>
-                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
-            </tr>
-
-            <tr id="menu_item3">
-                <td><img src="assets/image/khaiVi/goiXoaiHaiSan.jpg" alt="Món 3" width="100px" height="100px"></td>
-                <td>Gỏi Xoài Hải Sản</td>
-                <td>119.000đ</td>
-                <td>
-                    <div id="number-input">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
-                        <input id="input_sl" type="number" value="1" min="1" />
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
-                    </div>
-                </td>
-                <td>
-                    <textarea name="note" id="input_note3"></textarea>
-                </td>
-                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
-            </tr>
-
-            <tr id="menu_item4">
-                <td><img src="assets/image/khaiVi/hoaChuoiTronTomThit.jpg" alt="Món 4" width="100px" height="100px"></td>
-                <td>Hoa Chuối Trộn Tôm Thịt</td>
-                <td>109.000đ</td>
-                <td>
-                    <div id="number-input">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
-                        <input id="input_sl" type="number" value="1" min="1" />
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
-                    </div>
-                </td>
-                <td>
-                    <textarea name="note" id="input_note4"></textarea>
-                </td>
-                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
-            </tr>
-
-            <tr id="menu_item5">
-                <td><img src="assets/image/khaiVi/khoaiSoLePho.jpg" alt="Món 5" width="100px" height="100px"></td>
-                <td>Khoai Sọ Lệ Phố</td>
-                <td>99.000đ</td>
-                <td>
-                    <div id="number-input">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
-                        <input id="input_sl" type="number" value="1" min="1" />
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
-                    </div>
-                </td>
-                <td>
-                    <textarea name="note" id="input_note5"></textarea>
-                </td>
-                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
-            </tr>
-
-            <tr id="menu_item6">
-                <td><img src="assets/image/khaiVi/rauCangCuaTronBo.jpg" alt="Món 6" width="100px" height="100px"></td>
-                <td>Rau Càng Cua Trộn Bò</td>
-                <td>110.000đ</td>
-                <td>
-                    <div id="number-input">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
-                        <input id="input_sl" type="number" value="1" min="1" />
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
-                    </div>
-                </td>
-                <td>
-                    <textarea name="note" id="input_note6"></textarea>
-                </td>
-                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
-            </tr>
-
-            <tr id="menu_item7">
-                <td><img src="assets/image/khaiVi/khoaiTayChienBo.jpg" alt="Món 7" width="100px" height="100px"></td>
-                <td>Khoai Tây Chiên Bơ</td>
-                <td>69.000đ</td>
-                <td>
-                    <div id="number-input">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
-                        <input id="input_sl" type="number" value="1" min="1" />
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
-                    </div>
-                </td>
-                <td>
-                    <textarea name="note" id="input_note7"></textarea>
-                </td>
-                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
-            </tr>
-
-            <tr id="menu_item8">
-                <td><img src="assets/image/khaiVi/ramQuangBinh.jpg" alt="Món 8" width="100px" height="100px"></td>
-                <td>Ram Quảng Bình</td>
-                <td>95.000đ</td>
-                <td>
-                    <div id="number-input">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
-                        <input id="input_sl" type="number" value="1" min="1" />
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
-                    </div>
-                </td>
-                <td>
-                    <textarea name="note" id="input_note8"></textarea>
-                </td>
-                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
-            </tr>
-
-            <tr id="menu_item9">
-                <td><img src="assets/image/khaiVi/ocNhoiOngNua.jpg" alt="Món 9" width="100px" height="100px"></td>
-                <td>Ốc Nhồi Ống Nứa</td>
-                <td>109.000đ</td>
-                <td>
-                    <div id="number-input">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
-                        <input id="input_sl" type="number" value="1" min="1" />
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
-                    </div>
-                </td>
-                <td>
-                    <textarea name="note" id="input_note9"></textarea>
-                </td>
-                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
-            </tr>
-
-            <tr id="menu_item10">
-                <td><img src="assets/image/khaiVi/Salad.webp" alt="Món 10" width="100px" height="100px"></td>
-                <td>Salad Cá Hồi Thượng Hạng</td>
-                <td>110.000đ</td>
-                <td>
-                    <div id="number-input">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
-                        <input id="input_sl" type="number" value="1" min="1" />
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
-                    </div>
-                </td>
-                <td>
-                    <textarea name="note" id="input_note10"></textarea>
-                </td>
-                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
-            </tr>
             
-            <tr id="menu_item11">
-                <td><img src="assets/image/khaiVi/xaLachDauGiam.png" alt="Món 11" width="100px" height="100px"></td>
-                <td>Xà Lách Dầu Giấm</td>
-                <td>109.000đ</td>
-                <td>
-                    <div id="number-input">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
-                        <input id="input_sl" type="number" value="1" min="1" />
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
-                    </div>
-                </td>
-                <td>
-                    <textarea name="note" id="input_note11"></textarea>
-                </td>
-                <td><button id="btn_add">Thêm vào giỏ hàng</button></td>
-            </tr>
         </tbody>
     </table>
     <div class="footer">
@@ -271,5 +86,8 @@
             </div>
         </div>
     </div>
+    <script src="../assets/javaScript/localStorage.js" type="module"></script>
+    <script src="../assets/javaScript/menu.js" type="module"></script>
+    
 </body>
 </html>
