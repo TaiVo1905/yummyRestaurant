@@ -227,7 +227,7 @@
     width: 100%;
     background-color: rgb(241, 252, 198);;
     display: flex;
-    /* margin: 7px; */
+    border-radius: 15px;
     flex-direction: column;
     text-align: center;
 }
@@ -235,6 +235,8 @@
     height: 70%;
     width: 100%;
     overflow: hidden; /*loại bỏ phần hình ảnh tràn ra ngoài */
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
 }
 .card_dish img{
     height: 100%;
@@ -243,7 +245,7 @@
     transition: transform 0.5s ease-in-out;
 }
 .card_dish:hover img{
-    transform: scale(1.1) /*căn chỉnh độ phóng to của hình ảnh*/
+    transform: scale(1.1); /*căn chỉnh độ phóng to của hình ảnh*/
 }
 .menu_card h5{
     margin-top: 15px;

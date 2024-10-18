@@ -3,13 +3,16 @@
     margin: 0;
 }
 
+/* phần chứa div ảnh và div introduce */
 .details_top{
     height:640px;
     display: flex;
+    width: 100vw;
 }
 
+/* div chứa ảnh details */
 .details_img{
-    width: 640px;
+    width: 700px;
     height: 600px;
 }
 
@@ -19,28 +22,35 @@
     object-fit: cover;
 }
 
+/* thể loại món */
 .text1{
     font-size: 30px;
     opacity: 0.6;
+    color: rgb(90, 89, 89);
 }
 
+/* tên món */
 .text2{
     font-size: 40px;
+    color: blue;
 }
 
+/* div chứa thông tin details */
 .details_introduce{
     height: 640px;
-    width: 600px;
+    width: 784px;
     margin-left: 30px;
 }
 
-.quantity{
+/* div chứa số liệu món */
+.quantity{      
     height: 35px;
     width: 300px;
     display: flex;
     margin-top: 10px;
 }
 
+/* dấu trừ sp */
 .quantity_logo1{
     line-height: 35px;
     width: 15px;
@@ -52,6 +62,7 @@
     cursor: pointer;
 }
 
+/* số lượng sp */
 .quantity_logo2{
     line-height: 35px;
     width: 30px;
@@ -60,6 +71,7 @@
     text-align: center;
 }
 
+/* dấu cộng sp */
 .quantity_logo3{
     line-height: 35px;
     width: 15px;
@@ -71,115 +83,161 @@
     cursor: pointer;
 }
 
-.commit{
+/* button mua hàng dish details */
+.quantity button{
     margin-left: 50px;
-    border: 1px solid black;
-    line-height: 35px;
-    font-size: 17px;
-    padding: 0 10px;
-    background-color: red;
-    color: white;
-}
-
-.commit:hover{
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+    height: 35px;
+    width: 200px;
     cursor: pointer;
 }
 
+.quantity button:hover{
+    background-color: red;
+    color: white;
+    font-size: 18px;
+}
+
+/* text sản phẩm tt */
 .details_bottom{
     text-align: center;
     font-size: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.list_dish{
-    height: 420px;
+/* div chứa toàn bộ dstt */
+.dish-slider {
+    position: relative;
+    width: 100%; 
+}
+
+/* div chứa dstt */
+.slider-content {
     display: flex;
-    margin-top: 20px;
-    margin-left: 26px;
+    transition: transform 0.5s ease-in-out;
 }
 
-.dish{
-    height: 100%;
-    width: 330px;
-    background-color: rgb(250, 250, 247);
-    margin: 0 10px;
+/* list_dish được đặt tên để css khi lấy data từ localStorage */
+.slider-content .list_dish {
+    min-width: calc(25% - 10px); /* 25% chiều rộng trừ khoảng cách */
+    margin: 0 5px; /* Khoảng cách giữa các món ăn */
+    height: 400px;
+    display: flex;
+    flex-direction: column; /* Đặt các phần tử con xếp chồng lên nhau */
+    background-color: rgb(243, 246, 246);
 }
 
+/* button chứa dấu mũi tên để chuyển dish trong dstt */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+}
+
+/* mũi tên trái */
+#prev_dish {
+    left: 10px;
+}
+
+/* mũi tên phải */
+#next_dish {
+    right: 10px;
+}
+
+/* giá details */
 .price{
     font-size: 30px;
     color: red;
 }
 
+/* div chứa hình ảnh */
 .dish1{
     height: 73%;
     width: 100%;
 }
 
-.dish1 img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.dish1 img {
+    width: 100%; 
+    height: 320px; 
+    object-fit: cover; /* hình ảnh cân đối */
 }
 
+/* logo đặt hàng dstt */
 .dish button:hover{
     cursor: pointer;
 }
 
-.mui_ten1{
-    height: 100%;
-    width: 30px;
-    background-color: blue;
-    margin-left: 25px;
-}
-
-.mui_ten2{
-    height: 100%;
-    width: 30px;
-    background-color: blue;
-}
-
+/* type món ăn tt */
 .dish h6{
     font-size: 17px;
     opacity: 0.6;
     padding: 5px 0;
 }
 
+/* text tên món ăn tương tự */
 .dish h5{
     font-size: 20px;
 }
 
+/* giá sp tương tự */
 .dish span{
     font-size: 19px;
     color: rgb(255, 77, 0);
+    margin-top: 5px;
 }
 
+/* button đặt hàng trong danh sách */
 .dish button{
     font-size: 15px;
-    margin: 5px 0;
+    margin-bottom: 5px ;
     color: red;
     padding: 5px;
     border: 1px solid red;
+    border-radius: 5px;
 }
 
+.dish button:hover{
+    background-color: red;
+    color: white;
+}
+
+/* phần footer */
 .footer{
     height: 200px;
     background-color: rgb(204, 204, 202); 
     display: flex;
-    margin-top: 20px;
+    margin-top: 70px;
 }
+
+/* phần footer từng cột*/
 .footer_card{
     height: 100%;
     width: 20%;
     margin-left: 60px
 }
-.card_textBottom{
-    text-align: center;
-    font-size: 25px;
-}
+
+/* phần đchi, time, theo dõi trong footer */
 .card_textTop{
     text-align: center;
     font-size: 35px;
     margin-top: 20px;
 }
+
+/* phần dưới time, đchi */
+.card_textBottom{
+    text-align: center;
+    font-size: 25px;
+}
+
+/* logo phần footer */
 .card_logo{
     text-align: center;
     font-size: 45px;
@@ -188,38 +246,41 @@
     margin-left: 32px;
 }
 
-.logo_mt{
-    cursor: pointer;
+/* text trong phần mô tả */
+.describe{
+    max-height: 100px; 
+    font-weight: normal; /* Không in đậm */
+    padding: 0 5px;
+}
+
+/* text trang chủ */
+.text1 a{
+    text-decoration: none; /* bỏ gạch chân*/
+    color: rgb(90, 89, 89);
+}
+
+/* text trang chủ khi hover */
+.text1 a:hover{
+    color: red;
+}
+
+/* thẻ div từng món ăn */
+.dish {
+    /* flex: 1;  */
     display: flex;
-    justify-content: center;  
-    align-items: center;     
-    height: 100%;
-    width: 30px;
-}
-
-.details_icon{
-    margin-top: 5px; 
-    margin-left: 75px;
-    display: flex; 
-    gap: 20px;
-    justify-content: center; 
-    align-items: center; 
-}
-
-.details_icon button{
-    font-size: 20px;
-    border: 2px solid black; 
-    border-radius: 50%;   
-    width: 40px;            
-    height: 40px;           
-    display: flex;          
-    justify-content: center; /* Căn giữa icon theo chiều ngang */
-    align-items: center;     /* Căn giữa icon theo chiều dọc */
-    background-color: rgb(237, 235, 235); 
+    flex-direction: column; /* các thành phần trong dish thành một cột */
+    justify-content: space-between; /* nội dung được chia đều */
+    background-color: rgb(243, 246, 246);
     cursor: pointer;
 }
 
-textarea[name="noi_dung"]{
+.dish:hover{
+    box-shadow: 0 0 15px rgb(177, 177, 177);
+}
+
+/* div mô tả */
+.details_introduce .describe{
     height: 150px;
-    width: 600px;
+    width: 700px;
+    border: 1px solid rgb(214, 214, 214);
 }
