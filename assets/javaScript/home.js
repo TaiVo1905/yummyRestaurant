@@ -15,7 +15,7 @@ function renderFeaturedDishes(data) {
         `;
     });
 }
-const carts = []; // Đảm bảo biến carts đã được khai báo
+ // Đảm bảo biến carts đã được khai báo
 function handleCart() {
     const data = allData.featuredDishes;
     document.querySelectorAll('.add_to_cart').forEach(button => {
@@ -30,7 +30,7 @@ function handleCart() {
                     alert("Hãy đăng nhập để thêm món vào giỏ hàng.");
                 }
             } else {
-                const food_Items = data.find(dish => dish.name === food_Name);
+                const food_Items = data.find(dish => dish.name == food_Name);
                 if (food_Items) {
                     const cartItem = {
                         "id": user_ID,
@@ -41,8 +41,8 @@ function handleCart() {
                         "food_Qty": 1,
                         "describe": food_Items.describe,
                     };
-                    carts.push(cartItem);
-                    localStorage.setItem('carts', JSON.stringify(carts)); // Lưu giỏ hàng vào localStorage
+                    allData.carts.push(cartItem);
+                    setDataLocalStorage(allData); // Lưu giỏ hàng vào localStorage
                     alert('Bạn đã thêm món vào giỏ hàng thành công');
                 } else {
                     alert('Món ăn không tồn tại trong danh sách.');
@@ -51,21 +51,8 @@ function handleCart() {
             }
         });
     });
-function renderFeaturedDishes(data){
-    const menuAllDish = document.getElementById('body-menu'); //nơi để đưa thông tin các món ăn vào
-    data.featuredDishes.forEach(dish => { //duyệt từng phần tử trong featuredDishes
-    menuAllDish.innerHTML += `
-                              <div class="menu_card">
-                                  <div class="card_dish">
-                                      <img src="${dish.image_url}">
-                                  </div>
-                                  <h5>${dish.name}</h5>
-                                  <h6>${dish.price}</h6>
-                                  <button>Thêm vào giỏ hàng</button>
-                              </div>
-                              `;
-    })
 }
+
 function handleLogAndRegModal() {
     const logAndReg = document.getElementById("logAndReg");
     const logAndReg_modal = document.getElementById("logAndReg_modal");

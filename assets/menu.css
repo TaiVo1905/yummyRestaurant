@@ -6,28 +6,22 @@
     box-sizing: border-box;
 }
 
-
-.header_nav ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.header_nav ul li {
-    margin: 0 15px;
-}
-
-.header_nav ul li a {
-    text-decoration: none;
-    color: black;
+.reset_search{
+    width: 140px;
+    height: 30px;
+    background-color:orangered ;
+    color:white;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    margin-left: 14px;
+    text-transform: uppercase;
     font-weight: bold;
+    padding-top: 7px;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
-.searchBar, .header_cart, .header_regiter {
-    display: inline-block;
-    margin: 0 10px;
-}
 #menu_tbl {
     margin-top: 150px; /* Khoảng cách với phần header cố định */
     width: 100%;
@@ -37,7 +31,7 @@
 
 #menu_tbl thead th {
     position: sticky; /* Giữ cố định khi cuộn */
-    top: 80px; /* Đặt ngay dưới header cố định */
+    top: 57px; /* Đặt ngay dưới header cố định */
     background-color: white;
     padding: 20px;
     border-bottom: 2px solid rgb(113, 111, 111);

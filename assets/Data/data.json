@@ -970,8 +970,9 @@
             "email": "voductai123@gmail.com",
             "phoneNumber": "0393907372",
             "tableNumber": [2, 3, 4],
+            "peopleNum": 12,
             "time": "12:00",
-            "date":  "10/10/2024"
+            "date":  "2024-10-18"
         }
     ],
     "carts":[

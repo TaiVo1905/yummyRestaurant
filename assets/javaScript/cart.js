@@ -42,7 +42,7 @@ function displayCart(data){
                                     </div>
                                 </td>
                                 <td>
-                                <textarea class="input_note">${item.food_Note}</textarea>
+                                <textarea class="input_note" placeholder="Nhập ghi chú tại đây...">${item.food_Note}</textarea>
                                 </td>
                                 <td class="product_subtotal">${item.price}				
                                 </td>
@@ -261,7 +261,6 @@ function handleDisplayPaymentModal () {
     })
 }
 
-handleDisplayPaymentModal();
 
 
 //Lấy thông tin khách hàng đã đăng ký từ localstorage sau đó hiển thị lên form thông tin khách hàng
@@ -280,6 +279,8 @@ function getInformationLocalStorage() {
         alert('Không tìm thấy thông tin người dùng!');
     }
 }
+
+
 handleDisplayPaymentModal();
   
 // localStorage.clear() //Hiển thị lại sản phẩm
