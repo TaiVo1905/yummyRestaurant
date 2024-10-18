@@ -29,7 +29,7 @@ function regisTer(){
             alert('Email đã được sử dụng!');
         } else {
             const lastUser = users[users.length - 1]; // Lấy người dùng cuối cùng
-            id = lastUser.id + 1; // Cộng 1 vào id của người dùng cuối
+            const id = lastUser.id + 1; // Cộng 1 vào id của người dùng cuối
             users.push({
                 id: id,                   
                 lastName: lastName,       
@@ -53,8 +53,7 @@ function logIn(){
         const users = data.users;
         console.log(users[0])
         // Kiểm tra thông tin đăng nhập
-        const user = users.find(user => (user.email === email && user.pass === password));
-        console.log(user)
+        const user = users.find(user => user.email === email && user.pass === password);
         if (user) {
             alert('Đăng nhập thành công!');
             // lưu userID vào sessionStorage 
@@ -66,6 +65,20 @@ function logIn(){
         }
     });
 }
+
+function handleLogAndRegModal() {
+    const logAndReg = document.getElementById("logAndReg");
+    const logAndReg_modal = document.getElementById("logAndReg_modal");
+    logAndReg.addEventListener('click', (e) => {
+        logAndReg_modal.style.display = 'block';
+    })
+    logAndReg_modal.addEventListener('click', (e) => {
+        if(e.target === logAndReg_modal){
+            logAndReg_modal.style.display = 'none';
+        }
+    })
+}
+handleLogAndRegModal()
 changeFormLogAndReg();
 regisTer();
 logIn()

@@ -6,6 +6,7 @@
     <title>Book Table</title>
     <link rel="stylesheet" href="assets/home.css">
     <link rel="stylesheet" href="assets/bookTable.css">
+    <link rel="stylesheet" href="assets/logandreg.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body style="margin-top: 82px;">
@@ -13,7 +14,9 @@
         <!-- --------------------------------------------------------phần header----------------------------------------------- -->
         <div class="header">
             <div class="header_logo">
-                <!-- <img src="../assets/image/logo.jpg" alt=""> -->
+                <div class="logo">
+                    <!-- <img src="../assets/image/logo.jpg" alt=""> -->
+                </div>
             </div>
             <div class="header_nav">
                 <ul>
@@ -23,17 +26,18 @@
                     <li><a class="active" href="../contact.html">LIÊN HỆ</a></li>
                 </ul>
             </div>
-            <div class="searchBar">
-                <div class="search_logo">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="header-right">
+
+                <div class="searchBar">
+                    <input class="search_input" id="search_input" type="search" placeholder="Tìm kiếm...">
+                    <button class="btn_search" id="btn_search">Tìm Kiếm</button>
                 </div>
-                <input class="search_input" type="text" placeholder="Search...">
-            </div>
-            <div class="header_cart">
-                <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
-            </div>
-            <div class="header_regiter">
-                <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
+                <div class="header_cart">
+                    <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+                </div>
+                <div class="header_regiter">
+                    <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
+                </div>
             </div>
         </div>
         <h1 id="title">Đặt Bàn Trực Tuyến</h1>
@@ -42,26 +46,27 @@
             <form id="input_frm">
                 <div id="Time">
                     <label for="" id="time">Giờ: </label>
-                    <input type="time" id="input_time" min="08:30" max="22:30" step="1800s">
+                    <input type="time" id="input_time" min="08:30" max="22:30" step="1800s" required>
                 </div>
                 <!-- <br> -->
                 <div id="Date">
                     <label for="" id="date">Ngày: </label>
-                    <input type="date" id="input_date">
+                    <input type="date" id="input_date" required>
                 </div>
                 <!-- <br> -->
                 <div id="Quantity_people">
                     <label for="" id="quantity">Số Lượng Người: </label>
-                    <input type="number" id="input_number" min="1" max="16">
+                    <input type="number" id="input_number" min="1" max="16" required>
                 </div>
+                <div></div>
+                <button type="submit" id="btn_search">Tìm Kiếm</button>
             </form>
             <!-- <br> -->
-            <button id="btn_search" onclick="displaytable()">Tìm Kiếm</button>
         </div>
         <!-- Khu vực hiện cái bàn còn trống -->
         <div id="table_list" class="table-list"></div>
         <!-- Nút sau khi chọn bàn xong -->
-        <button id="btn_done" onclick="booktable()">Đặt Bàn</button>
+        <button id="btn_done">Đặt Bàn</button>
         <!-- Form hiển thị khi nhấn vào bàn trống để chọn bàn -->
         <div id="frm_booktable" class="modal">
             <div id="content_frm">
@@ -72,11 +77,12 @@
                 <form id="form_booktable">
                     <label for="tableNumber" id="number_table">Số Bàn</label>
                     <input type="text" id="tableNumber" readonly>
+                    <label for="input_number1" id="peopleNum">Số nguời</label>
+                    <input type="text" id="input_number1" readonly>
                     <label for="time" id="timeBooktable">Giờ</label>
-                    <input type="time" id="input_time1">
+                    <input type="time" id="input_time1" readonly>
                     <label for="date" id="dateBooktable">Ngày</label>
-    
-                    <input type="date" id="input_date1">
+                    <input type="date" id="input_date1" readonly>
                     <label for="name" id="nameUser">Tên Người Đặt</label>
                     <input type="text" id="input_name">
                     <label for="email" id="emailUser">Email</label>
@@ -85,7 +91,6 @@
                     <input type="tel" id="input_phone">
                     <div id="btn">
                         <button type="submit" id="submit">Submit</button>
-                        <button type="reset" id="reset">Reset</button>
                     </div>
                 </form>
             </div>
@@ -114,7 +119,48 @@
                 </div>
             </div>
         </div>
+        <div class="logAndReg_modal" id="logAndReg_modal">
+            <div class="containers_logandreg" id="registerContainer">
+                <form id="register_Form">
+                    <h1 class="title_register">ĐĂNG KÝ</h1>
+                    <div class="input_register">
+                        <i class="fa-solid fa-user register_icon"></i>
+                        <input type="text" name="lastName" class="register_lastName" placeholder="Họ" required>
+                    </div>
+                    <div class="input_register">
+                    <i class="fa-solid fa-user register_icon"></i>
+                        <input type="text" name="firstName" class="register_firstName" placeholder="Tên" required>
+                    </div>
+                    <div class="input_register">
+                        <i class="fa-solid fa-envelope register_icon"></i>
+                        <input type="email" name="email" class="register_email" placeholder="Email của bạn" required>
+                    </div>
+                    <div class="input_register">
+                        <i class="fa-solid fa-lock register_icon"></i>
+                        <input type="password" name="password" class="register_password" placeholder="Nhập mật khẩu" required>
+                    </div>
+                    <button type="submit" class="register_button">Đăng ký</button>
+                    <div class="register_prompt">Bạn đã có tài khoản? <a href="#" id="switchToLogin">Đăng nhập</a></div>
+                </form>
+            </div>
+            <div class="containers_logandreg" id="loginContainer" style="display: none;">
+                <form id="login_Form">
+                    <h1 class="title_login">ĐĂNG NHẬP</h1>
+                    <div class="input_login">
+                        <i class="fa-solid fa-envelope login_icon"></i>
+                        <input type="email" name="email" class="login_email" placeholder="Email của bạn" required>
+                    </div>
+                    <div class="input_login">
+                        <i class="fa-solid fa-lock login_icon"></i>
+                        <input type="password" name="password" class="login_password" placeholder="Nhập mật khẩu" required>
+                    </div>
+                    <button type="submit" class="login_button">Đăng nhập</button>
+                    <div class="login_prompt">Bạn chưa có tài khoản? <a href="#" id="switchToRegister">Đăng ký</a></div>
+                </form>
+            </div>
+        </div>
     </div>
-    <script src="assets/javaScript/bookTable.js"></script>
+    <script src="../assets/javaScript/bookTable.js" type="module"></script>
+    <script src="../assets/javaScript/logandreg.js" type="module"></script>
 </body>
 </html>
