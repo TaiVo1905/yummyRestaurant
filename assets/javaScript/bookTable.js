@@ -143,12 +143,32 @@ function booktable() {
                 document.getElementById('input_time1').value = document.getElementById('input_time').value;
                 document.getElementById('input_date1').value = document.getElementById('input_date').value;
                 document.getElementById('input_number1').value = document.getElementById('input_number').value;
-                
-                
                 document.getElementById('input_name').value = infoUser.firstName + " " + infoUser.lastName;
                 document.getElementById('input_email').value = infoUser.email;
                 document.getElementById('input_phone').value = infoUser.phoneNum || "";
                 document.getElementById('frm_booktable').style.display = "block"; // Hiển thị form
+
+                document.querySelector('#form_booktable').addEventListener('submit', () => {
+                    const tableNumber = document.getElementById('tableNumber').value;
+                    const input_time1 = document.getElementById('input_time1').value;
+                    const input_date1 = document.getElementById('input_date1').value;
+                    const input_number1 = document.getElementById('input_number1').value;
+                    const input_name = document.getElementById('input_name').value;
+                    const input_email = document.getElementById('input_email').value;
+                    const input_phone = document.getElementById('input_phone').value;
+                    const newBookATable = {
+                                            id: data.bookTables.length + 1,
+                                            customerName: input_name,
+                                            email: input_email,
+                                            phoneNumber: input_phone,
+                                            tableNumber: tableNumber.split(", "),
+                                            peopleNum: input_number1,
+                                            time: input_time1,
+                                            date:  input_date1
+                                        }
+                    data.bookTables.push(newBookATable);
+                    setDataLocalStorage(data);
+                })
             }
             else {
                 alert("Vui lòng chọn ít nhất một bàn.");

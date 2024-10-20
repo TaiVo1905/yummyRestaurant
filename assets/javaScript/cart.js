@@ -321,13 +321,13 @@ function ordersuccessfully(){
     const customerName = firstName + " " + lastName;
     const phoneNumber = document.querySelector('.payment_phoneNumber').value; 
     const address = document.querySelector('.payment_address').value; 
-    const food_Name = cart_userID.map(item=>item.nameFood)
-    const amount = cart_userID.reduce((total, item) => total + parseFloat(item.price) * parseInt(item.food_Qty), 0);
+    const food_Name = cart_userID.map(item=> item.nameFood + ` (${item.food_Qty})`)
+    const amount = document.querySelector('.sum_total').innerText;
 
     const newOrder = {
-        'id':data.orders.length+1,
+        'id':data.orders.length + 1,
         'foodName': food_Name,
-        'amount': amount.toLocaleString() + '.000VND',
+        'amount': amount,
         'time': new Date().toLocaleString(),
         'customerName': customerName,
         'phoneNumber': phoneNumber,
@@ -348,4 +348,3 @@ function ordersuccessfully(){
         window.location.href='menu.html';
     })
 }
-console.log(data);

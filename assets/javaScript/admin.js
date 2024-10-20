@@ -12,7 +12,7 @@ const orderTable = $('.admin_orders #admin_items');
 const bookTable = $('.admin_bookTables #admin_items');
 const userTable = $('.admin_users #admin_items');
 
-
+// Lấy data từ localStorage
 const data = getDataLocalStorage();
 
 function renderFood(menu) {
@@ -54,7 +54,7 @@ function renderOrders(orders) {
                         <td>${order.phoneNumber}</td>
                         <td>${order.address}</td>
                         <td>
-                            <i class="fa-solid fa-pen-to-square" id="update" title="Chỉnh sửa"></i>
+                            <i></i>
                             <i class="fa-solid fa-trash-can-arrow-up" id="delete" title="Xóa"></i>
                         </td>
                     </tr>
@@ -78,7 +78,7 @@ function renderBookTable(bookTables) {
                     <td>${bookTb.time}</td>
                     <td>${bookTb.date}</td>
                     <td>
-                        <i class="fa-solid fa-pen-to-square" id="update" title="Chỉnh sửa"></i>
+                        <i></i>
                         <i class="fa-solid fa-trash-can-arrow-up" id="delete" title="Xóa"></i>
                     </td>
                 </tr>
@@ -89,20 +89,22 @@ function renderBookTable(bookTables) {
 
 function renderUser(users) {
     users.forEach(user => {
-    userTable.innerHTML += `
-        <tr>
-            <td>${user.id}</td>
-            <td>${user.firstName} ${user.lastName}</td>
-            <td>${user.email}</td>
-            <td>${user.phoneNum}</td>
-            <td>${user.pass}</td>
-            <td>${user.date}</td>
-            <td>
-                <i></i>
-                <i class="fa-solid fa-trash-can-arrow-up" id="delete" title="Xóa"></i>
-            </td>
-        </tr>
-    `
+        if(user.firstName != ""){
+            userTable.innerHTML += `
+                <tr>
+                    <td>${user.id}</td>
+                    <td>${user.firstName} ${user.lastName}</td>
+                    <td>${user.email}</td>
+                    <td>${user.phoneNum}</td>
+                    <td>${user.pass}</td>
+                    <td>${user.date}</td>
+                    <td>
+                        <i></i>
+                        <i class="fa-solid fa-trash-can-arrow-up" id="delete" title="Xóa"></i>
+                    </td>
+                </tr>
+            `
+        }
 });
 }
 
@@ -111,11 +113,14 @@ function handleDisplayAddItemsModal () {
     const addItemsModal = $('#admin_addItems_modal');
     const closeAddItemsModal = $('#close_addItems_modal');
     const admin_addItem = $('#admin_addItem');
+    const form = $('.form--modal');
     admin_addItem.addEventListener('click', function () {
         addItemsModal.style.display = 'block';
+        addItems(data);
     })
     closeAddItemsModal.addEventListener('click', function () {
         addItemsModal.style.display = 'none';
+        form.reset();
     })
 }
 
@@ -185,32 +190,34 @@ function search(data) {
 
 function addItems(data) {
     const form = $('.form--modal');
+    const addItemsModal = $('#admin_addItems_modal');
     // const submit = $('#addItem');
+    addItemsModal.querySelector('.modal_header h2').innerText = "THÊM SẢN PHẨM MỚI";
     form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const itemName = form['itemName'].value;
-        const itemType = form['itemType'].value;
-        const itemImgText = form['itemImgText'].value;
-        const itemDesc = form['itemDesc'].value;
-        const itemPrice = form['itemPrice'].value;
-        console.log(itemDesc, itemImgText, itemName, itemPrice, itemType);
-        data.menu.push({
-            "id": data.menu[data.menu.length -1].id + 1,
-            "name": itemName,
-            "type": itemType,
-            "describe": itemDesc,
-            "image_url": `${itemImgText}`,
-            "price": itemPrice + "đ"
-        })
-        setDataLocalStorage(data);
-
-        renderData(data);
-        form.reset();
+        if (addItemsModal.querySelector('.modal_header h2').innerText == "THÊM SẢN PHẨM MỚI") {
+            e.preventDefault();
+            const itemName = form['itemName'].value;
+            const itemType = form['itemType'].value;
+            const itemImgText = form['itemImgText'].value;
+            const itemDesc = form['itemDesc'].value;
+            const itemPrice = form['itemPrice'].value;
+            console.log(itemDesc, itemImgText, itemName, itemPrice, itemType);
+            data.menu.push({
+                "id": data.menu[data.menu.length -1].id + 1,
+                "name": itemName,
+                "type": itemType,
+                "describe": itemDesc,
+                "image_url": `${itemImgText}`,
+                "price": itemPrice + "đ"
+            })
+            setDataLocalStorage(data);
+            renderData(data);
+            form.reset();
+        }
     })
     
 }
 
-addItems(data);
 function renderData(data) {
     foodTable.innerHTML = '';
     orderTable.innerHTML = '';
@@ -223,16 +230,10 @@ function renderData(data) {
 }
 
 function deleteRecord(data) {
-    // const deleteFood = foodTable.querySelectorAll('#delete');
-    // const deletebookTable = bookTable.querySelectorAll('#delete');
-    // const deleteOrder = bookTable.querySelectorAll('#delete');
-    // const deleteUser = userTable.querySelectorAll('#delete');
-    // console.log(deleteFood, deleteOrder, deletebookTable, deleteUser);
-    //  Xóa thực đơn
     foodTable.addEventListener('click', (e) => {
         if (e.target.id == "delete") {
             const recordFood = e.target.closest('tr');
-            if(confirm(`Bạn chắc chắn muốn xóa món ${recordFood.querySelector('td:nth-child(2)').innerText}`)) {
+            if(confirm(`Bạn chắc chắn muốn xóa món ${recordFood.querySelector('td:nth-child(2)').innerText}?`)) {
                 data.menu.some(record => {
                     if (record.id == recordFood.querySelector('td:first-Child').innerText) {
                         record.name = '';
@@ -253,7 +254,7 @@ function deleteRecord(data) {
     orderTable.addEventListener('click', (e) => {
         if (e.target.id == "delete") {
             const recordOrder = e.target.closest('tr');
-            if(confirm(`Bạn chắc chắn muốn xóa đơn đặt hàng của khách hàng ${recordOrder.querySelector('td:nth-child(5)').innerText}`)) {
+            if(confirm(`Bạn chắc chắn muốn xóa đơn đặt hàng của khách hàng ${recordOrder.querySelector('td:nth-child(5)').innerText}?`)) {
                 data.orders.some(record => {
                     if (record.id == recordOrder.querySelector('td:first-Child').innerText) {
                         record.foodName = '';
@@ -271,9 +272,88 @@ function deleteRecord(data) {
             }
         }
     })
+    bookTable.addEventListener('click', (e) => {
+        if (e.target.id == "delete") {
+            const recordOrder = e.target.closest('tr');
+            if(confirm(`Bạn chắc chắn muốn xóa đơn đặt bàn của khách hàng ${recordOrder.querySelector('td:nth-child(2)').innerText}?`)) {
+                data.bookTables.some(record => {
+                    if (record.id == recordOrder.querySelector('td:first-Child').innerText) {
+                            record.customerName = "";
+                            record.email = "";
+                            record.phoneNumber = "";
+                            record.tableNumber = [];
+                            record.peopleNum = "";
+                            record.time = "";
+                            record.date ="";
+                        return;
+                    }
+                })
+                setDataLocalStorage(data);
+                renderData(data);
+            }
+        }
+    })
+    userTable.addEventListener('click', (e) => {
+        if (e.target.id == "delete") {
+            const recordOrder = e.target.closest('tr');
+            if(confirm(`Bạn chắc chắn muốn xóa thông tin người dùng ${recordOrder.querySelector('td:nth-child(2)').innerText}?`)) {
+                data.users.some(record => {
+                    if (record.id == recordOrder.querySelector('td:first-Child').innerText) {
+                        record.firstName = "";
+                        record.lastName = "";
+                        record.email = "";
+                        record.pass = "";
+                        record.phoneNum = "";
+                        record.date = "";
+                        return;
+                    }
+                })
+                setDataLocalStorage(data);
+                renderData(data);
+            }
+        }
+    })
+}
+
+function updateMenu() {
+    const addItemsModal = $('#admin_addItems_modal');
+    const closeAddItemsModal = $('#close_addItems_modal');
+    foodTable.addEventListener('click', (e) => {
+        if (e.target.id == "update") {
+            const recordFood = e.target.closest('tr');
+            console.log(recordFood)
+            addItemsModal.style.display = "block";
+            addItemsModal.querySelector('.modal_header h2').innerText = "Chỉnh sửa thông tin món ăn";
+            const form = $('.form--modal');
+            form['itemName'].value = recordFood.querySelector('td:nth-child(2)').innerText;
+            form['itemType'].value = recordFood.querySelector('td:nth-child(3)').innerText;
+            form['itemDesc'].value = recordFood.querySelector('td:nth-child(4)').innerText;
+            form['itemImgText'].value = recordFood.querySelector('td:nth-child(5) .item_img').style.backgroundImage.slice(5, -2);
+            form['itemPrice'].value = recordFood.querySelector('td:nth-child(6)').innerText.slice(0, -1);
+            form.addEventListener('submit', (e) => {
+                if (addItemsModal.querySelector('.modal_header h2').innerText == "Chỉnh sửa thông tin món ăn") {
+                    e.preventDefault();
+                    data.menu.some( (food) => {
+                        if(food.id == recordFood.querySelector('td:nth-child(1)').innerText) {
+                            food.name = form['itemName'].value;
+                            food.type = form['itemType'].value;
+                            food.describe = form['itemDesc'].value;
+                            food.image_url = form['itemImgText'].value;
+                            food.price = form['itemPrice'].value;
+                        }
+                        return;
+                    })
+                    setDataLocalStorage(data);
+                    renderData(data);
+                    form.reset();
+                }
+            })
+        }
+    })
 }
 deleteRecord(data);
 handleDisplayAddItemsModal();
 handleDisplayAdminTable();
 renderData(data);
 search(data);
+updateMenu()
