@@ -36,6 +36,7 @@ function regisTer(){
                 firstName: firstName,     
                 email: email,             
                 pass: password,
+                date: new Date().toLocaleString()
             });
             setDataLocalStorage(data);
             alert('Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.');

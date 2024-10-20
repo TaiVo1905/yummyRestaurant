@@ -49,6 +49,7 @@ body{
     color: rgb(241, 239, 239);
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 /* Danh sách các bàn trống */
 .table-list {
@@ -95,13 +96,15 @@ body{
     color: rgb(241, 239, 239);
     border: none;
     border-radius: 10px;
+    display: none;
+    cursor: pointer;
 }
 /* Bảng thông tin đặt bàn */
 #frm_booktable{
     display: none;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 85px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -118,9 +121,7 @@ body{
     border: 1px solid #888;
     border-radius: 10px;
     width: 55%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     animation-name: animatetop;
     animation-duration: 0.4s
 }   
@@ -157,39 +158,41 @@ to {top:0; opacity:1}
     font-weight: bold; 
     color: rgb(241, 239, 239);
     margin-right: 12px;
+    cursor: pointer;
 }
 #form_booktable{
     margin: 0 30px;
 }
-#number_table, #timeBooktable, #dateBooktable, #nameUser, #emailUser, #phoneNumber{
+#number_table, #peopleNum, #timeBooktable, #dateBooktable, #nameUser, #emailUser, #phoneNumber{
     font-weight: bold;
     padding:  0 0 6px 10px;
     display: inline-block;
 }
-#tableNumber, #input_time1, #input_date1, #input_name, #input_email, #input_phone{
+#tableNumber, #input_number1, #input_time1, #input_date1, #input_name, #input_email, #input_phone{
     width: 100%;
-    height: 42px;
+    height: 36px;
     background-color: rgb(196, 195, 195);
     border-radius: 8px;
     border: none;
     outline: none;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     padding: 0 10px;
 }
 #btn{
     display: flex;
-    margin: 12px 0;
+    margin: 6px 0;
     justify-content: center;
     gap: 24px;
+    cursor: pointer;
 }
-#submit, #reset{
+#submit{
     background-color: orangered;
     border: none;
     height: 32px;
     border-radius: 6px;
     color: rgb(241, 239, 239);
     width: 80px;
-    
+    cursor: pointer;
 }
 /* logInAndReg */
 .logAndReg_modal {
