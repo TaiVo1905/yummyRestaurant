@@ -15,7 +15,6 @@ function renderFeaturedDishes(data) {
         `;
     });
 }
- // Đảm bảo biến carts đã được khai báo
 function handleCart() {
     const data = allData.featuredDishes;
     document.querySelectorAll('.add_to_cart').forEach(button => {
@@ -47,7 +46,6 @@ function handleCart() {
                     alert('Bạn đã thêm món vào giỏ hàng thành công');
                 } else {
                     alert('Món ăn không tồn tại trong danh sách.');
-                    
                 }
             }
         });
@@ -66,7 +64,6 @@ function handleLogAndRegModal() {
         }
     });
 }
-
 function switchToDetailPage() {
     const menu_cards = document.querySelectorAll(".menu_card");
     menu_cards.forEach( (menu_card) => {
@@ -81,6 +78,7 @@ function switchToDetailPage() {
         
 }
 // Render món ăn
+
 renderFeaturedDishes(allData);
 handleCart();
 handleLogAndRegModal();

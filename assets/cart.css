@@ -238,8 +238,6 @@ input[type=number]::-webkit-outer-spin-button {
     text-transform: inherit;
 }
 
-/* -------------------------------------------- Footer----------------------------------------------------*/
-
 /* Thanh toán sản phẩm */
 .cart_form_payments {
     position: fixed;
@@ -256,18 +254,14 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: bold;
     color: #fff;
     border: none;
-
 }
-
 .sub_payment:hover {
     background-color: #9b6c47;
     cursor: pointer;
 }
- 
 .order_total {
     border-bottom: 3px solid #ececec;
 }
-
 /* Mã giảm giá */
 .text_coupon {
     border-bottom: 3px solid #ececec;
@@ -275,29 +269,22 @@ input[type=number]::-webkit-outer-spin-button {
     padding-bottom: 10px;
     margin: 20px 0px;
 }
-
-
 .coupon_code{
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #aeacac;
-
 }
-
 .apply {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
 }
-
 .apply:hover {
     background-color: #aeacac;
     cursor: pointer;
 }
-
-
 /* form */
 .payment_modal {
     display: none;
@@ -311,7 +298,6 @@ input[type=number]::-webkit-outer-spin-button {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.4);
 }
-
 .paymentForm {
     width: 700px;
     border: 1px solid rgb(155, 153, 153);
@@ -363,7 +349,6 @@ input[type=number]::-webkit-outer-spin-button {
 .payment_button:hover {
     background-color: rgb(180, 28, 28);
 }
-
 
 
 /* RESPONSIVE */
@@ -429,7 +414,6 @@ input[type=number]::-webkit-outer-spin-button {
         margin-right: 10px;
     }
 
-   
     /* Giỏ hàng */
     .cart_wrapper {
         width: 100%;
@@ -438,7 +422,7 @@ input[type=number]::-webkit-outer-spin-button {
     .cart_table {
         border-right: none;
     }
-
+  
     img {
         width: 60px !important;
         height: 60px !important;
@@ -464,20 +448,16 @@ input[type=number]::-webkit-outer-spin-button {
     .input_note {
         width: 70px;
     }
-
       /* Form cần thanh toán */
     .cart_form_payments {
         width: 100%;
         position: static;
-        margin: 0;
-        
+        margin: 0; 
     }
-
     .cart_sidebar {
         margin-top: 20px;
         margin-right: 10px;
     }
-
     .cart_totals .product_name2 {
         text-align: center;
     }
@@ -493,7 +473,7 @@ input[type=number]::-webkit-outer-spin-button {
     #number_step {
         width: 30px;  
     }
-    
+   
     /* Tiếp tục xem và cập nhật giỏ hàng */
     .button_continue {
         padding-top: 80px;

@@ -5,8 +5,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
 .reset_search{
     width: 140px;
     height: 30px;
@@ -23,12 +21,11 @@
     cursor: pointer;
 }
 #menu_tbl {
-    margin-top: 150px; /* Khoảng cách với phần header cố định */
+    margin-top: 10px !important;
+    /* Khoảng cách với phần header cố định */
     width: 100%;
-    border-collapse: collapse;
     border: none;
 }
-
 #menu_tbl thead th {
     position: sticky; /* Giữ cố định khi cuộn */
     top: 57px; /* Đặt ngay dưới header cố định */
@@ -66,7 +63,7 @@
 } 
 /* Bảng menu */
 #menu_tbl{
-    margin-top: 30px; /* Để tránh bảng bị che bởi tiêu đề cố định */
+    margin-top: 10px !important; /* Để tránh bảng bị che bởi tiêu đề cố định */
     width: 100%;
     border-collapse: collapse;
     border: none;
@@ -181,12 +178,65 @@ tr:nth-child(even) textarea {
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 10;
 }
-
-/* RESPONSIVE */
-/* TABLET */
+/* chỉnh responsive cho menu */
 @media (min-width: 740px) and (max-width: 1023px) {
-    #menu_title {
-        margin-top: 50px;
+    .header{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .header_nav li{
+        margin-right:12px;
+        font-size: 13px;
+    }
+    .header-right {
+        width: 30%;
+        display: flex;
+    }
+    .searchBar{
+        display: flex;
+        width: 25px;
+    }
+    .search_input{
+        height: 25px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+    #btn_search{
+        margin-left: 20px !important;
+        margin-top: 2px;
+    }
+    .header_cart {
+        margin: 0px;
+        
+    }
+    .header_regiter{
+        margin-right: 30px ;
+        padding: 0px;
+        margin: 0px;
+    }
+ } 
+ @media (max-width:739px) {
+    .header{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    /* .header_nav{
+        display: none !important;
+    } */
+    .header-right {
+        width: 30% !important;
+        display: flex;
+    }
+    .searchBar{
+        display: flex;
+        width: 190px;
+    }
+    .header_regiter{
+        margin-right: 30px ;
+        padding: 0px;
+        margin: 0px;
     }
     #menu_list {
         position: relative; 
@@ -194,24 +244,12 @@ tr:nth-child(even) textarea {
         flex-flow: row wrap;
         justify-content: center;
     }
+    #menu_tbl{
+        width:80% !important;
+    }
+    .footer{
+        width: 100%;
+        justify-content: space-between;
+    }
+ }
 
-    
-}
-/* MOBILE */
-@media (max-width: 739px) {
-    #menu_title {
-        margin-top: 50px;
-    }
-    #menu_list {
-        position: relative; 
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-    }
-    #menu_tbl thead th,
-    #menu_list li a {
-        font-size: 14px;
-    }
-
-  
-}

@@ -103,8 +103,6 @@
     display: inline-block;
     align-content: center;
 }
-
-
 .header_search {
     height: 22px;
     width: 22px;
@@ -151,14 +149,11 @@
     cursor: pointer;
     opacity: 0.6;
 }
-
-
 .header_cart, .header_regiter{
     height: 100%;
     align-self: center;
     display: inline-block;
 }
-
 .header_cart{
     position: relative;
     top: 8px;
@@ -180,18 +175,16 @@
     margin-left: 1px;
 }
 
+
 .header_regiter{
     padding: 0 26px;
 }
 .cart_logo{
     margin-left: 50px;
 }
-
 .regiter_logo{
     margin-left: 30px;
 }
-
-
 /* ------------------------------------------------------PHẦN BODY-------------------------------------------------------- */
 .body_slider {
     width: 100%; 
@@ -199,7 +192,6 @@
     overflow: hidden; /* Ẩn các slide bị thừa ra ngoài */
     position: relative;
 }
-
 .slider {
     display: flex;
     width: 400%;
@@ -207,19 +199,16 @@
     transition: transform 1s ease; /* Hiệu ứng chuyển đổi */
     animation: slide 16s infinite; /* Tự động chuyển slide */
 }
-
 .slide {
     width: 100vw; /* Mỗi slide chiếm toàn bộ chiều rộng màn hình */
     height: 100%; 
     flex-shrink: 0; /* các slide sẽ ko bị thu nhỏ */
 }
-
 .slider img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 @keyframes slide {
     0% { transform: translateX(0); } /*thời điểm dịch chuyển*/
     20% { transform: translateX(0); } /*lúc hiển thị đứng yên*/
@@ -231,7 +220,6 @@
     95% { transform: translateX(-300vw); }
     100% { transform: translateX(0); }
 }
-
 /* Dish */
 .body_text {
     display: flex;
@@ -317,7 +305,6 @@
     margin-top: 10px;
     font-size: 20px;
 }
-
 /* triết lý thương hiệu */
 .body_textH5{
     text-align: center;
@@ -328,12 +315,10 @@
     padding: 0 150px;
     font-size: 15px;
 }
-
-
 /* giới thiệu */
 .body_introduce{
-    height: 540px;
-    /* width: 85%; */
+    height: 100%;
+    width: 85%;
     margin: 10px auto 24px auto;
     display: flex;
 }
@@ -372,8 +357,6 @@
     padding-right: 10px;
     margin-top: 0px;
 }
-
-
 /* ------------------------------------------------------phần footer-------------------------------------------------- */
 .footer{
     /* height: 200px; */
@@ -410,208 +393,175 @@
     text-decoration: none;
 }
 
-
-
-/* RESPONSIVE */
-/* TABLET */
-@media (min-width: 740px) and (max-width: 1023px) {
-    /* Header */
-    .menu_icon{
-        display: block;
+/* chỉnh sửa responsive */
+@media  (min-width:740px) and (max-width:1034px){
+    .header{
+        margin: 0px;
+        padding:0px;
+        justify-content: center;
     }
-
-    .header_nav {
-        display: none;
-    }
-
-    .header_nav li{
-        margin-right: 15px;
-    }
-
-    .header_nav a {
-        font-size: 15px;
-    }
-
-    .header_regiter {
-        padding: 0 15px;
-    }
-  
-    .searchBar {
-        display: flex;
-    }
-
-    .header_logo {
-        margin-left: 30px;
-    }
-
-
- /* FOOTER */
-    .card_logo {
-        margin: 0 35px;
-    }
-
-    .card_textTop {
-        font-size: 30px;    
-    }
-    .card_textBottom {
-        font-size: 20px;
-    }
-}
-
-.menu_icon_close {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 0.4rem;
-    right: 1rem;
-  }
-
-.menu_icon_close .fa-xmark {
-    font-size: 30px;
-}
-
-.header_nav {
-    transform: translateX(-100%);
-}
-
-/* MOBILE */
-@media (max-width: 739px) {
-    /* LOGO */
-    .logo {
-        display: none;
-    }
-   
-    /* HEADER */
-     /* Điều chỉnh lại header */
-     .header {
-        display: inline-block;
-        font-size: 16px;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .menu_icon {
-        display: inline-block !important; /* Hiển thị icon menu */
-    }
-
-    
-
     .header_nav{
-        position: fixed;
-        top: 0px;
-        left: 0px;
-        bottom: 0px;
-        right: 0px;
-        width: 250px;
-        max-width: 100%;
-        background-color: #fff;
-    }
-
-    .header_nav ul {
-        list-style-type: none;
-        margin-top: 30px;
-        margin-left: 30px;
-
-    }
-
-    .header_nav li {
-        float: none;
-        position: relative;
-        margin-right: 30px;
-        margin-bottom: 20px;
-    }
-
-    .header_nav li a {
-        font-size: 20px;
-        text-decoration: none;
-        color: #000;
-    }
-
-
-    .header_nav ul {
-        list-style-type: none;
-    }
-   
-    .header_nav a:hover{
-        color: red;
-    }
-
-    .header-right {
-        width: 70%;
-        justify-content: end;
-        margin-left: 195px;
-        /* position: absolute; */
-    }
-
-    .searchBar {
         display: inline-block;
     }
-
-    .header_search {
-        height: 22px;
-        width: 20px;
-    
+    .header_nav li{
+        margin-right:12px;
+        font-size: 13px;
+    }
+    .header-right {
+        width: 50%;
+        display: flex;
+        justify-content:space-between;
+    }
+    .searchBar{
+        display: inline-block;
+        display: flex;
+        width: 25px;
     }
     .search_input{
-        width: 150px;
+        height: 25px;
+        margin-left: 10px;
+        margin-top: 5px;
     }
-
-    .search_logo i {
-        color: #868686;
-        font-size: 15px;
-        padding-left: 5px;
-        line-height: 28px;
+    #btn_search{
+        margin-left: 10px;
+        margin-top: 2px;
+        width: 120px;
+        height: 38px;
     }
-    .btn_search{
-        font-size: 12px;
-    }
-
-    .header_cart i, .header_regiter i{
-        font-size: 28px;
-        opacity: 0.8;
-    }
-
-    .header_cart i:hover, .header_regiter i:hover{
-        cursor: pointer;
-        opacity: 0.6;
-    }
-
-
-    .header_cart, .header_regiter{
-        height: 100%;
+    .header_cart {
+        /* height: 100%; */
         align-self: center;
-        display: inline-block;
+        display:block;
+        margin-left: 190px;
     }
-
     .header_regiter{
-        padding: 0 10px;
+        margin-right: 30px;
     }
-    .regiter_logo{
+    .body_menu{
+        height: 1000px;
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        grid-gap: 10px;
+        margin: 0 10px;
+    }
+    .body_slider{
+        height: 500px;
+    }
+    #body_text_two{
+        margin-top:700px;
+        font-size: 35px;
+    }
+    .body_textH5{
+        font-size: 20px;
+    }
+    .body_textH6{
+        margin-top: 10px;
+        font-size: 17px;
+    }
+    .footer{
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 90px;
+    }
+    .footer_card{
+        height: 100%;
+        width: 25%;
+    }
+    .card_textTop b{
+        font-size: 25px;
+    }
+    .card_textBottom{
+        font-size: 20px;
+    }
+    .introduce_card h6{
+        height: 145px;
+    }
+    .card_dish{
+        height: 50%;
+        width: 100%;
+        /* overflow: hidden; loại bỏ phần hình ảnh tràn ra ngoài */
+    }
+    .card_logo{
         margin-left: 30px;
     }
-    
-    /* FORM */
-    #registerContainer, #loginContainer{
-        width: 360px;
+}
+@media (max-width:739px) {
+     .searchBar{
+        display: flex !important;
+        margin-right: 0px;
+        margin-left: 30px !important;
     }
-
-    #register_Form, #login_Form {
-        width: 320px;
+    .body_slider{
+        height: 300px;
     }
-   
-    
-    /* FOOTER */
-    .card_textTop {
-        font-size: 18px;    
+    .containers_logandreg{
+        width: 80% !important;
     }
-    .card_textBottom {
+    .body_menu{
+        height: 1000px;
+        display: grid;
+        grid-template-columns:1fr ;
+        grid-gap: 10px;
+        margin: 0 10px;
+    }
+    #body_text_two{
+        margin-top: 2270px;
+        font-size: 25px;
+    }
+    .body_text{
+        font-size: 15px;
+    }
+    .body_textH5{
+        font-size: 15px;
+    }
+    .body_textH6{
+        display: none;
+    }
+    .body_introduce{
+        width: 100%;
+        display: grid;
+        grid-template-columns:1fr ;
+        grid-gap: 5px;
+        margin-top: 0px;
+    }
+    .introduce_card{
+        width: 405px;
+        height: 350px;
+    }
+    .introduce_card h4{
+        font-size: 25px;
+    }
+    .introduce_card h6{
+        height: 100px;
+    }
+    .footer{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .card_logo{
+        margin-left:0px;
+    }   
+    .card_dish{
+        height: 50%;
+        width: 100%;
+    }
+    .card_textTop b{
         font-size: 12px;
     }
-    .card_logo {
-        font-size: 30px;
-        margin: 0 10px;
-        margin-left: 50px;
+    .card_textBottom{
+        font-size: 12px;
     }
-
-  
+    .cart_form_payments {
+        right: 30px;
+        width: 25%;
+    }
+    .cart_form_products{ 
+        flex-direction:  column;
+    }
+    .cart_table {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-right: 10px;
+    }
 }
