@@ -69,3 +69,5 @@ function handleLogAndRegModal() {
 renderFeaturedDishes(allData);
 handleCart();
 handleLogAndRegModal();
+
+import countUniqueItemsInCart, from "../javaScript/cart.js";

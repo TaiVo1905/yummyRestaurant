@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+.details{
+    margin-top: 60px;
+}
+
 /* phần chứa div ảnh và div introduce */
 .details_top{
     height:640px;
@@ -27,6 +31,7 @@
     font-size: 30px;
     opacity: 0.6;
     color: rgb(90, 89, 89);
+    cursor: pointer;
 }
 
 /* tên món */
@@ -283,4 +288,170 @@
     height: 150px;
     width: 700px;
     border: 1px solid rgb(214, 214, 214);
+}
+
+
+/* ----------------------------------------------------------------css header------------------------------------------------- */
+.header{
+    background-color: rgb(231, 253, 141);
+    display: flex;
+    font-size: 18px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-right {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+
+.header_logo {
+    margin-left: 36px;
+    display: inline-block;
+}
+
+.logo {
+    background-image: url(../assets/image/logo.jpg);
+    padding-left: 42px;
+    height: 42px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    display: inline-block;
+    margin-right: 6px;
+}
+.header_nav{
+    display: inline-block;
+}
+.header_nav ul {
+    list-style-type: none;
+}
+.header_nav li {
+    float: left;
+    position: relative;
+    margin-right: 30px;
+
+}
+.header_nav a{
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+.header_nav a:hover{
+    color: red;
+}
+.header_nav .active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 0;
+    background: red;
+    transition: width 0.3s ease-in-out;
+  }
+  .header_nav .active:hover::after {
+    width: 100%;
+  }
+
+.searchBar {
+    display: flex;
+    display: inline-block;
+    align-content: center;
+}
+
+
+.header_search {
+    height: 22px;
+    width: 22px;
+    background-color: blue;
+    margin-top: 60px;
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+}
+.search_input{
+    outline: none;
+    border: none;
+    height: 28px;
+    padding: 0 6px;
+    border-radius: 6px;
+    width: 210px;
+}
+
+.search_logo i {
+    color: #868686;
+    font-size: 15px;
+    padding-left: 5px;
+    line-height: 28px;
+}
+
+.btn_search{
+    width: 70px;
+    height: 28px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.header_cart i, .header_regiter i{
+    font-size: 28px;
+    opacity: 0.8;
+}
+
+.header_cart i:hover, .header_regiter i:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+
+.header_cart, .header_regiter{
+    height: 100%;
+    align-self: center;
+    display: inline-block;
+}
+
+.header_cart{
+    position: relative;
+    top: 8px;
+}
+
+.header_regiter{
+    padding: 0 26px;
+}
+.cart_logo{
+    margin-left: 50px;
+}
+
+.regiter_logo{
+    margin-left: 30px;
+}
+
+/* css giỏ hàng */
+.quantity_cart{
+    position: relative;
+    left: 70px;
+    bottom: 35px;
+    height: 16px;
+    width: 16px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 15px;
+}
+
+.quantity_cart p{
+    margin-left: 4px;
 }

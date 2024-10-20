@@ -92,6 +92,7 @@
 .searchBar {
     display: flex;
     display: inline-block;
+    align-content: center;
 }
 
 
@@ -147,6 +148,27 @@
     height: 100%;
     align-self: center;
     display: inline-block;
+}
+
+.header_cart{
+    position: relative;
+    top: 8px;
+}
+
+.quantity_cart{
+    position: relative;
+    left: 70px;
+    bottom: 35px;
+    height: 16px;
+    width: 16px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 15px;
+}
+
+.quantity_cart p{
+    margin-left: 1px;
 }
 
 .header_regiter{
@@ -378,6 +400,4 @@
     color: #000;
     text-decoration: none;
 }
-
-
 
