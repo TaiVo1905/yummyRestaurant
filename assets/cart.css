@@ -333,7 +333,8 @@ input[type=number]::-webkit-outer-spin-button {
 .payment_lastName,
 .payment_firstName,
 .payment_email, 
-.payment_phoneNumber {
+.payment_phoneNumber,
+.payment_address {
     width: 100%;
     height: 40px;
     border: 1px solid rgb(155, 153, 153);
