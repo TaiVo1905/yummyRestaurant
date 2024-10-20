@@ -119,19 +119,7 @@
     padding-left: 5px;
     line-height: 28px;
 }
-.reset_search{
-    width: 140px;
-    height: 30px;
-    background-color:orangered ;
-    color:white;
-    border-radius: 5px;
-    font-size: 14px;
-    transform: translateY(-10px);
-    margin-left: 14px;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 6px 15px 0 15px;
-}
+
 .btn_search{
     width: 70px;
     height: 28px;
@@ -141,6 +129,7 @@
     outline: none;
     border-radius: 5px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .header_cart i, .header_regiter i{
@@ -238,7 +227,7 @@
     width: 100%;
     background-color: rgb(241, 252, 198);;
     display: flex;
-    /* margin: 7px; */
+    border-radius: 15px;
     flex-direction: column;
     text-align: center;
 }
@@ -246,6 +235,8 @@
     height: 70%;
     width: 100%;
     overflow: hidden; /*loại bỏ phần hình ảnh tràn ra ngoài */
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
 }
 .card_dish img{
     height: 100%;
@@ -254,7 +245,7 @@
     transition: transform 0.5s ease-in-out;
 }
 .card_dish:hover img{
-    transform: scale(1.1) /*căn chỉnh độ phóng to của hình ảnh*/
+    transform: scale(1.1); /*căn chỉnh độ phóng to của hình ảnh*/
 }
 .menu_card h5{
     margin-top: 15px;

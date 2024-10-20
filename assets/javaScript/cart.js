@@ -27,7 +27,7 @@ function displayCart(data){
                                     <div class="image"><img src="${item.image_url}" style="width: 80px; height: 80px;" alt="${item.nameFood}"></div>
                                 </td>
                                 <td class="product_name appear">
-                                    <div>${item.nameFood}</div>
+                                    <div id = "${item.foodId}">${item.nameFood}</div>
                                 </td>
                                 <td class="product_price appear">
                                     <div>${item.price}</div>				
@@ -42,7 +42,7 @@ function displayCart(data){
                                     </div>
                                 </td>
                                 <td>
-                                <textarea class="input_note">${item.food_Note}</textarea>
+                                <textarea class="input_note" placeholder="Nhập ghi chú tại đây...">${item.food_Note}</textarea>
                                 </td>
                                 <td class="product_subtotal">${item.price}				
                                 </td>
@@ -53,18 +53,8 @@ function displayCart(data){
 }
 
 //Lấy dữ liệu từ JSON
-displayCart(data)
 
-function onclickProduct(event) {
-    // Kiểm tra nếu sự kiện xảy ra từ một phần tử sản phẩm
-    const productElement = event.target.closest('.product_image, .product_name, .product_price');
-    const isHeader = event.target.closest('th'); // Kiểm tra xem có phải nhấp vào tiêu đề (thead) không
 
-    if (!isHeader && productElement) {// Nếu nhấp vào tiêu đề, không chuyển hướng/
-        window.location.href = "details.html";
-    }
-      
-}
 
       /*
         event.target: Trả về phần tử cụ thể mà người dùng đã nhấp vào.
@@ -74,14 +64,27 @@ function onclickProduct(event) {
          */
 
 
-// Thêm sự kiện 'click' cho các sản phẩm sau khi DOM đã sẵn sàng
-document.addEventListener('DOMContentLoaded', function() {
+function getFoodId(){
     const productElements = document.querySelectorAll('.product_image, .product_name, .product_price');
-    
-    productElements.forEach(function(element) {
-        element.addEventListener('click', onclickProduct);
+    const trElements = document.querySelectorAll('.cart_form_products');
+    productElements.forEach( (element) => {
+        element.addEventListener('click', (e) => {
+            const isHeader = e.target.closest('th'); // Kiểm tra xem có phải nhấp vào tiêu đề (thead) không
+            if (!isHeader) {// Nếu nhấp vào tiêu đề, không chuyển hướng/
+                for (const tr of trElements) {
+                    if (tr.contains(e.target)) {
+                        console.log(tr.querySelector('.product_name > div').id)
+                        location.href = "details.html";
+                        sessionStorage.setItem('foodId', tr.querySelector('.product_name div').id);
+                        return;
+                    }
+                }
+            }
+        });
     });
-});
+}
+
+
 
 // Hàm cập nhật tổng tạm tính và tổng giá
 function updateCart() {
@@ -213,11 +216,15 @@ function setMtopFooter() {
 
 // Khởi tạo sự kiện lắng nghe khi tài liệu được tải xong
 document.addEventListener('DOMContentLoaded', function() {
+    displayCart(data)
     setupRemoveButtons();
     setupQuantityButtons();
     updateCart();
     checkIfCartIsEmpty();
-    setMtopFooter()
+    setMtopFooter();
+    handleLogAndRegModal();
+    getFoodId();
+    handleDisplayPaymentModal()
 });
 
 // xử lý form đăng nhập
@@ -234,7 +241,6 @@ function handleLogAndRegModal() {
     })
 }
 
-handleLogAndRegModal()
 
 
 // Xử lý payment
@@ -261,7 +267,6 @@ function handleDisplayPaymentModal () {
     })
 }
 
-handleDisplayPaymentModal();
 
 
 //Lấy thông tin khách hàng đã đăng ký từ localstorage sau đó hiển thị lên form thông tin khách hàng
