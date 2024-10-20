@@ -82,6 +82,6 @@ function switchToDetailPage() {
 renderFeaturedDishes(allData);
 handleCart();
 handleLogAndRegModal();
-import countUniqueItemsInCart, from "../javaScript/cart.js";
+// import countUniqueItemsInCart from "../javaScript/cart.js";
 switchToDetailPage();
 

@@ -318,7 +318,6 @@
 /* giới thiệu */
 .body_introduce{
     height: 100%;
-    width: 85%;
     margin: 10px auto 24px auto;
     display: flex;
 }
