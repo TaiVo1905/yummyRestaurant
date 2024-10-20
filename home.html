@@ -18,7 +18,15 @@
                     <!-- <img src="../assets/image/logo.jpg" alt=""> -->
                 </div>
             </div>
-            <div class="header_nav">
+            <!-- Menu Icon -->
+            <div class="menu_icon" id="open_Icon" onclick="sidebarOpen()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="header_nav" id="nav_Menu">
+                <!-- Close Icon -->
+                <div class="menu_icon_close" id="close_Icon" onclick="sidebarClose()">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
                 <ul>
                     <li><a class="active" href="../home.html">TRANG CHỦ</a></li>
                     <li><a class="active" href="../menu.html">THỰC ĐƠN</a></li>
@@ -27,7 +35,6 @@
                 </ul>
             </div>
             <div class="header-right">
-
                 <div class="searchBar">
                     <input class="search_input" id="search_input" type="search" placeholder="Tìm kiếm...">
                     <button class="btn_search" id="btn_search">Tìm Kiếm</button>
@@ -167,5 +174,17 @@
     <script src="../assets/javaScript/logandreg.js" type="module"></script>
     <script src="../assets/javaScript/home.js" type="module"></script>
     <!-- <script src="../assets/javaScript/menu.js" type="module"></script> -->
+    <script>
+        function sidebarOpen() {
+          document.getElementById("open_Icon").style.display = "block";
+        }
+        
+        function sidebarClose() {
+          document.getElementById("close_Icon").style.display = "none";
+        }
+
+        </script>
+
+        
 </body>
 </html>
