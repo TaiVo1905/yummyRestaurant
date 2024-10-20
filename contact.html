@@ -28,11 +28,14 @@
             <div class="header-right">
 
                 <div class="searchBar">
-                    <input class="search_input" id="search_input" type="text" placeholder="Search...">
+                    <input class="search_input" id="search_input" type="search" placeholder="Tìm kiếm...">
                     <button class="btn_search" id="btn_search">Tìm Kiếm</button>
                 </div>
                 <div class="header_cart">
-                    <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+                    <div>
+                        <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                    <div class="quantity_cart"><p id="quantity_cart">13</p></div>
                 </div>
                 <div class="header_regiter">
                     <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
@@ -47,11 +50,11 @@
                 <p class="script"> Nếu bạn có thắc mắc gì, có thể gửi yêu cầu cho chúng tôi và chúng tôi sẽ liên lạc sớm nhất có thể </p>
                 <form class ="frm">
                     <div class="text">
-                        <input type="text" name="fullname" class="fullName" placeholder="Tên của bạn ">
-                        <input type="email" name="email" class=" email" placeholder="Email của bạn ">
+                        <input type="text" name="fullname" class="fullName" placeholder="Tên của bạn" required>
+                        <input type="email" name="email" class="email" placeholder="Email của bạn" required>
                     </div>
                     <div class="content">
-                        <textarea name="message" class="message" placeholder="Nội dung"></textarea>
+                        <textarea name="message" class="message" placeholder="Nội dung" required></textarea>
                     </div>
                         <button type="submit">Gửi</button>
                 </form>
@@ -120,5 +123,12 @@
         </div>
     </div>
     <script src="../assets/javaScript/logandreg.js" type="module"></script>
+    <script>
+        document.querySelector('.frm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Cám ơn bạn liên hệ, chúng tôi sẽ phản hồi bạn sớm!");
+            window.location.href = "home.html";
+        })
+    </script>
 </body>
 </html>

@@ -230,7 +230,8 @@
 }
 
 /* order table */
-.admin_orders_content .admin_tb_thead th:first-child, .admin_orders_content .admin_tb_items td:first-child {
+.admin_orders_content .admin_tb_thead th:first-child, .admin_orders_content .admin_tb_items td:first-child,
+.admin_bookTables_content .admin_tb_thead th:first-child, .admin_bookTables_content .admin_tb_items td:first-child {
     width: 5%;
 }
 
@@ -253,10 +254,10 @@
 /* Users table, book tables table */
 
 .admin_users_content .admin_tb_thead th:first-child, .admin_users_content .admin_tb_items td:first-child,
-.admin_bookTables_content .admin_tb_thead th:first-child, .admin_bookTables_content .admin_tb_items td:first-child,
 .admin_bookTables_content .admin_tb_thead th:nth-child(5), .admin_bookTables_content .admin_tb_items td:nth-child(5),
 .admin_bookTables_content .admin_tb_thead th:nth-child(6), .admin_bookTables_content .admin_tb_items td:nth-child(6),
-    .admin_bookTables_content .admin_tb_thead th:nth-child(7), .admin_bookTables_content .admin_tb_items td:nth-child(7) {
+.admin_bookTables_content .admin_tb_thead th:nth-child(7), .admin_bookTables_content .admin_tb_items td:nth-child(7),
+.admin_bookTables_content .admin_tb_thead th:nth-child(8), .admin_bookTables_content .admin_tb_items td:nth-child(8) {
     width: 10%;
 }
 

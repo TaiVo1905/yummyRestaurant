@@ -9,83 +9,52 @@
 </head>
 <body>
     <div class="details">
-        <div class="details_top">
-            <div class="details_img">
-                <img src="../assets/image/salad cá hồi.jpg" alt="">
-            </div>
-            <div class="details_introduce">
-                <span class="text1">Trang Chủ / Khai Vị</span><br><br>
-                <span class="text2">Salad Cá Hồi</span><br>
-                <hr>
-                <span class="price"><b>69.000 đ<b></span>
-                <div class="quantity">
-                    <div class="quantity_logo1">-</div>
-                    <div class="quantity_logo2">1</div>
-                    <div class="quantity_logo3">+</div>
-                    <div class="commit">Thêm Vào Giỏ Hàng</div>
+        <!-- --------------------------------------------------header----------------------------------------------- -->
+        <div class="header">
+            <div class="header_logo">
+                <div class="logo">
+                    <!-- <img src="../assets/image/logo.jpg" alt=""> -->
                 </div>
-                <br><span>Danh Mục: Khai Vị</span><br>
-                <hr><br>
-                <span>Mô Tả<br>
-                    <textarea placeholder="Mô Tả Món Ăn" name="noi_dung"></textarea>
-                </span>
             </div>
-            <div class="details_icon">
-                <button>
-                    <i class="fa-solid fa-angle-left"></i>
-                </button>
-                <button>
-                    <i class="fa-solid fa-angle-right"></i>
-                </button>
+            <div class="header_nav">
+                <ul>
+                    <li><a class="active" href="../home.html">TRANG CHỦ</a></li>
+                    <li><a class="active" href="../menu.html">THỰC ĐƠN</a></li>
+                    <li><a class="active" href="../bookTable.html">ĐẶT BÀN</a></li>
+                    <li><a class="active" href="../contact.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+            <div class="header-right">
+    
+                <div class="searchBar">
+                    <input class="search_input" id="search_input" type="search" placeholder="Tìm kiếm...">
+                    <button class="btn_search" id="btn_search">Tìm Kiếm</button>
+                    
+                </div>
+                <div class="header_cart">
+                    <div>
+                        <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                    <div class="quantity_cart"><p id="quantity_cart"></p></div>
+                </div>
+                <div class="header_regiter">
+                    <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
+                </div>
             </div>
         </div>
-        <div class="details_bottom">SẢN PHẨM TƯƠNG TỰ</div>
-        <div class="list_dish">
-            <div class="mui_ten">
-                <i class="logo_mt fa-solid fa-angle-left"></i>
-            </div>
-            <div class="dish">
-                <div class="dish1">
-                    <img src="/assets/image/khaiVi/caHoiApChao.jpg" alt="">
-                </div>
-                <h6>Khai Vị</h6>
-                <h5>Ốc nhồi ống nứa</h5>
-                <span>90.000 đ</span><br>
-                <button>Thêm Vào Giỏ Hàng</button>
-            </div>
-            <div class="dish">
-                <div class="dish1">
-                    <img src="/assets/image/khaiVi/caHoiApChao.jpg" alt="">
-                </div>
-                <h6>Khai Vị</h6>
-                <h5>Ốc nhồi ống nứa</h5>
-                <span>90.000 đ</span><br>
-                <button>Thêm Vào Giỏ Hàng</button>
-            </div>
-            <div class="dish">
-                <div class="dish1">
-                    <img src="/assets/image/khaiVi/caHoiApChao.jpg" alt="">
-                </div>
-                <h6>Khai Vị</h6>
-                <h5>Ốc nhồi ống nứa</h5>
-                <span>90.000 đ</span><br>
-                <button>Thêm Vào Giỏ Hàng</button>
-            </div>
-            <div class="dish">
-                <div class="dish1">
-                    <img src="/assets/image/khaiVi/caHoiApChao.jpg" alt="">
-                </div>
-                <h6>Khai Vị</h6>
-                <h5>Ốc nhồi ống nứa</h5>
-                <span>90.000 đ</span><br>
-                <button>Thêm Vào Giỏ Hàng</button>
-            </div>
-            <div class="mui_ten">
-                <i class="logo_mt fa-solid fa-angle-right"></i>
+        <!-- -------------------------------------------------------body------------------------------------------ -->
+        <div class="details_top" id="details_top">
+
+        </div>
+        <div class="details_bottom"><b>SẢN PHẨM TƯƠNG TỰ<b></div>
+        <div class="box">
+            <div class="dish-slider">
+                <div class="slider-content" id="list_dish_content"></div>
+                <button id="prev_dish" class="slider-button">❮</button>
+                <button id="next_dish" class="slider-button">❯</button>
             </div>
         </div>
-
-
+        <!-- -------------------------------------------------------footer----------------------------------------------- -->
         <div class="footer">
             <div class="footer_card">
                 <div class="card_textTop"><b>Địa Chỉ</b></div><br/>
@@ -115,5 +84,7 @@
             </div>
         </div>
     </div>
+    <script src="../assets/javaScript/localStorage.js" type="module"></script>
+    <script src="../assets/javaScript/details.js" type="module"></script>
 </body>
 </html>

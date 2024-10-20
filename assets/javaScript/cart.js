@@ -1,7 +1,7 @@
 //Lấy dữ liệu từ json
 import getDataLocalStorage, {setDataLocalStorage} from "../javaScript/localStorage.js";
 const data = getDataLocalStorage();
-console.log(data)
+// console.log(data)
 
 //Hiển thị sản phẩm 
 function displayCart(data){
@@ -22,12 +22,12 @@ function displayCart(data){
                                 <!-- Xoá sản phẩm đã thêm vào giỏ hàng -->
                                 <td class="product_remove">
                                     <a href="#" class="remove"><i class="fa-regular fa-circle-xmark item_remove"></i></a>
-                                </td>
+                                </td>   
                                 <td class="product_image appear">
                                     <div class="image"><img src="${item.image_url}" style="width: 80px; height: 80px;" alt="${item.nameFood}"></div>
                                 </td>
                                 <td class="product_name appear">
-                                    <div>${item.nameFood}</div>
+                                    <div id = "${item.foodId}">${item.nameFood}</div>
                                 </td>
                                 <td class="product_price appear">
                                     <div>${item.price}</div>				
@@ -42,7 +42,7 @@ function displayCart(data){
                                     </div>
                                 </td>
                                 <td>
-                                <textarea class="input_note">${item.food_Note}</textarea>
+                                <textarea class="input_note" placeholder="Nhập ghi chú tại đây...">${item.food_Note}</textarea>
                                 </td>
                                 <td class="product_subtotal">${item.price}				
                                 </td>
@@ -53,18 +53,8 @@ function displayCart(data){
 }
 
 //Lấy dữ liệu từ JSON
-displayCart(data)
 
-function onclickProduct(event) {
-    // Kiểm tra nếu sự kiện xảy ra từ một phần tử sản phẩm
-    const productElement = event.target.closest('.product_image, .product_name, .product_price');
-    const isHeader = event.target.closest('th'); // Kiểm tra xem có phải nhấp vào tiêu đề (thead) không
 
-    if (!isHeader && productElement) {// Nếu nhấp vào tiêu đề, không chuyển hướng/
-        window.location.href = "details.html";
-    }
-      
-}
 
       /*
         event.target: Trả về phần tử cụ thể mà người dùng đã nhấp vào.
@@ -74,14 +64,27 @@ function onclickProduct(event) {
          */
 
 
-// Thêm sự kiện 'click' cho các sản phẩm sau khi DOM đã sẵn sàng
-document.addEventListener('DOMContentLoaded', function() {
+function getFoodId(){
     const productElements = document.querySelectorAll('.product_image, .product_name, .product_price');
-    
-    productElements.forEach(function(element) {
-        element.addEventListener('click', onclickProduct);
+    const trElements = document.querySelectorAll('.cart_form_products');
+    productElements.forEach( (element) => {
+        element.addEventListener('click', (e) => {
+            const isHeader = e.target.closest('th'); // Kiểm tra xem có phải nhấp vào tiêu đề (thead) không
+            if (!isHeader) {// Nếu nhấp vào tiêu đề, không chuyển hướng/
+                for (const tr of trElements) {
+                    if (tr.contains(e.target)) {
+                        console.log(tr.querySelector('.product_name > div').id)
+                        location.href = "details.html";
+                        sessionStorage.setItem('foodId', tr.querySelector('.product_name div').id);
+                        return;
+                    }
+                }
+            }
+        });
     });
-});
+}
+
+
 
 // Hàm cập nhật tổng tạm tính và tổng giá
 function updateCart() {
@@ -202,7 +205,7 @@ function setMtopFooter() {
     const isCart = data.carts.find( (cart) => {
         return sessionStorage.getItem('UserID') == cart.userId;
     })
-    console.log(isCart)
+    // console.log(isCart)
     if (isCart) {
         document.querySelector('.footer').style.marginTop = '0';
     } else {
@@ -213,11 +216,15 @@ function setMtopFooter() {
 
 // Khởi tạo sự kiện lắng nghe khi tài liệu được tải xong
 document.addEventListener('DOMContentLoaded', function() {
+    displayCart(data)
     setupRemoveButtons();
     setupQuantityButtons();
     updateCart();
     checkIfCartIsEmpty();
-    setMtopFooter()
+    setMtopFooter();
+    handleLogAndRegModal();
+    getFoodId();
+    handleDisplayPaymentModal()
 });
 
 // xử lý form đăng nhập
@@ -234,7 +241,6 @@ function handleLogAndRegModal() {
     })
 }
 
-handleLogAndRegModal()
 
 
 // Xử lý payment
@@ -261,7 +267,6 @@ function handleDisplayPaymentModal () {
     })
 }
 
-handleDisplayPaymentModal();
 
 
 //Lấy thông tin khách hàng đã đăng ký từ localstorage sau đó hiển thị lên form thông tin khách hàng
@@ -281,5 +286,98 @@ function getInformationLocalStorage() {
     }
 }
 handleDisplayPaymentModal();
+
+// hiện form đặt hàng thành công 
+const paymentSuccessful=document.querySelector('.order_success_modal');
+const paymentButton = document.querySelector('.payment_button');
+const payment_modal = document.querySelector('#payment_modal');
+paymentButton.addEventListener('click', function(e){
+    e.preventDefault();
+    payment_modal.style.display='none';
+    paymentSuccessful.style.display='block';
+    ordersuccessfully();
+})
+// localStorage.clear() //Hiển thị lại sản phẩm
+
+function ordersuccessfully(){
+    const user_id = parseInt(sessionStorage.getItem('UserID'));
+    // Kiểm tra nếu người dùng chưa đăng nhập
+    if (!user_id) {
+        alert("Vui lòng đăng nhập trước khi đặt hàng!");
+        return;
+    }
+    // Lọc sản phẩm trong giỏ hàng dựa vào userId
+    const cart_userID = data.carts.filter(item => item.userId === user_id);
+
+    if (cart_userID.length === 0) {
+        alert("Không có mặt hàng nào trong giỏ hàng này!");
+        return;
+    }
+
+    getInformationLocalStorage();
+    const firstName = document.querySelector('.payment_firstName').value;
+    const lastName = document.querySelector('.payment_lastName').value;
+    const customerName = firstName + " " + lastName;
+    const phoneNumber = document.querySelector('.payment_phoneNumber').value; 
+    const address = document.querySelector('.payment_address').value; 
+    const food_Name = cart_userID.map(item=> item.nameFood + ` (${item.food_Qty})`)
+    const amount = document.querySelector('.sum_total').innerText;
+
+    const newOrder = {
+        'id':data.orders.length + 1,
+        'foodName': food_Name,
+        'amount': amount,
+        'time': new Date().toLocaleString(),
+        'customerName': customerName,
+        'phoneNumber': phoneNumber,
+        'address': address
+    }
+
+    data.orders.push(newOrder);
+    setDataLocalStorage(data);
+
+    // Xóa dữ liệu trong carts
+    data.carts = data.carts.filter(item => item.userId !== user_id);
+    setDataLocalStorage(data);
+
+    // ẩn form quay về trang menu
+    const successfullyorder_btn = document.querySelector('.successfullyOder_button');
+    successfullyorder_btn.addEventListener('click', function(){
+        paymentSuccessful.style.display='none';
+        window.location.href='menu.html';
+    })
+}
+handleDisplayPaymentModal();
   
 // localStorage.clear() //Hiển thị lại sản phẩm
+
+
+/* ------------------------------------cập nhật số lượng món ăn trong giỏ hàng-----------------------------------------*/
+// Hàm đếm số lượng món ăn trong giỏ hàng
+function countUniqueItemsInCart() {
+    const user_ID = parseInt(sessionStorage.getItem('UserID')); // lấy user ID từ sessionStorage
+    const cartItems = data.carts.filter(cart => cart.userId == user_ID); // lọc món ăn thuộc về user hiện tại
+    return cartItems.length; // trả về số lượng món ăn trong giỏ
+}
+
+// Hàm để xóa món ăn khỏi giỏ hàng và trừ số lượng món ăn
+function removeItemFromCart(itemId) {
+    const user_ID = parseInt(sessionStorage.getItem('UserID')); // Lấy user ID từ sessionStorage
+    const cartIndex = data.carts.findIndex(cart => cart.userId == user_ID && cart.itemId == itemId); // Tìm index của món ăn cần xóa
+
+    if (cartIndex !== -1) {
+        data.carts.splice(cartIndex, 1); // xóa món ăn khỏi giỏ hàng
+        updateCartQuantity(); // cập nhật số lượng món ăn hiển thị trên logo giỏ hàng
+    } 
+}
+
+// Hàm cập nhật số lượng món ăn hiển thị trên logo giỏ hàng
+function updateCartQuantity() {
+    const updatedCount = countUniqueItemsInCart(); // đếm lại số lượng món ăn
+    document.getElementById('quantity_cart').innerText = updatedCount; // hiển thị số lượng mới trên logo giỏ hàng
+}
+
+// Gọi hàm đếm số lượng món ăn trong giỏ hàng và hiển thị 
+const totalUniqueItems = countUniqueItemsInCart();
+console.log(totalUniqueItems); // in ra số lượng món ăn
+document.getElementById('quantity_cart').innerText = totalUniqueItems; // hiển thị số lượng món ăn trên logo giỏ hàng

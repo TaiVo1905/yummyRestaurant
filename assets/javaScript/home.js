@@ -10,18 +10,17 @@ function renderFeaturedDishes(data) {
                 </div>
                 <h5>${dish.name}</h5>
                 <h6>${dish.price}</h6>
-                <button class="add_to_cart" data-name="${dish.name}">Thêm vào giỏ hàng</button>
+                <button class="add_to_cart" id="${dish.id}">Thêm vào giỏ hàng</button>
             </div>
         `;
     });
 }
-const carts =  []; // Lấy giỏ hàng từ localStorage hoặc khởi tạo mảng rỗng
 function handleCart() {
     const data = allData.featuredDishes;
     document.querySelectorAll('.add_to_cart').forEach(button => {
         button.addEventListener('click', function () {
-            const food_Name = this.getAttribute('data-name'); 
-            const user_ID = parseInt(sessionStorage.getItem('UserID')); // Lấy ID người dùng từ sessionStorage
+            const foodId = parseInt(this.id);
+            const user_ID = parseInt(sessionStorage.getItem('UserID'));
             if (!user_ID) {
                 const users_confirm = confirm("Bạn chưa đăng nhập. Bạn có muốn đăng nhập hoặc đăng ký không?");
                 if (users_confirm) {
@@ -30,20 +29,20 @@ function handleCart() {
                     alert("Hãy đăng nhập để thêm món vào giỏ hàng.");
                 }
             } else {
-                const food_Items = data.find(dish => dish.name === food_Name);
-                if (food_Items) {
+                const food_Item = data.find(dish => dish.id == foodId);
+                if (food_Item) {
                     const cartItem = {
                         "id": user_ID,
-                        "nameFood": food_Items.name,
-                        "type": food_Items.type,
-                        "image_url": food_Items.image_url,
-                        "price": food_Items.price,
+                        "nameFood": food_Item.name,
+                        "foodId": food_Item.id,
+                        "type": food_Item.type,
+                        "image_url": food_Item.image_url,
+                        "price": food_Item.price,
                         "food_Qty": 1,
-                        "describe": food_Items.describe,
+                        "describe": food_Item.describe,
                     };
-                    carts.push(cartItem); // Thêm món vào giỏ hàng
-                    localStorage.setItem('carts', JSON.stringify(carts)); // Lưu giỏ hàng vào localStorage
-                    console.log("Giỏ hàng hiện tại:", carts); // In giỏ hàng để kiểm tra
+                    allData.carts.push(cartItem);
+                    setDataLocalStorage(allData); // Lưu giỏ hàng vào localStorage
                     alert('Bạn đã thêm món vào giỏ hàng thành công');
                 } else {
                     alert('Món ăn không tồn tại trong danh sách.');
@@ -52,7 +51,6 @@ function handleCart() {
         });
     });
 }
-
 
 function handleLogAndRegModal() {
     const logAndReg = document.getElementById("logAndReg");
@@ -66,6 +64,24 @@ function handleLogAndRegModal() {
         }
     });
 }
+function switchToDetailPage() {
+    const menu_cards = document.querySelectorAll(".menu_card");
+    menu_cards.forEach( (menu_card) => {
+        menu_card.addEventListener("click", (e) => {
+            console.log(e)
+            if(e.target.className != "add_to_cart") {
+                sessionStorage.setItem('foodId', menu_card.querySelector(".add_to_cart").id);
+                location.href = "details.html"
+            }
+        })
+    })
+        
+}
+// Render món ăn
+
 renderFeaturedDishes(allData);
 handleCart();
 handleLogAndRegModal();
+import countUniqueItemsInCart, from "../javaScript/cart.js";
+switchToDetailPage();
+

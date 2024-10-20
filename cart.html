@@ -30,11 +30,14 @@
         <div class="header-right">
 
             <div class="searchBar">
-                <input class="search_input" id="search_input" type="text" placeholder="Search...">
+                <input class="search_input" id="search_input" type="search" placeholder="Tìm kiếm...">
                 <button class="btn_search" id="btn_search">Tìm Kiếm</button>
             </div>
             <div class="header_cart">
-                <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+                <div>
+                    <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+                </div>
+                <div class="quantity_cart"><p id="quantity_cart"></p></div>
             </div>
             <div class="header_regiter">
                 <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
@@ -65,7 +68,7 @@
                         <th class="product_name" >Món ăn</th>
                         <th class="product_price">Giá</th>
                         <th class="product_quantity">Số lượng</th>
-                        <th class="note">Ghi chú</th>
+                        <th class="input_note">Ghi chú</th>
                         <th class="product_subtotal">Tạm tính</th>
                     </tr>
                 </thead>
@@ -196,18 +199,18 @@
             </form>
         </div>
     </div>
-    <!-- pament form -->
+    <!-- payment form -->
     <div class="payment_modal" id="payment_modal">
         <div class="paymentForm" id="paymentForm">
             <form id="paymentfrm">
                 <h1 class="payment_title">THÔNG TIN KHÁCH HÀNG</h1>
                 <div class="iput_payment">
                     <i class="fa-solid fa-user register_icon"></i>
-                    <input type="text" name="lastName" class="payment_lastName" placeholder="Họ" required>
+                    <input type="text" name="firstName" class="payment_firstName" placeholder="Họ" required>
                 </div>
                 <div class="iput_payment">
                 <i class="fa-solid fa-user payment_icon"></i>
-                    <input type="text" name="firstName" class="payment_firstName" placeholder="Tên" required>
+                    <input type="text" name="LastName" class="payment_lastName" placeholder="Tên" required>
                 </div>
                 <div class="iput_payment">
                     <i class="fa-solid fa-envelope payment_icon"></i>
@@ -217,7 +220,11 @@
                     <i class="fa-solid fa-phone payment_icon"></i>
                     <input type="tel" name="phoneNumer" class="payment_phoneNumber" placeholder="Nhập số điện thoại của bạn" required>
                 </div>
-                <button type="submit" class="payment_button">Đặt hàng ngay</button>
+                <div class="iput_payment">
+                    <i class="fa-solid fa-address-book payment_icon"></i>
+                    <input type="text" name="address" class="payment_address" placeholder="Nhập địa chỉ của bạn" required>
+                </div>
+                <button type="submit" class="payment_button" id="payment_button">Đặt hàng ngay</button>
             </form>
         </div>
     </div>
