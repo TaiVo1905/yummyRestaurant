@@ -19,6 +19,15 @@
 }
 
 /* -------------------------------------------------------PHẦN HEADER----------------------------------------------- */
+.menu_icon  {
+    display: none;
+    top: 0px;
+    left: 0px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
 .header{
     background-color: rgb(231, 253, 141);
     display: flex;
@@ -389,4 +398,206 @@
 }
 
 
+/* RESPONSIVE */
+/* TABLET */
+@media (min-width: 740px) and (max-width: 1023px) {
+    /* Header */
+    .menu_icon{
+        display: block;
+    }
 
+    .header_nav {
+        display: none;
+    }
+
+    .header_nav li{
+        margin-right: 15px;
+    }
+
+    .header_nav a {
+        font-size: 15px;
+    }
+
+    .header_regiter {
+        padding: 0 15px;
+    }
+  
+    .searchBar {
+        display: flex;
+    }
+
+    .header_logo {
+        margin-left: 30px;
+    }
+
+
+ /* FOOTER */
+    .card_logo {
+        margin: 0 35px;
+    }
+
+    .card_textTop {
+        font-size: 30px;    
+    }
+    .card_textBottom {
+        font-size: 20px;
+    }
+}
+
+.menu_icon_close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0.4rem;
+    right: 1rem;
+  }
+
+.menu_icon_close .fa-xmark {
+    font-size: 30px;
+}
+
+.header_nav {
+    transform: translateX(-100%);
+}
+
+/* MOBILE */
+@media (max-width: 739px) {
+    /* LOGO */
+    .logo {
+        display: none;
+    }
+   
+    /* HEADER */
+     /* Điều chỉnh lại header */
+     .header {
+        display: inline-block;
+        font-size: 16px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu_icon {
+        display: inline-block !important; /* Hiển thị icon menu */
+    }
+
+    
+
+    .header_nav{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        width: 250px;
+        max-width: 100%;
+        background-color: #fff;
+    }
+
+    .header_nav ul {
+        list-style-type: none;
+        margin-top: 30px;
+        margin-left: 30px;
+
+    }
+
+    .header_nav li {
+        float: none;
+        position: relative;
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+
+    .header_nav li a {
+        font-size: 20px;
+        text-decoration: none;
+        color: #000;
+    }
+
+
+    .header_nav ul {
+        list-style-type: none;
+    }
+   
+    .header_nav a:hover{
+        color: red;
+    }
+
+    .header-right {
+        width: 70%;
+        justify-content: end;
+        margin-left: 195px;
+        /* position: absolute; */
+    }
+
+    .searchBar {
+        display: inline-block;
+    }
+
+    .header_search {
+        height: 22px;
+        width: 20px;
+    
+    }
+    .search_input{
+        width: 150px;
+    }
+
+    .search_logo i {
+        color: #868686;
+        font-size: 15px;
+        padding-left: 5px;
+        line-height: 28px;
+    }
+    .btn_search{
+        font-size: 12px;
+    }
+
+    .header_cart i, .header_regiter i{
+        font-size: 28px;
+        opacity: 0.8;
+    }
+
+    .header_cart i:hover, .header_regiter i:hover{
+        cursor: pointer;
+        opacity: 0.6;
+    }
+
+
+    .header_cart, .header_regiter{
+        height: 100%;
+        align-self: center;
+        display: inline-block;
+    }
+
+    .header_regiter{
+        padding: 0 10px;
+    }
+    .regiter_logo{
+        margin-left: 30px;
+    }
+    
+    /* FORM */
+    #registerContainer, #loginContainer{
+        width: 360px;
+    }
+
+    #register_Form, #login_Form {
+        width: 320px;
+    }
+   
+    
+    /* FOOTER */
+    .card_textTop {
+        font-size: 18px;    
+    }
+    .card_textBottom {
+        font-size: 12px;
+    }
+    .card_logo {
+        font-size: 30px;
+        margin: 0 10px;
+        margin-left: 50px;
+    }
+
+  
+}

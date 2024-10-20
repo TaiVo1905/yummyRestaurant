@@ -7,7 +7,7 @@
 }
 
 
-.header_nav ul {
+/* .header_nav ul {
     display: flex;
     list-style-type: none;
     margin: 0;
@@ -21,13 +21,13 @@
 .header_nav ul li a {
     text-decoration: none;
     color: black;
-    font-weight: bold;
-}
+    
+} */
 
-.searchBar, .header_cart, .header_regiter {
+/* .searchBar, .header_cart, .header_regiter {
     display: inline-block;
     margin: 0 10px;
-}
+} */
 #menu_tbl {
     margin-top: 150px; /* Khoảng cách với phần header cố định */
     width: 100%;
@@ -186,4 +186,38 @@ tr:nth-child(even) textarea {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 10;
+}
+
+/* RESPONSIVE */
+/* TABLET */
+@media (min-width: 740px) and (max-width: 1023px) {
+    #menu_title {
+        margin-top: 50px;
+    }
+    #menu_list {
+        position: relative; 
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    
+}
+/* MOBILE */
+@media (max-width: 739px) {
+    #menu_title {
+        margin-top: 50px;
+    }
+    #menu_list {
+        position: relative; 
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    #menu_tbl thead th,
+    #menu_list li a {
+        font-size: 14px;
+    }
+
+  
 }

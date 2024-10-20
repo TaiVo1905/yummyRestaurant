@@ -51,6 +51,7 @@ function handleCart() {
             }
         });
     });
+}
 function renderFeaturedDishes(data){
     const menuAllDish = document.getElementById('body-menu'); //nơi để đưa thông tin các món ăn vào
     data.featuredDishes.forEach(dish => { //duyệt từng phần tử trong featuredDishes

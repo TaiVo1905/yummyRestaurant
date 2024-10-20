@@ -22,7 +22,7 @@ function displayCart(data){
                                 <!-- Xoá sản phẩm đã thêm vào giỏ hàng -->
                                 <td class="product_remove">
                                     <a href="#" class="remove"><i class="fa-regular fa-circle-xmark item_remove"></i></a>
-                                </td>
+                                </td>   
                                 <td class="product_image appear">
                                     <div class="image"><img src="${item.image_url}" style="width: 80px; height: 80px;" alt="${item.nameFood}"></div>
                                 </td>
