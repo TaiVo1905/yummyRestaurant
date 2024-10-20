@@ -306,7 +306,6 @@ function ordersuccessfully(){
         alert("Vui lòng đăng nhập trước khi đặt hàng!");
         return;
     }
-
     // Lọc sản phẩm trong giỏ hàng dựa vào userId
     const cart_userID = data.carts.filter(item => item.userId === user_id);
 
@@ -348,3 +347,37 @@ function ordersuccessfully(){
         window.location.href='menu.html';
     })
 }
+handleDisplayPaymentModal();
+  
+// localStorage.clear() //Hiển thị lại sản phẩm
+
+
+/* ------------------------------------cập nhật số lượng món ăn trong giỏ hàng-----------------------------------------*/
+// Hàm đếm số lượng món ăn trong giỏ hàng
+function countUniqueItemsInCart() {
+    const user_ID = parseInt(sessionStorage.getItem('UserID')); // lấy user ID từ sessionStorage
+    const cartItems = data.carts.filter(cart => cart.userId == user_ID); // lọc món ăn thuộc về user hiện tại
+    return cartItems.length; // trả về số lượng món ăn trong giỏ
+}
+
+// Hàm để xóa món ăn khỏi giỏ hàng và trừ số lượng món ăn
+function removeItemFromCart(itemId) {
+    const user_ID = parseInt(sessionStorage.getItem('UserID')); // Lấy user ID từ sessionStorage
+    const cartIndex = data.carts.findIndex(cart => cart.userId == user_ID && cart.itemId == itemId); // Tìm index của món ăn cần xóa
+
+    if (cartIndex !== -1) {
+        data.carts.splice(cartIndex, 1); // xóa món ăn khỏi giỏ hàng
+        updateCartQuantity(); // cập nhật số lượng món ăn hiển thị trên logo giỏ hàng
+    } 
+}
+
+// Hàm cập nhật số lượng món ăn hiển thị trên logo giỏ hàng
+function updateCartQuantity() {
+    const updatedCount = countUniqueItemsInCart(); // đếm lại số lượng món ăn
+    document.getElementById('quantity_cart').innerText = updatedCount; // hiển thị số lượng mới trên logo giỏ hàng
+}
+
+// Gọi hàm đếm số lượng món ăn trong giỏ hàng và hiển thị 
+const totalUniqueItems = countUniqueItemsInCart();
+console.log(totalUniqueItems); // in ra số lượng món ăn
+document.getElementById('quantity_cart').innerText = totalUniqueItems; // hiển thị số lượng món ăn trên logo giỏ hàng

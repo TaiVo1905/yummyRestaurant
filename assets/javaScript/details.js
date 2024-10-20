@@ -15,7 +15,7 @@ function renderDishDetails(data) {
                 <img src="${dish.image_url}" alt="">
             </div>
             <div class="details_introduce">
-                <span class="text1"><a href="../home.html">Trang Chủ </a> / <span id="foodType">${dish.type}</span></span><br><br>
+                <span class="text1"><b>${dish.type}<b></span><br><br>
                 <span class="text2">${dish.name}</span><br>
                 <hr>
                 <span class="price"><b>${dish.price}<b></span>
