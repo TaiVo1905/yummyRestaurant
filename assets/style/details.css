@@ -307,7 +307,7 @@ input::-webkit-inner-spin-button {
 }
 
 .logo {
-    background-image: url(../assets/image/logo.jpg);
+    background-image: url(../image/logo.jpg);
     padding-left: 42px;
     height: 42px;
     background-size: cover;

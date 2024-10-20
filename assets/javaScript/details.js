@@ -1,9 +1,9 @@
-import getDataLocalStorage from "../javaScript/localStorage.js";
+import getDataLocalStorage from "./localStorage.js";
 
 const returnData = getDataLocalStorage(); //tạo biến lưu data trả về từ hàm getDataLocalStorage ở file localStorage.js
+let currentDishIndex = 0;
 
-
-// tạo dish chi tiết
+// Hàm hiển thị thông tin món ăn chi tiết
 function renderDishDetails(data) {
     const foodId = sessionStorage.getItem('foodId');
     const dish = data.menu.find( (food) => {
@@ -15,7 +15,7 @@ function renderDishDetails(data) {
                 <img src="${dish.image_url}" alt="">
             </div>
             <div class="details_introduce">
-                <span class="text1"><b>${dish.type}<b></span><br><br>
+                <span class="text1"><b id="foodType">${dish.type}<b></span><br><br>
                 <span class="text2">${dish.name}</span><br>
                 <hr>
                 <span class="price"><b>${dish.price}<b></span>
@@ -38,14 +38,13 @@ function renderDishDetails(data) {
 }
 
 // Cập nhật slider sau khi render
-function updateDishSlider() {
+function updateDishSlider(currentDishIndex) {
     const sliderContent = document.getElementById('list_dish_content');
     // Di chuyển slider để hiển thị 4 món ăn
     sliderContent.style.transform = `translateX(-${currentDishIndex * 25}%)`; // Di chuyển 25% mỗi lần
 }
 
 
-let currentDishIndex = 0;
 // lấy danh sách các dish tương tự
 function similarToDish(data) {
     const update = document.getElementById('list_dish_content');
@@ -67,38 +66,43 @@ function similarToDish(data) {
         update.appendChild(dishElement);
         }
         
-        // dishElement.addEventListener('click', () => {
-        //     renderDishDetails(dish); // Cập nhật nội dung chi tiết của món
-        // });
+        dishElement.addEventListener('click', () => {
+            sessionStorage('foodId', dish.id);
+            renderDishDetails(data); // Cập nhật nội dung chi tiết của món
+        });
 
     });
-    updateDishSlider(); // Cập nhật slider sau khi render
+    updateDishSlider(currentDishIndex); // Cập nhật slider sau khi render
 }
 
 
 
-// click để xem món trước
-document.getElementById('prev_dish').addEventListener('click', () => {
-    if (currentDishIndex > 0) {
-        currentDishIndex--; // Giảm chỉ số món hiện tại
-        updateDishSlider(); 
-    }
-});
-// click để xem món sau
-document.getElementById('next_dish').addEventListener('click', () => {
-    const totalDishes = document.getElementById('list_dish_content').children.length;
-    if (currentDishIndex < totalDishes - 4) { // Kiểm tra xem có đủ món để di chuyển không
-        currentDishIndex++; // Tăng chỉ số món hiện tại
-        updateDishSlider(); 
-    }
-});
+function handleListFood(currentDishIndex) {
+    // click để xem món trước
+    document.getElementById('prev_dish').addEventListener('click', () => {
+        if (currentDishIndex > 0) {
+            currentDishIndex--; // Giảm chỉ số món hiện tại
+            updateDishSlider(currentDishIndex); 
+        }
+    });
 
-// Hàm render sp detail
-document.addEventListener('DOMContentLoaded', renderDishDetails(returnData));
+    // click để xem món sau
+    document.getElementById('next_dish').addEventListener('click', () => {
+        const totalDishes = document.getElementById('list_dish_content').children.length;
+        if (currentDishIndex < totalDishes - 4) { // Kiểm tra xem có đủ món để di chuyển không
+            currentDishIndex++; // Tăng chỉ số món hiện tại
+            updateDishSlider(currentDishIndex); 
+        }
+    });
+}
 
+// Hàm chạy chương trình
+function runPage() {
+    document.addEventListener('DOMContentLoaded', () => {
+        renderDishDetails(returnData);
+        handleListFood(currentDishIndex);
+    });
 
+}
 
-
-
-
-
+runPage();

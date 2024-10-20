@@ -1,6 +1,6 @@
-import getDataLocalStorage, {setDataLocalStorage} from "../javaScript/localStorage.js";
+import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
 const data = getDataLocalStorage();
-// Chuyển đổi giữa form đăng ký và đăng nhập
+// Hàm chuyển đổi giữa form đăng ký và đăng nhập
 function changeFormLogAndReg(){
     document.getElementById('switchToLogin').addEventListener('click', function(event) {
         event.preventDefault();
@@ -60,7 +60,7 @@ function logIn(){
             // lưu userID vào sessionStorage 
             sessionStorage.setItem('UserID', user.id);
             // Chuyển hướng hoặc thực hiện hành động khác
-            window.location.href = 'home.html';
+            window.location.href = './index.html';
         } else {
             alert('Tên đăng nhập hoặc mật khẩu không đúng!');
         }
@@ -79,7 +79,15 @@ function handleLogAndRegModal() {
         }
     })
 }
-handleLogAndRegModal()
-changeFormLogAndReg();
-regisTer();
-logIn()
+
+// Hàm chạy chương trình
+function runPage() {
+    document.addEventListener('DOMContentLoaded', () => {
+        handleLogAndRegModal();
+        changeFormLogAndReg();
+        regisTer();
+        logIn();
+    })
+}
+
+runPage();

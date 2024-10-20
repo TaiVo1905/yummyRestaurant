@@ -1,4 +1,4 @@
-import getDataLocalStorage, {setDataLocalStorage} from "../javaScript/localStorage.js";
+import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
 
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
@@ -6,7 +6,6 @@ const admin_food = $('#admin_food');
 const admin_orders = $('#admin_orders');
 const admin_bookTables = $('#admin_bookTables');
 const admin_users = $('#admin_users');
-const admin_sidebarA = $$('.admin_sidebar a');
 const foodTable = $('.admin_food #admin_items');
 const orderTable = $('.admin_orders #admin_items');
 const bookTable = $('.admin_bookTables #admin_items');
@@ -15,6 +14,41 @@ const userTable = $('.admin_users #admin_items');
 // Lấy data từ localStorage
 const data = getDataLocalStorage();
 
+// Hàm xử lý hiển thị form thêm món ăn
+function handleDisplayAddItemsModal () {
+    const addItemsModal = $('#admin_addItems_modal');
+    const closeAddItemsModal = $('#close_addItems_modal');
+    const admin_addItem = $('#admin_addItem');
+    const form = $('.form--modal');
+    admin_addItem.addEventListener('click', function () {
+        addItemsModal.style.display = 'block';
+        addItems(data);
+    })
+    closeAddItemsModal.addEventListener('click', function () {
+        addItemsModal.style.display = 'none';
+        form.reset();
+    })
+}
+
+// Hàm xử lý khi nhấp chuột vào các thành phần ở sidebar
+function handleDisplayAdminTable () {
+    $('.admin_sidebar').addEventListener('click', function (e) {
+        if( e.target === admin_food || e.target === admin_orders || e.target === admin_bookTables || e.target === admin_users) {
+            const admin_sidebarActive = $('.admin_sidebar > .active');
+            const admin_food_class = $(`.${admin_sidebarActive.id}`);
+            e.preventDefault();
+            admin_food_class.style.display = 'none';
+            admin_food_class.querySelector('.admin_tb_thead').style.display = "none";
+            admin_sidebarActive.classList.remove('active');
+            e.target.classList.add('active');
+            $(`.${e.target.id}`).style.display = "block";
+            $(`.${e.target.id}`).querySelector('.admin_tb_thead').style.display = "table";
+            renderData(data);
+        } 
+    })
+}
+
+// Hàm hiển thị các món ăn
 function renderFood(menu) {
     menu.forEach(food => {
         if (food.name != '') {
@@ -41,6 +75,7 @@ function renderFood(menu) {
 console.log(foodTable);
 }
 
+// Hàm hiện thị các đơn đặt hàng
 function renderOrders(orders) {
     orders.forEach(order => {
         if (order.foodName != '') {
@@ -64,6 +99,7 @@ function renderOrders(orders) {
 
 }
 
+// Hàm hiển thị các đơn đặt bàn
 function renderBookTable(bookTables) {
     bookTables.forEach(bookTb => {
         if (bookTb.customerName != '') {
@@ -87,6 +123,7 @@ function renderBookTable(bookTables) {
 });
 }
 
+// Hàm hiển thị người dùng
 function renderUser(users) {
     users.forEach(user => {
         if(user.firstName != ""){
@@ -108,42 +145,7 @@ function renderUser(users) {
 });
 }
 
-
-function handleDisplayAddItemsModal () {
-    const addItemsModal = $('#admin_addItems_modal');
-    const closeAddItemsModal = $('#close_addItems_modal');
-    const admin_addItem = $('#admin_addItem');
-    const form = $('.form--modal');
-    admin_addItem.addEventListener('click', function () {
-        addItemsModal.style.display = 'block';
-        addItems(data);
-    })
-    closeAddItemsModal.addEventListener('click', function () {
-        addItemsModal.style.display = 'none';
-        form.reset();
-    })
-}
-
-function handleDisplayAdminTable () {
-    $('.admin_sidebar').addEventListener('click', function (e) {
-        if( e.target === admin_food || e.target === admin_orders || e.target === admin_bookTables || e.target === admin_users) {
-            const admin_sidebarActive = $('.admin_sidebar > .active');
-            const admin_food_class = $(`.${admin_sidebarActive.id}`);
-            e.preventDefault();
-            admin_food_class.style.display = 'none';
-            admin_food_class.querySelector('.admin_tb_thead').style.display = "none";
-            admin_sidebarActive.classList.remove('active');
-            e.target.classList.add('active');
-            $(`.${e.target.id}`).style.display = "block";
-            $(`.${e.target.id}`).querySelector('.admin_tb_thead').style.display = "table";
-            renderData(data);
-
-        } 
-    })
-}
-
-
-
+// Hàm xử lý tìm kiếm thông tin
 function search(data) {
     const admin_find = $('#admin_find');
     const admin_inputSearch = $('#admin_inputSearch');
@@ -154,27 +156,26 @@ function search(data) {
     
     admin_find.addEventListener('click', () => {
         const searchValue = admin_inputSearch.value;
-        console.log(searchValue)
         if (searchValue !== "") {
-            if (admin_food.style.display === "block") {
+            if (admin_food.style.display === "block") { //Tìm kiếm món ăn
                 const foodSearch = data.menu.filter(food => {
                     return food.name.includes(searchValue) || food.type.includes(searchValue) || food.describe.includes(searchValue);
                 })
                 foodTable.innerHTML = '';
                 renderFood(foodSearch);
-            } else if (admin_orders.style.display === "block"){
+            } else if (admin_orders.style.display === "block"){ //Tìm kiếm đơn đặt hàng
                 const ordersSearch = data.orders.filter(order => {
                     return order.foodName.includes(searchValue) || order.customerName.includes(searchValue) || order.address.includes(searchValue);
                 })
                 orderTable.innerHTML = '';
                 renderOrders(ordersSearch);
-            } else if (admin_bookTables.style.display === "block"){
+            } else if (admin_bookTables.style.display === "block"){ //Tìm kiếm đơn đặt bàn
                 const bookTablesSearch = data.bookTables.filter(bookTable => {
                     return bookTable.customerName.includes(searchValue) || bookTable.email.includes(searchValue)
                 })
                 bookTable.innerHTML = '';
                 renderBookTable(bookTablesSearch);
-            } else if (admin_users.style.display === "block"){
+            } else if (admin_users.style.display === "block"){ //Tìm kiếm người dùng
                 const userSearch = data.users.filter(user => {
                     return user.firstName.includes(searchValue) || user.lastName.includes(searchValue) || user.email.includes(searchValue)
                 })
@@ -182,16 +183,17 @@ function search(data) {
                 renderBookTable(userSearch);
             }
         } else {
+            // Trả về thông tin khi không có giá trị ở ô tìm kiếm
             renderData(data);
         }
     })
 
 }
 
+// Hàm thêm món ăn
 function addItems(data) {
     const form = $('.form--modal');
     const addItemsModal = $('#admin_addItems_modal');
-    // const submit = $('#addItem');
     addItemsModal.querySelector('.modal_header h2').innerText = "THÊM SẢN PHẨM MỚI";
     form.addEventListener('submit', (e) => {
         if (addItemsModal.querySelector('.modal_header h2').innerText == "THÊM SẢN PHẨM MỚI") {
@@ -218,6 +220,7 @@ function addItems(data) {
     
 }
 
+// Hàm Xử lý hiển thị thông tin
 function renderData(data) {
     foodTable.innerHTML = '';
     orderTable.innerHTML = '';
@@ -229,8 +232,9 @@ function renderData(data) {
     renderUser(data.users);
 }
 
+// Hàm xóa thông tin
 function deleteRecord(data) {
-    foodTable.addEventListener('click', (e) => {
+    foodTable.addEventListener('click', (e) => { //Xóa món ăn
         if (e.target.id == "delete") {
             const recordFood = e.target.closest('tr');
             if(confirm(`Bạn chắc chắn muốn xóa món ${recordFood.querySelector('td:nth-child(2)').innerText}?`)) {
@@ -251,7 +255,7 @@ function deleteRecord(data) {
         }
     })
 
-    orderTable.addEventListener('click', (e) => {
+    orderTable.addEventListener('click', (e) => { //Xóa đơn đặt hàng
         if (e.target.id == "delete") {
             const recordOrder = e.target.closest('tr');
             if(confirm(`Bạn chắc chắn muốn xóa đơn đặt hàng của khách hàng ${recordOrder.querySelector('td:nth-child(5)').innerText}?`)) {
@@ -272,7 +276,7 @@ function deleteRecord(data) {
             }
         }
     })
-    bookTable.addEventListener('click', (e) => {
+    bookTable.addEventListener('click', (e) => { //Xóa đơn đặt bàn
         if (e.target.id == "delete") {
             const recordOrder = e.target.closest('tr');
             if(confirm(`Bạn chắc chắn muốn xóa đơn đặt bàn của khách hàng ${recordOrder.querySelector('td:nth-child(2)').innerText}?`)) {
@@ -293,7 +297,7 @@ function deleteRecord(data) {
             }
         }
     })
-    userTable.addEventListener('click', (e) => {
+    userTable.addEventListener('click', (e) => { //Xóa người dùng
         if (e.target.id == "delete") {
             const recordOrder = e.target.closest('tr');
             if(confirm(`Bạn chắc chắn muốn xóa thông tin người dùng ${recordOrder.querySelector('td:nth-child(2)').innerText}?`)) {
@@ -315,15 +319,15 @@ function deleteRecord(data) {
     })
 }
 
-function updateMenu() {
+// Hàm chỉnh sửa thông tin món ăn
+function updateMenu(data) {
     const addItemsModal = $('#admin_addItems_modal');
-    const closeAddItemsModal = $('#close_addItems_modal');
     foodTable.addEventListener('click', (e) => {
         if (e.target.id == "update") {
             const recordFood = e.target.closest('tr');
             console.log(recordFood)
             addItemsModal.style.display = "block";
-            addItemsModal.querySelector('.modal_header h2').innerText = "Chỉnh sửa thông tin món ăn";
+            addItemsModal.querySelector('.modal_header h2').innerText = "CHỈNH SỬA THÔNG TIN MÓN ĂN";
             const form = $('.form--modal');
             form['itemName'].value = recordFood.querySelector('td:nth-child(2)').innerText;
             form['itemType'].value = recordFood.querySelector('td:nth-child(3)').innerText;
@@ -331,7 +335,7 @@ function updateMenu() {
             form['itemImgText'].value = recordFood.querySelector('td:nth-child(5) .item_img').style.backgroundImage.slice(5, -2);
             form['itemPrice'].value = recordFood.querySelector('td:nth-child(6)').innerText.slice(0, -1);
             form.addEventListener('submit', (e) => {
-                if (addItemsModal.querySelector('.modal_header h2').innerText == "Chỉnh sửa thông tin món ăn") {
+                if (addItemsModal.querySelector('.modal_header h2').innerText == "CHỈNH SỬA THÔNG TIN MÓN ĂN") {
                     e.preventDefault();
                     data.menu.some( (food) => {
                         if(food.id == recordFood.querySelector('td:nth-child(1)').innerText) {
@@ -351,9 +355,17 @@ function updateMenu() {
         }
     })
 }
-deleteRecord(data);
-handleDisplayAddItemsModal();
-handleDisplayAdminTable();
-renderData(data);
-search(data);
-updateMenu()
+
+// Hàm chạy chương trình
+function runPage(data) {
+    document.addEventListener('DOMContentLoaded', () => {
+        handleDisplayAddItemsModal();
+        handleDisplayAdminTable();
+        admin_food.click();
+        search(data);
+        deleteRecord(data);
+        updateMenu(data);
+    })
+}
+
+runPage(data);
