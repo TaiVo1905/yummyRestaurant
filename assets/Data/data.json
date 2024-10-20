@@ -955,7 +955,7 @@
     "orders": [
         {
         "id": 1,
-        "foodName": ["Chả Cá Thát Lát", "Tôm Sú Nướng Phô Mai"],
+        "foodName": ["Chả Cá Thát Lát (2)", "Tôm Sú Nướng Phô Mai (3)"],
         "amount": "324.000đ",
         "time": "12:00, 10/10/2024",
         "customerName": "Võ Đức Tài",
@@ -1176,9 +1176,6 @@
             "food_Note": "Không cay, nhiều rau",
             "price": "99.000đ"
         },
-
-
-
         {
             "userId": 3,
             "foodId": 6,

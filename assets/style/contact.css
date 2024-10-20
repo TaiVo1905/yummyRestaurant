@@ -3,14 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* Định dạng css cho contact*/
-body {
-    /* margin: 0; */
-    /* padding: 0; */
-    /* background-color: #fff;
-    color: #080a0b; */
-}
-
 .title{
     color:#999;
     font-size: 36px;
@@ -31,7 +23,6 @@ body {
     text-align: center;
     display: block;
 }
-
 /* Biểu tượng Font Awesome */
 .iconAddress, .iconPhone, .iconEmail {
     margin-right: 10px;
@@ -98,4 +89,28 @@ body {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 10;
+}
+/* RESPONSIVE */
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .container_contact {
+        margin-top: 30px;
+
+    }
+
+    .body .frm {
+        margin-top: 100px;
+    }
+    .footer {
+        margin-top: 195px;
+    }
+
+}
+
+
+/* Mobile */
+@media (max-width: 739px) {
+   .body {
+    margin-top: 150px;
+   }
 }

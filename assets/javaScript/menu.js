@@ -1,70 +1,39 @@
-import getDataLocalStorage, {setDataLocalStorage} from "../javaScript/localStorage.js";
+import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
 const data = getDataLocalStorage();
 let filtered=[];
-// Hàm lọc món ăn theo loại và hiển thị dưới dạng bảng
-function filterMenu() {
-    const menu = data.menu;
-    const menu_list = document.querySelector('#menu_list');
-    menu_list.addEventListener('click', (e) => {
-        const type = e.target.textContent;
-        // Lọc món ăn theo loại
-        filtered = menu.filter(item => {
-            return item.type.toLowerCase() === type.toLowerCase();
-        });
 
-        // Hiển thị menu theo loại đã lọc
-        displayFilteredMenu();
+// định dạng cho class active hoạt động đúng như mong đợi (MẶC ĐỊNH)
+function active(){
+    document.querySelectorAll('#menu_list a').forEach(category => {
+        category.addEventListener('click', function(e){
+            e.preventDefault();
+            document.querySelectorAll('#menu_list a').forEach(i => {
+                i.classList.remove('active');
+            })
+            this.classList.add('active');
+        });
     });
-    // Thêm sự kiện cho nút tìm kiếm
-    const searchButton = document.querySelector('#btn_search');
-    searchButton.addEventListener('click', searchMenu);
-    // Thêm sự kiện cho nút reset tìm kiếm
-    const reset_Search = document.querySelector('#reset_search');
-    reset_Search.addEventListener('click', resetSearch);
 }
 
-filterMenu();
-
-// Hàm hiển thị món ăn đã lọc
-function displayFilteredMenu() {
-    const menuTblBody = document.querySelector("#menu_tbl tbody");
-    menuTblBody.innerHTML = ''; // Xóa nội dung cũ
-
-    filtered.forEach(item => {
-        menuTblBody.innerHTML += `
-            <tr>
-                <td class="product_image"><img src="${item.image_url}" alt="${item.name}" width="100px" height="100px"></td>
-                <td class="product_name">${item.name}</td>
-                <td class="product_price">${item.price}</td>
-                <td>
-                    <div id="number-input">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
-                        <input class="input_sl" id="input_sl-${item.id}" type="number" value="1" min="1" />
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
-                    </div>
-                </td>
-                <td>
-                    <textarea name="note" class="input_note" id="input_note-${item.id}" placeholder="Nhập ghi chú..."></textarea>
-                </td>
-                <td><button class="btn_add" id="btn_add-${item.id}">Thêm vào giỏ hàng</button></td>
-            </tr> 
-            `;
+// Hamf chuyển sang trang chi tiết
+function switchToDetals() {
+    const productElements = document.querySelectorAll('.product_image, .product_name, .product_price');
+    const trElements = document.querySelectorAll('tbody tr');
+    productElements.forEach( (element) => {
+        element.addEventListener('click', (e) => {
+                for (const tr of trElements) {
+                    if (tr.contains(e.target)) {
+                        window.location.href = "./details.html";
+                        sessionStorage.setItem('foodId', tr.querySelector('tr .btn_add').id.split('-')[1]);
+                        return;
+                    }
+                }
         });
-    addData(filtered)
-        // addCart()
-  // Thêm sự kiện nhấp chuột cho các sản phẩm mới
-  addClickEventToProducts();
-    // Nếu không có món ăn nào phù hợp
-        if (filtered.length === 0) {
-            menuTblBody.innerHTML = `
-                <tr>
-                    <td colspan="6">Không có món nào thuộc loại này.</td>
-                </tr>
-            `;
-        }
-    }
+    });
+}
 
-function addData(filtered){
+// Hàm thêm món ăn vào giỏ hàng
+function addToCart(filtered){
     document.querySelectorAll('.btn_add').forEach(button=>{
         // gắn sự kiện onclick cho các nút button "thêm vào giỏ hàng"
         button.addEventListener('click', function(){
@@ -129,35 +98,74 @@ function addData(filtered){
     })
 }
 
-// Tìm kiếm món ăn khi người dùng nhấn nút "Tìm"
-function searchMenu() {
-    const searchKey = document.getElementById('search_input').value.toLowerCase();
-    filtered = filtered.filter(item => {
-        return item.name.toLowerCase().includes(searchKey); // Tìm món ăn có chứa từ khóa 'thuộc tính "includes"
-    });
+// Hàm hiển thị món ăn đã lọc
+function displayFilteredMenu() {
+    const menuTblBody = document.querySelector("#menu_tbl tbody");
+    menuTblBody.innerHTML = ''; // Xóa nội dung cũ
 
-    // Hiển thị kết quả tìm kiếm
-    displayFilteredMenu();
-}
-
-// Reset lại tìm kiếm và làm mới menu
-function resetSearch() {
-    window.location.href='menu.html';
-}
-
-// định dạng cho class active hoạt động đúng như mong đợi (MẶC ĐỊNH)
-function active(){
-    document.querySelectorAll('#menu_list a').forEach(category => {
-        category.addEventListener('click', function(e){
-            e.preventDefault();
-            document.querySelectorAll('#menu_list a').forEach(i => {
-                i.classList.remove('active');
-            })
-            this.classList.add('active');
+    filtered.forEach(item => {
+        menuTblBody.innerHTML += `
+            <tr>
+                <td class="product_image"><img src="${item.image_url}" alt="${item.name}" width="100px" height="100px"></td>
+                <td class="product_name">${item.name}</td>
+                <td class="product_price">${item.price}</td>
+                <td>
+                    <div id="number-input">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
+                        <input class="input_sl" id="input_sl-${item.id}" type="number" value="1" min="1" />
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" id="number_addition">+</button>
+                    </div>
+                </td>
+                <td>
+                    <textarea name="note" class="input_note" id="input_note-${item.id}" placeholder="Nhập ghi chú..."></textarea>
+                </td>
+                <td><button class="btn_add" id="btn_add-${item.id}">Thêm vào giỏ hàng</button></td>
+            </tr> 
+            `;
         });
+        
+    // Nếu không có món ăn nào phù hợp
+        if (filtered.length === 0) {
+            menuTblBody.innerHTML = `
+                <tr>
+                    <td colspan="6">Không có món nào thuộc loại này.</td>
+                </tr>
+            `;
+        }
+    addToCart(filtered);
+    switchToDetals();
+}
+
+// Hàm lọc món ăn theo loại và hiển thị dưới dạng bảng
+function filterMenu() {
+    active();
+    const menu = data.menu;
+    const menu_list = document.querySelector('#menu_list');
+    menu_list.addEventListener('click', (e) => {
+        const type = e.target.textContent;
+        // Lọc món ăn theo loại
+        filtered = menu.filter(item => {
+            return item.type.toLowerCase() === type.toLowerCase();
+        });
+
+        // Hiển thị menu theo loại đã lọc
+        displayFilteredMenu();
+    });
+    // Thêm sự kiện cho nút tìm kiếm
+    const searchButton = document.querySelector('#btn_search');
+    searchButton.addEventListener('click', () => {
+        const searchKey = document.getElementById('search_input').value.toLowerCase();
+        filtered = filtered.filter(item => {
+            return item.name.toLowerCase().includes(searchKey); // Tìm món ăn có chứa từ khóa 'thuộc tính "includes"
+        });
+        displayFilteredMenu();
+    });
+    // Thêm sự kiện cho nút reset tìm kiếm
+    const reset_Search = document.querySelector('#reset_search');
+    reset_Search.addEventListener('click', () => { // Reset lại tìm kiếm và làm mới menu
+        window.location.href='./menu.html';
     });
 }
-active();
 
 /*sd hàm forEach để duyệt qua tất cả các thẻ a trong menu list
     thêm sự kiện click vào mỗi thẻ a
@@ -167,47 +175,12 @@ active();
     - thêm class active vào thẻ a hiện tại (this.classList.add('active'))
 */
 
-// lấy category khai vị làm mặc định khi tải trang (MẶC ĐỊNH)
-function displayDefault(){
-    window.addEventListener('load',()=>{
-        const defaultPage = document.querySelector('#menu_list a');
-        if (defaultPage){
-            defaultPage.click();
-            // mô phỏng quá trình click. Tức là khi tải trang nó sẽ tự động click vào thẻ a đầu tiên mà không cần người dùng click vào.
-        }
+// Hàm chạy chương trình
+function runPage() {
+    document.addEventListener("DOMContentLoaded", () => {
+        filterMenu();
+        document.querySelector('#menu_list a').click(); // Luôn luôn hiển thị Những món khai vị khi load trang
     })
 }
-displayDefault();
 
-//Xem sản phẩm chi tiết
-// Đảm bảo hàm onclickProduct hoạt động đúng
-
-function addClickEventToProducts() {
-    const productElements = document.querySelectorAll('.product_image, .product_name, .product_price');
-    const trElements = document.querySelectorAll('tbody tr');
-    productElements.forEach( (element) => {
-        element.addEventListener('click', (e) => {
-                for (const tr of trElements) {
-                    if (tr.contains(e.target)) {
-                        location.href = "details.html";
-                        sessionStorage.setItem('foodId', tr.querySelector('tr .btn_add').id.split('-')[1]);
-                        return;
-                    }
-                }
-        });
-    });
-}
-
-function handleLogAndRegModal() {
-    const logAndReg = document.getElementById("logAndReg");
-    const logAndReg_modal = document.getElementById("logAndReg_modal");
-    logAndReg.addEventListener('click', (e) => {
-        logAndReg_modal.style.display = 'block';
-    })
-    logAndReg_modal.addEventListener('click', (e) => {
-        if(e.target === logAndReg_modal){
-            logAndReg_modal.style.display = 'none';
-        }
-    })
-}
-handleLogAndRegModal()
+runPage();

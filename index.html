@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../assets/image/logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="../assets/home.css">
-    <link rel="stylesheet" href="../assets/logandreg.css">
+    <link rel="shortcut icon" href="./assets/image/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/logandreg.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>Yummy Restaurant</title>
 </head>
@@ -18,23 +18,33 @@
                     <!-- <img src="../assets/image/logo.jpg" alt=""> -->
                 </div>
             </div>
-            <div class="header_nav">
+            <!-- Menu Icon -->
+            <!-- <div class="menu_icon" id="open_Icon" onclick="sidebarOpen()">
+                <i class="fa-solid fa-bars"></i>
+            </div> -->
+            <div class="header_nav" id="nav_Menu">
+                <!-- Close Icon -->
+                <!-- <div class="menu_icon_close" id="close_Icon" onclick="sidebarClose()">
+                    <i class="fa-solid fa-xmark"></i>
+                </div> -->
                 <ul>
-                    <li><a class="active" href="../home.html">TRANG CHỦ</a></li>
-                    <li><a class="active" href="../menu.html">THỰC ĐƠN</a></li>
-                    <li><a class="active" href="../bookTable.html">ĐẶT BÀN</a></li>
-                    <li><a class="active" href="../contact.html">LIÊN HỆ</a></li>
+                    <li><a class="active" href="./index.html">TRANG CHỦ</a></li>
+                    <li><a class="active" href="./menu.html">THỰC ĐƠN</a></li>
+                    <li><a class="active" href="./bookTable.html">ĐẶT BÀN</a></li>
+                    <li><a class="active" href="./contact.html">LIÊN HỆ</a></li>
                 </ul>
             </div>
             <div class="header-right">
-
                 <div class="searchBar">
                     <input class="search_input" id="search_input" type="search" placeholder="Tìm kiếm...">
                     <button class="btn_search" id="btn_search">Tìm Kiếm</button>
                     
                 </div>
                 <div class="header_cart">
-                    <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+                    <div>
+                        <a href="./cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                    <div class="quantity_cart"><p id="quantity_cart"></p></div>
                 </div>
                 <div class="header_regiter">
                     <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
@@ -45,52 +55,53 @@
         <div class="body_slider">
             <div class="slider">
                 <div class="slide">
-                    <img src="/assets/image/ảnh_slider.jpg" alt="Slide 1">
+                    <img src="./assets/image/slider/slider1.jpg" alt="Slide 1">
                 </div>
                 <div class="slide">
-                    <img src="/assets/image/ảnh2_slider.jpg" alt="Slide 2">
+                    <img src="./assets/image/slider/slider2.jpg" alt="Slide 2">
                 </div>
                 <div class="slide">
-                    <img src="/assets/image/ảnh3_slider.jpg" alt="Slide 3">
+                    <img src="./assets/image/slider/slider3.jpg" alt="Slide 3">
                 </div>
                 <div class="slide">
-                    <img src="/assets/image/drink.webp" alt="Slide 4">
+                    <img src="./assets/image/slider/slider4.webp" alt="Slide 4">
                 </div>
             </div>
         </div>
         <div class="body_text">
             <hr class="body_line">
-            <span>MÓN ĂN NỔI BẬT</span>
+            <span >MÓN ĂN NỔI BẬT</span>
             <hr class="body_line">
         </div>
         <div class="body_menu" id="body-menu">
                 <!-- LẤY DỮ LIỆU JSON -->
         </div>
-        <div class="body_text">
+        <div class="body_text " id="body_text_two">
             <hr class="body_line">
             <span>TRIẾT LÝ THƯƠNG HIỆU</span>
             <hr class="body_line">
         </div>    
         <h5 class="body_textH5">Yummy mang đến trải nghiệm ẩm thực bằng triết lý và niềm tin về tính “Trọn Vẹn”.</h5>
-        <h6 class="body_textH6">Tinh hoa văn hoá ẩm thực Việt Nam mang nhiều dấu ấn độc đáo, phản ánh đời sống tinh thần cũng như quan niệm sống nhân văn của người Việt từ bao thế hệ đã trở thành nguồn cảm hứng cho triết lý về tính “Trọn Vẹn” trong trải nghiệm ẩm thực của Yummy. </h6>
+        <div> <h6 class="body_textH6">Tinh hoa văn hoá ẩm thực Việt Nam mang nhiều dấu ấn độc đáo,
+             phản ánh đời sống tinh thần cũng như quan niệm sống nhân văn của người Việt từ bao thế hệ đã trở thành nguồn cảm hứng cho triết lý về tính “Trọn Vẹn” trong trải nghiệm ẩm thực của Yummy. </h6></div>
         <div class="body_introduce">
             <div class="introduce_card">
                 <div class="card_img">
-                    <img src="../assets/image/ẩm thực.jpg" alt="">
+                    <img src="./assets/image/thuongHieu/amThuc.jpg" alt="">
                 </div>
                 <h4>Ẩm Thực</h4>
                 <h6>Ẩm thực Việt Nam mang tính kế thừa và tiếp biến trong tiến trình lịch sử của văn hoá, do đó trải nghiệm ẩm thực “Trọn Vẹn” là sáng tạo trong chế biến nhưng vẫn tôn trọng những nguyên lý đã được đúc kết ngàn đời nhằm lưu giữ hương vị truyền thống</h6>
             </div>
             <div class="introduce_card">
                 <div class="card_img">
-                    <img src="../assets/image/con người.jpg" alt="">
+                    <img src="./assets/image/thuongHieu/people.jpg" alt="">
                 </div>
                 <h4>Con Người</h4>
                 <h6>Tính “Trọn Vẹn” đến từ sự chu đáo và tận tình của người đầu bếp, người phục vụ; là dòng chảy năng lượng được tạo ra từ lòng đam mê và nhiệt huyết của những con người Madame Lân</h6>
             </div>
             <div class="introduce_card">
                 <div class="card_img">
-                    <img src="../assets/image/không gian.jpg" alt="">
+                    <img src="./assets/image/thuongHieu/khongGian.jpg" alt="">
                 </div>
                 <h4>Không Gian</h4>
                 <h6>Với kiến trúc mang nét giao thoa tinh tế giữa xưa và nay cùng không gian chan hoà thiên nhiên, Madame Lân mang đến ý niệm về tính “Trọn Vẹn”từ bầu không khí ấm áp và gần gũi, khơi gợi những xúc cảm gắn kết và sẻ chia trong từng khoảnh khắc</h6>
@@ -160,10 +171,20 @@
             </div>
         </div>
     </div>
-    <script src="../assets/javaScript/localStorage.js" type="module"></script>
-    <script src="../assets/javaScript/logandreg.js" type="module"></script>
-    <script src="../assets/javaScript/home.js" type="module"></script>
-    <!-- <script src="../assets/javaScript/menu.js" type="module"></script> -->
+    <script src="./assets/javaScript/localStorage.js" type="module" defer></script>
+    <script src="./assets/javaScript/app.js" type="module" defer></script>
+    <script src="./assets/javaScript/logandreg.js" type="module" defer></script>
+    <script>
+        function sidebarOpen() {
+          document.getElementById("open_Icon").style.display = "block";
+        }
+        
+        function sidebarClose() {
+          document.getElementById("close_Icon").style.display = "none";
+        }
+
+        </script>
+
+        
 </body>
 </html>
- 

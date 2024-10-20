@@ -121,9 +121,7 @@ body{
     border: 1px solid #888;
     border-radius: 10px;
     width: 55%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     animation-name: animatetop;
     animation-duration: 0.4s
 }   
@@ -211,3 +209,59 @@ to {top:0; opacity:1}
     z-index: 10;
 }
 
+/* RESPONSIVE */
+/* TABLET */
+@media (min-width: 740px) and (max-width: 1023px)  {
+    #title {
+        /* margin-top: 170px; */
+    }
+    
+    .table-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-left: 32px;
+    }
+
+    .footer {
+        margin-top: 0px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 739px) {
+    .bookTable-container {
+        top: 0px;
+    }
+
+    #title {
+        font-size: 30px;
+        margin-top: 70px;
+    }
+
+    #input_frm {
+        display: block;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #Time, #Date, #Quantity_people {
+        margin-bottom: 10px;
+    }
+    .table {
+        width: 150px;
+        height: 200px;
+    }
+
+    .table-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    #frm_booktable {
+    }
+    #content_frm {
+        width: 300px;
+    }
+}

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Table</title>
-    <link rel="stylesheet" href="assets/home.css">
-    <link rel="stylesheet" href="assets/bookTable.css">
-    <link rel="stylesheet" href="assets/logandreg.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/bookTable.css">
+    <link rel="stylesheet" href="./assets/style/logandreg.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body style="margin-top: 82px;">
@@ -20,10 +20,10 @@
             </div>
             <div class="header_nav">
                 <ul>
-                    <li><a class="active" href="../home.html">TRANG CHỦ</a></li>
-                    <li><a class="active" href="../menu.html">THỰC ĐƠN</a></li>
-                    <li><a class="active" href="../bookTable.html">ĐẶT BÀN</a></li>
-                    <li><a class="active" href="../contact.html">LIÊN HỆ</a></li>
+                    <li><a class="active" href="./index.html">TRANG CHỦ</a></li>
+                    <li><a class="active" href="./menu.html">THỰC ĐƠN</a></li>
+                    <li><a class="active" href="./bookTable.html">ĐẶT BÀN</a></li>
+                    <li><a class="active" href="./contact.html">LIÊN HỆ</a></li>
                 </ul>
             </div>
             <div class="header-right">
@@ -33,7 +33,10 @@
                     <button class="btn_search" id="btn_search">Tìm Kiếm</button>
                 </div>
                 <div class="header_cart">
-                    <a href="../cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+                    <div>
+                        <a href="./cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                    <div class="quantity_cart"><p id="quantity_cart">13</p></div>
                 </div>
                 <div class="header_regiter">
                     <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
@@ -72,7 +75,7 @@
             <div id="content_frm">
                 <div id="title_frm">
                     <h2 id="titleOfForm">Thông Tin Đặt Bàn</h2>
-                    <span id="remove" class="close" onclick="remove()">&times;</span>
+                    <span id="remove" class="close">&times;</span>
                 </div>
                 <form id="form_booktable">
                     <label for="tableNumber" id="number_table">Số Bàn</label>
@@ -84,11 +87,11 @@
                     <label for="date" id="dateBooktable">Ngày</label>
                     <input type="date" id="input_date1" readonly>
                     <label for="name" id="nameUser">Tên Người Đặt</label>
-                    <input type="text" id="input_name">
+                    <input type="text" id="input_name" required>
                     <label for="email" id="emailUser">Email</label>
-                    <input type="email" id="input_email">
+                    <input type="email" id="input_email" required>
                     <label for="phone" id="phoneNumber">Số Điện Thoại</label>
-                    <input type="tel" id="input_phone">
+                    <input type="tel" id="input_phone" required>
                     <div id="btn">
                         <button type="submit" id="submit">Submit</button>
                     </div>
@@ -160,7 +163,7 @@
             </div>
         </div>
     </div>
-    <script src="../assets/javaScript/bookTable.js" type="module"></script>
-    <script src="../assets/javaScript/logandreg.js" type="module"></script>
+    <script src="./assets/javaScript/bookTable.js" type="module"></script>
+    <script src="./assets/javaScript/logandreg.js" type="module"></script>
 </body>
 </html>

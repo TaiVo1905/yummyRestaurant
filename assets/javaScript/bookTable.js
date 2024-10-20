@@ -1,11 +1,11 @@
-import getDataLocalStorage, {setDataLocalStorage} from "../javaScript/localStorage.js";
+import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
 const btn_done = document.querySelector("#btn_done");
 const btn_search = document.querySelector("#btn_search");
 const input_frm = document.querySelector("#input_frm");
 const logAndReg_modal = document.getElementById("logAndReg_modal");
 const data = getDataLocalStorage(); // Lấy dữ liệu từ localStorage
 
-//Hàm hiển thị bàn còn trống
+//Hàm xử lý và hiển thị bàn còn trống
 function displaytable() {
     input_frm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -14,8 +14,6 @@ function displaytable() {
             if (confirm("Bạn cần đăng nhập để đặt bàn!")) {
                 logAndReg_modal.style.display = 'block';
                 return;
-            } else {
-                return;
             }
         }
         const time = document.getElementById('input_time').value;
@@ -23,14 +21,14 @@ function displaytable() {
         const people = parseInt(document.getElementById('input_number').value);
         // Xử lý dữ liệu đầu vào
         const dateTime = new Date();
-        const currentDate = new Date(dateTime.getFullYear(), dateTime.getMonth(), dateTime.getDate());
-        // console.log(currentDate)
-        const inputDate = new Date(date[0], date[1] - 1, date[2]);
-        const currentHours = currentDate.getHours();
-        const currentMinutes = currentDate.getMinutes();
-        const inputTime = time.split(':');
-        const isDate = currentDate < inputDate ? true:false;
-        const isTime = parseInt(inputTime[0]) > (currentHours <= 20 ? currentHours + 2: currentHours) ? true:false;
+        const currentDate = new Date(dateTime.getFullYear(), dateTime.getMonth(), dateTime.getDate()); // Lấy ngày tháng hiện tại
+        const currentHours = currentDate.getHours(); // Lấy giờ hiện tại
+        const inputDate = new Date(date[0], date[1] - 1, date[2]); //Tạo ngày tháng được nhập từ người dùng
+        const inputTime = time.split(':'); //Đưa giờ và phút vào mảng
+        const isDate = currentDate < inputDate ? true:false; // Xác định ngày tháng của người dùng nhập vào
+        const isTime = parseInt(inputTime[0]) > (currentHours <= 20 ? currentHours + 2: currentHours) ? true:false; // Xác định giờ của người dùng nhập vào
+        
+        // Hàm hiển thị bàn
         function render() {
             // dãy các bàn trong nhà hàng (tables)
             const tables = [
@@ -65,9 +63,9 @@ function displaytable() {
                 { number: 29, available: true, maxPeople: 12 },
                 { number: 30, available: true, maxPeople: 2 },
             ];
-            // console.log(date.join("-"))
+
+            // Kiểm tra bàn đã đặt trùng với giờ và ngày của người dùng
             data.bookTables.forEach( (row) => {
-                // console.log(row.date);
                 if (row.date == date.join("-") && row.time == time) {
                     row.tableNumber.forEach ((tableNumber) => {
                         tables.some( (table) => {
@@ -117,7 +115,7 @@ function displaytable() {
             render();
         }
         else if (isTime) {
-            render()
+            render();
         } else {
             alert("Bạn cần đặt bàn trước 2 giờ!");
         }
@@ -125,7 +123,7 @@ function displaytable() {
 }
 
 
-// Hàm lấy các bàn đã chọn và hiển thị vào form
+// Hàm lấy các bàn đã chọn, hiển thị vào form và lưu dữ liệu
 function booktable() {
     btn_done.addEventListener('click', () => {
         const User_ID = parseInt(sessionStorage.getItem('UserID'));
@@ -143,12 +141,32 @@ function booktable() {
                 document.getElementById('input_time1').value = document.getElementById('input_time').value;
                 document.getElementById('input_date1').value = document.getElementById('input_date').value;
                 document.getElementById('input_number1').value = document.getElementById('input_number').value;
-                
-                
                 document.getElementById('input_name').value = infoUser.firstName + " " + infoUser.lastName;
                 document.getElementById('input_email').value = infoUser.email;
                 document.getElementById('input_phone').value = infoUser.phoneNum || "";
                 document.getElementById('frm_booktable').style.display = "block"; // Hiển thị form
+
+                document.querySelector('#form_booktable').addEventListener('submit', () => {
+                    const tableNumber = document.getElementById('tableNumber').value;
+                    const input_time1 = document.getElementById('input_time1').value;
+                    const input_date1 = document.getElementById('input_date1').value;
+                    const input_number1 = document.getElementById('input_number1').value;
+                    const input_name = document.getElementById('input_name').value;
+                    const input_email = document.getElementById('input_email').value;
+                    const input_phone = document.getElementById('input_phone').value;
+                    const newBookATable = {
+                                            id: data.bookTables.length + 1,
+                                            customerName: input_name,
+                                            email: input_email,
+                                            phoneNumber: input_phone,
+                                            tableNumber: tableNumber.split(", "),
+                                            peopleNum: input_number1,
+                                            time: input_time1,
+                                            date:  input_date1
+                                        }
+                    data.bookTables.push(newBookATable);
+                    setDataLocalStorage(data);
+                })
             }
             else {
                 alert("Vui lòng chọn ít nhất một bàn.");
@@ -162,29 +180,22 @@ function remove() {
     document.querySelector('#remove').addEventListener('click', () => {
         document.getElementById('frm_booktable').style.display = "none";
     })
-}
-
 // Đóng form khi click bên ngoài form
-window.onclick = function(event) {
-    const modal = document.getElementById('frm_booktable');
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-function handleLogAndRegModal() {
-    const logAndReg = document.getElementById("logAndReg");
-    logAndReg.addEventListener('click', (e) => {
-        logAndReg_modal.style.display = 'block';
-    })
-    logAndReg_modal.addEventListener('click', (e) => {
-        if(e.target === logAndReg_modal){
-            logAndReg_modal.style.display = 'none';
+    document.addEventListener('click', (e) => {
+        const modal = document.getElementById('frm_booktable');
+        if (e.target == modal) {
+            modal.style.display = "none";
         }
     })
 }
 
-displaytable();
-booktable()
-remove()
-handleLogAndRegModal()
+// Hàm chạy chương trình
+function runPage () {
+    document.addEventListener('DOMContentLoaded', () => {
+        displaytable();
+        booktable();
+        remove();
+    })
+}
+
+runPage();
