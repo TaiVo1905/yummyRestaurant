@@ -50,7 +50,7 @@ function displayFilteredMenu() {
             </tr> 
             `;
         });
-    addData()
+    addData(filtered)
         // addCart()
   // Thêm sự kiện nhấp chuột cho các sản phẩm mới
   addClickEventToProducts();
@@ -63,9 +63,8 @@ function displayFilteredMenu() {
             `;
         }
     }
-filterMenu()
 
-function addData(){
+function addData(filtered){
     document.querySelectorAll('.btn_add').forEach(button=>{
         // gắn sự kiện onclick cho các nút button "thêm vào giỏ hàng"
         button.addEventListener('click', function(){
@@ -78,7 +77,7 @@ function addData(){
             // lấy dữ liệu 
             
             const foodItem = filtered.find(item =>{
-                return item.id === foodID;
+                return item.id == foodID;
             })
             const userID = parseInt(sessionStorage.getItem('UserID'));
             // kiểm tra nếu chưa có userID tức là chưa đăng nhập thành công
@@ -94,6 +93,7 @@ function addData(){
                 const cartItem = {
                     "userId": userID,
                     "nameFood": foodItem.name,
+                    "foodId": foodItem.id,
                     "type": foodItem.type,
                     "image_url": foodItem.image_url,
                     "price": foodItem.price,
@@ -103,7 +103,7 @@ function addData(){
                 }
                 // Kiểm tra xem có trong cart có chưa. Nếu có rồi thì tăng số lượng
                 let itemIndex = data.carts.findIndex(item =>{
-                    return item.nameFood === foodItem.name;
+                    return item.foodId == foodItem.id && item.userId == userID;
                 })
                 console.log(cartItem.food_Note)
                 if (itemIndex !== -1){
@@ -114,11 +114,11 @@ function addData(){
                     } else {
                         data.carts[itemIndex].food_Note = cartItem.food_Note;
                     }
-                    // alert("Bạn thêm thành công!")
+                    alert("Bạn thêm thành công!")
                 }
                 else{
                     data.carts.push(cartItem);
-                    // alert("Thêm thành công!")
+                    alert("Thêm thành công!")
                 }
                 document.querySelector(`#input_sl-${foodID}`).value = 1;
                 document.querySelector(`#input_note-${foodID}`).value = "";
@@ -181,27 +181,20 @@ displayDefault();
 
 //Xem sản phẩm chi tiết
 // Đảm bảo hàm onclickProduct hoạt động đúng
-function onclickProduct(event) {
-    // Kiểm tra nếu sự kiện xảy ra từ một phần tử sản phẩm
-    const productElement = event.target.closest('.product_image, .product_name, .product_price');
-    if (!productElement) {
-        return; // Nếu không phải, ngăn chặn việc chuyển trang
-    }
-     /*
-        event.target: Trả về phần tử cụ thể mà người dùng đã nhấp vào.
-        .closest(selector): Phương thức này tìm kiếm trong chuỗi các phần tử cha gần nhất cho phần tử mà đã được nhấp vào
-        (trong trường hợp này là event.target). Nếu phần tử đó khớp với bất kỳ phần tử nào trong chuỗi .product_image, 
-        .product_name, hoặc .product_price, nó sẽ trả về phần tử đó. Nếu không, nó sẽ trả về null.
-         */
-        
-    // Chuyển hướng đến trang chi tiết
-    window.location.href = "details.html"; 
-}
 
 function addClickEventToProducts() {
     const productElements = document.querySelectorAll('.product_image, .product_name, .product_price');
-    productElements.forEach(function (element) {
-        element.addEventListener('click', onclickProduct);
+    const trElements = document.querySelectorAll('tbody tr');
+    productElements.forEach( (element) => {
+        element.addEventListener('click', (e) => {
+                for (const tr of trElements) {
+                    if (tr.contains(e.target)) {
+                        location.href = "details.html";
+                        sessionStorage.setItem('foodId', tr.querySelector('tr .btn_add').id.split('-')[1]);
+                        return;
+                    }
+                }
+        });
     });
 }
 
