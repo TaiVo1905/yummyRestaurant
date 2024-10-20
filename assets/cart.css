@@ -344,63 +344,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .payment_button:hover {
     background-color: rgb(180, 28, 28);
-}
- /* @media (max-width: 739px) {  */
-    /* .cart_container{
-        display: table-column;
-    } */
-    /* .cart_container {
-        margin-top: 70px;
-        margin-left: 30px;
-        margin-right: 30px;
-        margin-bottom: 0px;
-      }
-    .cart_table {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-gap: 10px 0;
-    }
-    .product_image {
-      grid-column:1;
-      display: flex !important;
-      align-items: center;
-    }
-  
-    .product_name {
-      grid-column: 1 ;
-      align-items: center;
-    }
-   */
-    /* .product_quantity {
-      grid-column: 2;
-      align-items: center;
-    }
-    .product_note {
-      grid-column: 5;
-      align-items: center;
-    }
-    .product_price {
-      grid-column: 3;
-      align-items: center;
-      padding:10px !important;
-    }
-    .product_remove { */
-        /* padding: 0px;
-        margin: 0px;
-        bottom: 0px;
-        left: 0px;
-      grid-column: 1;
-      display: flex;
-      align-items: center;
-    }
-    .cart_form_payments {
-      margin-top: 20px;
-    }
-    .paymentForm{
-        width: 80% !important;
-    }
-   /* }  */
-    
+} 
    @media (max-width: 739px) {
 
     #cart_announcement {
