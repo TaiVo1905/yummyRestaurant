@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 /* phần chứa div ảnh và div introduce */
@@ -41,50 +42,35 @@
     width: 784px;
     margin-left: 30px;
 }
-
-/* div chứa số liệu món */
-.quantity{      
-    height: 35px;
-    width: 300px;
-    display: flex;
-    margin-top: 10px;
+#number-input {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #ccc;
 }
-
-/* dấu trừ sp */
-.quantity_logo1{
-    line-height: 35px;
-    width: 15px;
-    text-align: center;
-    border: 1px solid black;
-}
-
-.quantity_logo1:hover{
-    cursor: pointer;
-}
-
-/* số lượng sp */
-.quantity_logo2{
-    line-height: 35px;
+#number_subtraction, #number_addition{
+    background-color: #e0e0e0;
+    border: none;
     width: 30px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    text-align: center;
-}
-
-/* dấu cộng sp */
-.quantity_logo3{
-    line-height: 35px;
-    width: 15px;
-    text-align: center;
-    border: 1px solid black;
-}
-
-.quantity_logo3:hover{
+    height: 32px;
     cursor: pointer;
+    font-size: 18px;
 }
+.input_sl {
+    width: 35px;
+    height: 30px;
+    text-align:center;
+    border: none;
+}
+/* Ẩn mũi tên của ô input khi có type là number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 
 /* button mua hàng dish details */
-.quantity button{
+#addCart{
     margin-left: 50px;
     padding: 5px;
     font-size: 15px;
@@ -92,9 +78,10 @@
     height: 35px;
     width: 200px;
     cursor: pointer;
+    border: none;
 }
 
-.quantity button:hover{
+#addCart:hover{
     background-color: red;
     color: white;
     font-size: 18px;
@@ -112,6 +99,7 @@
 .dish-slider {
     position: relative;
     width: 100%; 
+    overflow: hidden;
 }
 
 /* div chứa dstt */
@@ -124,7 +112,6 @@
 .slider-content .list_dish {
     min-width: calc(25% - 10px); /* 25% chiều rộng trừ khoảng cách */
     margin: 0 5px; /* Khoảng cách giữa các món ăn */
-    height: 400px;
     display: flex;
     flex-direction: column; /* Đặt các phần tử con xếp chồng lên nhau */
     background-color: rgb(243, 246, 246);
@@ -179,12 +166,13 @@
 .dish h6{
     font-size: 17px;
     opacity: 0.6;
-    padding: 5px 0;
+    padding: 6px;
 }
 
 /* text tên món ăn tương tự */
 .dish h5{
     font-size: 20px;
+    padding: 6px;
 }
 
 /* giá sp tương tự */
@@ -192,16 +180,18 @@
     font-size: 19px;
     color: rgb(255, 77, 0);
     margin-top: 5px;
+    padding: 0 6px;
 }
 
 /* button đặt hàng trong danh sách */
 .dish button{
     font-size: 15px;
-    margin-bottom: 5px ;
+    margin-bottom: 12px;
     color: red;
     padding: 5px;
     border: 1px solid red;
     border-radius: 5px;
+    margin-left: 6px;
 }
 
 .dish button:hover{
