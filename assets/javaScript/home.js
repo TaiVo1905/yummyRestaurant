@@ -66,7 +66,6 @@ function handleLogAndRegModal() {
         }
     });
 }
-// Render món ăn
 renderFeaturedDishes(allData);
 handleCart();
 handleLogAndRegModal();

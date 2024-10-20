@@ -133,10 +133,8 @@ img {
 
 /* Note */
 .input_note {
-    padding: 10px;
     resize: none;
     height: 90.8px;
-    width: 100%;
     border: none;
     scrollbar-width: none;
     --webkit-appearance: none;
@@ -234,8 +232,6 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: normal;
     text-transform: inherit;
 }
-
-
 /* Thanh toán sản phẩm */
 .cart_form_payments {
     position: fixed;
@@ -252,18 +248,14 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: bold;
     color: #fff;
     border: none;
-
 }
-
 .sub_payment:hover {
     background-color: #9b6c47;
     cursor: pointer;
 }
- 
 .order_total {
     border-bottom: 3px solid #ececec;
 }
-
 /* Mã giảm giá */
 .text_coupon {
     border-bottom: 3px solid #ececec;
@@ -271,23 +263,18 @@ input[type=number]::-webkit-outer-spin-button {
     padding-bottom: 10px;
     margin: 20px 0px;
 }
-
-
 .coupon_code{
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #aeacac;
-
 }
-
 .apply {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
 }
-
 .apply:hover {
     background-color: #aeacac;
     cursor: pointer;
@@ -295,7 +282,6 @@ input[type=number]::-webkit-outer-spin-button {
 .footer {
     margin-top: 490px;
 }
-
 /* form */
 .payment_modal {
     display: none;
@@ -309,7 +295,6 @@ input[type=number]::-webkit-outer-spin-button {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.4);
 }
-
 .paymentForm {
     width: 700px;
     border: 1px solid rgb(155, 153, 153);
@@ -359,4 +344,121 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .payment_button:hover {
     background-color: rgb(180, 28, 28);
+}
+ /* @media (max-width: 739px) {  */
+    /* .cart_container{
+        display: table-column;
+    } */
+    /* .cart_container {
+        margin-top: 70px;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 0px;
+      }
+    .cart_table {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-gap: 10px 0;
+    }
+    .product_image {
+      grid-column:1;
+      display: flex !important;
+      align-items: center;
+    }
+  
+    .product_name {
+      grid-column: 1 ;
+      align-items: center;
+    }
+   */
+    /* .product_quantity {
+      grid-column: 2;
+      align-items: center;
+    }
+    .product_note {
+      grid-column: 5;
+      align-items: center;
+    }
+    .product_price {
+      grid-column: 3;
+      align-items: center;
+      padding:10px !important;
+    }
+    .product_remove { */
+        /* padding: 0px;
+        margin: 0px;
+        bottom: 0px;
+        left: 0px;
+      grid-column: 1;
+      display: flex;
+      align-items: center;
+    }
+    .cart_form_payments {
+      margin-top: 20px;
+    }
+    .paymentForm{
+        width: 80% !important;
+    }
+   /* }  */
+    
+   @media (max-width: 739px) {
+
+    #cart_announcement {
+        margin-top: 100px;
+        margin-left: 200px;
+    }
+
+    /* Container */
+    .cart_container {
+        flex-direction: column;
+        margin-top: 200px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    /* Giỏ hàng */
+    .cart_wrapper {
+        width: 100%;
+    }
+
+    .cart_table {
+        border-right: none;
+    }
+
+    .cart_table th {
+        padding: 0px;
+        height: 50px;
+    }
+
+    .input_note {
+        width: 100px;
+    }
+      /* Form cần thanh toán */
+    .cart_form_payments {
+        width: 100%;
+        position: static;
+        margin: 0;
+        margin-right: 5px;
+        margin-left: 5px;
+
+    }
+    .cart_sidebar {
+        margin-top: 20px;
+        margin-right: 10px;
+    }
+    .cart_totals .product_name2 {
+        text-align: center;
+    }
+
+    /* Tiếp tục xem và cập nhật giỏ hàng */
+    .button_continue {
+        padding-top: 80px;
+    }
+
+    .payment_modal {
+        margin-top: 120px;
+    }
+
+    .paymentForm {
+        width: 100%;
+    }
 }
