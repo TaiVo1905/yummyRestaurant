@@ -60,18 +60,20 @@ function similarToDish(data) {
                     <h6>${dish.type}</h6>
                     <h5>${dish.name}</h5>
                     <span><b>${dish.price}<b></span><br>
-                    <button><b>Thêm Vào Giỏ Hàng<b></button>
+                    <button id=${dish.id}><b>Thêm Vào Giỏ Hàng<b></button>
                 </div>
             `;
         update.appendChild(dishElement);
         }
-        
-        dishElement.addEventListener('click', () => {
-            sessionStorage('foodId', dish.id);
-            renderDishDetails(data); // Cập nhật nội dung chi tiết của món
-        });
-
     });
+    document.querySelectorAll('.list_dish').forEach( (card) => {
+        card.addEventListener('click', (e) => {
+            if (e.target != card.querySelector('button')){
+                sessionStorage.setItem('foodId', card.querySelector('button').id);
+                window.location.href = "./details.html";
+            }
+        })
+    })
     updateDishSlider(currentDishIndex); // Cập nhật slider sau khi render
 }
 
