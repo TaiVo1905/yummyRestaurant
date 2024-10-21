@@ -19,6 +19,15 @@
 }
 
 /* -------------------------------------------------------PHẦN HEADER----------------------------------------------- */
+.menu_icon  {
+    display: none;
+    top: 0px;
+    left: 0px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
 .header{
     background-color: rgb(231, 253, 141);
     display: flex;
@@ -44,7 +53,7 @@
 }
 
 .logo {
-    background-image: url(../assets/image/logo.jpg);
+    background-image: url(../image/logo.jpg);
     padding-left: 42px;
     height: 42px;
     background-size: cover;
@@ -92,6 +101,7 @@
 .searchBar {
     display: flex;
     display: inline-block;
+    align-content: center;
 }
 .header_search {
     height: 22px;
@@ -117,19 +127,7 @@
     padding-left: 5px;
     line-height: 28px;
 }
-.reset_search{
-    width: 140px;
-    height: 30px;
-    background-color:orangered ;
-    color:white;
-    border-radius: 5px;
-    font-size: 14px;
-    transform: translateY(-10px);
-    margin-left: 14px;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 6px 15px 0 15px;
-}
+
 .btn_search{
     width: 70px;
     height: 28px;
@@ -139,6 +137,7 @@
     outline: none;
     border-radius: 5px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .header_cart i, .header_regiter i{
@@ -155,6 +154,28 @@
     align-self: center;
     display: inline-block;
 }
+.header_cart{
+    position: relative;
+    top: 8px;
+}
+
+.quantity_cart{
+    position: relative;
+    left: 70px;
+    bottom: 35px;
+    height: 16px;
+    width: 16px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 15px;
+}
+
+.quantity_cart p{
+    margin-left: 1px;
+}
+
+
 .header_regiter{
     padding: 0 26px;
 }
@@ -225,7 +246,7 @@
     width: 100%;
     background-color: rgb(241, 252, 198);;
     display: flex;
-    /* margin: 7px; */
+    border-radius: 15px;
     flex-direction: column;
     text-align: center;
 }
@@ -233,6 +254,8 @@
     height: 70%;
     width: 100%;
     overflow: hidden; /*loại bỏ phần hình ảnh tràn ra ngoài */
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
 }
 .card_dish img{
     height: 100%;
@@ -241,7 +264,7 @@
     transition: transform 0.5s ease-in-out;
 }
 .card_dish:hover img{
-    transform: scale(1.1) /*căn chỉnh độ phóng to của hình ảnh*/
+    transform: scale(1.1); /*căn chỉnh độ phóng to của hình ảnh*/
 }
 .menu_card h5{
     margin-top: 15px;
@@ -294,8 +317,7 @@
 }
 /* giới thiệu */
 .body_introduce{
-    height: 100%;
-    width: 85%;
+    height: 540px;
     margin: 10px auto 24px auto;
     display: flex;
 }
@@ -369,6 +391,7 @@
     color: #000;
     text-decoration: none;
 }
+
 /* chỉnh sửa responsive */
 @media  (min-width:740px) and (max-width:1034px){
     .header{

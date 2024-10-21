@@ -5,7 +5,7 @@
 }
 
 
-
+/* -------------------------------------------- Header----------------------------------------------------*/
 /* Thông báo */
 .cart_header {
     position: fixed;
@@ -35,6 +35,8 @@
     margin-top: 100px;
     margin-left: 550px;
 }
+
+/* -------------------------------------------- Body----------------------------------------------------*/
 
 /* Container */
 .cart_container {
@@ -221,17 +223,21 @@ input[type=number]::-webkit-outer-spin-button {
 
 .cart_totals td {
     text-align: right;
+    border-bottom: 1px solid #ececec;
+
 }
 
 .cart_subtotal, .order_total {
     font-weight: bold;
 }
 
+
 .normal_text {
     padding: 10px;
     font-weight: normal;
     text-transform: inherit;
 }
+
 /* Thanh toán sản phẩm */
 .cart_form_payments {
     position: fixed;
@@ -279,9 +285,6 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #aeacac;
     cursor: pointer;
 }
-.footer {
-    margin-top: 490px;
-}
 /* form */
 .payment_modal {
     display: none;
@@ -318,7 +321,8 @@ input[type=number]::-webkit-outer-spin-button {
 .payment_lastName,
 .payment_firstName,
 .payment_email, 
-.payment_phoneNumber {
+.payment_phoneNumber,
+.payment_address {
     width: 100%;
     height: 40px;
     border: 1px solid rgb(155, 153, 153);
@@ -344,21 +348,72 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .payment_button:hover {
     background-color: rgb(180, 28, 28);
-} 
-   @media (max-width: 739px) {
+}
 
+
+/* RESPONSIVE */
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    /* Thông báo */
+    #cart_announcement {
+        margin-left: 250px;
+    }
+   
+    /* Container */
+    .cart_container {
+        display: block;
+        margin-left: 20px;
+    }
+
+       /* Container */
+       .cart_container {
+        flex-direction: column;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    /* Bảng giỏ hàng đã thêm vào */
+    .cart_table {
+      font-size: 15px;
+    }
+       /* Form cần thanh toán */
+       .cart_form_payments {
+        width: 100%;
+        position: static;
+    }
+
+     /* Giỏ hàng */
+     .cart_wrapper {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .input_note {
+        width: 100px;
+    }
+
+    .cart_table {
+        border-right: none;
+    }
+
+}
+
+
+/* Mobile */
+@media (max-width: 739px) {
+    /* Thông báo */
     #cart_announcement {
         margin-top: 100px;
-        margin-left: 200px;
+        margin-left: 30px;
     }
 
     /* Container */
     .cart_container {
         flex-direction: column;
-        margin-top: 200px;
         margin-left: 10px;
         margin-right: 10px;
     }
+
     /* Giỏ hàng */
     .cart_wrapper {
         width: 100%;
@@ -367,23 +422,37 @@ input[type=number]::-webkit-outer-spin-button {
     .cart_table {
         border-right: none;
     }
-
+  
+    img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    .cart_table .product_quantity {
+        padding-left: 4px;
+    }
+    .product_name {
+        padding: 0px 4px;
+    }
     .cart_table th {
-        padding: 0px;
         height: 50px;
+        font-size: 10px !important;
+    }
+    .cart_table  th, td {
+        font-size: 10px;
+    }
+    .cart_table th, .cart_table td {
+        padding: 0px;
+        
     }
 
     .input_note {
-        width: 100px;
+        width: 70px;
     }
       /* Form cần thanh toán */
     .cart_form_payments {
         width: 100%;
         position: static;
-        margin: 0;
-        margin-right: 5px;
-        margin-left: 5px;
-
+        margin: 0; 
     }
     .cart_sidebar {
         margin-top: 20px;
@@ -392,16 +461,30 @@ input[type=number]::-webkit-outer-spin-button {
     .cart_totals .product_name2 {
         text-align: center;
     }
+/* Tăng giảm số lượng */
+    #number_subtraction {
+       
+    }
+    #number_subtraction, #number_addition {
+        width: 20px;
+        
+    }
+
+    #number_step {
+        width: 30px;  
+    }
+   
     /* Tiếp tục xem và cập nhật giỏ hàng */
     .button_continue {
         padding-top: 80px;
     }
 
     .payment_modal {
-        margin-top: 120px;
+        margin-top: 50px;
     }
 
     .paymentForm {
-        width: 100%;
+        width: 360px;
     }
 }
+
