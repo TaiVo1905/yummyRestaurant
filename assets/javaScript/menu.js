@@ -1,4 +1,5 @@
 import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
+import {countUniqueItemsInCart} from "./cart.js";
 const data = getDataLocalStorage();
 let filtered=[];
 
@@ -71,10 +72,9 @@ function addToCart(filtered){
                     "food_Note": foodNote
                 }
                 // Kiểm tra xem có trong cart có chưa. Nếu có rồi thì tăng số lượng
-                let itemIndex = data.carts.findIndex(item =>{
+                const itemIndex = data.carts.findIndex(item =>{
                     return item.foodId == foodItem.id && item.userId == userID;
                 })
-                console.log(cartItem.food_Note)
                 if (itemIndex !== -1){
                     data.carts[itemIndex].food_Qty = parseInt(data.carts[itemIndex].food_Qty) + cartItem.food_Qty;
                     console.log(data.carts[itemIndex].food_Note, cartItem.food_Note)
@@ -262,6 +262,7 @@ function runPage() {
     document.addEventListener("DOMContentLoaded", () => {
         filterMenu();
         document.querySelector('#menu_list a').click(); // Luôn luôn hiển thị Những món khai vị khi load trang
+        countUniqueItemsInCart();
     })
 }
 

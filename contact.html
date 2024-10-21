@@ -35,7 +35,7 @@
                     <div>
                         <a href="./cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
                     </div>
-                    <div class="quantity_cart"><p id="quantity_cart">13</p></div>
+                    <div class="quantity_cart"><p id="quantity_cart"></p></div>
                 </div>
                 <div class="header_regiter">
                     <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
@@ -60,8 +60,8 @@
                 </form>
                 <div class="footer">
                     <div class="footer_card">
-                        <div class="card_textTop"><b>Thành viên nhóm</b></div><br/>
-                        <div class="card_textBottom">Võ Đức Tài<br>Ngô Thị Kim Hân<br>Hồ Viết Tiến<br>Bnướch Thị Thủy<br>Coor Chăng</div>
+                        <div class="card_textTop"><b>Địa chỉ</b></div><br/>
+                        <div class="card_textBottom">99 Tô Hiến Thành - Phước Mỹ<br>Sơn Trà - Đà Nẵng</div>
                     </div>
                     <div class="footer_card">
                         <div class="card_textTop"><b>Thời Gian</b></div><br/>
@@ -69,7 +69,7 @@
                     </div>
                     <div class="footer_card">
                         <div class="card_textTop"><b>Email</b></div><br/>
-                        <div class="card_textBottom">Yummy@gmail.com</div>
+                        <div class="card_textBottom">yummyrestaurant1905@gmail.com</div>
                     </div>
                     <div class="footer_card">
                         <div class="card_textTop"><b>Theo Dõi</b></div><br/>
@@ -176,12 +176,14 @@
         </div>
     </div>
     <script src="./assets/javaScript/logandreg.js" type="module"></script>
-    <script>
+    <script type="module">
+        import {countUniqueItemsInCart} from "./assets/javaScript/cart.js";
         document.querySelector('.frm').addEventListener('submit', (e) => {
             e.preventDefault();
             alert("Cám ơn bạn liên hệ, chúng tôi sẽ phản hồi bạn sớm!");
             window.location.href = "./index.html";
         })
+        countUniqueItemsInCart();
     </script>
 </body>
 </html>

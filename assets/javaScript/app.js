@@ -1,4 +1,5 @@
 import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
+import {countUniqueItemsInCart} from "./cart.js";
 const data = getDataLocalStorage(); // Tạo biến lưu data trả về từ hàm getDataLocalStorage ở file localStorage.js
 
 // Hàm hiển thị món ăn nổi bật
@@ -34,7 +35,7 @@ function handleCart(data) {
             } else {
                 const food_Item = data.featuredDishes.find(dish => dish.id == foodId);
                 const cartItem = {
-                    "id": user_ID,
+                    "userId": user_ID,
                     "nameFood": food_Item.name,
                     "foodId": food_Item.id,
                     "type": food_Item.type,
@@ -43,7 +44,16 @@ function handleCart(data) {
                     "food_Qty": 1,
                     "describe": food_Item.describe,
                 };
-                data.carts.push(cartItem);
+                const itemIndex = data.carts.findIndex(item =>{
+                    return item.foodId == food_Item.id && item.userId == user_ID;
+                })
+                if (itemIndex !== -1){
+                    data.carts[itemIndex].food_Qty = parseInt(data.carts[itemIndex].food_Qty) + cartItem.food_Qty;
+                }
+                else{
+                    data.carts.push(cartItem);
+                }
+                countUniqueItemsInCart();
                 setDataLocalStorage(data); // Lưu giỏ hàng vào localStorage
                 alert('Bạn đã thêm món vào giỏ hàng thành công');
             }
@@ -154,6 +164,7 @@ function runPage(data) {
         renderFeaturedDishes(data);
         handleCart(data);
         switchToDetailPage();
+        countUniqueItemsInCart();
         handleIconClick();
     })
 }

@@ -156,15 +156,14 @@
 }
 .header_cart{
     position: relative;
-    top: 8px;
 }
 
 .quantity_cart{
-    position: relative;
-    left: 70px;
-    bottom: 35px;
-    height: 16px;
-    width: 16px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    height: 18px;
+    width: 18px;
     background-color: red;
     color: white;
     border-radius: 50%;
@@ -172,7 +171,7 @@
 }
 
 .quantity_cart p{
-    margin-left: 1px;
+    text-align: center;
 }
 
 

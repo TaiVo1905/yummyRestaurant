@@ -6,7 +6,7 @@ function getDataLocalStorage() {
 }
 export default getDataLocalStorage;
 function saveData() {
-    fetch ('https://raw.githubusercontent.com/TaiVo1905/yummyRestaurantWebsite/main/assets/Data/data.json')
+    fetch ('../assets/Data/data.json')
     .then (response => response.json())
     .then (data => {
         if(localStorage.getItem('data') === null){
