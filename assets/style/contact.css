@@ -3,14 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* Định dạng css cho contact*/
-body {
-    /* margin: 0; */
-    /* padding: 0; */
-    /* background-color: #fff;
-    color: #080a0b; */
-}
-
 .title{
     color:#999;
     font-size: 36px;
@@ -31,7 +23,6 @@ body {
     text-align: center;
     display: block;
 }
-
 /* Biểu tượng Font Awesome */
 .iconAddress, .iconPhone, .iconEmail {
     margin-right: 10px;
@@ -69,14 +60,21 @@ body {
 }
 /* Định dạng nút gửi */
 .frm button[type="submit"] {
-    padding: 10px 20px;
-    background-color: #f1f1f1;
+    padding: 10px 25px;
+    background-color: #868686;
     border: 1px solid #ddd;
     border-radius: 5px;
     cursor: pointer; /* Hiển thị nút gửi đang bị disable */
-    color: #999;
+    color: #fff;
     font-size: 14px;
     margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.frm button[type="submit"]:hover {
+    background-color: orangered;
 }
 
 .logAndReg_modal {
@@ -91,4 +89,28 @@ body {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 10;
+}
+/* RESPONSIVE */
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .container_contact {
+        margin-top: 30px;
+
+    }
+
+    .body .frm {
+        margin-top: 100px;
+    }
+    .footer {
+        margin-top: 195px;
+    }
+
+}
+
+
+/* Mobile */
+@media (max-width: 739px) {
+   .body {
+    margin-top: 150px;
+   }
 }

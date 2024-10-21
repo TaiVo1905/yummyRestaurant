@@ -19,6 +19,15 @@
 }
 
 /* -------------------------------------------------------PHẦN HEADER----------------------------------------------- */
+.menu_icon  {
+    display: none;
+    top: 0px;
+    left: 0px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
 .header{
     background-color: rgb(231, 253, 141);
     display: flex;
@@ -44,7 +53,7 @@
 }
 
 .logo {
-    background-image: url(../assets/image/logo.jpg);
+    background-image: url(../image/logo.jpg);
     padding-left: 42px;
     height: 42px;
     background-size: cover;
@@ -92,9 +101,8 @@
 .searchBar {
     display: flex;
     display: inline-block;
+    align-content: center;
 }
-
-
 .header_search {
     height: 22px;
     width: 22px;
@@ -119,19 +127,7 @@
     padding-left: 5px;
     line-height: 28px;
 }
-.reset_search{
-    width: 140px;
-    height: 30px;
-    background-color:orangered ;
-    color:white;
-    border-radius: 5px;
-    font-size: 14px;
-    transform: translateY(-10px);
-    margin-left: 14px;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 6px 15px 0 15px;
-}
+
 .btn_search{
     width: 70px;
     height: 28px;
@@ -141,6 +137,7 @@
     outline: none;
     border-radius: 5px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .header_cart i, .header_regiter i{
@@ -152,13 +149,32 @@
     cursor: pointer;
     opacity: 0.6;
 }
-
-
 .header_cart, .header_regiter{
     height: 100%;
     align-self: center;
     display: inline-block;
 }
+.header_cart{
+    position: relative;
+    top: 8px;
+}
+
+.quantity_cart{
+    position: relative;
+    left: 70px;
+    bottom: 35px;
+    height: 16px;
+    width: 16px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 15px;
+}
+
+.quantity_cart p{
+    margin-left: 1px;
+}
+
 
 .header_regiter{
     padding: 0 26px;
@@ -166,189 +182,8 @@
 .cart_logo{
     margin-left: 50px;
 }
-
 .regiter_logo{
     margin-left: 30px;
-}
-
-
-/* ------------------------------------------------------PHẦN BODY-------------------------------------------------------- */
-.body_slider {
-    width: 100%; 
-    height: 700px;
-    overflow: hidden; /* Ẩn các slide bị thừa ra ngoài */
-    position: relative;
-}
-
-.slider {
-    display: flex;
-    width: 400%;
-    height: 100%;
-    transition: transform 1s ease; /* Hiệu ứng chuyển đổi */
-    animation: slide 16s infinite; /* Tự động chuyển slide */
-}
-
-.slide {
-    width: 100vw; /* Mỗi slide chiếm toàn bộ chiều rộng màn hình */
-    height: 100%; 
-    flex-shrink: 0; /* các slide sẽ ko bị thu nhỏ */
-}
-
-.slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-@keyframes slide {
-    0% { transform: translateX(0); } /*thời điểm dịch chuyển*/
-    20% { transform: translateX(0); } /*lúc hiển thị đứng yên*/
-    25% { transform: translateX(-100vw); }
-    45% { transform: translateX(-100vw); }
-    50% { transform: translateX(-200vw); }
-    70% { transform: translateX(-200vw); }
-    75% { transform: translateX(-300vw); }
-    95% { transform: translateX(-300vw); }
-    100% { transform: translateX(0); }
-}
-
-/* Dish */
-.body_text {
-    display: flex;
-    align-items: center;
-    text-align: center; 
-    height: 80px;
-    font-size: 50px;
-}
-.body_line {
-    flex-grow: 1; 
-    border-top: 1px solid #000;
-    margin: 0 10px;
-}
-.body_menu{
-    height: 1000px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
-    margin: 0 10px;
-}
-
-.menu_card{
-    height: 100%;
-    width: 100%;
-    background-color: rgb(241, 252, 198);;
-    display: flex;
-    /* margin: 7px; */
-    flex-direction: column;
-    text-align: center;
-}
-.card_dish{
-    height: 70%;
-    width: 100%;
-    overflow: hidden; /*loại bỏ phần hình ảnh tràn ra ngoài */
-}
-.card_dish img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease-in-out;
-}
-.card_dish:hover img{
-    transform: scale(1.1) /*căn chỉnh độ phóng to của hình ảnh*/
-}
-.menu_card h5{
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 26px;
-}
-.menu_card h6{
-    margin-bottom: 5px;
-    font-size: 27px;
-    /* margin-left: 124px; */
-    color: #8b8b8b;
-    margin-top: 12px;
-}
-.menu_card button{
-    /* margin-left: 80px; */
-    margin-top: 10px;
-    font-size: 20px;
-    width: 60%;
-    align-self: center;
-    margin-bottom: 10px;
-    border: none;
-    height: 10%;
-    color: #fff;
-    background-color: orangered;
-    transition: transform 0.3s ease-in-out;
-    border-radius: 10px;
-
-}
-.menu_card button:hover{
-    opacity: 0.9;
-    cursor: pointer;
-    /* color: #333; */
-    transform: scale(1.1);
-    font-weight: 600;
-}
-.bt{
-    margin-left: 80px;
-    margin-top: 10px;
-    font-size: 20px;
-}
-
-/* triết lý thương hiệu */
-.body_textH5{
-    text-align: center;
-    font-size: 22px;
-}
-.body_textH6{
-    text-align: center;
-    padding: 0 150px;
-    font-size: 15px;
-}
-
-
-/* giới thiệu */
-.body_introduce{
-    height: 540px;
-    /* width: 85%; */
-    margin: 10px auto 24px auto;
-    display: flex;
-}
-.introduce_card{
-    height: 600px;
-    width: 33.3%;
-    margin: 10px;
-}
-/* thẻ card chứa img */
-.card_img{ 
-    height: 60%;
-    width: 100%;
-    /* background-color: yellow; */
-}
-.card_img img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-.introduce_card h4{
-    text-align: center;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    margin: 0px;
-    background-color: rgb(249, 248, 230);
-    font-size: 32px;
-}
-.introduce_card h6{
-    height: 100px;
-    /* width: 95%; */
-    background-color: rgb(242, 251, 207);
-    margin-left: 0px;
-    text-align: justify;
-    font-size: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 0px;
 }
 
 /* Form hiển thị thông tin cá nhân */
@@ -364,6 +199,7 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.4);
 }
+
 
 .information_Form{
     width: 700px;
@@ -387,7 +223,7 @@
 }
 .information_lastName,
 .information_firstName,
-.information_email, 
+.information_email,
 .information_phoneNumber
 {
     width: 100%;
@@ -424,6 +260,7 @@
     background-color: rgb(180, 28, 28);
 }
 
+
 /* Form đổi mật khẩu */
 .changePassword_modal {
     display: none;
@@ -437,6 +274,7 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.4);
 }
+
 
 .password_Form{
     width: 700px;
@@ -496,6 +334,177 @@
     background-color: rgb(180, 28, 28);
 }
 
+/* ------------------------------------------------------PHẦN BODY-------------------------------------------------------- */
+.body_slider {
+    width: 100%; 
+    height: 700px;
+    overflow: hidden; /* Ẩn các slide bị thừa ra ngoài */
+    position: relative;
+}
+.slider {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    transition: transform 1s ease; /* Hiệu ứng chuyển đổi */
+    animation: slide 16s infinite; /* Tự động chuyển slide */
+}
+.slide {
+    width: 100vw; /* Mỗi slide chiếm toàn bộ chiều rộng màn hình */
+    height: 100%; 
+    flex-shrink: 0; /* các slide sẽ ko bị thu nhỏ */
+}
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@keyframes slide {
+    0% { transform: translateX(0); } /*thời điểm dịch chuyển*/
+    20% { transform: translateX(0); } /*lúc hiển thị đứng yên*/
+    25% { transform: translateX(-100vw); }
+    45% { transform: translateX(-100vw); }
+    50% { transform: translateX(-200vw); }
+    70% { transform: translateX(-200vw); }
+    75% { transform: translateX(-300vw); }
+    95% { transform: translateX(-300vw); }
+    100% { transform: translateX(0); }
+}
+/* Dish */
+.body_text {
+    display: flex;
+    align-items: center;
+    text-align: center; 
+    height: 80px;
+    font-size: 50px;
+}
+.body_line {
+    flex-grow: 1; 
+    border-top: 1px solid #000;
+    margin: 0 10px;
+}
+.body_menu{
+    height: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin: 0 10px;
+}
+
+.menu_card{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(241, 252, 198);;
+    display: flex;
+    border-radius: 15px;
+    flex-direction: column;
+    text-align: center;
+}
+.card_dish{
+    height: 70%;
+    width: 100%;
+    overflow: hidden; /*loại bỏ phần hình ảnh tràn ra ngoài */
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.card_dish img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+.card_dish:hover img{
+    transform: scale(1.1); /*căn chỉnh độ phóng to của hình ảnh*/
+}
+.menu_card h5{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 26px;
+}
+.menu_card h6{
+    margin-bottom: 5px;
+    font-size: 27px;
+    /* margin-left: 124px; */
+    color: #8b8b8b;
+    margin-top: 12px;
+}
+.menu_card button{
+    /* margin-left: 80px; */
+    margin-top: 10px;
+    font-size: 20px;
+    width: 60%;
+    align-self: center;
+    margin-bottom: 10px;
+    border: none;
+    height: 10%;
+    color: #fff;
+    background-color: orangered;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+
+}
+.menu_card button:hover{
+    opacity: 0.9;
+    cursor: pointer;
+    /* color: #333; */
+    transform: scale(1.1);
+    font-weight: 600;
+}
+.bt{
+    margin-left: 80px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+/* triết lý thương hiệu */
+.body_textH5{
+    text-align: center;
+    font-size: 22px;
+}
+.body_textH6{
+    text-align: center;
+    padding: 0 150px;
+    font-size: 15px;
+}
+/* giới thiệu */
+.body_introduce{
+    height: 540px;
+    margin: 10px auto 24px auto;
+    display: flex;
+}
+.introduce_card{
+    height: 600px;
+    width: 33.3%;
+    margin: 10px;
+}
+/* thẻ card chứa img */
+.card_img{ 
+    height: 60%;
+    width: 100%;
+    /* background-color: yellow; */
+}
+.card_img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.introduce_card h4{
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin: 0px;
+    background-color: rgb(249, 248, 230);
+    font-size: 32px;
+}
+.introduce_card h6{
+    height: 100px;
+    /* width: 95%; */
+    background-color: rgb(242, 251, 207);
+    margin-left: 0px;
+    text-align: justify;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 0px;
+}
 /* ------------------------------------------------------phần footer-------------------------------------------------- */
 .footer{
     /* height: 200px; */
@@ -532,5 +541,175 @@
     text-decoration: none;
 }
 
-
-
+/* chỉnh sửa responsive */
+@media  (min-width:740px) and (max-width:1034px){
+    .header{
+        margin: 0px;
+        padding:0px;
+        justify-content: center;
+    }
+    .header_nav{
+        display: inline-block;
+    }
+    .header_nav li{
+        margin-right:12px;
+        font-size: 13px;
+    }
+    .header-right {
+        width: 50%;
+        display: flex;
+        justify-content:space-between;
+    }
+    .searchBar{
+        display: inline-block;
+        display: flex;
+        width: 25px;
+    }
+    .search_input{
+        height: 25px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+    #btn_search{
+        margin-left: 10px;
+        margin-top: 2px;
+        width: 120px;
+        height: 38px;
+    }
+    .header_cart {
+        /* height: 100%; */
+        align-self: center;
+        display:block;
+        margin-left: 190px;
+    }
+    .header_regiter{
+        margin-right: 30px;
+    }
+    .body_menu{
+        height: 1000px;
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        grid-gap: 10px;
+        margin: 0 10px;
+    }
+    .body_slider{
+        height: 500px;
+    }
+    #body_text_two{
+        margin-top:700px;
+        font-size: 35px;
+    }
+    .body_textH5{
+        font-size: 20px;
+    }
+    .body_textH6{
+        margin-top: 10px;
+        font-size: 17px;
+    }
+    .footer{
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 90px;
+    }
+    .footer_card{
+        height: 100%;
+        width: 25%;
+    }
+    .card_textTop b{
+        font-size: 25px;
+    }
+    .card_textBottom{
+        font-size: 20px;
+    }
+    .introduce_card h6{
+        height: 145px;
+    }
+    .card_dish{
+        height: 50%;
+        width: 100%;
+        /* overflow: hidden; loại bỏ phần hình ảnh tràn ra ngoài */
+    }
+    .card_logo{
+        margin-left: 30px;
+    }
+}
+@media (max-width:739px) {
+     .searchBar{
+        display: flex !important;
+        margin-right: 0px;
+        margin-left: 30px !important;
+    }
+    .body_slider{
+        height: 300px;
+    }
+    .containers_logandreg{
+        width: 80% !important;
+    }
+    .body_menu{
+        height: 1000px;
+        display: grid;
+        grid-template-columns:1fr ;
+        grid-gap: 10px;
+        margin: 0 10px;
+    }
+    #body_text_two{
+        margin-top: 2270px;
+        font-size: 25px;
+    }
+    .body_text{
+        font-size: 15px;
+    }
+    .body_textH5{
+        font-size: 15px;
+    }
+    .body_textH6{
+        display: none;
+    }
+    .body_introduce{
+        width: 100%;
+        display: grid;
+        grid-template-columns:1fr ;
+        grid-gap: 5px;
+        margin-top: 0px;
+    }
+    .introduce_card{
+        width: 405px;
+        height: 350px;
+    }
+    .introduce_card h4{
+        font-size: 25px;
+    }
+    .introduce_card h6{
+        height: 100px;
+    }
+    .footer{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .card_logo{
+        margin-left:0px;
+    }   
+    .card_dish{
+        height: 50%;
+        width: 100%;
+    }
+    .card_textTop b{
+        font-size: 12px;
+    }
+    .card_textBottom{
+        font-size: 12px;
+    }
+    .cart_form_payments {
+        right: 30px;
+        width: 25%;
+    }
+    .cart_form_products{ 
+        flex-direction:  column;
+    }
+    .cart_table {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-right: 10px;
+    }
+}
