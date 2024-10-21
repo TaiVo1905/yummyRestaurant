@@ -184,6 +184,155 @@
 .regiter_logo{
     margin-left: 30px;
 }
+
+/* Form hiển thị thông tin cá nhân */
+.personalInformation_modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.information_Form{
+    width: 700px;
+    border: 1px solid rgb(155, 153, 153);
+    padding: 20px;
+    margin: 5% auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 254, 254, 0.8);
+}
+.information_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.input_information {
+    position: relative;
+    margin-bottom: 15px;
+}
+.information_lastName,
+.information_firstName,
+.information_email,
+.information_phoneNumber
+{
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgb(155, 153, 153);
+    border-radius: 4px;
+    padding-left: 40px;
+    outline: none;
+}
+.information_icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: gray;
+}
+.btn_information{
+    display: flex;
+    justify-content: center;
+}
+.password_button, .logout_button {
+    width: 120px;
+    height: 40px;
+    border: none;
+    background-color:#333;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.logout_button{
+    margin-left: 20px;
+}
+.logout_button:hover, .password_button:hover {
+    background-color: rgb(180, 28, 28);
+}
+
+
+/* Form đổi mật khẩu */
+.changePassword_modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.password_Form{
+    width: 700px;
+    border: 1px solid rgb(155, 153, 153);
+    padding: 20px;
+    margin: 5% auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 254, 254, 0.8);
+}
+.passwordfrm_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.input_password {
+    position: relative;
+    margin-bottom: 15px;
+}
+.password_current,
+.password_new,
+.password_newConfirm
+{
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgb(155, 153, 153);
+    border-radius: 4px;
+    padding-left: 40px;
+    outline: none;
+}
+.password_icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: gray;
+}
+.btn_passwordfrm{
+    display: flex;
+    justify-content: center;
+}
+.update_button, .cancel_button {
+    width: 120px;
+    height: 40px;
+    border: none;
+    background-color:#333;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.cancel_button{
+    margin-left: 20px;
+}
+.update_button:hover, .cancel_button:hover {
+    background-color: rgb(180, 28, 28);
+}
+
 /* ------------------------------------------------------PHẦN BODY-------------------------------------------------------- */
 .body_slider {
     width: 100%; 

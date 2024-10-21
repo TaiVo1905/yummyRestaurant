@@ -44,7 +44,7 @@
     </div>
     <h1 id="menu_title">Thực đơn tại nhà hàng Yummy</h1>
     <!-- <i id="reset_search" class="fa-solid fa-xmark icon_reset"></i> -->
-    <div class="reset_search" id="reset_search">Hủy tìm kiếm</div>
+    <div class="reset_search" id="reset_search" style="display:none">Hủy tìm kiếm</div>
     <nav id="menu_nav">
         <ul id="menu_list">
             <li id="khaivi"><a href="#" >Khai vị</a></li>
@@ -133,6 +133,59 @@
                 <button type="submit" class="login_button">Đăng nhập</button>
                 <div class="login_prompt">Bạn chưa có tài khoản? <a href="#" id="switchToRegister">Đăng ký</a></div>
             </form>
+        </div>
+        <!-- From hiển thị thông tin cá nhân -->
+        <div class="personalInformation_modal" id="personalInformation_modal"> 
+            <div class="information_Form" id="information_Form">
+                <form id="information_frm">
+                    <h1 class="information_title">THÔNG TIN CÁ NHÂN</h1>
+                    <div class="input_information">
+                        <i class="fa-solid fa-user information_icon"></i>
+                        <input type="text" name="lastName" class="information_lastName" placeholder="Họ" required>
+                    </div>
+                    <div class="input_information">
+                    <i class="fa-solid fa-user information_icon"></i>
+                        <input type="text" name="firstName" class="information_firstName" placeholder="Tên" required>
+                    </div>
+                    <div class="input_information">
+                        <i class="fa-solid fa-envelope information_icon"></i>
+                        <input type="email" name="email" class="information_email" placeholder="Email của bạn" required>
+                    </div>
+                    <div class="input_information">
+                        <i class="fa-solid fa-phone information_icon"></i>
+                        <input type="tel" name="phoneNumer" class="information_phoneNumber" placeholder="Nhập số điện thoại của bạn" required>
+                    </div>
+                    <div class="btn_information">
+                        <button class="password_button" id="password_button">Đổi mật khẩu</button>
+                        <button class="logout_button" id="logout_button">Đăng xuất</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Form đổi mật khẩu -->
+        <div class="changePassword_modal" id="changePassword_modal">
+            <div class="password_Form" id="password_Form">
+                <form id="password_frm">
+                    <h1 class="passwordfrm_title">THAY ĐỔI MẬT KHẨU</h1>
+                    <div class="input_password">
+                        <i class="fa-solid fa-lock password_icon"></i>
+                        <input type="password" name="current_password" class="password_current" placeholder="Mật khẩu cũ">
+                    </div>
+                    <div class="input_password">
+                        <i class="fa-solid fa-key password_icon"></i>
+                        <input type="password" name="new_password" class="password_new" placeholder="Mật khẩu mới">
+                    </div>
+                    <div class="input_password">
+                        <i class="fa-solid fa-key password_icon"></i>
+                        <input type="password" name="confirm_newPassword" class="password_newConfirm" placeholder="Xác nhận mật khẩu mới">
+                    </div>
+                    <div class="btn_passwordfrm">
+                        <button type="submit" class="update_button" id="update_button">Cập nhật</button>
+                        <button class="cancel_button" id="cancel_button">Hủy bỏ</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <script src="./assets/javaScript/localStorage.js" type="module" defer></script>
