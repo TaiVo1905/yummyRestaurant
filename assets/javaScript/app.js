@@ -83,13 +83,13 @@ function getInformation() {
 // Khi click vào biểu tượng con người
 function handleIconClick() {
     const logAndReg = document.getElementById("logAndReg");
+    const logAndRegModal = document.querySelector('.logAndReg_modal');
     const personalInformation = document.querySelector('.personalInformation_modal');
-    const logAndRegModal = document.getElementById('logAndReg_modal');
     logAndReg.addEventListener('click', () => {
         const userid = parseInt(sessionStorage.getItem('UserID')); // Kiểm tra xem người dùng đã đăng nhập hay chưa
         if (userid) {
             // personal_information(); // Nếu đã đăng nhập, hiển thị thông tin cá nhân
-            logAndRegModal.style.display='none';
+            logAndRegModal.style.display = 'none';
             personalInformation.style.display = 'block'; // Hiển thị form thông tin cá nhân
             getInformation(); // Lấy thông tin người dùng để điền vào form
         } else {
@@ -113,7 +113,7 @@ function handleIconClick() {
             const confirmPassword = document.querySelector('.password_newConfirm').value;
 
             // Lấy thông tin user từ localStorage
-            const users = allData.users;
+            const users = data.users;
             const User = users.find(user => user.id === user_ID);
 
             if (User.pass === oldPassword) {
@@ -135,7 +135,7 @@ function handleIconClick() {
         // click vào nút hủy
         const cancel = document.querySelector('.cancel_button');
         cancel.addEventListener('click', () => {
-            window.location.href('home.html');
+            changePassword.style.display='none';
         });
         });
     };
