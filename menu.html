@@ -35,7 +35,7 @@
                 <div>
                     <a href="./cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
                 </div>
-                <div class="quantity_cart"><p id="quantity_cart">1</p></div>
+                <div class="quantity_cart"><p id="quantity_cart"></p></div>
             </div>
             <div class="header_regiter">
                 <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
@@ -75,8 +75,8 @@
     </table>
     <div class="footer">
         <div class="footer_card">
-            <div class="card_textTop"><b>Thành viên nhóm</b></div><br/>
-            <div class="card_textBottom">Võ Đức Tài<br>Ngô Thị Kim Hân<br>Hồ Viết Tiến<br>Bnướch Thị Thủy<br>Coor Chăng</div>
+            <div class="card_textTop"><b>Địa chỉ</b></div><br/>
+            <div class="card_textBottom">99 Tô Hiến Thành - Phước Mỹ<br>Sơn Trà - Đà Nẵng</div>
         </div>
         <div class="footer_card">
             <div class="card_textTop"><b>Thời Gian</b></div><br/>
@@ -84,7 +84,7 @@
         </div>
         <div class="footer_card">
             <div class="card_textTop"><b>Email</b></div><br/>
-            <div class="card_textBottom">Yummy@gmail.com</div>
+            <div class="card_textBottom">yummyrestaurant1905@gmail.com</div>
         </div>
         <div class="footer_card">
             <div class="card_textTop"><b>Theo Dõi</b></div><br/>
@@ -94,45 +94,45 @@
                     <a href="#"><i class="fa-solid fa-phone-volume"></i></a>
             </div>
         </div>
-        <div class="logAndReg_modal" id="logAndReg_modal">
-            <div class="containers_logandreg" id="registerContainer">
-                <form id="register_Form">
-                    <h1 class="title_register">ĐĂNG KÝ</h1>
-                    <div class="input_register">
-                        <i class="fa-solid fa-user register_icon"></i>
-                        <input type="text" name="lastName" class="register_lastName" placeholder="Họ" required>
-                    </div>
-                    <div class="input_register">
+    </div>
+    <div class="logAndReg_modal" id="logAndReg_modal">
+        <div class="containers_logandreg" id="registerContainer">
+            <form id="register_Form">
+                <h1 class="title_register">ĐĂNG KÝ</h1>
+                <div class="input_register">
                     <i class="fa-solid fa-user register_icon"></i>
-                        <input type="text" name="firstName" class="register_firstName" placeholder="Tên" required>
-                    </div>
-                    <div class="input_register">
-                        <i class="fa-solid fa-envelope register_icon"></i>
-                        <input type="email" name="email" class="register_email" placeholder="Email của bạn" required>
-                    </div>
-                    <div class="input_register">
-                        <i class="fa-solid fa-lock register_icon"></i>
-                        <input type="password" name="password" class="register_password" placeholder="Nhập mật khẩu" required>
-                    </div>
-                    <button type="submit" class="register_button">Đăng ký</button>
-                    <div class="register_prompt">Bạn đã có tài khoản? <a href="#" id="switchToLogin">Đăng nhập</a></div>
-                </form>
-            </div>
-            <div class="containers_logandreg" id="loginContainer" style="display: none;">
-                <form id="login_Form">
-                    <h1 class="title_login">ĐĂNG NHẬP</h1>
-                    <div class="input_login">
-                        <i class="fa-solid fa-envelope login_icon"></i>
-                        <input type="email" name="email" class="login_email" placeholder="Email của bạn" required>
-                    </div>
-                    <div class="input_login">
-                        <i class="fa-solid fa-lock login_icon"></i>
-                        <input type="password" name="password" class="login_password" placeholder="Nhập mật khẩu" required>
-                    </div>
-                    <button type="submit" class="login_button">Đăng nhập</button>
-                    <div class="login_prompt">Bạn chưa có tài khoản? <a href="#" id="switchToRegister">Đăng ký</a></div>
-                </form>
-            </div>
+                    <input type="text" name="lastName" class="register_lastName" placeholder="Họ" required>
+                </div>
+                <div class="input_register">
+                <i class="fa-solid fa-user register_icon"></i>
+                    <input type="text" name="firstName" class="register_firstName" placeholder="Tên" required>
+                </div>
+                <div class="input_register">
+                    <i class="fa-solid fa-envelope register_icon"></i>
+                    <input type="email" name="email" class="register_email" placeholder="Email của bạn" required>
+                </div>
+                <div class="input_register">
+                    <i class="fa-solid fa-lock register_icon"></i>
+                    <input type="password" name="password" class="register_password" placeholder="Nhập mật khẩu" required>
+                </div>
+                <button type="submit" class="register_button">Đăng ký</button>
+                <div class="register_prompt">Bạn đã có tài khoản? <a href="#" id="switchToLogin">Đăng nhập</a></div>
+            </form>
+        </div>
+        <div class="containers_logandreg" id="loginContainer" style="display: none;">
+            <form id="login_Form">
+                <h1 class="title_login">ĐĂNG NHẬP</h1>
+                <div class="input_login">
+                    <i class="fa-solid fa-envelope login_icon"></i>
+                    <input type="email" name="email" class="login_email" placeholder="Email của bạn" required>
+                </div>
+                <div class="input_login">
+                    <i class="fa-solid fa-lock login_icon"></i>
+                    <input type="password" name="password" class="login_password" placeholder="Nhập mật khẩu" required>
+                </div>
+                <button type="submit" class="login_button">Đăng nhập</button>
+                <div class="login_prompt">Bạn chưa có tài khoản? <a href="#" id="switchToRegister">Đăng ký</a></div>
+            </form>
         </div>
     </div>
     <script src="./assets/javaScript/localStorage.js" type="module" defer></script>
