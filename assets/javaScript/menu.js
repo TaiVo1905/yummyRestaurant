@@ -131,6 +131,7 @@ function addData(){
 
 // Tìm kiếm món ăn khi người dùng nhấn nút "Tìm"
 function searchMenu() {
+    document.getElementById('reset_search').style.display='block';
     const searchKey = document.getElementById('search_input').value.toLowerCase();
     filtered = filtered.filter(item => {
         return item.name.toLowerCase().includes(searchKey); // Tìm món ăn có chứa từ khóa 'thuộc tính "includes"
