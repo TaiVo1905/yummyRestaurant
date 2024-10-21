@@ -237,6 +237,7 @@ function handleOrder(){
     paymentButton.addEventListener('click', function(e){
         e.preventDefault();
         const user_id = parseInt(sessionStorage.getItem('UserID'));
+        const cart_userID = data.carts.filter(item => item.userId === user_id);
         payment_modal.style.display='none';
         paymentSuccessful.style.display='block';
         const firstName = document.querySelector('.payment_firstName').value;
