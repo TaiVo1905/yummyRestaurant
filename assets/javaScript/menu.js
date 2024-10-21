@@ -92,8 +92,7 @@ function addToCart(filtered){
                 document.querySelector(`#input_sl-${foodID}`).value = 1;
                 document.querySelector(`#input_note-${foodID}`).value = "";
                 setDataLocalStorage(data);
-            }
-            
+            }   
         })
     })
 }
@@ -136,6 +135,87 @@ function displayFilteredMenu() {
     switchToDetals();
 }
 
+function getInformation() {
+    const users = data.users; // Lấy mảng người dùng từ localStorage
+    const user_ID = parseInt(sessionStorage.getItem('UserID')); // Lấy ID người dùng từ sessionStorage
+    const user_exist = users.find(user => user.id === user_ID); // Tìm người dùng dựa theo ID
+
+    if (user_exist) {
+        // Nếu tìm thấy người dùng, điền thông tin vào form
+        document.querySelector('.information_firstName').value = user_exist.lastName;
+        document.querySelector('.information_lastName').value = user_exist.firstName;
+        document.querySelector('.information_email').value = user_exist.email;
+        document.querySelector('.information_phoneNumber').value = user_exist.phoneNum || ''; // Trường hợp người dùng chưa nhập phone
+    }
+}
+// Khi click vào biểu tượng con người
+function handleIconClick() {
+    const logAndReg = document.getElementById("logAndReg");
+    const logAndRegModal = document.querySelector('.logAndReg_modal');
+    const personalInformation = document.querySelector('.personalInformation_modal');
+    logAndReg.addEventListener('click', () => {
+        const userid = parseInt(sessionStorage.getItem('UserID')); // Kiểm tra xem người dùng đã đăng nhập hay chưa
+        if (userid) {
+            // personal_information(); // Nếu đã đăng nhập, hiển thị thông tin cá nhân
+            logAndRegModal.style.display = 'none';
+            personalInformation.style.display = 'block'; // Hiển thị form thông tin cá nhân
+            getInformation(); // Lấy thông tin người dùng để điền vào form
+        } else {
+            logAndRegModal.style.display = 'block'; // Nếu chưa đăng nhập, hiển thị modal đăng nhập
+        }
+    });
+    // Click vào nút đổi mật khẩu
+    const password_btn = document.querySelector('.password_button');
+    const changePassword = document.querySelector('.changePassword_modal');
+    password_btn.addEventListener('click',(e) => {
+        e.preventDefault();
+        personalInformation.style.display = 'none';
+        changePassword.style.display='block';
+
+        // click vào nút cập nhật
+        document.querySelector('.update_button').addEventListener('click', (e) => {
+            e.preventDefault();
+            const user_ID = parseInt(sessionStorage.getItem('UserID'));
+            const oldPassword = document.querySelector('.password_current').value;
+            const newPassword = document.querySelector('.password_new').value;
+            const confirmPassword = document.querySelector('.password_newConfirm').value;
+
+            // Lấy thông tin user từ localStorage
+            const users = data.users;
+            const User = users.find(user => user.id === user_ID);
+
+            if (User.pass === oldPassword) {
+                if (newPassword === confirmPassword) {
+                    // Cập nhật mật khẩu mới
+                    User.pass = newPassword;
+                    setDataLocalStorage(data); // Lưu lại vào localStorage
+                    console.log(data);
+                    alert('Đổi mật khẩu thành công!');
+                    changePassword.style.display = 'none';
+                } else {
+                    alert('Mật khẩu xác nhận không khớp!');
+                }
+            } else {
+                alert('Mật khẩu cũ không đúng!');
+            }
+        });
+        
+        // click vào nút hủy
+        const cancel = document.querySelector('.cancel_button');
+        cancel.addEventListener('click', () => {
+            changePassword.style.display='none';
+        });
+        });
+    };
+
+    // click vào nút đăng xuất
+    const logout = document.querySelector('.logout_button');
+    logout.addEventListener('click', ()=>{
+        sessionStorage.removeItem('UserID');
+        alert('Bạn đã đăng xuất thành công!')
+        changePassword.style.display='none';
+    });
+
 // Hàm lọc món ăn theo loại và hiển thị dưới dạng bảng
 function filterMenu() {
     active();
@@ -153,7 +233,9 @@ function filterMenu() {
     });
     // Thêm sự kiện cho nút tìm kiếm
     const searchButton = document.querySelector('#btn_search');
+    const reset_Search = document.querySelector('#reset_search');
     searchButton.addEventListener('click', () => {
+        reset_Search.style.display='block';
         const searchKey = document.getElementById('search_input').value.toLowerCase();
         filtered = filtered.filter(item => {
             return item.name.toLowerCase().includes(searchKey); // Tìm món ăn có chứa từ khóa 'thuộc tính "includes"
@@ -161,10 +243,10 @@ function filterMenu() {
         displayFilteredMenu();
     });
     // Thêm sự kiện cho nút reset tìm kiếm
-    const reset_Search = document.querySelector('#reset_search');
     reset_Search.addEventListener('click', () => { // Reset lại tìm kiếm và làm mới menu
         window.location.href='./menu.html';
     });
+
 }
 
 /*sd hàm forEach để duyệt qua tất cả các thẻ a trong menu list
