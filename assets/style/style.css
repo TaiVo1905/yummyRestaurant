@@ -540,6 +540,27 @@
     text-decoration: none;
 }
 
+/* ------------------------------------------------------ */
+.menu_icon_close {
+    position: absolute;
+    font-size: 20px;
+    top: 0.4rem;
+    right: 1rem;
+    display: none;
+    cursor: pointer;
+  }
+
+
+.menu_icon  {
+    display: none;
+    top: 0px;
+    left: 0px;
+    font-size: 25px;
+    cursor: pointer;
+}
+/* ------------------------------------------------------ */
+
+
 /* chỉnh sửa responsive */
 @media  (min-width:740px) and (max-width:1034px){
     .header{
@@ -632,8 +653,13 @@
         margin-left: 30px;
     }
 }
- @media (max-width:739px) {
-   .searchBar{
+
+.nav_input:checked ~ .header_nav {
+    transform: translateX(0%);
+}
+
+@media (max-width:739px) {
+     .searchBar{
         display: flex !important;
         margin-right: 0px;
         margin-left: 30px !important;
@@ -689,6 +715,11 @@
     .card_logo{
         margin-left:0px;
     }   
+     /* ----------------------------------*/
+   .card_logo i{
+    font-size: 25px;
+    }
+/* ----------------------------------- */
     .card_dish{
         height: 50%;
         width: 100%;
@@ -701,15 +732,140 @@
     }
     .cart_form_payments {
         right: 30px;
-        width: 25%;
+        width: 100%;
     }
     .cart_form_products{ 
         flex-direction:  column;
     }
     .cart_table {
-        display: flex;
+        /* display: flex; */
         flex-direction: column;
         width: 100%;
         margin-right: 10px;
     }
-} 
+
+    /* -------------------------------------------------- */
+/* LOGO */
+    .logo {
+        display: none;
+    }
+
+/* HEADER */
+ /* Điều chỉnh lại header */
+    .header {
+        display: inline-block;
+        height: 60px;
+        font-size: 16px;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .menu_icon {
+        display: block; /* Hiển thị icon menu */
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    .menu_icon_close {
+        display: block;
+    }
+    .header_nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 200px;
+        height: 100%;
+        background-color: rgb(231, 253, 141);
+        z-index: 100;
+        flex-direction: column;
+        transition: transform 0.3s ease-in-out; /* Thêm hiệu ứng chuyển tiếp mượt mà cho thuộc tính `transform`. */
+        /* z-index: 100;Đặt thứ tự chồng của phần tử, đảm bảo nó nằm trên các phần tử khác. */
+        transform: translateX(-100%);/* Ban đầu di chuyển thanh bên ra khỏi tầm nhìn (bên trái) bằng 100% chiều rộng của nó. */
+    }
+    
+
+    .header_nav ul {
+        list-style-type: none;
+        margin-top: 30px;
+        margin-left: 30px;
+
+    }
+    .header_nav li {
+        float: none;
+        position: relative;
+        margin-right: 30px;
+        margin-bottom: 20px;
+        border-bottom: 0.1px solid #333 ;
+    }
+
+    .header_nav li a {
+        font-size: 16px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .header_nav ul {
+        list-style-type: none;
+    }
+    .header-right {
+        width: 70%;
+        margin-left: 100px;
+        position: absolute;
+    }
+    .header_search {
+        height: 22px;
+        width: 20px;
+    }
+    
+    .search_input{
+        width: 150px;
+    }
+
+    .search_logo i {
+        color: #868686;
+        font-size: 15px;
+        padding-left: 5px;
+        line-height: 28px;
+    }
+    .btn_search{
+        font-size: 12px;
+    }
+
+    .header_cart i, .header_regiter i{
+        font-size: 25px;
+        opacity: 0.8;
+    }
+
+    .header_cart i:hover, .header_regiter i:hover{
+        cursor: pointer;
+        opacity: 0.6;
+    }
+
+    .header_cart, .header_regiter {
+        height: 100%;
+        align-self: center;
+        display: inline-block;
+        margin: 0px;
+    }
+    .quantity_cart  {
+        left: 40px;
+    }
+    .header_regiter{
+        padding: 0px;
+    }
+
+    .cart_logo{
+        margin-left: 20px;
+    }
+
+    .regiter_logo{
+        margin-left: 10px;
+    }
+
+    .regiter_logo{
+        margin-left: 20px;
+    }
+
+}
+

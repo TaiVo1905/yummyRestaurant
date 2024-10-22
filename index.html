@@ -17,15 +17,24 @@
                 <div class="logo">
                     <!-- <img src="../assets/image/logo.jpg" alt=""> -->
                 </div>
-            </div>  
-                <div class="header_nav" id="nav_Menu">
-                    <ul>
-                        <li><a class="active" href="./index.html">TRANG CHỦ</a></li>
-                        <li><a class="active" href="./menu.html">THỰC ĐƠN</a></li>
-                        <li><a class="active" href="./bookTable.html">ĐẶT BÀN</a></li>
-                        <li><a class="active" href="./contact.html">LIÊN HỆ</a></li>
-                    </ul>
-                </div>
+            </div>
+            <!-- Menu Icon -->
+            <label for="nav_mobile_input" class="menu_icon">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <input type="checkbox" name="" hidden class="nav_input" id="nav_mobile_input">
+            <div class="header_nav" id="nav_Menu">
+                <!-- Close Icon -->
+                <label for="nav_mobile_input" class="menu_icon_close">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+                <ul>
+                    <li><a class="active" href="./index.html">TRANG CHỦ</a></li>
+                    <li><a class="active" href="./menu.html">THỰC ĐƠN</a></li>
+                    <li><a class="active" href="./bookTable.html">ĐẶT BÀN</a></li>
+                    <li><a class="active" href="./contact.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
             <div class="header-right">
                 <div class="searchBar">
                     <input class="search_input" id="search_input" type="search" placeholder="Tìm kiếm...">
@@ -218,6 +227,25 @@
         </div>
     </div>
     <script src="./assets/javaScript/localStorage.js" type="module" defer></script>
-    <script src="./assets/javaScript/logandreg.js" type="module" defer></script>  
+    <script src="./assets/javaScript/app.js" type="module" defer></script>
+    <script src="./assets/javaScript/logandreg.js" type="module" defer></script>
+    <!-- <script>
+       function showSidebar() {
+            const navMenu = document.getElementById("nav_Menu");
+            navMenu.style.transform = "translateX(0)";
+            document.getElementById("close_Icon").style.display = "block";
+            document.getElementById("open_Icon").style.display = "none";
+        }
+
+        function hideSidebar() {
+            const navMenu = document.getElementById("nav_Menu");
+            navMenu.style.transform = "translateX(-100%)";
+            document.getElementById("close_Icon").style.display = "none";
+            document.getElementById("open_Icon").style.display = "block";
+        }
+
+ </script> -->
+
+        
 </body>
 </html>

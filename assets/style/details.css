@@ -232,15 +232,57 @@ input::-webkit-inner-spin-button {
     background-color: rgb(243, 246, 246);
     cursor: pointer;
 }
-
 .dish:hover{
     box-shadow: 0 0 15px rgb(177, 177, 177);
 }
-
 /* div mô tả */
 .details_introduce .describe{
     height: 150px;
     width: 700px;
     border: 1px solid rgb(214, 214, 214);
 }
+@media (max-width:739px) {
+     .details_introduce{
+        height: 100%;
+        width: 100%;
+        margin-left: 20px;
+        display: block;
+    } 
+    .details_top{
+        display:-webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden !important;
+        width: 440px;
+        height: 940px;
 
+    }
+    .text1{
+        font-size: 30px;
+        color:rgb(122, 137, 136) ;
+    }
+    .text2{
+        font-size: 35px;
+        color: rgb(122, 137, 136);
+    }
+    .price{
+        font-size: 25px;
+        margin-top: 10px ;
+    }
+    .quantity{
+        font-size: 40px;
+    }
+    .describe{
+        display:block;
+        font-size: 20px;
+        flex-direction:row ;
+    }
+    .details_img img{
+        width: 70%; 
+    }
+    .dish-slider{
+        display: grid;
+        grid-template-columns: 1fr !important   ;
+        grid-gap: 5px;
+    }
+
+}
