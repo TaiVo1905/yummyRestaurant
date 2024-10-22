@@ -104,6 +104,8 @@ function updateCart() {
 
     document.querySelector('.cart_total').innerText = total.toLocaleString() + '.000đ';
     document.querySelector('.sum_total').innerText = total.toLocaleString() + '.000đ';
+    document.querySelector('.cart_total').innerText = total.toLocaleString() + '.000đ';
+    document.querySelector('.sum_total').innerText = total.toLocaleString() + '.000đ';
     setDataLocalStorage(data);   
 }
 
@@ -212,7 +214,6 @@ function getInformationLocalStorage() {
 function handleDisplayPaymentModal () {
     const payment_modal = document.querySelector('#payment_modal');
     const sub_payment = document.querySelector('.sub_payment');
-
     const paymentForm = document.querySelector('#paymentForm');
 
     //Hiển thị model khi bấm nút thanh toán
