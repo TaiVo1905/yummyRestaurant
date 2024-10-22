@@ -84,12 +84,12 @@ function getInformation() {
 
     if (user_exist) {
         // Nếu tìm thấy người dùng, điền thông tin vào form
-        document.querySelector('.information_firstName').value = user_exist.lastName;
-        document.querySelector('.information_lastName').value = user_exist.firstName;
+        document.querySelector('.information_firstName').value = user_exist.firstName;
+        document.querySelector('.information_lastName').value = user_exist.lastName;
         document.querySelector('.information_email').value = user_exist.email;
         document.querySelector('.information_phoneNumber').value = user_exist.phoneNum || ''; // Trường hợp người dùng chưa nhập phone
     }
-}
+} 
 // Khi click vào biểu tượng con người
 function handleIconClick() {
     const logAndReg = document.getElementById("logAndReg");
