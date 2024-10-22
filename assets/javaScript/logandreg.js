@@ -75,7 +75,7 @@ function handleLogAndRegModal() {
     })
     logAndReg_modal.addEventListener('click', (e) => {
         if(e.target === logAndReg_modal){
-            logAndReg_modal.style.display = 'none';
+            logAndReg_modal.style.display = 'none`';
         }
     })
 }
