@@ -195,7 +195,7 @@ tr:nth-child(even) textarea {
     }
     .searchBar{
         display: flex;
-        width: 25px;
+        /* width: 25px; */
     }
     .search_input{
         height: 25px;
@@ -215,6 +215,13 @@ tr:nth-child(even) textarea {
         padding: 0px;
         margin: 0px;
     }
+
+    #menu_list {
+        position: relative; 
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
  } 
  @media (max-width:739px) {
     .header{
@@ -228,10 +235,15 @@ tr:nth-child(even) textarea {
     .header-right {
         width: 30% !important;
         display: flex;
+        margin-left: 270px !important;
     }
     .searchBar{
         display: flex;
-        width: 190px;
+        /* width: 190px; */
+    }
+
+    .btn_search{
+        font-size: 12px;
     }
     .header_regiter{
         margin-right: 30px ;
