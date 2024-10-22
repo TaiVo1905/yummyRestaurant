@@ -104,8 +104,6 @@ function updateCart() {
 
     document.querySelector('.cart_total').innerText = total.toLocaleString() + '.000đ';
     document.querySelector('.sum_total').innerText = total.toLocaleString() + '.000đ';
-    document.querySelector('.cart_total').innerText = total.toLocaleString() + '.000đ';
-    document.querySelector('.sum_total').innerText = total.toLocaleString() + '.000đ';
     setDataLocalStorage(data);   
 }
 
