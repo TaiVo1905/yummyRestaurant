@@ -11,8 +11,11 @@
     position: fixed;
     left: 0;
     top: 0;
+    right: 0;
+    background-color: #fff;
     z-index: 1;
-    margin-top: 66px;
+    padding-top: 66px;
+    padding-bottom: 24px;
 }
 
 #delete_notification {
@@ -118,6 +121,14 @@ a {
     margin-top: 40px;
     border-right: 3px solid #e0e0e0;
     border-collapse: collapse;
+}
+
+.tbl_header {
+    position: fixed;
+    z-index: 5;
+    width: calc(70% - 21px);
+    background-color: #fff;
+
 }
 
 .cart_table  th, td {
@@ -241,6 +252,7 @@ input[type=number]::-webkit-outer-spin-button {
 /* Thanh toán sản phẩm */
 .cart_form_payments {
     position: fixed;
+    z-index: 5;
     right: 30px;
     width: 25%;
 }

@@ -70,7 +70,7 @@
         <!-- Giỏ hàng -->
         <div class="cart_wrapper">
             <!-- Bảng giỏ hàng đã thêm vào -->
-            <table class="cart_table">
+             <table class="cart_table tbl_header">
                 <thead>
                     <tr>
                         <th class="img_" colspan="2" style="text-align: end;padding-right: 42px;">Ảnh</th>
@@ -81,6 +81,8 @@
                         <th class="product_subtotal">Tạm tính</th>
                     </tr>
                 </thead>
+             </table>
+            <table class="cart_table" style="margin-top: 131px;">
                 <tbody id="menu_body">    
                     
                 </tbody>
@@ -100,11 +102,11 @@
                             <!-- Tính tổng cần thanh toán -->
                             <tr class="cart_subtotal">
                                 <th class="normal_text">Tạm tính</th>
-                                <td class="cart_total">672.000đ</td>
+                                <td class="cart_total">0đ</td>
                             </tr>
                             <tr class="order_total">
                                 <th class="normal_text">Tổng</th>
-                                <td class="sum_total">672.000đ</td>
+                                <td class="sum_total">0đ</td>
                             </tr>
                         </tbody>
                     </table>
@@ -147,8 +149,8 @@
     <!-- footer -->
     <div class="footer">
         <div class="footer_card">
-            <div class="card_textTop"><b>Thành viên nhóm</b></div><br/>
-            <div class="card_textBottom">Võ Đức Tài<br>Ngô Thị Kim Hân<br>Hồ Viết Tiến<br>Bnướch Thị Thủy<br>Coor Chăng</div>
+            <div class="card_textTop"><b>Địa chỉ</b></div><br/>
+            <div class="card_textBottom">99 Tô Hiến Thành - Phước Mỹ<br>Sơn Trà - Đà Nẵng</div>
         </div>
         <div class="footer_card">
             <div class="card_textTop"><b>Thời Gian</b></div><br/>
@@ -156,7 +158,7 @@
         </div>
         <div class="footer_card">
             <div class="card_textTop"><b>Email</b></div><br/>
-            <div class="card_textBottom">Yummy@gmail.com</div>
+            <div class="card_textBottom">yummyrestaurant1905@gmail.com</div>
         </div>
         <div class="footer_card">
             <div class="card_textTop"><b>Theo Dõi</b></div><br/>
@@ -233,10 +235,11 @@
                     <i class="fa-solid fa-address-book payment_icon"></i>
                     <input type="text" name="address" class="payment_address" placeholder="Nhập địa chỉ của bạn" required>
                 </div>
-                <button type="submit" class="payment_button" id="payment_button">Đặt hàng ngay</button>
+                <input type="submit" class="payment_button" id="payment_button" value="Đặt hàng ngay">
             </form>
         </div>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="./assets/javaScript/localStorage.js" type="module" defer></script>
     <script src="./assets/javaScript/cart.js" type="module" defer></script>
     <script src="./assets/javaScript/logandreg.js" type="module" defer></script>

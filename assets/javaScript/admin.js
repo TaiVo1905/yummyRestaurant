@@ -210,7 +210,7 @@ function addItems(data) {
                 "type": itemType,
                 "describe": itemDesc,
                 "image_url": `${itemImgText}`,
-                "price": itemPrice + "đ"
+                "price": parseInt(itemPrice).toLocaleString() + "đ"
             })
             setDataLocalStorage(data);
             renderData(data);
