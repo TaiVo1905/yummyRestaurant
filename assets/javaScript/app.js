@@ -91,7 +91,7 @@ export function toast (message) {
 // Hàm chạy chương trình
 function runPage(data) {
     document.addEventListener('DOMContentLoaded', () => {
-        if (window.location.pathname == '/index.html' || window.location.pathname == '/ymmyRestaurantWebsite/index.html' || window.location.pathname == '/ymmyRestaurantWebsite/' || window.location.pathname == '/') {
+        if (window.location.pathname == '/index.html' || window.location.pathname == '/yummyRestaurantWebsite/index.html' || window.location.pathname == '/yummyRestaurantWebsite/' || window.location.pathname == '/') {
             renderFeaturedDishes(data);
             handleCart(data);
             switchToDetailPage();
