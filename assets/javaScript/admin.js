@@ -159,13 +159,13 @@ function search(data) {
         if (searchValue !== "") {
             if (admin_food.style.display === "block") { //Tìm kiếm món ăn
                 const foodSearch = data.menu.filter(food => {
-                    return food.name.includes(searchValue) || food.type.includes(searchValue) || food.describe.includes(searchValue);
+                    return food.name.toLowerCase().includes(searchValue.toLowerCase()) || food.type.toLowerCase().includes(searchValue.toLowerCase()) || food.describe.toLowerCase().includes(searchValue.toLowerCase());
                 })
                 foodTable.innerHTML = '';
                 renderFood(foodSearch);
             } else if (admin_orders.style.display === "block"){ //Tìm kiếm đơn đặt hàng
                 const ordersSearch = data.orders.filter(order => {
-                    return order.foodName.includes(searchValue) || order.customerName.includes(searchValue) || order.address.includes(searchValue);
+                    return order.foodName.toLowerCase().includes(searchValue.toLowerCase()) || order.customerName.toLowerCase().includes(searchValue.toLowerCase()) || order.address.toLowerCase().includes(searchValue.toLowerCase());
                 })
                 orderTable.innerHTML = '';
                 renderOrders(ordersSearch);
@@ -177,10 +177,10 @@ function search(data) {
                 renderBookTable(bookTablesSearch);
             } else if (admin_users.style.display === "block"){ //Tìm kiếm người dùng
                 const userSearch = data.users.filter(user => {
-                    return user.firstName.includes(searchValue) || user.lastName.includes(searchValue) || user.email.includes(searchValue)
+                    return user.firstName.toLowerCase().includes(searchValue.toLowerCase()) || user.lastName.toLowerCase().includes(searchValue.toLowerCase()) || user.email.toLowerCase().includes(searchValue.toLowerCase())
                 })
                 userTable.innerHTML = '';
-                renderBookTable(userSearch);
+                renderUser(userSearch);
             }
         } else {
             // Trả về thông tin khi không có giá trị ở ô tìm kiếm

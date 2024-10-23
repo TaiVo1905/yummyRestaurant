@@ -60,7 +60,7 @@ function logIn(){
         const users = data.users;
         console.log(users[0])
         // Kiểm tra thông tin đăng nhập
-        const user = users.find(user => user.email === email && user.pass === password);
+        const user = users.find(user => user.email.toLowerCase() === email.toLowerCase() && user.pass === password);
         if (user) {
             toast('Đăng nhập thành công!');
             document.querySelector('#login_Form').reset();
