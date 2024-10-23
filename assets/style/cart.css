@@ -122,13 +122,13 @@ a {
     border-collapse: collapse;
 }
 
-.tbl_header {
+/* .tbl_header {
     position: fixed;
     z-index: 1;
     width: calc(70% - 21px);
     background-color: #fff;
 
-}
+} */
 
 .cart_table  th, td {
     text-align: center;
