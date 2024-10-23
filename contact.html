@@ -68,6 +68,31 @@
                         <button type="submit">Gửi</button>
                 </form>
         </div>
+
+        <!-- footer -->
+        <div class="footer">
+            <div class="footer_card">
+                <div class="card_textTop"><b>Địa chỉ</b></div><br/>
+                <div class="card_textBottom">99 Tô Hiến Thành - Phước Mỹ<br>Sơn Trà - Đà Nẵng</div>
+            </div>
+            <div class="footer_card">
+                <div class="card_textTop"><b>Thời Gian</b></div><br/>
+                <div class="card_textBottom">8h00 - 23h59<br/> Monday - Sunday</div>
+            </div>
+            <div class="footer_card">
+                <div class="card_textTop"><b>Email</b></div><br/>
+                <div class="card_textBottom">yummyrestaurant1905@gmail.com</div>
+            </div>
+            <div class="footer_card">
+                <div class="card_textTop"><b>Theo Dõi</b></div><br/>
+                <div class="card_logo">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="#"><i class="fa-solid fa-phone-volume"></i></a>
+                </div>
+            </div>
+        </div>
+
         <!-- Form đăng ký, đăng nhập -->
         <div class="logAndReg_modal" id="logAndReg_modal">
             <div class="containers_logandreg" id="registerContainer">
@@ -179,7 +204,7 @@
         document.querySelector('.frm').addEventListener('submit', (e) => {
             e.preventDefault();
             alert("Cám ơn bạn liên hệ, chúng tôi sẽ phản hồi bạn sớm!");
-            window.location.href = "./index.html";
+            window.location.href = "./contact.html";
         })
         countUniqueItemsInCart();
     </script>
