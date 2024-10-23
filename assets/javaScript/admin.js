@@ -1,5 +1,5 @@
 import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
-
+import {toast} from "./app.js";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const admin_food = $('#admin_food');
@@ -215,6 +215,7 @@ function addItems(data) {
             setDataLocalStorage(data);
             renderData(data);
             form.reset();
+            toast('Thêm thành công!');
         }
     })
     
@@ -251,6 +252,7 @@ function deleteRecord(data) {
                 })
                 setDataLocalStorage(data);
                 renderData(data);
+                toast('Xóa thành công!');
             }
         }
     })
@@ -273,6 +275,7 @@ function deleteRecord(data) {
                 })
                 setDataLocalStorage(data);
                 renderData(data);
+                toast('Xóa thành công!');
             }
         }
     })
@@ -294,6 +297,7 @@ function deleteRecord(data) {
                 })
                 setDataLocalStorage(data);
                 renderData(data);
+                toast('Xóa thành công!');
             }
         }
     })
@@ -314,6 +318,7 @@ function deleteRecord(data) {
                 })
                 setDataLocalStorage(data);
                 renderData(data);
+                toast('Xóa thành công!');
             }
         }
     })
@@ -350,6 +355,7 @@ function updateMenu(data) {
                     setDataLocalStorage(data);
                     renderData(data);
                     form.reset();
+                    toast('Chỉnh sửa thành công!');
                 }
             })
         }

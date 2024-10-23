@@ -91,7 +91,8 @@ function updateCart() {
         const food_name = row.querySelector('.product_name div').innerText;
         const user_ID = parseInt(sessionStorage.getItem('UserID'));
         //Khi tính tổng xong chuyển sang dạng chuỗi để thêm chữ 'đ
-        subtotalElement.innerText = subtotal.toLocaleString() + 'đ';    
+        subtotalElement.innerText = subtotal.toLocaleString() + '.000đ';    
+        
         total += subtotal;
         //Lưu giữ liệu khi có thay đổi
         const itemIndex = data.carts.findIndex(item =>{
@@ -101,8 +102,8 @@ function updateCart() {
         data.carts[itemIndex].food_Note = row.querySelector('.input_note').value;
     });
 
-    document.querySelector('.cart_total').innerText = total.toLocaleString() + 'đ';
-    document.querySelector('.sum_total').innerText = total.toLocaleString() + 'đ';
+    document.querySelector('.cart_total').innerText = total.toLocaleString() + '.000đ';
+    document.querySelector('.sum_total').innerText = total.toLocaleString() + '.000đ';
     setDataLocalStorage(data);   
 }
 
@@ -211,7 +212,6 @@ function getInformationLocalStorage() {
 function handleDisplayPaymentModal () {
     const payment_modal = document.querySelector('#payment_modal');
     const sub_payment = document.querySelector('.sub_payment');
-
     const paymentForm = document.querySelector('#paymentForm');
 
     //Hiển thị model khi bấm nút thanh toán
@@ -277,7 +277,7 @@ function handleOrder(){
 // Khởi tạo sự kiện lắng nghe khi tài liệu được tải xong
 function runPage(data) {
     document.addEventListener('DOMContentLoaded', function() {
-        if(window.location.pathname == '/cart.html') {
+        if(window.location.pathname == '/cart.html' || window.location.pathname == '/yummyRestaurantWebsite/cart.html') {
             (function () {
                 emailjs.init({
                     publicKey: 'RLQrS8shW-Hgt9gSp',
@@ -304,6 +304,7 @@ runPage(data);
 /* ------------------------------------cập nhật số lượng món ăn trong giỏ hàng-----------------------------------------*/
 // Hàm đếm số lượng món ăn trong giỏ hàng
 export function countUniqueItemsInCart() {
+    const data = getDataLocalStorage(); // Cập nhật data theo thời gian thực;
     const user_ID = parseInt(sessionStorage.getItem('UserID')); // lấy user ID từ sessionStorage
     const cartItems = data.carts.filter(cart => cart.userId == user_ID); // lọc món ăn thuộc về user hiện tại
     document.querySelector('#quantity_cart').innerText = cartItems.length; // trả về số lượng món ăn trong giỏ

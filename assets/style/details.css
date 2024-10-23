@@ -28,17 +28,18 @@
 }
 
 /* thể loại món */
+.title_type{
+    margin-bottom: 14px;
+    margin-top: 8px;
+}
 .text1{
-    font-size: 30px;
+    font-size: 24px;
     opacity: 0.6;
     color: rgb(90, 89, 89);
     cursor: pointer;
 }
-
-/* tên món */
-.text2{
-    font-size: 40px;
-    color: blue;
+#foodType{
+    font-weight:lighter;
 }
 
 /* div chứa thông tin details */
@@ -46,6 +47,23 @@
     height: 640px;
     width: 784px;
     margin-left: 30px;
+}
+/* tên món */
+.nameFood{
+    margin-bottom: 6px;
+}
+.text2{
+    font-size: 32px;
+    color: rgb(88, 87, 87);
+}
+/* giá món ăn */
+.priceFood{
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+.price{
+    font-size: 28px !important;
+    color: rgb(250, 96, 40) !important;
 }
 
 #number-input {
@@ -73,24 +91,48 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
-
 /* button mua hàng dish details */
 #addCart{
-    margin-left: 50px;
+    margin-left: 40px;
     padding: 5px;
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: bold;
     border-radius: 5px;
     height: 35px;
     width: 200px;
     cursor: pointer;
-    border: none;
+    border: 1px solid orangered;
+    background-color: white;
+    color: orangered;
 }
-
 #addCart:hover{
-    background-color: red;
+    background-color: orangered;
     color: white;
     font-size: 18px;
+}
+
+.category{
+    padding:40px 10px 5px 0;
+    font-size: 18px;
+    color: gray;
+}
+.describeFood{
+    margin-bottom: 20px;
+}
+.title_describe{
+    color: gray;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+/* div mô tả */
+.describe{
+    height: 150px;
+    width: 700px;
+    /* border: 1px solid rgb(214, 214, 214); */
+    text-align: justify;
+    font-size: 16px;
+    color: rgb(88, 87, 87);
+    padding: 0 !important;
 }
 
 /* text sản phẩm tt */
@@ -99,6 +141,7 @@ input::-webkit-inner-spin-button {
     font-size: 35px;
     margin-top: 10px;
     margin-bottom: 10px;
+    color: rgb(91, 90, 90);
 }
 
 /* div chứa toàn bộ dstt */
@@ -232,15 +275,85 @@ input::-webkit-inner-spin-button {
     background-color: rgb(243, 246, 246);
     cursor: pointer;
 }
-
 .dish:hover{
     box-shadow: 0 0 15px rgb(177, 177, 177);
 }
 
 /* div mô tả */
-.details_introduce .describe{
+/* .describe{
     height: 150px;
     width: 700px;
     border: 1px solid rgb(214, 214, 214);
+} */
+
+
+/* RESPONSIVE */
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .details_top {
+        height: 500px;
+    }
+    .details_img {
+        width: 669px;
+        height: 400px;
+    }
+    .details_img img{
+        /* width: 70%;  */
+    }
+   .details_introduce {
+    width: 470px;
+   }
+   .text2{
+    font-size: 38px;
 }
 
+}
+
+
+/* Mobile */
+@media (max-width:739px) {
+     .details_introduce{
+        height: 100%;
+        width: 100%;
+        margin-left: 20px;
+        display: block;
+    } 
+    .details_top{
+        display:-webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden !important;
+        width: 440px;
+        height: 940px;
+
+    }
+    .text1{
+        font-size: 30px;
+        color:rgb(122, 137, 136) ;
+    }
+    .text2{
+        font-size: 35px;
+        color: rgb(122, 137, 136);
+    }
+    .price{
+        font-size: 25px;
+        margin-top: 10px ;
+    }
+    .quantity{
+        font-size: 40px;
+    }
+    .describe{
+        display:block;
+        width: 200px;
+        font-size: 16px;
+        flex-direction:row ;
+    }
+    .details_img img{
+        width: 70%; 
+    }
+    .dish-slider{
+        display: grid;
+        grid-template-columns: 1fr !important   ;
+        grid-gap: 5px;
+    }
+
+}

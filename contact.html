@@ -17,7 +17,16 @@
                     <!-- <img src="../assets/image/logo.jpg" alt=""> -->
                 </div>
             </div>
-            <div class="header_nav">
+           <!-- Menu Icon -->
+           <label for="nav_mobile_input" class="menu_icon">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <input type="checkbox" name="" hidden class="nav_input" id="nav_mobile_input">
+        <div class="header_nav" id="nav_Menu">
+            <!-- Close Icon -->
+            <label for="nav_mobile_input" class="menu_icon_close">
+                <i class="fa-solid fa-xmark"></i>
+            </label>
                 <ul>
                     <li><a class="active" href="./index.html">TRANG CHỦ</a></li>
                     <li><a class="active" href="./menu.html">THỰC ĐƠN</a></li>
@@ -58,29 +67,8 @@
                     </div>
                         <button type="submit">Gửi</button>
                 </form>
-                <div class="footer">
-                    <div class="footer_card">
-                        <div class="card_textTop"><b>Địa chỉ</b></div><br/>
-                        <div class="card_textBottom">99 Tô Hiến Thành - Phước Mỹ<br>Sơn Trà - Đà Nẵng</div>
-                    </div>
-                    <div class="footer_card">
-                        <div class="card_textTop"><b>Thời Gian</b></div><br/>
-                        <div class="card_textBottom">8h00 - 23h59<br/> Monday - Sunday</div>
-                    </div>
-                    <div class="footer_card">
-                        <div class="card_textTop"><b>Email</b></div><br/>
-                        <div class="card_textBottom">yummyrestaurant1905@gmail.com</div>
-                    </div>
-                    <div class="footer_card">
-                        <div class="card_textTop"><b>Theo Dõi</b></div><br/>
-                        <div class="card_logo">
-                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-                                <a href="#"><i class="fa-solid fa-phone-volume"></i></a>
-                        </div>
-                    </div>
-                </div>
         </div>
+        <!-- Form đăng ký, đăng nhập -->
         <div class="logAndReg_modal" id="logAndReg_modal">
             <div class="containers_logandreg" id="registerContainer">
                 <form id="register_Form">
@@ -100,6 +88,10 @@
                     <div class="input_register">
                         <i class="fa-solid fa-lock register_icon"></i>
                         <input type="password" name="password" class="register_password" placeholder="Nhập mật khẩu" required>
+                    </div>
+                    <div class="input_register">
+                        <i class="fa-solid fa-lock register_icon"></i>
+                        <input type="password" name="confirm_password" class="register_confirm" placeholder="Nhập lại mật khẩu" required>
                     </div>
                     <button type="submit" class="register_button">Đăng ký</button>
                     <div class="register_prompt">Bạn đã có tài khoản? <a href="#" id="switchToLogin">Đăng nhập</a></div>
@@ -121,22 +113,22 @@
                 </form>
             </div>
         </div>
-        <!-- From hiển thị thông tin cá nhân -->
+        <!-- Formm hiển thị thông tin cá nhân -->
         <div class="personalInformation_modal" id="personalInformation_modal"> 
             <div class="information_Form" id="information_Form">
                 <form id="information_frm">
                     <h1 class="information_title">THÔNG TIN CÁ NHÂN</h1>
                     <div class="input_information">
                         <i class="fa-solid fa-user information_icon"></i>
-                        <input type="text" name="lastName" class="information_lastName" placeholder="Họ" required>
+                        <input type="text" name="lastName" class="information_lastName" readonly>
                     </div>
                     <div class="input_information">
                     <i class="fa-solid fa-user information_icon"></i>
-                        <input type="text" name="firstName" class="information_firstName" placeholder="Tên" required>
+                        <input type="text" name="firstName" class="information_firstName" readonly>
                     </div>
                     <div class="input_information">
                         <i class="fa-solid fa-envelope information_icon"></i>
-                        <input type="email" name="email" class="information_email" placeholder="Email của bạn" required>
+                        <input type="email" name="email" class="information_email" readonly>
                     </div>
                     <div class="input_information">
                         <i class="fa-solid fa-phone information_icon"></i>
@@ -144,6 +136,7 @@
                     </div>
                     <div class="btn_information">
                         <button class="password_button" id="password_button">Đổi mật khẩu</button>
+                        <input type="submit" class="update_phone" id="update_phone" value="Cập nhật">
                         <button class="logout_button" id="logout_button">Đăng xuất</button>
                     </div>
                 </form>
@@ -157,22 +150,27 @@
                     <h1 class="passwordfrm_title">THAY ĐỔI MẬT KHẨU</h1>
                     <div class="input_password">
                         <i class="fa-solid fa-lock password_icon"></i>
-                        <input type="password" name="current_password" class="password_current" placeholder="Mật khẩu cũ">
+                        <input type="password" name="current_password" class="password_current" placeholder="Mật khẩu cũ" required>
                     </div>
                     <div class="input_password">
                         <i class="fa-solid fa-key password_icon"></i>
-                        <input type="password" name="new_password" class="password_new" placeholder="Mật khẩu mới">
+                        <input type="password" name="new_password" class="password_new" placeholder="Mật khẩu mới" required>
                     </div>
                     <div class="input_password">
                         <i class="fa-solid fa-key password_icon"></i>
-                        <input type="password" name="confirm_newPassword" class="password_newConfirm" placeholder="Xác nhận mật khẩu mới">
+                        <input type="password" name="confirm_newPassword" class="password_newConfirm" placeholder="Xác nhận mật khẩu mới" required>
                     </div>
                     <div class="btn_passwordfrm">
-                        <button type="submit" class="update_button" id="update_button">Cập nhật</button>
+                        <input type="submit" class="update_button" id="update_button" value = "Cập nhật">
                         <button class="cancel_button" id="cancel_button">Hủy bỏ</button>
                     </div>
                 </form>
             </div>
+        </div>
+
+        <!-- Toast message -->
+        <div id="toast">
+            
         </div>
     </div>
     <script src="./assets/javaScript/logandreg.js" type="module"></script>
