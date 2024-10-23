@@ -1,6 +1,6 @@
 import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
 const data = getDataLocalStorage(); // Lấy dữ liệu từ localStorage
-const paymentSuccessful=document.querySelector('.order_success_modal');
+const paymentSuccessful = document.querySelector('.order_success_modal');
 const paymentButton = document.querySelector('.payment_button');
 const payment_modal = document.querySelector('#payment_modal');
 
@@ -51,7 +51,6 @@ function displayCart(data){
                                 </tr>
                             `;
     });
-
 }
 
 // Lưu sản phẩm để hiển thị ở trang chi tiết
@@ -86,7 +85,7 @@ function updateCart() {
         const subtotalElement = row.querySelector('.product_subtotal');
 
         //Thay đổi 'đ' thành khoảng trắng để lấy số và tính tổng
-        const price = parseFloat(priceElement.innerText.replace('đ', '').replace('.', ''));
+        const price = parseFloat(priceElement.innerText.replace('đ', '').replace(',', ''));
         const quantity = quantityElement.value;
         const subtotal = price * quantity;
         const food_name = row.querySelector('.product_name div').innerText;
@@ -110,7 +109,6 @@ function updateCart() {
 //Hàm kiểm tra nếu giỏ hàng trống
 function checkIfCartIsEmpty() {
     const cartRows = document.querySelectorAll('.cart_form_products');
-
     if(cartRows.length === 0) {
         // Ẩn phần giỏ hàng và hiển thị thông báo trống
         document.querySelector('.cart_container').style.display = 'none';
@@ -119,11 +117,11 @@ function checkIfCartIsEmpty() {
         const announcementCart = document.getElementById('cart_announcement');
         announcementCart.innerHTML = 'Chưa có sản phẩm nào trong giỏ hàng.';
         announcementCart.style.display = 'block';//Hiển thị thông báo.
-        
     } else {
         document.getElementById('cart_announcement').style.display = 'none';
         document.querySelector('.cart_container').style.display = 'flex';
     }
+    countUniqueItemsInCart();
 }
 
 // hàm xoá sản phẩm khỏi giỏ hàng
@@ -133,7 +131,7 @@ function removeCartItem(event) {
     const foodId = cartRow.querySelector('.product_name div').id; // Lấy tên sản phẩm
 
     // Xóa sản phẩm khỏi localStorage
-    const updatedCartLocalStorage = data.carts.filter(cart => cart.foodId !== foodId);
+    const updatedCartLocalStorage = data.carts.filter(cart => cart.foodId != foodId);
     data.carts = updatedCartLocalStorage;// Cập nhật data
     setDataLocalStorage(data); //Cập nhật lại localStrorage
 
@@ -144,14 +142,14 @@ function removeCartItem(event) {
 
     // Hiển thị thông báo tùy chỉnh
     const notification = document.getElementById('delete_notification');
-    notification.innerHTML = `<i class="fa-solid fa-check notification_check"></i> “${productName}” đã xoá.`; // Thêm tên sản phẩm vào thông báo
+    notification.innerHTML = `<i class="fa-solid fa-check notification_check"></i> “${cartRow.querySelector('.product_name div').innerText}” đã xoá.`; // Thêm tên sản phẩm vào thông báo
     notification.style.display = 'block';
 
     
     setTimeout(() => {
         notification.style.display = 'none';
     }, 2000); // Ẩn thông báo sau 1 giây
-    
+    countUniqueItemsInCart();
 }
 
 // Hàm thêm sự kiện lắng nghe cho các nút xoá
@@ -234,7 +232,7 @@ function handleDisplayPaymentModal () {
 
 // Hàm Xử lý dặt hàng
 function handleOrder(){
-    paymentButton.addEventListener('click', function(e){
+    document.querySelector('#paymentfrm').addEventListener( 'submit', (e) => {
         e.preventDefault();
         const user_id = parseInt(sessionStorage.getItem('UserID'));
         const cart_userID = data.carts.filter(item => item.userId === user_id);
@@ -243,6 +241,7 @@ function handleOrder(){
         const firstName = document.querySelector('.payment_firstName').value;
         const lastName = document.querySelector('.payment_lastName').value;
         const customerName = firstName + " " + lastName;
+        const email = document.querySelector('.payment_email').value;
         const phoneNumber = document.querySelector('.payment_phoneNumber').value; 
         const address = document.querySelector('.payment_address').value; 
         const food_Name = cart_userID.map(item=> item.nameFood + ` (${item.food_Qty})`)
@@ -260,7 +259,7 @@ function handleOrder(){
     
         data.orders.push(newOrder);
         setDataLocalStorage(data);
-    
+        sendMailOrder(customerName, email, amount, data);
         // Xóa dữ liệu trong carts
         data.carts = data.carts.filter(item => item.userId !== user_id);
         setDataLocalStorage(data);
@@ -271,53 +270,62 @@ function handleOrder(){
             paymentSuccessful.style.display='none';
             window.location.href='./menu.html';
         })
+        countUniqueItemsInCart();
     })
 }
 
 // Khởi tạo sự kiện lắng nghe khi tài liệu được tải xong
-document.addEventListener('DOMContentLoaded', function() {
-    displayCart(data)
-    setupRemoveButtons();
-    setupQuantityButtons();
-    updateCart();
-    checkIfCartIsEmpty();
-    setMtopFooter();
-    getFoodId();
-    handleDisplayPaymentModal();
-    handleOrder();
-});
+function runPage(data) {
+    document.addEventListener('DOMContentLoaded', function() {
+        if(window.location.pathname == '/cart.html') {
+            (function () {
+                emailjs.init({
+                    publicKey: 'RLQrS8shW-Hgt9gSp',
+                });
+            })()
+            displayCart(data);
+            setupRemoveButtons();
+            setupQuantityButtons();
+            updateCart();
+            checkIfCartIsEmpty();
+            setMtopFooter();
+            getFoodId();
+            handleDisplayPaymentModal();
+            handleOrder();
+        }
+    });
+}
 
-
+runPage(data);
 
   
 
 
 /* ------------------------------------cập nhật số lượng món ăn trong giỏ hàng-----------------------------------------*/
 // Hàm đếm số lượng món ăn trong giỏ hàng
-function countUniqueItemsInCart() {
+export function countUniqueItemsInCart() {
     const user_ID = parseInt(sessionStorage.getItem('UserID')); // lấy user ID từ sessionStorage
     const cartItems = data.carts.filter(cart => cart.userId == user_ID); // lọc món ăn thuộc về user hiện tại
-    return cartItems.length; // trả về số lượng món ăn trong giỏ
+    document.querySelector('#quantity_cart').innerText = cartItems.length; // trả về số lượng món ăn trong giỏ
 }
 
-// Hàm để xóa món ăn khỏi giỏ hàng và trừ số lượng món ăn
-function removeItemFromCart(itemId) {
-    const user_ID = parseInt(sessionStorage.getItem('UserID')); // Lấy user ID từ sessionStorage
-    const cartIndex = data.carts.findIndex(cart => cart.userId == user_ID && cart.itemId == itemId); // Tìm index của món ăn cần xóa
 
-    if (cartIndex !== -1) {
-        data.carts.splice(cartIndex, 1); // xóa món ăn khỏi giỏ hàng
-        updateCartQuantity(); // cập nhật số lượng món ăn hiển thị trên logo giỏ hàng
-    } 
+function sendMailOrder(customerNameame, email, amounT, data) {
+    const userId = parseInt(sessionStorage.getItem('UserID'));
+    let mess = "";
+    let dem = 1;
+    data.carts.forEach ( (cart) => {
+        if (userId == cart.userId) {
+            mess += `${dem}. ${cart.nameFood} - ${cart.food_Qty} - ${(cart.food_Qty * parseInt(cart.price.replace('đ', '').replace(',', ''))).toLocaleString()}đ\n`;
+            dem++;
+        }
+    })
+    const info = {
+        to_name: customerNameame,
+        to_email: email,
+        message: mess,
+        amount: amounT
+    }
+
+    emailjs.send('service_v65g29u', 'template_72ggs8a', info);
 }
-
-// Hàm cập nhật số lượng món ăn hiển thị trên logo giỏ hàng
-function updateCartQuantity() {
-    const updatedCount = countUniqueItemsInCart(); // đếm lại số lượng món ăn
-    document.getElementById('quantity_cart').innerText = updatedCount; // hiển thị số lượng mới trên logo giỏ hàng
-}
-
-// Gọi hàm đếm số lượng món ăn trong giỏ hàng và hiển thị 
-const totalUniqueItems = countUniqueItemsInCart();
-console.log(totalUniqueItems); // in ra số lượng món ăn
-document.getElementById('quantity_cart').innerText = totalUniqueItems; // hiển thị số lượng món ăn trên logo giỏ hàng

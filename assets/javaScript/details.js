@@ -1,5 +1,5 @@
 import getDataLocalStorage from "./localStorage.js";
-
+import {countUniqueItemsInCart} from "./cart.js";
 const returnData = getDataLocalStorage(); //tạo biến lưu data trả về từ hàm getDataLocalStorage ở file localStorage.js
 let currentDishIndex = 0;
 
@@ -103,6 +103,7 @@ function runPage() {
     document.addEventListener('DOMContentLoaded', () => {
         renderDishDetails(returnData);
         handleListFood(currentDishIndex);
+        countUniqueItemsInCart();
     });
 
 }

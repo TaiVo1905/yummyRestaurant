@@ -1,4 +1,5 @@
 import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
+import {countUniqueItemsInCart} from "./cart.js";
 const btn_done = document.querySelector("#btn_done");
 const btn_search = document.querySelector("#btn_search");
 const input_frm = document.querySelector("#input_frm");
@@ -195,6 +196,7 @@ function runPage () {
         displaytable();
         booktable();
         remove();
+        countUniqueItemsInCart()
     })
 }
 
