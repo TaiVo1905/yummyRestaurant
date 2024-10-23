@@ -164,17 +164,15 @@ function handleLogIn(getInformation, changePassUser, logOut) {
             getInformation(); // Lấy thông tin người dùng để điền vào form
             changePassUser(personalInformation); // Xử lý khi người dùng nhấn vào đổi mật khẩu
             logOut(personalInformation); //Xử lý khi người dùng nhấn vào nút đăng xuất
-            // document.querySelector('#information_frm').addEventListener('submit', (e) => {
-            //     e.preventDefault();
-            //     const phoneNum = document.querySelector('#information_frm')['phoneNumer'].value;
-            //     document.querySelector('#information_frm')['phoneNumer'].addEventListener('change', () => {
-            //         const index = data.users.findIndex( (user) => { return user.id == parseInt(sessionStorage.getItem('UserID'))});
-            //         data.users[index].phoneNum = phoneNum;
-            //         toast('Cập nhật số điện thoại thành công!');
-            //         setDataLocalStorage(data);
-            //     })
-            //     console.log(1);
-            // })
+            document.querySelector('#information_frm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const phoneNum = document.querySelector('#information_frm')['phoneNumer'].value;
+                    const index = data.users.findIndex( (user) => { return user.id == parseInt(sessionStorage.getItem('UserID'))});
+                    data.users[index].phoneNum = phoneNum;
+                    toast('Cập nhật số điện thoại thành công!');
+                    setDataLocalStorage(data);
+                console.log(1);
+            })
         } else {
             logAndRegModal.style.display = 'block'; // Nếu chưa đăng nhập, hiển thị modal đăng nhập
         }

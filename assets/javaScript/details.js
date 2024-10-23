@@ -16,10 +16,16 @@ function renderDishDetails(data) {
                 <img src="${dish.image_url}" alt="">
             </div>
             <div class="details_introduce">
-                <span class="text1"><b id="foodType">${dish.type}<b></span><br><br>
-                <span class="text2">${dish.name}</span><br>
+                <div class="title_type">
+                    <span class="text1"><b id="foodType">${dish.type}<b></span><br>
+                </div>
+                <div class="nameFood">
+                    <span class="text2">${dish.name}</span><br>
+                </div>
                 <hr>
-                <span class="price"><b>${dish.price}<b></span>
+                <div class="priceFood">
+                    <span class="price"><b>${dish.price}<b></span>
+                </div>
                 <div class="quantity">
                     <div id="number-input">
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" id="number_subtraction">-</button>
@@ -28,11 +34,16 @@ function renderDishDetails(data) {
                     </div>
                     <button id="addCart">Thêm Vào Giỏ Hàng</button>
                 </div>
-                <br><span>Danh Mục: ${dish.type}</span><br>
+                <div class="category">
+                    <span class="category_food">Danh Mục: ${dish.type}</span><br>
+                </div>
                 <hr><br>
-                <span>Mô Tả<br>
+                <div class="describeFood">
+                    <div class="title_describe"
+                        <span>Mô Tả: <br></span>
+                    </div>
                     <div class="describe">${dish.describe}</div>
-                </span>
+                </div>
             </div>
     `;
     similarToDish(data);
