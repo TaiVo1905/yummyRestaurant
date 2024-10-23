@@ -19,14 +19,15 @@
                 </div>
             </div>
             <!-- Menu Icon -->
-            <!-- <div class="menu_icon" id="open_Icon" onclick="sidebarOpen()">
+            <label for="nav_mobile_input" class="menu_icon">
                 <i class="fa-solid fa-bars"></i>
-            </div> -->
+            </label>
+            <input type="checkbox" name="" hidden class="nav_input" id="nav_mobile_input">
             <div class="header_nav" id="nav_Menu">
                 <!-- Close Icon -->
-                <!-- <div class="menu_icon_close" id="close_Icon" onclick="sidebarClose()">
+                <label for="nav_mobile_input" class="menu_icon_close">
                     <i class="fa-solid fa-xmark"></i>
-                </div> -->
+                </label>
                 <ul>
                     <li><a class="active" href="./index.html">TRANG CHỦ</a></li>
                     <li><a class="active" href="./menu.html">THỰC ĐƠN</a></li>
@@ -226,19 +227,8 @@
         </div>
     </div>
     <script src="./assets/javaScript/localStorage.js" type="module" defer></script>
-    <script src="./assets/javaScript/logandreg.js" type="module" defer></script>
     <script src="./assets/javaScript/app.js" type="module" defer></script>
-    <script>
-        function sidebarOpen() {
-          document.getElementById("open_Icon").style.display = "block";
-        }
-        
-        function sidebarClose() {
-          document.getElementById("close_Icon").style.display = "none";
-        }
-
-        </script>
-
+    <script src="./assets/javaScript/logandreg.js" type="module" defer></script>
         
 </body>
 </html>

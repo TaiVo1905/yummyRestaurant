@@ -232,11 +232,9 @@ input::-webkit-inner-spin-button {
     background-color: rgb(243, 246, 246);
     cursor: pointer;
 }
-
 .dish:hover{
     box-shadow: 0 0 15px rgb(177, 177, 177);
 }
-
 /* div mô tả */
 .details_introduce .describe{
     height: 150px;
@@ -244,3 +242,74 @@ input::-webkit-inner-spin-button {
     border: 1px solid rgb(214, 214, 214);
 }
 
+
+/* RESPONSIVE */
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .details_top {
+        height: 500px;
+    }
+    .details_img {
+        width: 669px;
+        height: 400px;
+    }
+    .details_img img{
+        /* width: 70%;  */
+    }
+   .details_introduce {
+    width: 470px;
+   }
+   .text2{
+    font-size: 38px;
+}
+
+}
+
+
+/* Mobile */
+@media (max-width:739px) {
+     .details_introduce{
+        height: 100%;
+        width: 100%;
+        margin-left: 20px;
+        display: block;
+    } 
+    .details_top{
+        display:-webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden !important;
+        width: 440px;
+        height: 940px;
+
+    }
+    .text1{
+        font-size: 30px;
+        color:rgb(122, 137, 136) ;
+    }
+    .text2{
+        font-size: 35px;
+        color: rgb(122, 137, 136);
+    }
+    .price{
+        font-size: 25px;
+        margin-top: 10px ;
+    }
+    .quantity{
+        font-size: 40px;
+    }
+    .describe{
+        display:block;
+        width: 200px;
+        font-size: 16px;
+        flex-direction:row ;
+    }
+    .details_img img{
+        width: 70%; 
+    }
+    .dish-slider{
+        display: grid;
+        grid-template-columns: 1fr !important   ;
+        grid-gap: 5px;
+    }
+
+}
