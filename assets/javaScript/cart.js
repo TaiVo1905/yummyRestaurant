@@ -193,7 +193,7 @@ function setMtopFooter() {
     if (isCart) {
         document.querySelector('.footer').style.marginTop = '0';
     } else {
-        document.querySelector('.footer').style.marginTop = '490px';
+        document.querySelector('.footer').style.marginTop = '585px';
     }
 }
 
