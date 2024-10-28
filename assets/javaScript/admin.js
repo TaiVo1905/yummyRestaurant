@@ -1,4 +1,4 @@
-import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
+import {getDataLocalStorage, setDataLocalStorage} from "./localStorage.js";
 import {toast} from "./app.js";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
@@ -281,10 +281,10 @@ function deleteRecord(data) {
     })
     bookTable.addEventListener('click', (e) => { //Xóa đơn đặt bàn
         if (e.target.id == "delete") {
-            const recordOrder = e.target.closest('tr');
-            if(confirm(`Bạn chắc chắn muốn xóa đơn đặt bàn của khách hàng ${recordOrder.querySelector('td:nth-child(2)').innerText}?`)) {
+            const recordBookTbl = e.target.closest('tr');
+            if(confirm(`Bạn chắc chắn muốn xóa đơn đặt bàn của khách hàng ${recordBookTbl.querySelector('td:nth-child(2)').innerText}?`)) {
                 data.bookTables.some(record => {
-                    if (record.id == recordOrder.querySelector('td:first-Child').innerText) {
+                    if (record.id == recordBookTbl.querySelector('td:first-Child').innerText) {
                             record.customerName = "";
                             record.email = "";
                             record.phoneNumber = "";
@@ -303,10 +303,10 @@ function deleteRecord(data) {
     })
     userTable.addEventListener('click', (e) => { //Xóa người dùng
         if (e.target.id == "delete") {
-            const recordOrder = e.target.closest('tr');
-            if(confirm(`Bạn chắc chắn muốn xóa thông tin người dùng ${recordOrder.querySelector('td:nth-child(2)').innerText}?`)) {
+            const recordUser = e.target.closest('tr');
+            if(confirm(`Bạn chắc chắn muốn xóa thông tin người dùng ${recordUser.querySelector('td:nth-child(2)').innerText}?`)) {
                 data.users.some(record => {
-                    if (record.id == recordOrder.querySelector('td:first-Child').innerText) {
+                    if (record.id == recordUser.querySelector('td:first-Child').innerText) {
                         record.firstName = "";
                         record.lastName = "";
                         record.email = "";

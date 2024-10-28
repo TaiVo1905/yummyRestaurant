@@ -1,4 +1,4 @@
-import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
+import {getDataLocalStorage, setDataLocalStorage} from "./localStorage.js";
 const data = getDataLocalStorage(); // Lấy dữ liệu từ localStorage
 const paymentSuccessful = document.querySelector('.order_success_modal');
 const paymentButton = document.querySelector('.payment_button');

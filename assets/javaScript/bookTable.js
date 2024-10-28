@@ -1,4 +1,4 @@
-import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
+import {getDataLocalStorage, setDataLocalStorage} from "./localStorage.js";
 import {countUniqueItemsInCart} from "./cart.js";
 import {toast} from "./app.js";
 const btn_done = document.querySelector("#btn_done");
@@ -15,8 +15,8 @@ function displaytable() {
         if (!User_ID){
             if (confirm("Bạn cần đăng nhập để đặt bàn!")) {
                 logAndReg_modal.style.display = 'block';
-                return;
             }
+            return;
         }
         const time = document.getElementById('input_time').value;
         const date = document.getElementById('input_date').value.split("-");

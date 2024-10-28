@@ -221,6 +221,7 @@ to {top:0; opacity:1}
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
         margin-left: 32px;
+        min-height: 677px;
     }
 
     .footer {
@@ -257,9 +258,6 @@ to {top:0; opacity:1}
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-    }
-
-    #frm_booktable {
     }
     #content_frm {
         width: 300px;

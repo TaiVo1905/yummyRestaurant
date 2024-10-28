@@ -1,5 +1,6 @@
-import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
+import {getDataLocalStorage, setDataLocalStorage} from "./localStorage.js";
 import {toast} from "./app.js";
+import {countUniqueItemsInCart} from "./cart.js";
 const data = getDataLocalStorage();
 // Hàm chuyển đổi giữa form đăng ký và đăng nhập
 function changeFormLogAndReg(){
@@ -66,6 +67,7 @@ function logIn(){
             document.querySelector('#login_Form').reset();
             // lưu userID vào sessionStorage 
             sessionStorage.setItem('UserID', user.id);
+            countUniqueItemsInCart();
             document.getElementById('logAndReg_modal').style.display = 'none';
         } else {
             toast('Tên đăng nhập hoặc mật khẩu không đúng!');
@@ -144,6 +146,7 @@ function logOut (personalInformation) {
         sessionStorage.removeItem('UserID');
         personalInformation.style.display='none';
         toast('Bạn đã đăng xuất thành công!');
+        countUniqueItemsInCart();
     });
 }
 
