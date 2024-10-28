@@ -1,4 +1,4 @@
-import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
+import {getDataLocalStorage, setDataLocalStorage} from "./localStorage.js";
 import {countUniqueItemsInCart} from "./cart.js";
 const data = getDataLocalStorage(); // Tạo biến lưu data trả về từ hàm getDataLocalStorage ở file localStorage.js
 
@@ -54,8 +54,8 @@ function handleCart(data) {
                 else{
                     data.carts.push(cartItem);
                 }
-                countUniqueItemsInCart();
                 setDataLocalStorage(data); // Lưu giỏ hàng vào localStorage
+                countUniqueItemsInCart();
                 toast('Bạn đã thêm món vào giỏ hàng thành công');
                 
             }

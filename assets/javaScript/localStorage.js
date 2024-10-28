@@ -1,10 +1,10 @@
-export const setDataLocalStorage = function (data) {
+export function setDataLocalStorage (data) {
     localStorage.setItem('data', JSON.stringify(data));
 }
-function getDataLocalStorage() {
+export function getDataLocalStorage() {
     return JSON.parse(localStorage.getItem('data'));
 }
-export default getDataLocalStorage;
+
 function saveData() {
     fetch ('https://raw.githubusercontent.com/TaiVo1905/yummyRestaurantWebsite/main/assets/Data/data.json')
     .then (response => response.json())

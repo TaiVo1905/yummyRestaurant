@@ -180,42 +180,6 @@ tr:nth-child(even) textarea {
 }
 /* chỉnh responsive cho menu */
 @media (min-width: 740px) and (max-width: 1023px) {
-    .header{
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-    }
-    .header_nav li{
-        margin-right:12px;
-        font-size: 13px;
-    }
-    .header-right {
-        width: 30%;
-        display: flex;
-    }
-    .searchBar{
-        display: flex;
-        /* width: 25px; */
-    }
-    .search_input{
-        height: 25px;
-        margin-left: 10px;
-        margin-top: 5px;
-    }
-    #btn_search{
-        margin-left: 20px !important;
-        margin-top: 2px;
-    }
-    .header_cart {
-        margin: 0px;
-        
-    }
-    .header_regiter{
-        margin-right: 30px ;
-        padding: 0px;
-        margin: 0px;
-    }
-
     #menu_list {
         position: relative; 
         display: flex;
@@ -224,40 +188,14 @@ tr:nth-child(even) textarea {
     }
  } 
  @media (max-width:739px) {
-    .header{
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-    }
-    /* .header_nav{
-        display: none !important;
-    } */
-    .header-right {
-        width: 30% !important;
-        display: flex;
-        margin-left: 270px !important;
-    }
-    .searchBar{
-        display: flex;
-        /* width: 190px; */
-    }
-
-    .btn_search{
-        font-size: 12px;
-    }
-    .header_regiter{
-        margin-right: 30px ;
-        padding: 0px;
-        margin: 0px;
-    }
     #menu_list {
         position: relative; 
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
     }
-    #menu_tbl{
-        width:80% !important;
+    #menu_tbl, #menu_tbl thead{
+        display: inline-block;
     }
     .footer{
         width: 100%;

@@ -1,4 +1,4 @@
-import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
+import {getDataLocalStorage, setDataLocalStorage} from "./localStorage.js";
 import {countUniqueItemsInCart} from "./cart.js";
 import { toast } from "./app.js";
 const data = getDataLocalStorage();
@@ -93,6 +93,7 @@ function addToCart(filtered){
                 document.querySelector(`#input_sl-${foodID}`).value = 1;
                 document.querySelector(`#input_note-${foodID}`).value = "";
                 setDataLocalStorage(data);
+                countUniqueItemsInCart();
             }   
         })
     })
