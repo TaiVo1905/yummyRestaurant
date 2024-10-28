@@ -168,6 +168,7 @@ function booktable() {
                                         }
                     data.bookTables.push(newBookATable);
                     setDataLocalStorage(data);
+                    toast("Đặt bàn thành công!");
                 })
             }
             else {
