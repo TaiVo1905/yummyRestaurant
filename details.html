@@ -5,43 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="./assets/style/details.css">
     <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/details.css">
+    <link rel="stylesheet" href="./assets/style/logandreg.css">
 </head>
 <body>
     <div class="details">
         <!-- --------------------------------------------------header----------------------------------------------- -->
         <div class="header">
-            <div class="header_logo">
-                <div class="logo">
-                    <!-- <img src="../assets/image/logo.jpg" alt=""> -->
-                </div>
-            </div>
-            <div class="header_nav">
-                <ul>
-                    <li><a class="active" href="./index.html">TRANG CHỦ</a></li>
-                    <li><a class="active" href="./menu.html">THỰC ĐƠN</a></li>
-                    <li><a class="active" href="./bookTable.html">ĐẶT BÀN</a></li>
-                    <li><a class="active" href="./contact.html">LIÊN HỆ</a></li>
-                </ul>
-            </div>
-            <div class="header-right">
-    
-                <div class="searchBar">
-                    <input class="search_input" id="search_input" type="search" placeholder="Tìm kiếm...">
-                    <button class="btn_search" id="btn_search">Tìm Kiếm</button>
-                    
-                </div>
-                <div class="header_cart">
-                    <div>
-                        <a href="./cart.html" style="color: #000"><i class="cart_logo fa-solid fa-cart-shopping"></i></a>
-                    </div>
-                    <div class="quantity_cart"><p id="quantity_cart"></p></div>
-                </div>
-                <div class="header_regiter">
-                    <i class="regiter_logo fa-solid fa-user" id="logAndReg"></i>
-                </div>
-            </div>
+            
         </div>
         <!-- -------------------------------------------------------body------------------------------------------ -->
         <div class="details_top" id="details_top">
@@ -57,29 +29,29 @@
         </div>
         <!-- -------------------------------------------------------footer----------------------------------------------- -->
         <div class="footer">
-            <div class="footer_card">
-                <div class="card_textTop"><b>Địa chỉ</b></div><br/>
-                <div class="card_textBottom">99 Tô Hiến Thành - Phước Mỹ<br>Sơn Trà - Đà Nẵng</div>
-            </div>
-            <div class="footer_card">
-                <div class="card_textTop"><b>Thời Gian</b></div><br/>
-                <div class="card_textBottom">8h00 - 23h59<br/> Monday - Sunday</div>
-            </div>
-            <div class="footer_card">
-                <div class="card_textTop"><b>Email</b></div><br/>
-                <div class="card_textBottom">yummyrestaurant1905@gmail.com</div>
-            </div>
-            <div class="footer_card">
-                <div class="card_textTop"><b>Theo Dõi</b></div><br/>
-                <div class="card_logo">
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-                        <a href="#"><i class="fa-solid fa-phone-volume"></i></a>
-                </div>
-            </div>
+            
+        </div>
+        <!-- Form đăng ký, đăng nhập -->
+        <div class="logAndReg_modal" id="logAndReg_modal">
+            
+        </div>
+        <!-- Formm hiển thị thông tin cá nhân -->
+        <div class="personalInformation_modal" id="personalInformation_modal"> 
+            
+        </div>
+
+        <!-- Form đổi mật khẩu -->
+        <div class="changePassword_modal" id="changePassword_modal">
+            
+        </div>
+
+        <!-- Toast message -->
+        <div id="toast">
+            
         </div>
     </div>
-    <script src="./assets/javaScript/localStorage.js" type="module" defer></script>
+    <script src="./assets/javaScript/common.js" defer></script>
+    <script src="./assets/javaScript/logandreg.js" type="module" defer></script>
     <script src="./assets/javaScript/details.js" type="module" defer></script>
 </body>
 </html>

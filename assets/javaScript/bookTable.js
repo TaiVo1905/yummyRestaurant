@@ -1,5 +1,6 @@
-import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
+import {getDataLocalStorage, setDataLocalStorage} from "./localStorage.js";
 import {countUniqueItemsInCart} from "./cart.js";
+import {toast} from "./app.js";
 const btn_done = document.querySelector("#btn_done");
 const btn_search = document.querySelector("#btn_search");
 const input_frm = document.querySelector("#input_frm");
@@ -14,8 +15,8 @@ function displaytable() {
         if (!User_ID){
             if (confirm("Bạn cần đăng nhập để đặt bàn!")) {
                 logAndReg_modal.style.display = 'block';
-                return;
             }
+            return;
         }
         const time = document.getElementById('input_time').value;
         const date = document.getElementById('input_date').value.split("-");
@@ -111,14 +112,14 @@ function displaytable() {
             btn_done.style.display="block";
         }
         if (currentDate > inputDate) {
-            alert("Bạn cần đặt bàn ở ngày hiện tại hoặc sau ngày hiện tại!");
+            toast("Bạn cần đặt bàn ở ngày hiện tại hoặc sau ngày hiện tại!");
         }else if(isDate) {
             render();
         }
         else if (isTime) {
             render();
         } else {
-            alert("Bạn cần đặt bàn trước 2 giờ!");
+            toast("Bạn cần đặt bàn trước 2 giờ!");
         }
         })
 }
@@ -170,7 +171,7 @@ function booktable() {
                 })
             }
             else {
-                alert("Vui lòng chọn ít nhất một bàn.");
+                toast("Vui lòng chọn ít nhất một bàn!");
             }
 
     })
@@ -196,7 +197,7 @@ function runPage () {
         displaytable();
         booktable();
         remove();
-        countUniqueItemsInCart()
+        countUniqueItemsInCart();
     })
 }
 

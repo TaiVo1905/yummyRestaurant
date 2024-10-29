@@ -3,7 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
-.containers_logandreg {
+
+.logAndReg_modal, .personalInformation_modal, .changePassword_modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.containers_logandreg,
+.information_Form,
+.password_Form {
     width: 700px;
     border: 1px solid rgb(155, 153, 153);
     padding: 20px;
@@ -12,23 +28,39 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 254, 254, 0.8);
 }
-.title_register, .title_login {
+
+.title_register,
+.title_login,
+.information_title,
+.passwordfrm_title {
     font-size: 18px;
     font-weight: bold;
     color: #333;
     text-align: center;
     margin-bottom: 20px;
 }
-.input_register, .input_login {
+.input_register,
+.input_login,
+.input_information,
+.input_password {
     position: relative;
     margin-bottom: 15px;
 }
+
 .register_lastName,
 .register_firstName,
 .register_email, 
-.register_password, 
+.register_password,
+.register_confirm, 
 .login_email, 
-.login_password {
+.login_password,
+.information_lastName,
+.information_firstName,
+.information_email,
+.information_phoneNumber,
+.password_current,
+.password_new,
+.password_newConfirm {
     width: 100%;
     height: 40px;
     border: 1px solid rgb(155, 153, 153);
@@ -36,14 +68,31 @@
     padding-left: 40px;
     outline: none;
 }
-.register_icon, .login_icon {
+
+.register_icon,
+.login_icon,
+.password_icon,
+.information_icon {
     position: absolute;
     left: 10px;
     top: 10px;
     color: gray;
 }
-.register_button, .login_button {
-    width: 100%;
+
+
+.register_button,
+.login_button {
+    width: 100% !important;
+}
+
+.password_button,
+.logout_button,
+.update_button,
+.cancel_button,
+.update_phone,
+.register_button,
+.login_button {
+    width: 120px;
     height: 40px;
     border: none;
     background-color:#333;
@@ -52,18 +101,34 @@
     border-radius: 4px;
     cursor: pointer;
 }
-.register_button:hover {
-    background-color: rgb(180, 28, 28);
+
+.password_button:hover,
+.logout_button:hover,
+.update_button:hover,
+.cancel_button:hover,
+.update_phone:hover,
+.register_button:hover,
+.login_button:hover {
+    background-color: rgb(180, 28, 28) !important;
 }
+
 .register_prompt, .login_prompt {
     text-align: center;
     margin-top: 15px;
 }
-.register_prompt a {
+.register_prompt a, .login_prompt a {
     color: rgb(220, 120, 120);
     text-decoration: none;
 }
-.login_prompt a {
-    color: rgb(220, 120, 120);
-    text-decoration: none;
+
+
+.btn_information, .btn_passwordfrm{
+    display: flex;
+    justify-content: center;
+}
+
+.logout_button,
+.update_phone,
+.cancel_button{
+    margin-left: 20px;
 }

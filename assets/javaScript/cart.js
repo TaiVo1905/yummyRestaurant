@@ -1,4 +1,4 @@
-import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
+import {getDataLocalStorage, setDataLocalStorage} from "./localStorage.js";
 const data = getDataLocalStorage(); // Lấy dữ liệu từ localStorage
 const paymentSuccessful = document.querySelector('.order_success_modal');
 const paymentButton = document.querySelector('.payment_button');
@@ -92,6 +92,7 @@ function updateCart() {
         const user_ID = parseInt(sessionStorage.getItem('UserID'));
         //Khi tính tổng xong chuyển sang dạng chuỗi để thêm chữ 'đ
         subtotalElement.innerText = subtotal.toLocaleString() + 'đ';    
+        
         total += subtotal;
         //Lưu giữ liệu khi có thay đổi
         const itemIndex = data.carts.findIndex(item =>{
@@ -192,7 +193,7 @@ function setMtopFooter() {
     if (isCart) {
         document.querySelector('.footer').style.marginTop = '0';
     } else {
-        document.querySelector('.footer').style.marginTop = '490px';
+        document.querySelector('.footer').style.marginTop = '585px';
     }
 }
 
@@ -211,7 +212,6 @@ function getInformationLocalStorage() {
 function handleDisplayPaymentModal () {
     const payment_modal = document.querySelector('#payment_modal');
     const sub_payment = document.querySelector('.sub_payment');
-
     const paymentForm = document.querySelector('#paymentForm');
 
     //Hiển thị model khi bấm nút thanh toán
@@ -277,7 +277,7 @@ function handleOrder(){
 // Khởi tạo sự kiện lắng nghe khi tài liệu được tải xong
 function runPage(data) {
     document.addEventListener('DOMContentLoaded', function() {
-        if(window.location.pathname == '/cart.html') {
+        if(window.location.pathname == '/cart.html' || window.location.pathname == '/yummyRestaurantWebsite/cart.html') {
             (function () {
                 emailjs.init({
                     publicKey: 'RLQrS8shW-Hgt9gSp',
@@ -304,13 +304,14 @@ runPage(data);
 /* ------------------------------------cập nhật số lượng món ăn trong giỏ hàng-----------------------------------------*/
 // Hàm đếm số lượng món ăn trong giỏ hàng
 export function countUniqueItemsInCart() {
+    const data = getDataLocalStorage(); // Cập nhật data theo thời gian thực;
     const user_ID = parseInt(sessionStorage.getItem('UserID')); // lấy user ID từ sessionStorage
     const cartItems = data.carts.filter(cart => cart.userId == user_ID); // lọc món ăn thuộc về user hiện tại
     document.querySelector('#quantity_cart').innerText = cartItems.length; // trả về số lượng món ăn trong giỏ
 }
 
 
-function sendMailOrder(customerNameame, email, amounT, data) {
+function sendMailOrder(customerName, email, amounT, data) {
     const userId = parseInt(sessionStorage.getItem('UserID'));
     let mess = "";
     let dem = 1;
@@ -321,7 +322,7 @@ function sendMailOrder(customerNameame, email, amounT, data) {
         }
     })
     const info = {
-        to_name: customerNameame,
+        to_name: customerName,
         to_email: email,
         message: mess,
         amount: amounT

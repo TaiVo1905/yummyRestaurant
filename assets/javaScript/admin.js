@@ -1,5 +1,5 @@
-import getDataLocalStorage, {setDataLocalStorage} from "./localStorage.js";
-
+import {getDataLocalStorage, setDataLocalStorage} from "./localStorage.js";
+import {toast} from "./app.js";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const admin_food = $('#admin_food');
@@ -159,16 +159,16 @@ function search(data) {
         if (searchValue !== "") {
             if (admin_food.style.display === "block") { //Tìm kiếm món ăn
                 const foodSearch = data.menu.filter(food => {
-                    return food.name.includes(searchValue) || food.type.includes(searchValue) || food.describe.includes(searchValue);
+                    return food.name.toLowerCase().includes(searchValue.toLowerCase()) || food.type.toLowerCase().includes(searchValue.toLowerCase()) || food.describe.toLowerCase().includes(searchValue.toLowerCase());
                 })
                 foodTable.innerHTML = '';
                 renderFood(foodSearch);
             } else if (admin_orders.style.display === "block"){ //Tìm kiếm đơn đặt hàng
                 const ordersSearch = data.orders.filter(order => {
-                    return order.foodName.includes(searchValue) || order.customerName.includes(searchValue) || order.address.includes(searchValue);
+                    return order.foodName.toLowerCase().includes(searchValue.toLowerCase()) || order.customerName.toLowerCase().includes(searchValue.toLowerCase()) || order.address.toLowerCase().includes(searchValue.toLowerCase());
                 })
                 orderTable.innerHTML = '';
-                renderOrders(ordersSearch);
+                renderOrders(ordersSearch); 
             } else if (admin_bookTables.style.display === "block"){ //Tìm kiếm đơn đặt bàn
                 const bookTablesSearch = data.bookTables.filter(bookTable => {
                     return bookTable.customerName.includes(searchValue) || bookTable.email.includes(searchValue)
@@ -177,10 +177,10 @@ function search(data) {
                 renderBookTable(bookTablesSearch);
             } else if (admin_users.style.display === "block"){ //Tìm kiếm người dùng
                 const userSearch = data.users.filter(user => {
-                    return user.firstName.includes(searchValue) || user.lastName.includes(searchValue) || user.email.includes(searchValue)
+                    return user.firstName.toLowerCase().includes(searchValue.toLowerCase()) || user.lastName.toLowerCase().includes(searchValue.toLowerCase()) || user.email.toLowerCase().includes(searchValue.toLowerCase())
                 })
                 userTable.innerHTML = '';
-                renderBookTable(userSearch);
+                renderUser(userSearch);
             }
         } else {
             // Trả về thông tin khi không có giá trị ở ô tìm kiếm
@@ -215,6 +215,7 @@ function addItems(data) {
             setDataLocalStorage(data);
             renderData(data);
             form.reset();
+            toast('Thêm thành công!');
         }
     })
     
@@ -236,6 +237,7 @@ function renderData(data) {
 function deleteRecord(data) {
     foodTable.addEventListener('click', (e) => { //Xóa món ăn
         if (e.target.id == "delete") {
+            console.log(e);
             const recordFood = e.target.closest('tr');
             if(confirm(`Bạn chắc chắn muốn xóa món ${recordFood.querySelector('td:nth-child(2)').innerText}?`)) {
                 data.menu.some(record => {
@@ -251,6 +253,7 @@ function deleteRecord(data) {
                 })
                 setDataLocalStorage(data);
                 renderData(data);
+                toast('Xóa thành công!');
             }
         }
     })
@@ -273,15 +276,16 @@ function deleteRecord(data) {
                 })
                 setDataLocalStorage(data);
                 renderData(data);
+                toast('Xóa thành công!');
             }
         }
     })
     bookTable.addEventListener('click', (e) => { //Xóa đơn đặt bàn
         if (e.target.id == "delete") {
-            const recordOrder = e.target.closest('tr');
-            if(confirm(`Bạn chắc chắn muốn xóa đơn đặt bàn của khách hàng ${recordOrder.querySelector('td:nth-child(2)').innerText}?`)) {
+            const recordBookTbl = e.target.closest('tr');
+            if(confirm(`Bạn chắc chắn muốn xóa đơn đặt bàn của khách hàng ${recordBookTbl.querySelector('td:nth-child(2)').innerText}?`)) {
                 data.bookTables.some(record => {
-                    if (record.id == recordOrder.querySelector('td:first-Child').innerText) {
+                    if (record.id == recordBookTbl.querySelector('td:first-Child').innerText) {
                             record.customerName = "";
                             record.email = "";
                             record.phoneNumber = "";
@@ -294,15 +298,16 @@ function deleteRecord(data) {
                 })
                 setDataLocalStorage(data);
                 renderData(data);
+                toast('Xóa thành công!');
             }
         }
     })
     userTable.addEventListener('click', (e) => { //Xóa người dùng
         if (e.target.id == "delete") {
-            const recordOrder = e.target.closest('tr');
-            if(confirm(`Bạn chắc chắn muốn xóa thông tin người dùng ${recordOrder.querySelector('td:nth-child(2)').innerText}?`)) {
+            const recordUser = e.target.closest('tr');
+            if(confirm(`Bạn chắc chắn muốn xóa thông tin người dùng ${recordUser.querySelector('td:nth-child(2)').innerText}?`)) {
                 data.users.some(record => {
-                    if (record.id == recordOrder.querySelector('td:first-Child').innerText) {
+                    if (record.id == recordUser.querySelector('td:first-Child').innerText) {
                         record.firstName = "";
                         record.lastName = "";
                         record.email = "";
@@ -314,6 +319,7 @@ function deleteRecord(data) {
                 })
                 setDataLocalStorage(data);
                 renderData(data);
+                toast('Xóa thành công!');
             }
         }
     })
@@ -350,6 +356,7 @@ function updateMenu(data) {
                     setDataLocalStorage(data);
                     renderData(data);
                     form.reset();
+                    toast('Chỉnh sửa thành công!');
                 }
             })
         }
