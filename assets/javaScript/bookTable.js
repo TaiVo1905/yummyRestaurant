@@ -128,6 +128,7 @@ function displaytable() {
 // Hàm lấy các bàn đã chọn, hiển thị vào form và lưu dữ liệu
 function booktable() {
     btn_done.addEventListener('click', () => {
+        e.preventDefault();
         const User_ID = parseInt(sessionStorage.getItem('UserID'));
         const infoUser = data.users.find( (user) => user.id == User_ID);
             const array_table = []; // Lưu trữ bàn khách đang chọn

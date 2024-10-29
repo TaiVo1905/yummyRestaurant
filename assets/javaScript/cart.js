@@ -274,6 +274,35 @@ function handleOrder(){
     })
 }
 
+// Hàm đếm số lượng món ăn trong giỏ hàng
+export function countUniqueItemsInCart() {
+    const data = getDataLocalStorage(); // Cập nhật data theo thời gian thực;
+    const user_ID = parseInt(sessionStorage.getItem('UserID')); // lấy user ID từ sessionStorage
+    const cartItems = data.carts.filter(cart => cart.userId == user_ID); // lọc món ăn thuộc về user hiện tại
+    document.querySelector('#quantity_cart').innerText = cartItems.length; // trả về số lượng món ăn trong giỏ
+}
+
+// Hàm gửi email
+function sendMailOrder(customerNameame, email, amounT, data) {
+    const userId = parseInt(sessionStorage.getItem('UserID'));
+    let mess = "";
+    let dem = 1;
+    data.carts.forEach ( (cart) => {
+        if (userId == cart.userId) {
+            mess += `${dem}. ${cart.nameFood} - ${cart.food_Qty} - ${(cart.food_Qty * parseInt(cart.price.replace('đ', '').replace(',', ''))).toLocaleString()}đ\n`;
+            dem++;
+        }
+    })
+    const info = {
+        to_name: customerNameame,
+        to_email: email,
+        message: mess,
+        amount: amounT
+    }
+
+    emailjs.send('service_v65g29u', 'template_72ggs8a', info);
+}
+
 // Khởi tạo sự kiện lắng nghe khi tài liệu được tải xong
 function runPage(data) {
     document.addEventListener('DOMContentLoaded', function() {
@@ -297,36 +326,3 @@ function runPage(data) {
 }
 
 runPage(data);
-
-  
-
-
-/* ------------------------------------cập nhật số lượng món ăn trong giỏ hàng-----------------------------------------*/
-// Hàm đếm số lượng món ăn trong giỏ hàng
-export function countUniqueItemsInCart() {
-    const data = getDataLocalStorage(); // Cập nhật data theo thời gian thực;
-    const user_ID = parseInt(sessionStorage.getItem('UserID')); // lấy user ID từ sessionStorage
-    const cartItems = data.carts.filter(cart => cart.userId == user_ID); // lọc món ăn thuộc về user hiện tại
-    document.querySelector('#quantity_cart').innerText = cartItems.length; // trả về số lượng món ăn trong giỏ
-}
-
-
-function sendMailOrder(customerNameame, email, amounT, data) {
-    const userId = parseInt(sessionStorage.getItem('UserID'));
-    let mess = "";
-    let dem = 1;
-    data.carts.forEach ( (cart) => {
-        if (userId == cart.userId) {
-            mess += `${dem}. ${cart.nameFood} - ${cart.food_Qty} - ${(cart.food_Qty * parseInt(cart.price.replace('đ', '').replace(',', ''))).toLocaleString()}đ\n`;
-            dem++;
-        }
-    })
-    const info = {
-        to_name: customerNameame,
-        to_email: email,
-        message: mess,
-        amount: amounT
-    }
-
-    emailjs.send('service_v65g29u', 'template_72ggs8a', info);
-}
