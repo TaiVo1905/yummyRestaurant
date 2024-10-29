@@ -171,6 +171,7 @@ function booktable() {
                     data.bookTables.push(newBookATable);
                     setDataLocalStorage(data);
                     toast("Đặt bàn thành công!");
+                    setTimeout(() => window.location.href = "./bookTable.html", 2000);
                 })
             }
             else {
