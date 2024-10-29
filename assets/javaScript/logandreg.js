@@ -112,19 +112,24 @@ function changePassUser (personalInformation) {
             const users = data.users;
             const User = users.find(user => user.id === user_ID);
 
-            if (User.pass === oldPassword) {
-                if (newPassword === confirmPassword) {
+            if (User.pass == oldPassword) {
+                if (newPassword == confirmPassword) {
                     // Cập nhật mật khẩu mới
+                    if (newPassword == User.pass) {
+                    toast('Mật khẩu mới trùng với mật khẩu cũ!');
+                    return;
+                    }
                     User.pass = newPassword;
                     setDataLocalStorage(data); // Lưu lại vào localStorage
                     console.log(data);
-                    alert('Đổi mật khẩu thành công!');
+                    toast('Đổi mật khẩu thành công!');
                     changePassword.style.display = 'none';
+                    document.querySelector('#password_frm').reset();
                 } else {
-                    alert('Mật khẩu xác nhận không khớp!');
+                    toast('Mật khẩu xác nhận không khớp!');
                 }
             } else {
-                alert('Mật khẩu cũ không đúng!');
+                toast('Mật khẩu cũ không đúng!');
             }
         });
         
