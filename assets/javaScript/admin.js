@@ -338,7 +338,7 @@ function updateMenu(data) {
             form['itemType'].value = recordFood.querySelector('td:nth-child(3)').innerText;
             form['itemDesc'].value = recordFood.querySelector('td:nth-child(4)').innerText;
             form['itemImgText'].value = recordFood.querySelector('td:nth-child(5) .item_img').style.backgroundImage.slice(5, -2);
-            form['itemPrice'].value = recordFood.querySelector('td:nth-child(6)').innerText.slice(0, -1);
+            form['itemPrice'].value = recordFood.querySelector('td:nth-child(6)').innerText.slice(0, -1).replace(',', '');
             form.addEventListener('submit', (e) => {
                 if (addItemsModal.querySelector('.modal_header h2').innerText == "CHỈNH SỬA THÔNG TIN MÓN ĂN") {
                     e.preventDefault();
@@ -348,7 +348,7 @@ function updateMenu(data) {
                             food.type = form['itemType'].value;
                             food.describe = form['itemDesc'].value;
                             food.image_url = form['itemImgText'].value;
-                            food.price = form['itemPrice'].value;
+                            food.price = parseInt(form['itemPrice'].value).toLocaleString() + "đ"
                         }
                         return;
                     })
