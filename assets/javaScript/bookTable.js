@@ -127,8 +127,8 @@ function displaytable() {
 
 // Hàm lấy các bàn đã chọn, hiển thị vào form và lưu dữ liệu
 function booktable() {
-    btn_done.addEventListener('click', (e) => {
-        e.preventDefault();
+    btn_done.addEventListener('click', (event) => {
+        event.preventDefault();
         const User_ID = parseInt(sessionStorage.getItem('UserID'));
         const infoUser = data.users.find( (user) => user.id == User_ID);
             const array_table = []; // Lưu trữ bàn khách đang chọn
@@ -149,7 +149,8 @@ function booktable() {
                 document.getElementById('input_phone').value = infoUser.phoneNum || "";
                 document.getElementById('frm_booktable').style.display = "block"; // Hiển thị form
 
-                document.querySelector('#form_booktable').addEventListener('submit', () => {
+                document.querySelector('#form_booktable').addEventListener('submit', (event) => {
+                    event.preventDefault();
                     const tableNumber = document.getElementById('tableNumber').value;
                     const input_time1 = document.getElementById('input_time1').value;
                     const input_date1 = document.getElementById('input_date1').value;
