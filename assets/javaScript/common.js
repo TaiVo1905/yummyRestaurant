@@ -17,7 +17,7 @@ function renderHeader () {
                                 <i class="fa-solid fa-xmark"></i>
                             </label>
                             <ul>
-                                <li><a class="active" href="./index.html">TRANG CHỦ</a></li>
+                                <li><a class="active" href="./admin.html">TRANG CHỦ</a></li>
                                 <li><a class="active" href="./menu.html">ĐẶT MÓN</a></li>
                                 <li><a class="active" href="./bookTable.html">ĐẶT BÀN</a></li>
                                 <li><a class="active" href="./contact.html">LIÊN HỆ</a></li>
@@ -88,11 +88,11 @@ function renderLogAndReg () {
                                     </div>
                                     <div class="input_register">
                                         <i class="fa-solid fa-lock register_icon"></i>
-                                        <input type="password" name="password" class="register_password" placeholder="Nhập mật khẩu" required>
+                                        <input type="password" name="password" class="register_password" placeholder="Nhập mật khẩu" minlength="6" required>
                                     </div>
                                     <div class="input_register">
                                         <i class="fa-solid fa-lock register_icon"></i>
-                                        <input type="password" name="confirm_password" class="register_confirm" placeholder="Nhập lại mật khẩu" required>
+                                        <input type="password" name="confirm_password" class="register_confirm" placeholder="Nhập lại mật khẩu" minlength="6" required>
                                     </div>
                                     <button type="submit" class="register_button">Đăng ký</button>
                                     <div class="register_prompt">Bạn đã có tài khoản? <a href="#" id="switchToLogin">Đăng nhập</a></div>
@@ -160,7 +160,7 @@ function renderChangePassModal () {
                                         </div>
                                         <div class="input_password">
                                             <i class="fa-solid fa-key password_icon"></i>
-                                            <input type="password" name="new_password" class="password_new" placeholder="Mật khẩu mới" required>
+                                            <input type="password" name="new_password" class="password_new" placeholder="Mật khẩu mới" minlength="6" required>
                                         </div>
                                         <div class="input_password">
                                             <i class="fa-solid fa-key password_icon"></i>
@@ -175,8 +175,17 @@ function renderChangePassModal () {
                             `
 }
 
-renderHeader();
-renderFooter();
-renderLogAndReg();
-renderInfoUser();
-renderChangePassModal();
+function runPage() {
+    document.addEventListener('DOMContentLoaded', () => {
+        renderInfoUser();
+        renderChangePassModal();
+        if (window.location.pathname == '/admin.html' || window.location.pathname == '/ymmyRestaurantWebsite/admin.html'){
+            return;
+        }
+        renderHeader();
+        renderFooter();
+        renderLogAndReg();
+    })
+}
+
+runPage();

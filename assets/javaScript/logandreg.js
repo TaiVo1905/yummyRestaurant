@@ -25,17 +25,17 @@ function regisTer(){
         const password = this.password.value.trim();
         const confirm_password = this.confirm_password.value.trim();
         // Lấy danh sách người dùng đã đăng ký từ localStorage
-        const users = data.users;
+        ;
         // Kiểm tra xem email đã tồn tại chưa
-        const existingUser = users.find(user => user.email === email);
+        const existingUser = data.users.find(user => user.email === email);
         if (existingUser) {
             toast('Email đã được sử dụng!');
         } else if (confirm_password != password) {
             toast('Xác nhận mật khẩu thất bại!');
         } else {
-            const lastUser = users[users.length - 1]; // Lấy người dùng cuối cùng
+            const lastUser = data.users[data.users.length - 1]; // Lấy người dùng cuối cùng
             const id = lastUser.id + 1; // Cộng 1 vào id của người dùng cuối
-            users.push({
+            data.users.push({
                 id: id,                   
                 lastName: lastName,       
                 firstName: firstName,     
@@ -59,16 +59,20 @@ function logIn(){
         const password = this.password.value.trim();
         // Lấy danh sách người dùng từ localStorage
         const users = data.users;
-        console.log(users[0])
         // Kiểm tra thông tin đăng nhập
-        const user = users.find(user => user.email.toLowerCase() === email.toLowerCase() && user.pass === password);
+        const user = users.find(user => user.email.toLowerCase() == email.toLowerCase() && user.pass == password);
         if (user) {
             toast('Đăng nhập thành công!');
             document.querySelector('#login_Form').reset();
+            document.getElementById('logAndReg_modal').style.display = 'none';
+            if (user.email == 'admin2024@gmail.com') {
+                setTimeout(() => {
+                    window.location.href = 'admin.html';
+                }, 1500);
+            }
             // lưu userID vào sessionStorage 
             sessionStorage.setItem('UserID', user.id);
             countUniqueItemsInCart();
-            document.getElementById('logAndReg_modal').style.display = 'none';
         } else {
             toast('Tên đăng nhập hoặc mật khẩu không đúng!');
         }
@@ -79,7 +83,7 @@ function logIn(){
 function getInformation() {
     const users = data.users; // Lấy mảng người dùng từ localStorage
     const user_ID = parseInt(sessionStorage.getItem('UserID')); // Lấy ID người dùng từ sessionStorage
-    const user_exist = users.find(user => user.id === user_ID); // Tìm người dùng dựa theo ID
+    const user_exist = users.find(user => user.id == user_ID); // Tìm người dùng dựa theo ID
 
     if (user_exist) {
         // Nếu tìm thấy người dùng, điền thông tin vào form
@@ -99,47 +103,46 @@ function changePassUser (personalInformation) {
         e.preventDefault();
         personalInformation.style.display = 'none';
         changePassword.style.display='block';
+    });
+    // click vào nút cập nhật
+    document.querySelector('#password_frm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const user_ID = parseInt(sessionStorage.getItem('UserID'));
+        const oldPassword = document.querySelector('.password_current').value;
+        const newPassword = document.querySelector('.password_new').value;
+        const confirmPassword = document.querySelector('.password_newConfirm').value;
 
-        // click vào nút cập nhật
-        document.querySelector('#password_frm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const user_ID = parseInt(sessionStorage.getItem('UserID'));
-            const oldPassword = document.querySelector('.password_current').value;
-            const newPassword = document.querySelector('.password_new').value;
-            const confirmPassword = document.querySelector('.password_newConfirm').value;
-
-            // Lấy thông tin user từ localStorage
-            const users = data.users;
-            const User = users.find(user => user.id === user_ID);
-
-            if (User.pass == oldPassword) {
-                if (newPassword == confirmPassword) {
-                    // Cập nhật mật khẩu mới
-                    if (newPassword == User.pass) {
+        // Lấy thông tin user từ localStorage
+        const user = data.users.find(user => {return user.id == user_ID});
+        console.log(user);
+        if (user.pass == oldPassword) {
+            if (newPassword == confirmPassword) {
+                // Cập nhật mật khẩu mới
+                if (newPassword == user.pass) {
                     toast('Mật khẩu mới trùng với mật khẩu cũ!');
-                    return;
-                    }
-                    User.pass = newPassword;
+                } else {
+                    const index = data.users.findIndex(user => {return user.id == user_ID});
+                    data.users[index].pass = newPassword;
                     setDataLocalStorage(data); // Lưu lại vào localStorage
                     console.log(data);
                     toast('Đổi mật khẩu thành công!');
                     changePassword.style.display = 'none';
                     document.querySelector('#password_frm').reset();
-                } else {
-                    toast('Mật khẩu xác nhận không khớp!');
                 }
             } else {
-                toast('Mật khẩu cũ không đúng!');
+                toast('Mật khẩu xác nhận không khớp!');
             }
-        });
-        
-        // click vào nút hủy
-        const cancel = document.querySelector('.cancel_button');
-        cancel.addEventListener('click', (e) => {
-            e.preventDefault();
-            changePassword.style.display='none';
-        });
-        });
+        } else {
+            toast('Mật khẩu cũ không đúng!');
+        }
+    });
+    
+    // click vào nút hủy
+    const cancel = document.querySelector('.cancel_button');
+    cancel.addEventListener('click', (e) => {
+        e.preventDefault();
+        changePassword.style.display='none';
+    });
 }
 
 // Hàm xử lý đăng xuất cho user;
@@ -151,45 +154,59 @@ function logOut (personalInformation) {
         sessionStorage.removeItem('UserID');
         personalInformation.style.display='none';
         toast('Bạn đã đăng xuất thành công!');
-        countUniqueItemsInCart();
+        setTimeout( () => {
+            if (window.location.pathname == '/admin.html' || window.location.pathname == '/ymmyRestaurantWebsite/admin.html') {
+                window.location.href = "./index.html";
+                console.log(1);
+                return;
+            }
+            countUniqueItemsInCart();
+        }, 1500);
     });
 }
 
 // Khi click vào biểu tượng con người
-function handleLogIn(getInformation, changePassUser, logOut) {
+function handleLogIn() {
     const logAndReg = document.getElementById("logAndReg");
     const logAndRegModal = document.querySelector('.logAndReg_modal');
     const personalInformation = document.querySelector('.personalInformation_modal');
-    const modal = document.querySelectorAll('.logAndReg_modal, .personalInformation_modal, .changePassword_modal');
-    console.log(modal)
+    const modal = document?.querySelectorAll('.logAndReg_modal, .personalInformation_modal, .changePassword_modal');
     logAndReg.addEventListener('click', () => {
         const userid = parseInt(sessionStorage.getItem('UserID')); 
         // Kiểm tra xem người dùng đã đăng nhập hay chưa
         if (userid) {
             // personal_information(); // Nếu đã đăng nhập, hiển thị thông tin cá nhân
-            logAndRegModal.style.display = 'none';
+            if(logAndRegModal){
+                logAndRegModal.style.display = 'none';
+            }
             personalInformation.style.display = 'block'; // Hiển thị form thông tin cá nhân
             getInformation(); // Lấy thông tin người dùng để điền vào form
-            changePassUser(personalInformation); // Xử lý khi người dùng nhấn vào đổi mật khẩu
-            logOut(personalInformation); //Xử lý khi người dùng nhấn vào nút đăng xuất
-            document.querySelector('#information_frm').addEventListener('submit', (e) => {
-                e.preventDefault();
-                const phoneNum = document.querySelector('#information_frm')['phoneNumer'].value;
-                    const index = data.users.findIndex( (user) => { return user.id == parseInt(sessionStorage.getItem('UserID'))});
-                    data.users[index].phoneNum = phoneNum;
-                    toast('Cập nhật số điện thoại thành công!');
-                    setDataLocalStorage(data);
-                console.log(1);
-            })
         } else {
-            logAndRegModal.style.display = 'block'; // Nếu chưa đăng nhập, hiển thị modal đăng nhập
+            if(logAndRegModal){
+                logAndRegModal.style.display = 'block';
+            } // Nếu chưa đăng nhập, hiển thị modal đăng nhập
         }
 
     });
+    changePassUser(personalInformation); // Xử lý khi người dùng nhấn vào đổi mật khẩu
+    logOut(personalInformation); //Xử lý khi người dùng nhấn vào nút đăng xuất
+    document.querySelector('#information_frm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const phoneNum = document.querySelector('#information_frm')['phoneNumer'].value;
+        const index = data.users.findIndex( (user) => { return user.id == parseInt(sessionStorage.getItem('UserID'))});
+        if(data.users[index].phoneNum == phoneNum) {
+            toast('Bạn chưa thay đổi số điện thoại, vui lòng thử lại!');
+            return;
+        }
+        data.users[index].phoneNum = phoneNum;
+        toast('Cập nhật số điện thoại thành công!');
+        setDataLocalStorage(data);
+    })
     modal.forEach ( (m) => {
         m.addEventListener('click', (e) => {
             if (e.target.className == 'logAndReg_modal' || e.target.className == 'personalInformation_modal' || e.target.className == 'changePassword_modal') {
                 e.target.style.display = 'none';
+                e.target.querySelector('form').reset();
             }
         })
     })
@@ -199,7 +216,10 @@ function handleLogIn(getInformation, changePassUser, logOut) {
 // Hàm chạy chương trình
 function runPage() {
     document.addEventListener('DOMContentLoaded', () => {
-        handleLogIn(getInformation, changePassUser, logOut);
+        handleLogIn();
+        if (window.location.pathname == '/admin.html' || window.location.pathname == '/ymmyRestaurantWebsite/admin.html') {
+            return;
+        }
         changeFormLogAndReg();
         regisTer();
         logIn();
