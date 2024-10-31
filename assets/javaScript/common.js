@@ -17,7 +17,7 @@ function renderHeader () {
                                 <i class="fa-solid fa-xmark"></i>
                             </label>
                             <ul>
-                                <li><a class="active" href="./admin.html">TRANG CHỦ</a></li>
+                                <li><a class="active" href="./index.html">TRANG CHỦ</a></li>
                                 <li><a class="active" href="./menu.html">ĐẶT MÓN</a></li>
                                 <li><a class="active" href="./bookTable.html">ĐẶT BÀN</a></li>
                                 <li><a class="active" href="./contact.html">LIÊN HỆ</a></li>
