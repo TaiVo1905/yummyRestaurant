@@ -884,6 +884,15 @@
             "pass": "987654",
             "phoneNum": "0987123456",
             "date" : "14/10/2024"
+        },
+        {
+            "id": 6,
+            "firstName": "Yummy",
+            "lastName": "Restaurant",
+            "email": "admin2024@gmail.com",
+            "pass": "admin2024",
+            "phoneNum": "0123456789",
+            "date" : "14/10/2024"
         }
     ],
     "featuredDishes": [

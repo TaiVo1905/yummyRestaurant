@@ -71,7 +71,7 @@ function switchToDetailPage() {
             console.log(e)
             if(e.target.className != "add_to_cart") {
                 sessionStorage.setItem('foodId', menu_card.querySelector(".add_to_cart").id);
-                window.location.href = "./details.html"
+                window.location.href = "./details.html";
             }
         })
     })
